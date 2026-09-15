@@ -1,0 +1,24 @@
+# ---- 构建产物 ----
+out/
+
+# ---- 发布包 ----
+# tty.zip / tty 目录是二进制产物，用 GitHub Release 发布更合适，不进版本库。
+# 想连它一起提交的话，把下面这行删掉即可。
+dist/
+
+# ---- 测试 / 临时目录 ----
+.testdata/
+.finaldata/
+.setuplog/
+.accept/
+
+# ---- 用户数据（万一被指向仓库里）----
+settings.json
+user-words.txt
+user-english.txt
+logs/
+
+# ---- 编辑器 / 系统 ----
+.vs/
+*.user
+Thumbs.db

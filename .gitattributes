@@ -1,0 +1,14 @@
+# 统一换行，避免 Windows/Linux 来回改文件
+* text=auto
+
+*.ps1   text
+*.cs    text
+*.md    text
+*.txt   text
+
+# 二进制
+*.exe   binary
+*.dll   binary
+*.zip   binary
+*.ico   binary
+*.png   binary

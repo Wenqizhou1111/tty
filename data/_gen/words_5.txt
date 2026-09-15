@@ -1,0 +1,273 @@
+tian qi 天气 9600
+qing tian 晴天 7600
+xia yu 下雨 8400
+xia xue 下雪 7000
+gua feng 刮风 6600
+wen du 温度 7600
+qi wen 气温 7300
+leng 冷 8600
+re 热 8600
+chun tian 春天 8200
+xia tian 夏天 8200
+qiu tian 秋天 8000
+dong tian 冬天 8100
+tai yang 太阳 8800
+yue liang 月亮 8000
+xing xing 星星 7600
+kong qi 空气 8200
+huan jing 环境 8500
+wu ran 污染 7200
+hai 海 8300
+shan 山 8400
+he 河 7800
+shu 树 8100
+hua 花 8300
+cao 草 7800
+yun 云 7200
+yu 雨 8000
+xue 雪 7800
+feng 风 8200
+shan dian 闪电 6400
+tai feng 台风 6800
+di zhen 地震 7000
+hong shui 洪水 6000
+gan han 干旱 5400
+qi hou 气候 7400
+zi ran 自然 8400
+sen lin 森林 7400
+shu lin 树林 6000
+shan mai 山脉 4600
+chang jiang 长江 6600
+huang he 黄河 6400
+hai yang 海洋 7200
+hai bian 海边 6800
+sha tan 沙滩 6200
+dao yu 岛屿 4200
+shui ku 水库 4000
+cao yuan 草原 6600
+shan gu 山谷 4600
+yan re 炎热 5200
+wen nuan 温暖 6600
+liang shuang 凉爽 5000
+chao shi 潮湿 4800
+gan zao 干燥 5200
+yin tian 阴天 4600
+duo yun 多云 4000
+da wu 大雾 4400
+jiang wen 降温 4600
+sheng wen 升温 3600
+yu shui 雨水 4600
+xue hua 雪花 4400
+yun cai 云彩 3600
+ri chu 日出 4600
+ri luo 日落 4800
+yue guang 月光 5000
+yang guang 阳光 7600
+xing guang 星光 3400
+lan tian 蓝天 5600
+bai yun 白云 5200
+wu yun 乌云 4400
+cai hong 彩虹 5200
+bao yu 暴雨 5000
+xiao yu 小雨 5000
+ji jie 季节 7000
+sheng tai 生态 6200
+zhi wu 植物 7200
+shu mu 树木 5200
+shu ye 树叶 4800
+hua yuan 花园 5600
+gong yuan 公园 7600
+cao di 草地 4800
+dong wu 动物 8400
+mao 猫 8200
+gou 狗 8300
+niao 鸟 8000
+yu 鱼 8200
+ma 马 8000
+niu 牛 7900
+yang 羊 7600
+ji 鸡 7800
+ya 鸭 6800
+lao hu 老虎 7400
+da xiang 大象 7000
+xiong mao 熊猫 7400
+wen zi 蚊子 6600
+cang ying 苍蝇 6200
+shi zi 狮子 6800
+lao shu 老鼠 7200
+tu zi 兔子 7000
+hou zi 猴子 6800
+she 蛇 6600
+lang 狼 6400
+xiong 熊 6200
+lu 鹿 5000
+zhu 猪 7400
+e yu 鳄鱼 5200
+hai tun 海豚 5400
+jing yu 鲸鱼 5000
+qing wa 青蛙 5800
+hu die 蝴蝶 6000
+mi feng 蜜蜂 6200
+ma yi 蚂蚁 6000
+zhi zhu 蜘蛛 5000
+kong que 孔雀 4800
+ge zi 鸽子 5600
+lao ying 老鹰 5400
+mao tou ying 猫头鹰 4600
+yan zi 燕子 5000
+wu gui 乌龟 5400
+pang xie 螃蟹 5200
+xia 虾 5600
+hai ou 海鸥 4200
+qi e 企鹅 5400
+chang jing lu 长颈鹿 4800
+ban ma 斑马 4200
+he ma 河马 4200
+xi niu 犀牛 4000
+luo tuo 骆驼 4800
+bian fu 蝙蝠 4200
+song shu 松鼠 4400
+ci wei 刺猬 3400
+hu li 狐狸 5600
+gong ji 公鸡 5000
+mu ji 母鸡 4600
+xiao niao 小鸟 5400
+chong wu 宠物 6600
+dong wu yuan 动物园 6200
+kun chong 昆虫 5000
+yan se 颜色 8800
+hong se 红色 8200
+lan se 蓝色 8000
+lv se 绿色 8000
+huang se 黄色 7800
+hei se 黑色 8000
+bai se 白色 8000
+hui se 灰色 7200
+zi se 紫色 7000
+fen se 粉色 7000
+cheng se 橙色 6600
+zong se 棕色 6200
+hong 红 8000
+hei 黑 7800
+bai 白 7800
+lv 绿 7600
+lan 蓝 7600
+huang 黄 7600
+jin se 金色 5600
+yin se 银色 4600
+shen lan 深蓝 3400
+se cai 色彩 5600
+wu yan liu se 五颜六色 4200
+jian kang 健康 8800
+yi yuan 医院 9000
+kan bing 看病 7400
+gan mao 感冒 7600
+fa shao 发烧 7200
+ke sou 咳嗽 6800
+chi yao 吃药 7200
+da zhen 打针 6800
+jian cha 检查 8400
+shou shu 手术 7200
+xiu xi 休息 8600
+shui mian 睡眠 7400
+duan lian 锻炼 7400
+jian fei 减肥 7200
+ying yang 营养 7200
+shen ti 身体 9000
+sheng bing 生病 7600
+zhi liao 治疗 7200
+yi sheng 医生 8800
+hu shi 护士 6600
+bing ren 病人 6600
+yao 药 8000
+yao dian 药店 5800
+ti jian 体检 5400
+xue ya 血压 5600
+ti wen 体温 5200
+bing fang 病房 5000
+tou teng 头疼 6200
+ya teng 牙疼 4600
+du zi teng 肚子疼 5200
+shi mian 失眠 5400
+pi lao 疲劳 6200
+ya li 压力 8000
+fang song 放松 6800
+wei sheng 卫生 6800
+wei sheng su 维生素 5600
+mian yi 免疫 4600
+yu fang 预防 5400
+kang fu 康复 4400
+zhong yi 中医 5400
+xi yi 西医 3800
+kou zhao 口罩 5600
+xiao du 消毒 5000
+ji bing 疾病 6200
+bao jian 保健 4200
+yun dong 运动 8800
+pao bu 跑步 8000
+you yong 游泳 8000
+lan qiu 篮球 7600
+zu qiu 足球 7600
+yu mao qiu 羽毛球 6400
+jian shen 健身 7200
+yu jia 瑜伽 6200
+pa shan 爬山 6600
+qi zi xing che 骑自行车 5800
+you xi 游戏 8800
+dian ying 电影 8800
+yin yue 音乐 8800
+chang ge 唱歌 7800
+tiao wu 跳舞 7400
+lv you 旅游 8200
+lv xing 旅行 8000
+pai zhao 拍照 7200
+kan shu 看书 7600
+dian shi 电视 8800
+jie mu 节目 7800
+yan chang hui 演唱会 6200
+men piao 门票 6600
+jia qi 假期 7600
+ti yu 体育 7600
+bi sai 比赛 8000
+yue du 阅读 6600
+xiao shuo 小说 7200
+ge qu 歌曲 7000
+ge shou 歌手 6600
+ming xing 明星 7000
+yan yuan 演员 6800
+dian ying yuan 电影院 6400
+ju chang 剧场 4000
+yin yue hui 音乐会 5000
+bo wu guan 博物馆 6000
+du jia 度假 5600
+xiu xian 休闲 6200
+yu le 娱乐 7200
+wan shua 玩耍 5400
+wang luo 网络 8600
+shang wang 上网 7400
+shou ji 手机 9200
+dian nao 电脑 8800
+wei xin 微信 8800
+duan shi pin 短视频 6400
+zhi bo 直播 6800
+dian zi you xi 电子游戏 5400
+san bu 散步 6200
+tiao sheng 跳绳 5000
+ping pang qiu 乒乓球 6000
+wang qiu 网球 5600
+gao er fu 高尔夫 4400
+hua bing 滑冰 4600
+hua xue 滑雪 5000
+chong lang 冲浪 3400
+qian shui 潜水 4200
+diao yu 钓鱼 5800
+jiao lian 教练 6200
+yun dong yuan 运动员 6400
+qiu chang 球场 4600
+jian shen fang 健身房 5200
+guan zhong 观众 6600
+bi fen 比分 4200
+guan jun 冠军 6600
+jin pai 金牌 5400
+ao yun hui 奥运会 6400
+shi jie bei 世界杯 6200

@@ -1,0 +1,106 @@
+# 墨言输入法 英文补充词库（人工精选）
+# 格式: <单词> <常用度排名>   排名越小越靠前
+# 这张表用来补 english.txt（自动生成的 4000 词表）漏掉的高频词。
+# 重复的词会自动取更靠前的排名，所以随便加，不用怕和主表撞车。
+#
+# ---- 数字生活 ----
+information 300
+info 1200
+internet 700
+email 900
+website 1500
+online 1300
+offline 2600
+download 1800
+upload 2400
+software 1900
+hardware 2500
+wifi 2200
+password 1600
+username 2300
+login 2000
+logout 2800
+account 1100
+profile 2100
+screenshot 2700
+backup 2400
+update 1200
+upgrade 2200
+install 1900
+uninstall 3000
+browser 2000
+bookmark 2900
+podcast 2900
+smartphone 2500
+laptop 2100
+desktop 2000
+tablet 2400
+keyboard 2300
+printer 2300
+scanner 2800
+#
+# ---- 社交与礼貌 ----
+hello 600
+hi 700
+sorry 700
+goodbye 1400
+bye 1600
+thanks 800
+welcome 1100
+congratulations 2400
+cheers 2600
+please 500
+okay 900
+#
+# ---- 工作与商务 ----
+meeting 1100
+schedule 1500
+calendar 1900
+reminder 2400
+deadline 2300
+invoice 2600
+payment 1500
+refund 2300
+discount 1900
+receipt 2500
+manager 1300
+colleague 2100
+customer 1300
+client 1500
+supplier 2700
+project 1100
+report 1000
+presentation 1900
+document 1400
+spreadsheet 2900
+feedback 1900
+suggestion 2100
+complaint 2300
+review 1300
+rating 2200
+#
+# ---- 出行与生活 ----
+delivery 1700
+shipping 2200
+address 1200
+package 1700
+restaurant 1600
+menu 2000
+reservation 2500
+airport 1700
+flight 1400
+ticket 1500
+luggage 2500
+hotel 1600
+booking 2100
+checkin 2800
+checkout 2600
+weather 1300
+forecast 2400
+temperature 1900
+#
+# ---- 健康 ----
+exercise 1600
+fitness 2200
+diet 2000
+nutrition 2500

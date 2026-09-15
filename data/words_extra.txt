@@ -1,0 +1,609 @@
+shu ru fa 输入法 9600
+pin yin 拼音 9400
+da zi 打字 9200
+hou xuan 候选 8000
+shang ping 上屏 6000
+ci ku 词库 6500
+kuai jie jian 快捷键 7500
+jian tie ban 剪贴板 7000
+shu ru kuang 输入框 6500
+guang biao 光标 6500
+hui che 回车 7000
+kong ge 空格 7000
+tui ge 退格 5800
+quan jiao 全角 5500
+ban jiao 半角 5500
+zi ti 字体 7000
+zi hao 字号 5500
+fu zhi 复制 8000
+zhan tie 粘贴 7500
+che xiao 撤销 7000
+chong zuo 重做 6000
+bao cun 保存 8200
+ling cun wei 另存为 5500
+da yin 打印 7200
+jie tu 截图 8000
+lu ping 录屏 6500
+shua xin 刷新 7800
+shang chuan 上传 8000
+fen xiang 分享 8300
+zhuan fa 转发 8000
+shou cang 收藏 8000
+dian zan 点赞 8000
+ping lun 评论 8200
+guan zhu 关注 8300
+si xin 私信 7000
+liao tian 聊天 8500
+tong hua 通话 7500
+yu yin 语音 8000
+tuo dong 拖动 6000
+qie huan 切换 7500
+cha xun 查询 7000
+que ren 确认 8200
+qu xiao 取消 8200
+che hui 撤回 7000
+tian jia 添加 8000
+shan chu 删除 8000
+xiu gai 修改 7900
+bian ji 编辑 7800
+dian ji 点击 8200
+da kai 打开 9000
+guan bi 关闭 8500
+nin hao 您好 8800
+duo xie 多谢 8200
+qing jiao 请教 6500
+ma fan ni 麻烦你 6500
+xin ku le 辛苦了 7000
+gong xi 恭喜 7200
+sheng ri kuai le 生日快乐 7500
+xin nian kuai le 新年快乐 7500
+zhou mo yu kuai 周末愉快 6000
+yi lu ping an 一路平安 5800
+zhu yi an quan 注意安全 6500
+bao zhong shen ti 保重身体 5500
+zao dian xiu xi 早点休息 6000
+shou dao 收到 8200
+zhi dao le 知道了 7500
+mei wen ti 没问题 7800
+mei shi 没事 7300
+bu xing 不行 7500
+shao deng 稍等 6500
+ma shang 马上 7800
+hui lai 回来 8300
+dao le 到了 7500
+zai lu shang 在路上 6500
+ke yi ma 可以吗 6000
+shi fen 十分 7000
+xiang dang 相当 6800
+shao wei 稍微 6500
+zui 最 7500
+geng 更 7500
+ting 挺 7000
+man 蛮 5000
+zhen 真 7500
+tai 太 7800
+zhong yu 终于 7500
+ju ran 居然 7000
+jing ran 竟然 6800
+guo ran 果然 6800
+ken ding 肯定 7500
+mei ge 每个 7500
+de 的 9900
+le 了 9900
+shi 是 9900
+zai 在 9900
+you 有 9800
+he 和 9700
+jiu 就 9700
+bu 不 9800
+ren 人 9600
+dou 都 9600
+yi 一 9600
+ye 也 9500
+hen 很 9500
+dao 到 9400
+shuo 说 9400
+yao 要 9400
+qu 去 9300
+hui 会 9300
+zhe 着 9200
+yi ge 一个 9500
+shui 谁 8500
+ji dian 几点 6500
+wo 我 9900
+ni 你 9900
+ta 他 9800
+ta 她 9600
+ta 它 9000
+zhe 这 9500
+na 那 9400
+shang 上 9200
+xia 下 9200
+da 大 9300
+xiao 小 9300
+duo 多 9200
+shao 少 8800
+hao 好 9500
+kan 看 9300
+xiang 想 9300
+gei 给 9200
+yong 用 9100
+zuo 做 9200
+mai 买 9000
+mai 卖 8900
+chi 吃 9200
+he 喝 9000
+zou 走 8900
+lai 来 9400
+neng 能 9200
+tian 天 8500
+nian 年 8500
+yue 月 8400
+ri 日 7800
+shi 事 8300
+hua 话 8300
+qian 钱 8800
+shui 水 8800
+huo 火 8000
+che 车 8600
+men 门 8400
+lu 路 8300
+shu 书 8300
+zi 字 7800
+ci 词 7200
+xin 心 8200
+li 力 7500
+dian 点 8500
+fen 分 8000
+ge 个 9000
+men 们 8000
+ne 呢 8500
+ma 吗 8500
+ba 吧 8500
+a 啊 8500
+ya 呀 7800
+o 哦 7800
+en 嗯 8000
+wei 喂 8000
+gang cai 刚才 7800
+gang gang 刚刚 7500
+li ke 立刻 7500
+zhi hou 之后 8000
+zhi qian 之前 8000
+hou tian 后天 7500
+qian tian 前天 7200
+shang wu 上午 8300
+mei zhou 每周 7000
+mei yue 每月 6800
+mei nian 每年 7000
+zhou yi 周一 7200
+zhou er 周二 7100
+zhou san 周三 7100
+zhou si 周四 7100
+zhou wu 周五 7200
+zhou liu 周六 7200
+zhou ri 周日 7200
+xing qi yi 星期一 7000
+xing qi er 星期二 6900
+xing qi san 星期三 6900
+xing qi si 星期四 6900
+xing qi wu 星期五 7000
+xing qi liu 星期六 7000
+xing qi ri 星期日 7000
+chi dao 迟到 7200
+zao tui 早退 5500
+ling chen 凌晨 7000
+tao bao 淘宝 8500
+jing dong 京东 8000
+pin duo duo 拼多多 7500
+dou yin 抖音 8500
+kuai shou 快手 7500
+wei bo 微博 8000
+xiao hong shu 小红书 7500
+zhi hu 知乎 7000
+bai du 百度 8000
+gu ge 谷歌 7500
+mei tuan 美团 7500
+e le me 饿了么 7000
+di di 滴滴 7500
+gao de di tu 高德地图 7000
+sao ma 扫码 7200
+fen si 粉丝 7500
+dan mu 弹幕 6500
+chong zhi 充值 7200
+ti xian 提现 7000
+shou kuan 收款 7200
+qian shou 签收 6500
+xi lian 洗脸 6800
+huan yi fu 换衣服 6500
+chuan yi fu 穿衣服 6500
+tuo xie 拖鞋 5500
+zuo che 坐车 6500
+qi che 骑车 6200
+qi che 汽车 7500
+xi wan 洗碗 6500
+tuo di 拖地 5500
+liang yi fu 晾衣服 5000
+jiao hua 浇花 4800
+yang mao 养猫 5000
+liu gou 遛狗 5000
+xi fan 稀饭 6000
+man tou 馒头 6500
+mi fen 米粉 5500
+la mian 拉面 6000
+zha ji 炸鸡 6200
+shu tiao 薯条 6200
+han bao 汉堡 6200
+pi sa 披萨 6000
+san ming zhi 三明治 6000
+guo zhi 果汁 6200
+nai cha 奶茶 7000
+fang bian mian 方便面 6200
+huo tui 火腿 5500
+xiang chang 香肠 5500
+bai cai 白菜 6200
+tu dou 土豆 6500
+xi hong shi 西红柿 6500
+huang gua 黄瓜 6200
+qie zi 茄子 6000
+dou fu 豆腐 6500
+hua sheng 花生 6200
+gua zi 瓜子 6000
+he tao 核桃 5500
+pu tao 葡萄 6500
+xiang jiao 香蕉 6500
+xi gua 西瓜 6800
+ju zi 橘子 6200
+cao mei 草莓 6200
+ying tao 樱桃 5800
+tao zi 桃子 5500
+li 梨 5500
+you zi 柚子 5000
+ning meng 柠檬 5500
+da mi 大米 6000
+mian fen 面粉 5500
+shi yong you 食用油 5200
+jiang you 酱油 5800
+cu 醋 5500
+yan 盐 6200
+tang 糖 6200
+la jiao 辣椒 6200
+da suan 大蒜 5500
+sheng jiang 生姜 5200
+wei jing 味精 4800
+dian xin 点心 5800
+yue bing 月饼 6000
+zong zi 粽子 5800
+tang yuan 汤圆 5500
+hou long 喉咙 5500
+xi gai 膝盖 5500
+hou bei 后背 5200
+shou wan 手腕 5000
+da pen ti 打喷嚏 5200
+liu bi ti 流鼻涕 5000
+tou yun 头晕 5800
+zhu yuan 住院 6200
+gua hao 挂号 6200
+pai dui 排队 6800
+yi miao 疫苗 6500
+shi li 视力 5500
+zao shui 早睡 5500
+ao ye 熬夜 6200
+xing fen 兴奋 6200
+yu men 郁闷 5500
+xin fan 心烦 5500
+an xin 安心 5500
+man zu 满足 6200
+tian mi 甜蜜 5500
+lang man 浪漫 6000
+wen rou 温柔 6000
+you mo 幽默 5500
+da fang 大方 5200
+xiao qi 小气 5200
+qin kuai 勤快 5000
+lan duo 懒惰 5000
+xian mu 羡慕 5800
+ji du 嫉妒 5200
+jue wang 绝望 5200
+xin teng 心疼 6000
+dao qian 道歉 6500
+chao jia 吵架 6500
+da jia 打架 5800
+he hao 和好 5000
+fen shou 分手 6200
+biao bai 表白 5800
+yue hui 约会 6200
+xiang qin 相亲 5500
+tan lian ai 谈恋爱 6000
+huai yun 怀孕 6000
+sheng hai zi 生孩子 6000
+dai hai zi 带孩子 5500
+jiao yu 教育 7000
+pei yang 培养 6200
+pei ban 陪伴 6000
+da ka 打卡 6200
+hui bao 汇报 6200
+zong jie 总结 6500
+mu biao 目标 7000
+jie zhi 截止 5500
+yan qi 延期 5500
+gou tong 沟通 7000
+xie tiao 协调 6000
+pei he 配合 6200
+fu ze 负责 6800
+jia ban fei 加班费 5000
+nian zhong jiang 年终奖 5500
+zhang gong zi 涨工资 5500
+tiao cao 跳槽 5800
+ying pin 应聘 5800
+ru zhi 入职 5800
+shang si 上司 5500
+xia shu 下属 5200
+mi shu 秘书 5500
+zhu li 助理 5500
+qian tai 前台 5000
+gong ying shang 供应商 5200
+bao xiao 报销 6200
+shang ke 上课 7200
+xia ke 下课 6800
+yu xi 预习 5800
+bei song 背诵 5500
+lang du 朗读 5000
+kao yan 考研 6200
+gao kao 高考 6800
+zhong kao 中考 5800
+bu xi 补习 5800
+jia jiao 家教 5500
+jiang xue jin 奖学金 6000
+shi yan shi 实验室 6000
+jiao shou 教授 6500
+jiang shi 讲师 5000
+ban ji 班级 6000
+tong zhuo 同桌 5500
+su she 宿舍 6200
+shi tang 食堂 6500
+cao chang 操场 6000
+ji ge 及格 5500
+man fen 满分 5500
+bi ye zheng 毕业证 5200
+jiu dian 酒店 7000
+min su 民宿 5200
+jing dian 景点 6500
+dao you 导游 5800
+xing li 行李 6500
+xing li xiang 行李箱 5500
+bei bao 背包 5500
+deng ji pai 登机牌 5000
+an jian 安检 5800
+hou ji 候机 4800
+qi fei 起飞 6200
+jiang luo 降落 5800
+hang ban 航班 6200
+yan wu 延误 5500
+dong che 动车 6000
+jia you zhan 加油站 5500
+dao hang 导航 6800
+di tu 地图 6800
+lu xian 路线 6200
+ju li 距离 6800
+fang xiang 方向 6500
+mi lu 迷路 5500
+wang gou 网购 6500
+xia dan 下单 6500
+ping jia 评价 6800
+cha ping 差评 5500
+hao ping 好评 5800
+you hui quan 优惠券 6000
+miao sha 秒杀 5500
+qiang gou 抢购 5500
+que huo 缺货 5500
+bao you 包邮 6000
+yun fei 运费 5800
+fa huo 发货 6200
+shou huo 收货 6200
+yin hang 银行 7200
+cun kuan 存款 6000
+dai kuan 贷款 6500
+li lv 利率 5800
+li cai 理财 6200
+ji jin 基金 6500
+gu piao 股票 6500
+jiao fei 缴费 5800
+shui dian fei 水电费 5500
+ya jin 押金 5500
+cha ji 茶几 5000
+yao kong qi 遥控器 5800
+nuan qi 暖气 6000
+chui feng ji 吹风机 5500
+jia shi qi 加湿器 4800
+cha zuo 插座 5500
+chong dian qi 充电器 6000
+shu ju xian 数据线 5800
+er ji 耳机 6800
+yin xiang 音箱 5500
+she xiang tou 摄像头 6200
+da yin ji 打印机 5800
+zhu ji 主机 5500
+bi ji ben 笔记本 6500
+ping ban 平板 6500
+chong dian bao 充电宝 6000
+wang xian 网线 5000
+ni cheng 昵称 5500
+tou xiang 头像 6000
+qian ming 签名 5800
+zhen tou 枕头 5800
+bei zi 被子 6000
+chuang dan 床单 5500
+xie gui 鞋柜 4800
+la ji tong 垃圾桶 5800
+sao ba 扫把 5000
+tuo ba 拖把 5000
+xi jie jing 洗洁精 4800
+ya gao 牙膏 5800
+mu yu lu 沐浴露 5500
+xi shou ye 洗手液 5000
+zhi jin 纸巾 6000
+da lei 打雷 5800
+bing bao 冰雹 4800
+zhong qiu 中秋 6200
+duan wu 端午 5800
+yuan dan 元旦 6000
+guo qing 国庆 6500
+lao dong jie 劳动节 5500
+er tong jie 儿童节 5200
+qing ren jie 情人节 5800
+sheng dan jie 圣诞节 6000
+yun ji suan 云计算 5800
+da shu ju 大数据 5800
+qu kuai lian 区块链 5200
+wang luo an quan 网络安全 5500
+yin si 隐私 6200
+shou quan 授权 5800
+quan xian 权限 6200
+sheng ji 升级 6800
+xie zai 卸载 6500
+chong qi 重启 6500
+guan ji 关机 6500
+kai ji 开机 6500
+si ji 死机 5500
+ka dun 卡顿 5500
+shan tui 闪退 5000
+bao cuo 报错 5500
+xiu fu 修复 6000
+ti shi 提示 6800
+jing gao 警告 6200
+cuo wu 错误 6800
+zheng que 正确 7500
+shi bai 失败 7200
+chang shi 尝试 6500
+cao zuo 操作 7200
+xuan xiang 选项 6500
+mo ren 默认 6000
+zi ding yi 自定义 5500
+mu ban 模板 5800
+ge shi 格式 6200
+pai ban 排版 5200
+biao ge 表格 6200
+wen dang 文档 7000
+huan deng pian 幻灯片 5500
+yan shi 演示 5500
+ya suo 压缩 5800
+jie ya 解压 5500
+wen jian jia 文件夹 6200
+zhuo mian 桌面 6500
+tu biao 图标 6000
+shou cang jia 收藏夹 5200
+li shi ji lu 历史记录 5500
+liu lan 浏览 6200
+fang wen 访问 6500
+lian jie 链接 6800
+dian kai 点开 6000
+chang an 长按 5500
+hua dong 滑动 5800
+suo fang 缩放 5200
+zhao pian 照片 7000
+xiang ce 相册 6200
+xiang ji 相机 6800
+lu yin 录音 6200
+zhui ju 追剧 5500
+dian ying piao 电影票 5500
+zao shang hao 早上好 7000
+wan shang hao 晚上好 6500
+wan an 晚安 7000
+huan ying 欢迎 7200
+bai tuo 拜托 6000
+bie ke qi 别客气 5800
+ke qi le 客气了 5500
+bu yong xie 不用谢 6000
+ying gai de 应该的 5500
+hao zhu yi 好主意 5500
+wo tong yi 我同意 5500
+bu tong yi 不同意 5200
+zhi chi ni 支持你 5500
+xie xie nin 谢谢您 5500
+qing wen yi xia 请问一下 6000
+pian yi dian 便宜点 5500
+da bao 打包 6200
+jie zhang 结账 6200
+dian dan 点单 5200
+jiao shi 教师 6200
+shi bu shi 是不是 6500
+you mei you 有没有 6800
+dui bu dui 对不对 5500
+hao bu hao 好不好 5200
+zai na li 在哪里 6000
+gan shen me 干什么 6000
+zuo shen me 做什么 6000
+qu na er 去哪儿 5800
+xing bu xing 行不行 5200
+ma fan nin 麻烦您 5000
+dui de 对的 5500
+ke yi le 可以了 5500
+xing ba 行吧 5000
+suan le 算了 6200
+sui bian 随便 6200
+dou xing 都行 5500
+zhuang tai 状态 6500
+te dian 特点 6000
+you dian 优点 5800
+que dian 缺点 5800
+qu bie 区别 6200
+cha bie 差别 5800
+bian hua 变化 6800
+ying xiang 影响 7200
+zuo yong 作用 6500
+yi yi 意义 6200
+jia zhi 价值 6800
+zhong yao 重要 8000
+bi yao 必要 6200
+guan jian 关键 6800
+ji chu 基础 6800
+tiao jian 条件 6800
+guo cheng 过程 6800
+jie duan 阶段 6200
+bu zhou 步骤 6200
+shun xu 顺序 5800
+xi jie 细节 6000
+zhong dian 重点 6800
+nan dian 难点 5500
+li zi 例子 6000
+jiao xun 教训 5500
+dao li 道理 6500
+yuan ze 原则 6200
+gui ze 规则 6500
+zhi du 制度 6800
+quan li 权利 6200
+yi wu 义务 5800
+zi you 自由 7000
+ping deng 平等 6000
+gong ping 公平 6200
+wen ming 文明 6200
+wen hua 文化 7200
+yi shu 艺术 6500
+ke xue 科学 7000
+ji shu 技术 7200
+ji neng 技能 6500
+tian fu 天赋 5500
+qian li 潜力 5800
+xing qu 兴趣 6800
+ai hao 爱好 6500
+wei lai 未来 7500
+guo qu 过去 7000
+mu qian 目前 7000
+jiang lai 将来 6200
+ti qian 提前 6500
+tui chi 推迟 5500
+an shi 按时 5800
+ji shi 及时 6200
+shun bian 顺便 6000
+te yi 特意 5500
+zhuan men 专门 6000
+qin zi 亲自 5800
+dan du 单独 5800
+gong tong 共同 6200
+fen bie 分别 6200
+ge zi 各自 5500
+hu xiang 互相 6200
+bi ci 彼此 5500
+zheng yi 正义 5500
+dao de 道德 6000

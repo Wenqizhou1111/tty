@@ -1,0 +1,21 @@
+; MyIme.def -- DLL export table
+;
+; A TSF text service DLL must export these four functions
+; (DllMain is recorded in the PE header and does not need an export):
+;   DllGetClassObject      TSF / COM creates the text service object
+;   DllCanUnloadNow        may the host unload this DLL now?
+;   DllRegisterServer      regsvr32 MyIme.dll
+;   DllUnregisterServer    regsvr32 /u MyIme.dll
+;
+; A .def file is used instead of __declspec(dllexport) so the export names
+; stay undecorated -- C++ name mangling would hide DllRegisterServer from
+; regsvr32. Keep this file ASCII-only: link.exe reads .def files using the
+; system code page, and non-ASCII bytes here can break parsing on some setups.
+
+LIBRARY MyIme
+
+EXPORTS
+    DllGetClassObject       PRIVATE
+    DllCanUnloadNow         PRIVATE
+    DllRegisterServer       PRIVATE
+    DllUnregisterServer     PRIVATE

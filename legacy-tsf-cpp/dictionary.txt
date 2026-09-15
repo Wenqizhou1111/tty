@@ -1,0 +1,286 @@
+# MyIME 示例词典（UTF-8，无 BOM 也行，带 BOM 也行）
+#
+# 格式： <码> <词> [权重]
+#   码 = 空格分隔的键序列。拼音输入法就是拼音音节（不带声调）；
+#        换成五笔/双拼/自定义码表时，把码换成对应的键序列即可，
+#        引擎的流程完全一样（见 设计文档.md「引擎怎么换成别的码表」）。
+#   词 = 上屏文字（可以是多个字，也可以是英文）
+#   权重 = 排序分，越大越靠前；省略按 0 处理
+#
+# 权重不是「标准词频」，只是演示排序：数字键选字、首候选加粗都靠它。
+# 真实项目应该用词频统计表批量生成这个文件。
+
+# ---------- 单字（高频） ----------
+de 的 9000
+yi 一 8500
+shi 是 9000
+bu 不 9000
+le 了 9000
+ren 人 8000
+wo 我 9000
+zai 在 9000
+you 有 9000
+ta 他 8500
+he 和 8000
+zhe 这 8000
+zhong 中 8000
+da 大 8000
+wei 为 7000
+shang 上 7000
+ge 个 7000
+guo 国 6000
+di 地 6000
+dao 到 6000
+shuo 说 6000
+men 们 6000
+wei 位 4000
+ye 也 6000
+zi 子 5500
+dao 道 3500
+chu 出 4500
+er 而 4000
+yao 要 5000
+yu 于 4000
+jiu 就 5500
+xia 下 5000
+de 得 3000
+zhuo 着 3000
+zi 自 3000
+zi 字 3000
+hui 会 5000
+ke 可 4500
+ta 她 3000
+guo 过 3000
+li 里 4000
+dui 对 4000
+ye 业 3000
+neng 能 4500
+fang 方 3000
+duo 多 3500
+ran 然 3000
+yu 与 2500
+xin 新 4000
+xian 先 3500
+qian 前 3500
+suo 所 3000
+ben 本 3000
+jian 见 3000
+jing 经 3000
+tou 头 3000
+mian 面 3000
+gong 公 2500
+tong 同 2500
+san 三 4000
+xiao 小 7000
+er 二 3000
+li 理 3000
+qi 起 2500
+ming 明 3000
+li 力 2500
+dian 电 4000
+dian 点 3500
+dian 店 900
+kai 开 4000
+wai 外 3000
+jiang 将 2500
+hai 还 4000
+fa 发 1800
+fa 法 2000
+cheng 成 3500
+shi 事 3000
+zhi 只 3000
+zuo 作 3000
+dang 当 3000
+tian 天 4000
+ru 如 2500
+xiang 想 3500
+yang 样 3000
+gan 干 2500
+guan 关 2500
+bei 被 3000
+mei 没 4000
+mei 每 2500
+zui 最 3000
+hao 好 5000
+hao 号 2000
+hao 豪 500
+ni 你 5000
+ni 尼 800
+ni 泥 600
+ni 拟 500
+shi 十 2000
+shi 时 4000
+shi 使 1500
+shi 市 1500
+shi 试 1200
+ji 机 3000
+ji 几 1500
+ji 记 1200
+ji 计 1200
+qi 器 2000
+qi 气 1500
+wen 文 3000
+wen 问 2000
+wen 温 800
+shu 输 1500
+shu 数 2000
+shu 书 1800
+shu 树 900
+ru 入 1500
+xie 写 2000
+xie 谢 1500
+xie 些 1800
+zai 再 3000
+jian 件 2000
+jian 建 1800
+jian 简 1200
+ma 吗 3000
+ma 妈 2000
+ma 马 1500
+le 乐 1500
+you 又 2500
+you 右 1200
+you 由 1500
+he 合 2000
+he 河 900
+bu 部 2500
+bu 步 1500
+shang 商 1200
+xia 夏 900
+da 打 3000
+xiao 笑 1200
+xiao 校 1500
+nao 脑 2500
+nao 闹 500
+jie 接 2000
+jie 解 2500
+jie 界 1800
+jie 节 1600
+jie 街 900
+
+# ---------- 词组（多音节） ----------
+ni hao 你好 9000
+ni men 你们 6000
+wo men 我们 9000
+xie xie 谢谢 6000
+zai jian 再见 6000
+dui bu qi 对不起 6000
+mei guan xi 没关系 5000
+zhong guo 中国 9000
+zhong wen 中文 6000
+bei jing 北京 6000
+shang hai 上海 5000
+wen zi 文字 5000
+shu ru 输入 6000
+ji qi 机器 4000
+dian nao 电脑 6000
+dian hua 电话 5000
+ce shi 测试 5000
+fa ming 发明 3000
+fa zhan 发展 5000
+gong zuo 工作 7000
+sheng huo 生活 6000
+xue xi 学习 7000
+peng you 朋友 6000
+lao shi 老师 5000
+xue sheng 学生 5000
+tong xue 同学 4500
+jia ting 家庭 4000
+hai zi 孩子 5000
+shi jie 世界 6000
+shi jian 时间 6000
+di fang 地方 5000
+fang fa 方法 5000
+wen ti 问题 6000
+qing kuang 情况 4000
+guan xi 关系 4500
+yi jian 意见 3500
+xi tong 系统 5000
+cheng xu 程序 5000
+shu ju 数据 4500
+wen jian 文件 5000
+mu lu 目录 3500
+jian pan 键盘 4000
+shu biao 鼠标 4000
+ping mu 屏幕 3500
+wang luo 网络 5000
+wang zhan 网站 4000
+you jian 邮件 4000
+mi ma 密码 4000
+deng lu 登录 4000
+zhu ce 注册 4000
+an zhuang 安装 4000
+xie zai 卸载 3000
+sheng ji 升级 3000
+geng xin 更新 3500
+ban ben 版本 3000
+gong neng 功能 4000
+jie mian 界面 3500
+she zhi 设置 4500
+xuan xiang 选项 3000
+cai dan 菜单 3500
+chuang kou 窗口 3500
+shu ru fa 输入法 13000
+pin yin 拼音 6000
+shuang pin 双拼 4000
+wu bi 五笔 5000
+ci dian 词典 4000
+ci ku 词库 3500
+hou xuan 候选 3500
+shang ping 上屏 2500
+zu he 组合 3000
+zhuang tai 状态 3500
+kuai jie jian 快捷键 3500
+zhong ying wen 中英文 3000
+ban jiao 半角 2500
+quan jiao 全角 2500
+biao dian 标点 3000
+fu hao 符号 3000
+te shu 特殊 3000
+tu xing 图形 2500
+yan se 颜色 3000
+zi ti 字体 3000
+da xiao 大小 3000
+gao du 高度 2000
+kuan du 宽度 2000
+wei zhi 位置 3000
+ying pan 硬盘 3500
+nei cun 内存 3500
+xian shi 显示 4000
+xian ka 显卡 3000
+zhu ban 主板 2500
+dian yuan 电源 3000
+kai ji 开机 3000
+guan ji 关机 3000
+chong qi 重启 3000
+lan ping 蓝屏 2000
+si ji 死机 2000
+liu lan 浏览 3000
+sou suo 搜索 4000
+xia zai 下载 4500
+shang chuan 上传 3500
+fu zhi 复制 4000
+zhan tie 粘贴 4000
+jian qie 剪切 3000
+che xiao 撤销 3000
+zhong zuo 重做 2000
+bao cun 保存 4500
+da kai 打开 4500
+guan bi 关闭 4000
+shua xin 刷新 3000
+sheng cheng 生成 3000
+bian ji 编辑 3500
+pai ban 排版 2500
+da yin 打印 3000
+sao miao 扫描 2500
+zhao pian 照片 3500
+tu pian 图片 3500
+yin pin 音频 3000
+shi pin 视频 4000
+bo fang 播放 3500
+ting zhi 停止 3000
+zan ting 暂停 3000
+kuai jin 快进 2500
+kuai tui 快退 2500
+yin liang 音量 3000
+jing yin 静音 2500

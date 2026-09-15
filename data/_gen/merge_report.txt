@@ -1,0 +1,20 @@
+== 单字表 ==
+  chars_1.txt      音节= 68 字= 767
+  chars_2.txt      音节= 68 字=1001
+  chars_3.txt      音节= 68 字=1005
+  chars_4.txt      音节= 68 字= 697
+  chars_5.txt      音节= 68 字= 803
+  chars_6.txt      音节= 67 字=1013
+  合并结果: 音节=407  条目=5286  去重后不同汉字=5132
+== 词表 ==
+  words_1.txt      条= 250
+  words_2.txt      条= 232
+  words_3.txt      条= 344
+  words_4.txt      条= 286
+  words_5.txt      条= 273
+  合并结果: 去重后词条=1220
+== 体检 ==
+  不同汉字总数 = 5132  (目标 4000)
+  词条总数     = 1220  (目标 >=1000)
+  候选字少于3个的音节: 34 ne yo dei nve nou niang zen ei lia gei zhei hei diu seng neng shei run dia sen nuan miu rua me eng zhuai reng chua fou fo nen
+  完全缺失的音节: 0 

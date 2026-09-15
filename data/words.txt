@@ -1,0 +1,1223 @@
+# 墨言输入法 联想词库
+# 格式: <音节 空格分隔> <词> <权重>   权重越大越靠前
+# 由 tools/merge_data.py 从 data/_gen/words_*.txt 合并生成
+wo men 我们 9800
+shen me 什么 9800
+ni hao 你好 9800
+gong zuo 工作 9800
+mei you 没有 9800
+ba ba 爸爸 9800
+ma ma 妈妈 9800
+chi fan 吃饭 9800
+zhe ge 这个 9700
+xian zai 现在 9700
+zhi dao 知道 9700
+ke yi 可以 9700
+bu shi 不是 9700
+na ge 那个 9600
+jin tian 今天 9600
+shi hou 时候 9600
+peng you 朋友 9600
+tian qi 天气 9600
+zen me 怎么 9500
+yin wei 因为 9500
+jiu shi 就是 9500
+shi jian 时间 9500
+yi xia 一下 9500
+xi huan 喜欢 9500
+xie xie 谢谢 9500
+jia 家 9500
+zi ji 自己 9400
+suo yi 所以 9400
+dan shi 但是 9400
+yi jing 已经 9400
+ke neng 可能 9400
+ying gai 应该 9400
+kai shi 开始 9400
+duo shao 多少 9400
+yi qi 一起 9400
+jue de 觉得 9400
+wen ti 问题 9400
+hai zi 孩子 9400
+lao shi 老师 9400
+ge ge 哥哥 9400
+jie jie 姐姐 9400
+wei shen me 为什么 9300
+zhe yang 这样 9300
+hai shi 还是 9300
+ming tian 明天 9300
+yi hou 以后 9300
+fei chang 非常 9300
+hen duo 很多 9300
+di di 弟弟 9300
+mei mei 妹妹 9300
+shou ji 手机 9300
+ta men 他们 9200
+ru guo 如果 9200
+ran hou 然后 9200
+yi ding 一定 9200
+zuo tian 昨天 9200
+yi xie 一些 9200
+yi dian 一点 9200
+zai jian 再见 9200
+xue xi 学习 9200
+sheng huo 生活 9200
+shi qing 事情 9200
+dong xi 东西 9200
+guo jia 国家 9200
+xue sheng 学生 9200
+ye ye 爷爷 9200
+nai nai 奶奶 9200
+shen ti 身体 9200
+gao xing 高兴 9200
+shang ban 上班 9200
+xia ban 下班 9200
+xue xiao 学校 9200
+wei xin 微信 9200
+hai you 还有 9100
+ni men 你们 9000
+da jia 大家 9000
+zhe li 这里 9000
+zhe xie 这些 9000
+yi qian 以前 9000
+wan shang 晚上 9000
+te bie 特别 9000
+xu yao 需要 9000
+xi wang 希望 9000
+dui bu qi 对不起 9000
+tong xue 同学 9000
+fu wu 服务 9000
+er zi 儿子 9000
+yan jing 眼睛 9000
+shou 手 9000
+kai xin 开心 9000
+ai 爱 9000
+ming zi 名字 9000
+gong si 公司 9000
+da xue 大学 9000
+shi pin 视频 9000
+yi yuan 医院 9000
+fa zhan 发展 9000
+she hui 社会 9000
+nv er 女儿 8900
+fu mu 父母 8900
+hui jia 回家 8900
+hao chi 好吃 8900
+dian nao 电脑 8900
+wang luo 网络 8900
+zheng fu 政府 8900
+sui ran 虽然 8800
+na me 那么 8800
+zhe me 这么 8800
+yi zhi 一直 8800
+dang ran 当然 8800
+xia wu 下午 8800
+zui hou 最后 8800
+di fang 地方 8800
+bu neng 不能 8800
+yi sheng 医生 8800
+jian kang 健康 8800
+jia li 家里 8800
+shui jiao 睡觉 8800
+dian shi 电视 8800
+yan se 颜色 8800
+zhen de 真的 8800
+hui yi 会议 8800
+wan cheng 完成 8800
+guan li 管理 8800
+zhi shi 知识 8800
+yin yue 音乐 8800
+xi tong 系统 8800
+shu ju 数据 8800
+you xi 游戏 8800
+jing ji 经济 8800
+xin xi 信息 8800
+tai yang 太阳 8800
+yun dong 运动 8800
+dian ying 电影 8800
+na li 那里 8700
+na xie 那些 8700
+ke shi 可是 8700
+guan xi 关系 8700
+jie guo 结果 8700
+bu cuo 不错 8700
+wan fan 晚饭 8700
+xiang mu 项目 8700
+chan pin 产品 8700
+kao shi 考试 8700
+zhuan ye 专业 8700
+ruan jian 软件 8700
+er qie 而且 8600
+huo zhe 或者 8600
+yi yang 一样 8600
+bi xu 必须 8600
+zao shang 早上 8600
+xiao shi 小时 8600
+mei tian 每天 8600
+suo you 所有 8600
+mei guan xi 没关系 8600
+fang fa 方法 8600
+shi jie 世界 8600
+bu hui 不会 8600
+ke hu 客户 8600
+ling dao 领导 8600
+xiu xi 休息 8600
+zao fan 早饭 8600
+kai che 开车 8600
+an quan 安全 8600
+kai hui 开会 8600
+ji hua 计划 8600
+qi ye 企业 8600
+shi chang 市场 8600
+he zuo 合作 8600
+ping tai 平台 8600
+bi ye 毕业 8600
+mi ma 密码 8600
+wen jian 文件 8600
+jian she 建设 8600
+xiao xi 消息 8600
+leng 冷 8600
+re 热 8600
+na li 哪里 8500
+na yang 那样 8500
+zen me yang 怎么样 8500
+bu guo 不过 8500
+yuan yin 原因 8500
+neng li 能力 8500
+jia ting 家庭 8500
+nu li 努力 8500
+jia ren 家人 8500
+tong shi 同事 8500
+lao ban 老板 8500
+tou 头 8500
+piao liang 漂亮 8500
+xiang xin 相信 8500
+fang jian 房间 8500
+wu fan 午饭 8500
+zuo fan 做饭 8500
+qi chuang 起床 8500
+xiao shou 销售 8500
+jia ban 加班 8500
+ren wu 任务 8500
+cheng ji 成绩 8500
+geng xin 更新 8500
+tu pian 图片 8500
+ren gong zhi neng 人工智能 8500
+kai fa 开发 8500
+zheng ce 政策 8500
+huan jing 环境 8500
+jing chang 经常 8400
+zhong wu 中午 8400
+fen zhong 分钟 8400
+zhe ci 这次 8400
+you dian 有点 8400
+qing wen 请问 8400
+ji hui 机会 8400
+ren shi 认识 8400
+gan jue 感觉 8400
+hao de 好的 8400
+bu yao 不要 8400
+mi fan 米饭 8400
+shui guo 水果 8400
+fan 饭 8400
+fang zi 房子 8400
+mai dong xi 买东西 8400
+jian cha 检查 8400
+bao gao 报告 8400
+bu men 部门 8400
+ye wu 业务 8400
+zuo ye 作业 8400
+shang xue 上学 8400
+xia zai 下载 8400
+zhang hao 账号 8400
+cheng xu 程序 8400
+gong neng 功能 8400
+shen qing 申请 8400
+fa lv 法律 8400
+nei rong 内容 8400
+xia yu 下雨 8400
+shan 山 8400
+zi ran 自然 8400
+dong wu 动物 8400
+qi shi 其实 8300
+yi si 意思 8300
+jing yan 经验 8300
+mian tiao 面条 8300
+ping guo 苹果 8300
+cai 菜 8300
+fei ji 飞机 8300
+gong zi 工资 8300
+zhi liang 质量 8300
+fang an 方案 8300
+yuan gong 员工 8300
+tuan dui 团队 8300
+tou zi 投资 8300
+zi yuan 资源 8300
+ke cheng 课程 8300
+ying yu 英语 8300
+shang wang 上网 8300
+an zhuang 安装 8300
+deng lu 登录 8300
+zhu ce 注册 8300
+sou suo 搜索 8300
+hu lian wang 互联网 8300
+zhi fu 支付 8300
+gui ding 规定 8300
+gai ge 改革 8300
+fang shi 方式 8300
+hai 海 8300
+hua 花 8300
+gou 狗 8300
+bie ren 别人 8200
+shen me shi hou 什么时候 8200
+zheng zai 正在 8200
+wan quan 完全 8200
+xing qi 星期 8200
+quan bu 全部 8200
+xiang yao 想要 8200
+nv ren 女人 8200
+dan xin 担心 8200
+ji dan 鸡蛋 8200
+niu nai 牛奶 8200
+wai mai 外卖 8200
+yu 鱼 8200
+di tie 地铁 8200
+lv you 旅游 8200
+ti jiao 提交 8200
+he tong 合同 8200
+xiao lv 效率 8200
+wang zhan 网站 8200
+you jian 邮件 8200
+dai ma 代码 8200
+mo xing 模型 8200
+she zhi 设置 8200
+shu zi 数字 8200
+ban li 办理 8200
+tong zhi 通知 8200
+shui ping 水平 8200
+chun tian 春天 8200
+xia tian 夏天 8200
+kong qi 空气 8200
+feng 风 8200
+mao 猫 8200
+hong se 红色 8200
+shu cai 蔬菜 8100
+ka fei 咖啡 8100
+rou 肉 8100
+huo che 火车 8100
+gui 贵 8100
+mian shi 面试 8100
+cai liao 材料 8100
+dong tian 冬天 8100
+shu 树 8100
+wei le 为了 8000
+zong shi 总是 8000
+zhou mo 周末 8000
+jin nian 今年 8000
+hou lai 后来 8000
+di yi 第一 8000
+ban fa 办法 8000
+qing kuang 情况 8000
+ming bai 明白 8000
+jue ding 决定 8000
+fa xian 发现 8000
+zhun bei 准备 8000
+bang zhu 帮助 8000
+shi de 是的 8000
+bu yong 不用 8000
+fu qin 父亲 8000
+mu qin 母亲 8000
+lao po 老婆 8000
+lao gong 老公 8000
+nan ren 男人 8000
+jiao 脚 8000
+tou fa 头发 8000
+lian 脸 8000
+nan guo 难过 8000
+sheng qi 生气 8000
+jin zhang 紧张 8000
+hai pa 害怕 8000
+fang xin 放心 8000
+shu fu 舒服 8000
+xing fu 幸福 8000
+gan xie 感谢 8000
+xin li 心里 8000
+guan xin 关心 8000
+li jie 理解 8000
+xiao 笑 8000
+jie hun 结婚 8000
+jia you 加油 8000
+he shui 喝水 8000
+tang 汤 8000
+da che 打车 8000
+gao tie 高铁 8000
+lv xing 旅行 8000
+chao shi 超市 8000
+pian yi 便宜 8000
+jin du 进度 8000
+zhi ye 职业 8000
+hang ye 行业 8000
+guang gao 广告 8000
+lun wen 论文 8000
+bao ming 报名 8000
+shu xue 数学 8000
+zhi neng 智能 8000
+zheng ming 证明 8000
+biao zhun 标准 8000
+ze ren 责任 8000
+ya li 压力 8000
+qiu tian 秋天 8000
+yue liang 月亮 8000
+yu 雨 8000
+niao 鸟 8000
+ma 马 8000
+lan se 蓝色 8000
+lv se 绿色 8000
+hei se 黑色 8000
+bai se 白色 8000
+hong 红 8000
+yao 药 8000
+pao bu 跑步 8000
+you yong 游泳 8000
+bi sai 比赛 8000
+ta men 她们 7900
+chuang 床 7900
+lu shang 路上 7900
+shang chang 商场 7900
+kuai di 快递 7900
+zhao pin 招聘 7900
+niu 牛 7900
+zhi you 只有 7800
+de hua 的话 7800
+qu nian 去年 7800
+xia ci 下次 7800
+bang mang 帮忙 7800
+zhu yi 注意 7800
+zhao dao 找到 7800
+a yi 阿姨 7800
+chu fang 厨房 7800
+chu men 出门 7800
+can ting 餐厅 7800
+mian bao 面包 7800
+jiao zi 饺子 7800
+gong jiao 公交 7800
+che zhan 车站 7800
+gou wu 购物 7800
+jia ge 价格 7800
+bi jiao 比较 7800
+jian li 简历 7800
+pei xun 培训 7800
+pin pai 品牌 7800
+fu xi 复习 7800
+tu shu guan 图书馆 7800
+jiao shi 教室 7800
+yue du 阅读 7800
+yu wen 语文 7800
+li shi 历史 7800
+zheng zhi 政治 7800
+wang ye 网页 7800
+ping mu 屏幕 7800
+ce shi 测试 7800
+yi dong 移动 7800
+zai xian 在线 7800
+shen fen zheng 身份证 7800
+feng xian 风险 7800
+he 河 7800
+cao 草 7800
+xue 雪 7800
+ji 鸡 7800
+huang se 黄色 7800
+hei 黑 7800
+bai 白 7800
+chang ge 唱歌 7800
+jie mu 节目 7800
+ji chang 机场 7700
+chu chai 出差 7700
+zhi yao 只要 7600
+bi ru 比如 7600
+cha bu duo 差不多 7600
+you shi hou 有时候 7600
+ming nian 明年 7600
+jie shu 结束 7600
+you xie 有些 7600
+bu hao yi si 不好意思 7600
+de dao 得到 7600
+qi zi 妻子 7600
+jing cha 警察 7600
+wei sheng jian 卫生间 7600
+wei dao 味道 7600
+fu kuan 付款 7600
+fang bian 方便 7600
+qing jia 请假 7600
+zhi wei 职位 7600
+cheng ben 成本 7600
+tui guang 推广 7600
+bi ji 笔记 7600
+da an 答案 7600
+ti yu 体育 7600
+ban ben 版本 7600
+ju min 居民 7600
+gui hua 规划 7600
+qing tian 晴天 7600
+wen du 温度 7600
+xing xing 星星 7600
+yang guang 阳光 7600
+gong yuan 公园 7600
+yang 羊 7600
+lv 绿 7600
+lan 蓝 7600
+huang 黄 7600
+gan mao 感冒 7600
+sheng bing 生病 7600
+lan qiu 篮球 7600
+zu qiu 足球 7600
+kan shu 看书 7600
+jia qi 假期 7600
+tong shi 同时 7500
+tong guo 通过 7500
+que shi 确实 7500
+zhang fu 丈夫 7500
+shu shu 叔叔 7500
+er duo 耳朵 7500
+bi zi 鼻子 7500
+tui 腿 7500
+sheng yin 声音 7500
+tao yan 讨厌 7500
+man yi 满意 7500
+zhao ji 着急 7500
+ren zhen 认真 7500
+bu ke qi 不客气 7500
+gan qing 感情 7500
+xin qing 心情 7500
+zhao gu 照顾 7500
+zhi chi 支持 7500
+xiao hai 小孩 7500
+li kai 离开 7500
+cai dan 菜单 7500
+huo guo 火锅 7500
+cha 茶 7500
+xi zao 洗澡 7500
+ting che 停车 7500
+ci zhi 辞职 7500
+gang wei 岗位 7500
+bao xian 保险 7500
+cai wu 财务 7500
+li run 利润 7500
+yan jiu sheng 研究生 7500
+fan yi 翻译 7500
+zhi bo 直播 7500
+fa yuan 法院 7500
+she qu 社区 7500
+ye xu 也许 7400
+dang shi 当时 7400
+tai duo 太多 7400
+ma fan 麻烦 7400
+liao jie 了解 7400
+bu tong 不同 7400
+ke ting 客厅 7400
+xi guan 习惯 7400
+re shui 热水 7400
+deng 灯 7400
+du che 堵车 7400
+ding dan 订单 7400
+mai cai 买菜 7400
+hao kan 好看 7400
+yu suan 预算 7400
+ying xiao 营销 7400
+liu liang 流量 7400
+lv shi 律师 7400
+qi hou 气候 7400
+sen lin 森林 7400
+lao hu 老虎 7400
+xiong mao 熊猫 7400
+zhu 猪 7400
+kan bing 看病 7400
+shui mian 睡眠 7400
+duan lian 锻炼 7400
+tiao wu 跳舞 7400
+bu dan 不但 7300
+xian sheng 先生 7300
+si ji 司机 7300
+wo shi 卧室 7300
+dian cai 点菜 7300
+men kou 门口 7300
+ji piao 机票 7300
+da zhe 打折 7300
+jiang jin 奖金 7300
+tan pan 谈判 7300
+shen pi 审批 7300
+qi wen 气温 7300
+yu shi 于是 7200
+dao di 到底 7200
+yi ban 一般 7200
+da gai 大概 7200
+shang ci 上次 7200
+bai tian 白天 7200
+yi hui er 一会儿 7200
+shi yong 使用 7200
+jie jue 解决 7200
+cheng gong 成功 7200
+zen me ban 怎么办 7200
+bu ke neng 不可能 7200
+xiong di 兄弟 7200
+sheng ri 生日 7200
+la de 辣的 7200
+dan gao 蛋糕 7200
+bao zi 包子 7200
+xiang 香 7200
+kong tiao 空调 7200
+shou shi 收拾 7200
+zhuo zi 桌子 7200
+shua ya 刷牙 7200
+chong dian 充电 7200
+bing xiang 冰箱 7200
+chu zu che 出租车 7200
+huo che zhan 火车站 7200
+chu fa 出发 7200
+duo shao qian 多少钱 7200
+xiao xin 小心 7200
+fang jia 放假 7200
+ye ji 业绩 7200
+fu li 福利 7200
+tui xiu 退休 7200
+kuai ji 会计 7200
+qu dao 渠道 7200
+ke fu 客服 7200
+xue fei 学费 7200
+ti mu 题目 7200
+fen shu 分数 7200
+wu li 物理 7200
+hua xue 化学 7200
+jian pan 键盘 7200
+xin hao 信号 7200
+hong bao 红包 7200
+hu kou 户口 7200
+qian zheng 签证 7200
+gong an 公安 7200
+deng ji 登记 7200
+yi bao 医保 7200
+gong min 公民 7200
+wu ran 污染 7200
+yun 云 7200
+hai yang 海洋 7200
+zhi wu 植物 7200
+lao shu 老鼠 7200
+hui se 灰色 7200
+fa shao 发烧 7200
+chi yao 吃药 7200
+shou shu 手术 7200
+jian fei 减肥 7200
+ying yang 营养 7200
+zhi liao 治疗 7200
+jian shen 健身 7200
+pai zhao 拍照 7200
+xiao shuo 小说 7200
+yu le 娱乐 7200
+niu rou 牛肉 7100
+la ji 垃圾 7100
+shang dian 商店 7100
+you hui 优惠 7100
+yi qie 一切 7000
+yin ci 因此 7000
+guan yu 关于 7000
+bu jin 不仅 7000
+yi bian 一边 7000
+ling wai 另外 7000
+zhu yao 主要 7000
+ceng jing 曾经 7000
+you shi 有时 7000
+ji hu 几乎 7000
+ri zi 日子 7000
+cong lai 从来 7000
+ji ben 基本 7000
+hen jiu 很久 7000
+di er 第二 7000
+bao kuo 包括 7000
+can jia 参加 7000
+an pai 安排 7000
+yue lai yue 越来越 7000
+mei shen me 没什么 7000
+bu guan 不管 7000
+wai gong 外公 7000
+wai po 外婆 7000
+jie mei 姐妹 7000
+nv hai 女孩 7000
+lao ren 老人 7000
+ren min 人民 7000
+zui ba 嘴巴 7000
+gan dong 感动 7000
+shi wang 失望 7000
+ke ai 可爱 7000
+cong ming 聪明 7000
+ku 哭 7000
+chun jie 春节 7000
+xin ku 辛苦 7000
+qiao ke li 巧克力 7000
+zhu rou 猪肉 7000
+xi shou 洗手 7000
+yin liao 饮料 7000
+da sao 打扫 7000
+yi zi 椅子 7000
+kai men 开门 7000
+che piao 车票 7000
+dao da 到达 7000
+zou lu 走路 7000
+wei xin zhi fu 微信支付 7000
+zhi fu bao 支付宝 7000
+bao guo 包裹 7000
+hua qian 花钱 7000
+mian fei 免费 7000
+tui jian 推荐 7000
+lei le 累了 7000
+xie zuo 协作 7000
+kao he 考核 7000
+she bao 社保 7000
+li zhi 离职 7000
+wu liu 物流 7000
+fang xue 放学 7000
+xue wei 学位 7000
+xie zuo 写作 7000
+dan ci 单词 7000
+di li 地理 7000
+jie kou 接口 7000
+shu biao 鼠标 7000
+dian chi 电池 7000
+fu wu qi 服务器 7000
+peng you quan 朋友圈 7000
+xin pian 芯片 7000
+hu zhao 护照 7000
+gong gao 公告 7000
+zheng jian 证件 7000
+shui wu 税务 7000
+shi min 市民 7000
+luo shi 落实 7000
+jian du 监督 7000
+xia xue 下雪 7000
+di zhen 地震 7000
+ji jie 季节 7000
+da xiang 大象 7000
+tu zi 兔子 7000
+zi se 紫色 7000
+fen se 粉色 7000
+ge qu 歌曲 7000
+ming xing 明星 7000
+chao cai 炒菜 6900
+ji rou 鸡肉 6900
+pi jiu 啤酒 6900
+xi yi ji 洗衣机 6900
+li wu 礼物 6900
+you de 有的 6800
+dui yu 对于 6800
+gen ju 根据 6800
+hen shao 很少 6800
+qin ren 亲人 6800
+fang song 放松 6800
+guo nian 过年 6800
+bing gan 饼干 6800
+chao fan 炒饭 6800
+kuai zi 筷子 6800
+bei zi 杯子 6800
+fang zu 房租 6800
+zheng li 整理 6800
+xiao qu 小区 6800
+guan men 关门 6800
+gong jiao che 公交车 6800
+di tie zhan 地铁站 6800
+yin hang ka 银行卡 6800
+fa piao 发票 6800
+qian bao 钱包 6800
+sheng qian 省钱 6800
+e le 饿了 6800
+yao shi 钥匙 6800
+mao jin 毛巾 6800
+ji xiao 绩效 6800
+qian yue 签约 6800
+cai gou 采购 6800
+dao shi 导师 6800
+wu xian 无线 6800
+shu ju ku 数据库 6800
+jie mian 界面 6800
+er wei ma 二维码 6800
+zhuan zhang 转账 6800
+bing du 病毒 6800
+fa gui 法规 6800
+chuang kou 窗口 6800
+na shui 纳税 6800
+gong wu yuan 公务员 6800
+tai feng 台风 6800
+hai bian 海边 6800
+ya 鸭 6800
+shi zi 狮子 6800
+hou zi 猴子 6800
+ke sou 咳嗽 6800
+da zhen 打针 6800
+wei sheng 卫生 6800
+yan yuan 演员 6800
+qi zhong 其中 6600
+shi zai 实在 6600
+zeng jia 增加 6600
+zhi shao 至少 6600
+ti gong 提供 6600
+bu yi ding 不一定 6600
+mei cuo 没错 6600
+bu duan 不断 6600
+hu shi 护士 6600
+wen nuan 温暖 6600
+jia ju 家具 6600
+shao kao 烧烤 6600
+hao he 好喝 6600
+sha fa 沙发 6600
+hong lv deng 红绿灯 6600
+zi xing che 自行车 6600
+xian jin 现金 6600
+shou ru 收入 6600
+hao yong 好用 6600
+hao wan 好玩 6600
+wei sheng zhi 卫生纸 6600
+bo shi 博士 6600
+jiao cai 教材 6600
+yu fa 语法 6600
+mei shu 美术 6600
+bian cheng 编程 6600
+bu tie 补贴 6600
+zhi fa 执法 6600
+gua feng 刮风 6600
+chang jiang 长江 6600
+cao yuan 草原 6600
+wen zi 蚊子 6600
+she 蛇 6600
+chong wu 宠物 6600
+cheng se 橙色 6600
+bing ren 病人 6600
+pa shan 爬山 6600
+men piao 门票 6600
+ge shou 歌手 6600
+guan zhong 观众 6600
+guan jun 冠军 6600
+yao shi 要是 6500
+shen zhi 甚至 6500
+li ru 例如 6500
+qin qi 亲戚 6500
+jia xiang 家乡 6500
+nan hai 男孩 6500
+da ren 大人 6500
+ya chi 牙齿 6500
+du zi 肚子 6500
+tong ku 痛苦 6500
+ji dong 激动 6500
+bao qian 抱歉 6500
+ai qing 爱情 6500
+meng xiang 梦想 6500
+dui xiang 对象 6500
+zai jia 在家 6500
+bing ji ling 冰淇淋 6500
+suan nai 酸奶 6500
+xia 虾 6500
+zao can 早餐 6500
+ban jia 搬家 6500
+sheng zhi 升职 6500
+shi yong qi 试用期 6500
+qian zi 签字 6500
+bao jia 报价 6500
+gong zuo ri 工作日 6500
+shuo shi 硕士 6500
+kou yu 口语 6500
+xian shi qi 显示器 6500
+kuan dai 宽带 6500
+suan fa 算法 6500
+liu lan qi 浏览器 6500
+sao miao 扫描 6500
+gong zhong hao 公众号 6500
+ying pan 硬盘 6500
+dian xin 电信 6500
+ban shi 办事 6500
+bing qie 并且 6400
+tian tian 天天 6400
+wu lun 无论 6400
+tai du 态度 6400
+dou jiang 豆浆 6400
+ling shi 零食 6400
+wu can 午餐 6400
+wan can 晚餐 6400
+dian ti 电梯 6400
+tui huo 退货 6400
+jie qian 借钱 6400
+you yi si 有意思 6400
+xi fa shui 洗发水 6400
+duan shi pin 短视频 6400
+shan dian 闪电 6400
+huang he 黄河 6400
+lang 狼 6400
+yu mao qiu 羽毛球 6400
+dian ying yuan 电影院 6400
+yun dong yuan 运动员 6400
+ao yun hui 奥运会 6400
+fan zheng 反正 6300
+xiao jie 小姐 6300
+dui le 对了 6300
+tian de 甜的 6300
+jiang zuo 讲座 6300
+an zhao 按照 6200
+jiu suan 就算 6200
+zhe shi 这时 6200
+da bu fen 大部分 6200
+jian shao 减少 6200
+zui duo 最多 6200
+mu di 目的 6200
+bu bi 不必 6200
+jiu jiu 舅舅 6200
+lin ju 邻居 6200
+tang guo 糖果 6200
+you tiao 油条 6200
+xiao chi 小吃 6200
+yang rou 羊肉 6200
+pan zi 盘子 6200
+kuang quan shui 矿泉水 6200
+dian dong che 电动车 6200
+gao su 高速 6200
+cun qian 存钱 6200
+song huo 送货 6200
+ri chang 日常 6200
+yi gui 衣柜 6200
+ya shua 牙刷 6200
+ma tong 马桶 6200
+gong ji jin 公积金 6200
+ku cun 库存 6200
+shou hou 售后 6200
+ke ben 课本 6200
+ci dian 词典 6200
+cun chu 存储 6200
+nei cun 内存 6200
+tiao li 条例 6200
+xuan ju 选举 6200
+xu ke 许可 6200
+sha tan 沙滩 6200
+sheng tai 生态 6200
+cang ying 苍蝇 6200
+xiong 熊 6200
+mi feng 蜜蜂 6200
+dong wu yuan 动物园 6200
+zong se 棕色 6200
+tou teng 头疼 6200
+pi lao 疲劳 6200
+ji bing 疾病 6200
+yu jia 瑜伽 6200
+yan chang hui 演唱会 6200
+xiu xian 休闲 6200
+san bu 散步 6200
+jiao lian 教练 6200
+shi jie bei 世界杯 6200
+shui jiao 水饺 6100
+ran er 然而 6000
+you qi 尤其 6000
+na shi 那时 6000
+shu liang 数量 6000
+sun zi 孙子 6000
+jia zhang 家长 6000
+er tong 儿童 6000
+yu kuai 愉快 6000
+wu liao 无聊 6000
+re qing 热情 6000
+shuai qi 帅气 6000
+ke qi 客气 6000
+qi dai 期待 6000
+xin xin 信心 6000
+hou hui 后悔 6000
+zun zhong 尊重 6000
+nan peng you 男朋友 6000
+nv peng you 女朋友 6000
+bao bao 宝宝 6000
+zhang da 长大 6000
+sheng ming 生命 6000
+xing ge 性格 6000
+hun tun 馄饨 6000
+kai shui 开水 6000
+qu qian 取钱 6000
+mai dan 买单 6000
+kun le 困了 6000
+ting hao 挺好 6000
+dian fei 电费 6000
+shu zhuo 书桌 6000
+ze ren xin 责任心 6000
+ting li 听力 6000
+sou suo yin qing 搜索引擎 6000
+diao yan 调研 6000
+hong shui 洪水 6000
+shu lin 树林 6000
+hu die 蝴蝶 6000
+ma yi 蚂蚁 6000
+bo wu guan 博物馆 6000
+ping pang qiu 乒乓球 6000
+ren jia 人家 5900
+ban ye 半夜 5900
+ci wai 此外 5800
+sun nv 孙女 5800
+kao ya 烤鸭 5800
+lv cha 绿茶 5800
+yang tai 阳台 5800
+zhuang xiu 装修 5800
+gong lu 公路 5800
+huan qian 还钱 5800
+gou wu che 购物车 5800
+hua suan 划算 5800
+lu you qi 路由器 5800
+qing wa 青蛙 5800
+yao dian 药店 5800
+qi zi xing che 骑自行车 5800
+diao yu 钓鱼 5800
+zu gou 足够 5700
+da liang 大量 5600
+bu ru 不如 5600
+xian de 咸的 5600
+shui bei 水杯 5600
+hong cha 红茶 5600
+bai jiu 白酒 5600
+gong yu 公寓 5600
+guan deng 关灯 5600
+sao di 扫地 5600
+mo tuo che 摩托车 5600
+ling qian 零钱 5600
+qing ke 请客 5600
+hui yuan 会员 5600
+zhang dan 账单 5600
+te jia 特价 5600
+tai gui le 太贵了 5600
+mei yi si 没意思 5600
+xiu li 修理 5600
+tai deng 台灯 5600
+fei zao 肥皂 5600
+lan tian 蓝天 5600
+hua yuan 花园 5600
+ge zi 鸽子 5600
+hu li 狐狸 5600
+jin se 金色 5600
+se cai 色彩 5600
+xue ya 血压 5600
+wei sheng su 维生素 5600
+kou zhao 口罩 5600
+du jia 度假 5600
+wang qiu 网球 5600
+nian qing ren 年轻人 5500
+gong ren 工人 5500
+nong min 农民 5500
+xin zang 心脏 5500
+pi fu 皮肤 5500
+bo zi 脖子 5500
+biao qing 表情 5500
+bei shang 悲伤 5500
+shan liang 善良 5500
+li mao 礼貌 5500
+nei xin 内心 5500
+xiang nian 想念 5500
+nai xin 耐心 5500
+huai yi 怀疑 5500
+yuan liang 原谅 5500
+xin ren 信任 5500
+wei xiao 微笑 5500
+lian ai 恋爱 5500
+cheng zhang 成长 5500
+chu sheng 出生 5500
+nian ling 年龄 5500
+zhuan zheng 转正 5500
+gong zuo liang 工作量 5500
+zi xi 自习 5500
+zhi bo jian 直播间 5500
+hei ke 黑客 5500
+bei fen 备份 5500
+zi zhi 资质 5500
+na pa 哪怕 5400
+shao zi 勺子 5400
+qi shui 汽水 5400
+mai fang 买房 5400
+zhi chu 支出 5400
+cu xiao 促销 5400
+yi dian dian 一点点 5400
+wu ye 物业 5400
+gan han 干旱 5400
+hai tun 海豚 5400
+lao ying 老鹰 5400
+wu gui 乌龟 5400
+qi e 企鹅 5400
+xiao niao 小鸟 5400
+ti jian 体检 5400
+shi mian 失眠 5400
+yu fang 预防 5400
+zhong yi 中医 5400
+wan shua 玩耍 5400
+dian zi you xi 电子游戏 5400
+jin pai 金牌 5400
+chu fei 除非 5200
+zhi yu 至于 5200
+cong ci 从此 5200
+duo shu 多数 5200
+biao ge 表哥 5200
+suan de 酸的 5200
+hong jiu 红酒 5200
+wei bo lu 微波炉 5200
+piao jia 票价 5200
+tui kuan 退款 5200
+chi cun 尺寸 5200
+pai zi 牌子 5200
+bu gui 不贵 5200
+shui fei 水费 5200
+yan re 炎热 5200
+gan zao 干燥 5200
+bai yun 白云 5200
+cai hong 彩虹 5200
+shu mu 树木 5200
+e yu 鳄鱼 5200
+pang xie 螃蟹 5200
+ti wen 体温 5200
+du zi teng 肚子疼 5200
+jian shen fang 健身房 5200
+ou er 偶尔 5100
+yi ban lai shuo 一般来说 5000
+zui chu 最初 5000
+gu ma 姑妈 5000
+biao jie 表姐 5000
+zhang bei 长辈 5000
+fu wu yuan 服务员 5000
+jian bang 肩膀 5000
+ge bo 胳膊 5000
+shou zhi 手指 5000
+yao 腰 5000
+li qi 力气 5000
+gu du 孤独 5000
+you hao 友好 5000
+yong gan 勇敢 5000
+xi ai 喜爱 5000
+you qing 友情 5000
+si nian 思念 5000
+yuan wang 愿望 5000
+yong qi 勇气 5000
+zhu fu 祝福 5000
+hun yin 婚姻 5000
+ai ren 爱人 5000
+ye xiao 夜宵 5000
+dian fan bao 电饭煲 5000
+shang men 上门 5000
+bao an 保安 5000
+chuan lian 窗帘 5000
+shang ban zu 上班族 5000
+shi ye dan wei 事业单位 5000
+liang shuang 凉爽 5000
+yue guang 月光 5000
+bao yu 暴雨 5000
+xiao yu 小雨 5000
+lu 鹿 5000
+jing yu 鲸鱼 5000
+zhi zhu 蜘蛛 5000
+yan zi 燕子 5000
+gong ji 公鸡 5000
+kun chong 昆虫 5000
+bing fang 病房 5000
+xiao du 消毒 5000
+yin yue hui 音乐会 5000
+tiao sheng 跳绳 5000
+hua xue 滑雪 5000
+shen ye 深夜 4900
+qing chen 清晨 4800
+shao shu 少数 4800
+yi ma 姨妈 4800
+ku de 苦的 4800
+re shui qi 热水器 4800
+zhao qian 找钱 4800
+xiao piao 小票 4800
+yang shi 样式 4800
+chao shi 潮湿 4800
+ri luo 日落 4800
+shu ye 树叶 4800
+cao di 草地 4800
+kong que 孔雀 4800
+chang jing lu 长颈鹿 4800
+luo tuo 骆驼 4800
+lou ceng 楼层 4600
+huan huo 换货 4600
+mai jia 卖家 4600
+men suo 门锁 4600
+shan mai 山脉 4600
+shan gu 山谷 4600
+yin tian 阴天 4600
+jiang wen 降温 4600
+yu shui 雨水 4600
+ri chu 日出 4600
+mao tou ying 猫头鹰 4600
+mu ji 母鸡 4600
+yin se 银色 4600
+ya teng 牙疼 4600
+mian yi 免疫 4600
+hua bing 滑冰 4600
+qiu chang 球场 4600
+shang ren 商人 4500
+chu shi 厨师 4500
+ji mo 寂寞 4500
+ben dan 笨蛋 4500
+bao yuan 抱怨 4500
+jia wu 家务 4500
+li hun 离婚 4500
+xiao peng you 小朋友 4500
+qing nian 青年 4500
+xing ming 姓名 4500
+shen gao 身高 4500
+ti zhong 体重 4500
+lao dong he tong 劳动合同 4500
+fang huo qiang 防火墙 4500
+li xian 离线 4500
+bie shu 别墅 4400
+suan zhang 算账 4400
+sheng dan 圣诞 4400
+da wu 大雾 4400
+xue hua 雪花 4400
+wu yun 乌云 4400
+song shu 松鼠 4400
+kang fu 康复 4400
+gao er fu 高尔夫 4400
+zu jin 租金 4200
+shui guan 水管 4200
+yu gang 浴缸 4200
+dao yu 岛屿 4200
+hai ou 海鸥 4200
+ban ma 斑马 4200
+he ma 河马 4200
+bian fu 蝙蝠 4200
+wu yan liu se 五颜六色 4200
+bao jian 保健 4200
+qian shui 潜水 4200
+bi fen 比分 4200
+mo sheng ren 陌生人 4000
+qun zhong 群众 4000
+yan shen 眼神 4000
+lao shi 老实 4000
+qin qing 亲情 4000
+da xiao 大笑 4000
+liu lei 流泪 4000
+lao xiang 老乡 4000
+ying er 婴儿 4000
+bao zhong 保重 4000
+shui ku 水库 4000
+duo yun 多云 4000
+xi niu 犀牛 4000
+ju chang 剧场 4000
+zhi qian 值钱 3800
+di tan 地毯 3800
+xi yi 西医 3800
+man jian 满减 3600
+sheng wen 升温 3600
+yun cai 云彩 3600
+tang xiong 堂兄 3500
+dui you 队友 3500
+xiong kou 胸口 3500
+leng mo 冷漠 3500
+kuan rong 宽容 3500
+yi lai 依赖 3500
+yang yu 养育 3500
+xing guang 星光 3400
+ci wei 刺猬 3400
+shen lan 深蓝 3400
+chong lang 冲浪 3400
+wan kuai 碗筷 3200
+wan bei 晚辈 3000
+zhong nian 中年 3000
+lao nian 老年 3000
+lian peng tou 莲蓬头 2600
+da zhe ka 打折卡 2400

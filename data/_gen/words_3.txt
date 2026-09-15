@@ -1,0 +1,344 @@
+chi fan 吃饭 9800
+zao fan 早饭 8600
+wu fan 午饭 8500
+wan fan 晚饭 8700
+hao chi 好吃 8900
+mi fan 米饭 8400
+mian tiao 面条 8300
+shu cai 蔬菜 8100
+shui guo 水果 8400
+ping guo 苹果 8300
+ji dan 鸡蛋 8200
+niu nai 牛奶 8200
+ka fei 咖啡 8100
+he shui 喝水 8000
+can ting 餐厅 7800
+wai mai 外卖 8200
+dian cai 点菜 7300
+cai dan 菜单 7500
+wei dao 味道 7600
+la de 辣的 7200
+tang 汤 8000
+dong xi 东西 9200
+zuo fan 做饭 8500
+xi huan 喜欢 9000
+bu cuo 不错 8700
+mian bao 面包 7800
+dan gao 蛋糕 7200
+bing gan 饼干 6800
+tang guo 糖果 6200
+qiao ke li 巧克力 7000
+bing ji ling 冰淇淋 6500
+suan nai 酸奶 6500
+dou jiang 豆浆 6400
+you tiao 油条 6200
+bao zi 包子 7200
+jiao zi 饺子 7800
+hun tun 馄饨 6000
+chao fan 炒饭 6800
+chao cai 炒菜 6900
+shao kao 烧烤 6600
+huo guo 火锅 7500
+kao ya 烤鸭 5800
+xiao chi 小吃 6200
+ling shi 零食 6400
+shui jiao 水饺 6100
+zhu rou 猪肉 7000
+niu rou 牛肉 7100
+yang rou 羊肉 6200
+ji rou 鸡肉 6900
+yu 鱼 7800
+xia 虾 6500
+cai 菜 8300
+rou 肉 8100
+fan 饭 8400
+tian de 甜的 6300
+xian de 咸的 5600
+suan de 酸的 5200
+ku de 苦的 4800
+hao he 好喝 6600
+xiang 香 7200
+xi shou 洗手 7000
+wan kuai 碗筷 3200
+kuai zi 筷子 6800
+shao zi 勺子 5400
+pan zi 盘子 6200
+bei zi 杯子 6800
+shui bei 水杯 5600
+re shui 热水 7400
+kai shui 开水 6000
+cha 茶 7500
+lv cha 绿茶 5800
+hong cha 红茶 5600
+kuang quan shui 矿泉水 6200
+qi shui 汽水 5400
+pi jiu 啤酒 6900
+bai jiu 白酒 5600
+hong jiu 红酒 5200
+yin liao 饮料 7000
+zao can 早餐 6500
+wu can 午餐 6400
+wan can 晚餐 6400
+ye xiao 夜宵 5000
+jia li 家里 8800
+fang jian 房间 8300
+chu fang 厨房 7800
+wei sheng jian 卫生间 7600
+ke ting 客厅 7400
+wo shi 卧室 7300
+yang tai 阳台 5800
+fang zu 房租 6800
+ban jia 搬家 6500
+jia ju 家具 6600
+kong tiao 空调 7200
+xi yi ji 洗衣机 6900
+da sao 打扫 7000
+shou shi 收拾 7200
+zheng li 整理 6800
+jia 家 9500
+fang zi 房子 8400
+gong yu 公寓 5600
+bie shu 别墅 4400
+xiao qu 小区 6800
+lou ceng 楼层 4600
+dian ti 电梯 6400
+men kou 门口 7300
+chuang 床 7900
+sha fa 沙发 6600
+zhuo zi 桌子 7200
+yi zi 椅子 7000
+deng 灯 7400
+guan deng 关灯 5600
+kai men 开门 7000
+guan men 关门 6800
+shui jiao 睡觉 8800
+qi chuang 起床 8500
+shua ya 刷牙 7200
+xi zao 洗澡 7500
+chong dian 充电 6900
+dian shi 电视 8100
+bing xiang 冰箱 7200
+wei bo lu 微波炉 5200
+dian fan bao 电饭煲 5000
+re shui qi 热水器 4800
+sao di 扫地 5600
+la ji 垃圾 7100
+lin ju 邻居 6200
+zu jin 租金 4200
+mai fang 买房 5400
+zhuang xiu 装修 5800
+kai che 开车 8600
+da che 打车 8000
+gong jiao 公交 7800
+di tie 地铁 8200
+huo che 火车 8100
+fei ji 飞机 8300
+gao tie 高铁 8000
+che zhan 车站 7800
+ji chang 机场 7700
+ji piao 机票 7300
+lu shang 路上 7900
+du che 堵车 7400
+hong lv deng 红绿灯 6600
+ting che 停车 7500
+jia you 加油 7800
+chu zu che 出租车 7200
+gong jiao che 公交车 6800
+zi xing che 自行车 6600
+dian dong che 电动车 6200
+mo tuo che 摩托车 5600
+si ji 司机 7300
+piao jia 票价 5200
+che piao 车票 7000
+huo che zhan 火车站 7200
+di tie zhan 地铁站 6800
+gong lu 公路 5800
+gao su 高速 6200
+chu fa 出发 7200
+dao da 到达 7000
+hui jia 回家 8900
+chu men 出门 7800
+shang ban 上班 8500
+xia ban 下班 8300
+chu chai 出差 6200
+lv xing 旅行 7400
+lv you 旅游 7600
+zou lu 走路 7000
+an quan 安全 7600
+mai dong xi 买东西 8400
+gou wu 购物 7800
+chao shi 超市 8000
+shang chang 商场 7900
+shang dian 商店 7100
+jia ge 价格 7800
+pian yi 便宜 8000
+gui 贵 8100
+da zhe 打折 7300
+you hui 优惠 7100
+fu kuan 付款 7600
+wei xin zhi fu 微信支付 7000
+zhi fu bao 支付宝 7000
+yin hang ka 银行卡 6800
+xian jin 现金 6600
+fa piao 发票 6200
+kuai di 快递 7900
+bao guo 包裹 7000
+ding dan 订单 7400
+tui huo 退货 6400
+shou ji 手机 9200
+qian bao 钱包 6800
+ling qian 零钱 5600
+zhao qian 找钱 4800
+hua qian 花钱 7000
+cun qian 存钱 6200
+qu qian 取钱 6000
+jie qian 借钱 6400
+huan qian 还钱 5800
+gong zi 工资 7800
+shou ru 收入 6600
+zhi chu 支出 5400
+sheng qian 省钱 6800
+zhi qian 值钱 3800
+mian fei 免费 7000
+mai dan 买单 6000
+qing ke 请客 5600
+suan zhang 算账 4400
+xiao piao 小票 4800
+hui yuan 会员 5600
+zhang dan 账单 5600
+gou wu che 购物车 5800
+mai cai 买菜 7400
+song huo 送货 6200
+shang men 上门 5000
+tui kuan 退款 5200
+huan huo 换货 4600
+zhi liang 质量 7000
+chi cun 尺寸 5200
+yan se 颜色 7200
+yang shi 样式 4800
+pai zi 牌子 5200
+te jia 特价 5600
+cu xiao 促销 5400
+man jian 满减 3600
+da zhe ka 打折卡 2400
+xiao shou 销售 6000
+mai jia 卖家 4600
+ke hu 客户 6200
+fu wu 服务 7400
+tai du 态度 6400
+man yi 满意 6800
+tui jian 推荐 7000
+hao yong 好用 6600
+hua suan 划算 5800
+bu gui 不贵 5200
+tai gui le 太贵了 5600
+duo shao qian 多少钱 7200
+yi dian dian 一点点 5400
+sheng huo 生活 8800
+ri chang 日常 6200
+xi guan 习惯 7400
+fang bian 方便 7600
+ma fan 麻烦 7200
+xu yao 需要 8200
+nv er 女儿 7600
+er zi 儿子 7600
+lao po 老婆 7400
+lao gong 老公 7300
+ba ba 爸爸 8200
+ma ma 妈妈 8300
+peng you 朋友 8900
+tong shi 同事 7000
+lao ban 老板 7600
+sheng ri 生日 7200
+li wu 礼物 6900
+jin tian 今天 9200
+ming tian 明天 9000
+zuo tian 昨天 8800
+xian zai 现在 9100
+yi hou 以后 8400
+yin wei 因为 9400
+suo yi 所以 9000
+dan shi 但是 9000
+ke shi 可是 8600
+ru guo 如果 8500
+zen me 怎么 8900
+shen me 什么 9300
+wei shen me 为什么 8800
+duo shao 多少 8500
+yi qi 一起 8600
+ke yi 可以 9200
+ying gai 应该 8400
+bi jiao 比较 7800
+fei chang 非常 8200
+te bie 特别 8000
+zhen de 真的 8800
+dang ran 当然 8000
+qi shi 其实 8200
+yi jing 已经 8600
+hai shi 还是 8700
+zhi dao 知道 9000
+jue de 觉得 8900
+xi wang 希望 8200
+zhun bei 准备 8000
+jue ding 决定 7800
+bang mang 帮忙 7600
+xiao xin 小心 7200
+fang xin 放心 7400
+kai xin 开心 8300
+gao xing 高兴 8200
+lei le 累了 7000
+e le 饿了 6800
+kun le 困了 6000
+sheng qi 生气 7000
+nan guo 难过 6600
+wu liao 无聊 6000
+you yi si 有意思 6400
+mei yi si 没意思 5600
+hao wan 好玩 6600
+hao kan 好看 7400
+ting hao 挺好 6000
+xing qi 星期 7200
+zhou mo 周末 8000
+fang jia 放假 7200
+guo nian 过年 6800
+chun jie 春节 7000
+sheng dan 圣诞 4400
+qin qi 亲戚 5800
+tong xue 同学 8400
+lao shi 老师 8600
+xue sheng 学生 8300
+gong zuo 工作 9000
+gong si 公司 8600
+kai hui 开会 7200
+jia ban 加班 7400
+hui yi 会议 7000
+xiang mu 项目 6600
+ji hua 计划 7000
+ren wu 任务 6800
+wan cheng 完成 7200
+jie guo 结果 7400
+wen ti 问题 8800
+ban fa 办法 7600
+zhu yi 注意 7800
+jian cha 检查 6400
+xiu li 修理 5600
+shui guan 水管 4200
+dian fei 电费 6000
+shui fei 水费 5200
+wu ye 物业 5400
+bao an 保安 5000
+yao shi 钥匙 6800
+men suo 门锁 4600
+chuan lian 窗帘 5000
+di tan 地毯 3800
+yi gui 衣柜 6200
+shu zhuo 书桌 6000
+tai deng 台灯 5600
+ya shua 牙刷 6200
+mao jin 毛巾 6800
+wei sheng zhi 卫生纸 6600
+xi fa shui 洗发水 6400
+fei zao 肥皂 5600
+yu gang 浴缸 4200
+ma tong 马桶 6200
+lian peng tou 莲蓬头 2600
