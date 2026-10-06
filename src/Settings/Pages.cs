@@ -1826,7 +1826,7 @@ namespace MyIme.Settings
         {
             DialogResult r = MessageBox.Show(this,
                 "确定要清空用户词库吗？\r\n\r\n你自造的词、调过的词频都会没掉，内置词库不受影响。",
-                "墨言输入法 · 清空用户词库", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                "代龙 · 清空用户词库", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (r != DialogResult.OK) return;
 
             try
@@ -1956,7 +1956,7 @@ namespace MyIme.Settings
             y += 34;
 
             GhostButton uninstall = new GhostButton();
-            uninstall.Text = "卸载墨言输入法";
+            uninstall.Text = "卸载代龙";
             uninstall.Danger = true;
             uninstall.Size = new Size(132, 32);
             PlaceRight(c2, uninstall, 18);
@@ -2020,9 +2020,9 @@ namespace MyIme.Settings
             }
 
             DialogResult r = MessageBox.Show(this,
-                "确定要卸载墨言输入法吗？\r\n\r\n会先关掉正在运行的输入法，再删掉程序文件；"
+                "确定要卸载代龙吗？\r\n\r\n会先关掉正在运行的输入法，再删掉程序文件；"
                 + "你的设置和用户词库会保留在 %APPDATA%\\MyIME 里。",
-                "墨言输入法 · 卸载", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                "代龙 · 卸载", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (r != DialogResult.OK) return;
 
             try

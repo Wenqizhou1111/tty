@@ -22,3 +22,9 @@ logs/
 .vs/
 *.user
 Thumbs.db
+
+# ---- DSH 沙箱/诊断产生的临时文件（不该进版本库）----
+dsh-acl-reports/
+.dsh-write-probe.txt
+_ocr.ps1
+.smoke/

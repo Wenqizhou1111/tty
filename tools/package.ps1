@@ -27,7 +27,7 @@ if (Test-Path -LiteralPath $Pkg) { Remove-Item -LiteralPath $Pkg -Recurse -Force
 New-Item -ItemType Directory -Path $Pkg -Force | Out-Null
 
 Write-Host '==> 复制程序文件' -ForegroundColor Cyan
-$files = @('MyIme.Core.exe','MyIme.Settings.exe','tty.exe','MyIme.Shared.dll')
+$files = @('MyIme.Core.exe','MyIme.Settings.exe','tty.exe','MyIme.Shared.dll','icon.ico')
 foreach ($f in $files) {
     $src = Join-Path $Out $f
     if (-not (Test-Path -LiteralPath $src)) { throw "缺少产物: $f（先跑 build.ps1）" }
@@ -48,7 +48,7 @@ foreach ($doc in @('README.md','使用说明.txt','设计文档.md')) {
 
 # 给最终用户看的极简说明（放在包里最显眼的位置）
 $quick = @'
-墨言输入法 —— 快速开始
+代龙 —— 快速开始
 
 【安装】
   双击 tty.exe，一路下一步即可。

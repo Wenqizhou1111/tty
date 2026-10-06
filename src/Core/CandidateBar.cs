@@ -82,7 +82,7 @@ namespace MyIme.Core
             StartPosition = FormStartPosition.Manual;
             TopMost = true;
             BackColor = _bg;
-            Text = "MyIME 输入条";
+            Text = "代龙 输入条";
             Size = new Size(300, 44);
             Visible = false;
         }

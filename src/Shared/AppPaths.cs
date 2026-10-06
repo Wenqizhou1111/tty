@@ -8,7 +8,7 @@ namespace MyIme.Shared
     public static class AppPaths
     {
         public const string AppName = "MyIME";
-        public const string AppNameCn = "墨言输入法";
+        public const string AppNameCn = "代龙";
         public const string Version = "1.0.0";
 
         /// <summary>exe 所在目录（数据文件在 .\data 下）。</summary>
@@ -63,7 +63,7 @@ namespace MyIme.Shared
         {
             get
             {
-                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Programs), "墨言输入法");
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Programs), "代龙");
             }
         }
 
@@ -71,7 +71,7 @@ namespace MyIme.Shared
         {
             get
             {
-                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), "墨言输入法.lnk");
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), "代龙.lnk");
             }
         }
 

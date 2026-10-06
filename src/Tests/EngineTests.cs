@@ -47,7 +47,7 @@ static class EngineTests
         Log.MinLevel = LogLevel.Warn;
         Log.ConsoleEcho = false;
 
-        Console.WriteLine("墨言输入法 · 引擎单元测试");
+        Console.WriteLine("代龙 · 引擎单元测试");
         Console.WriteLine("数据目录: " + AppPaths.BuiltinDataDir);
 
         Lexicon lex = new Lexicon();

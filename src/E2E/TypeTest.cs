@@ -28,7 +28,7 @@ static class TypeTest
         Log.MinLevel = LogLevel.Error;
 
         _form = new Form();
-        _form.Text = "墨言输入法 · 端到端打字测试";
+        _form.Text = "代龙 · 端到端打字测试";
         _form.Size = new Size(700, 320);
         _form.StartPosition = FormStartPosition.CenterScreen;
         _form.TopMost = true;

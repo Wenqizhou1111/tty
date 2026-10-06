@@ -85,6 +85,9 @@ if (-not (Test-Path -LiteralPath $OutDir)) { New-Item -ItemType Directory -Path 
 #                  但每个控件都刷一条警告会把真正的错误淹没。
 $BaseArgs = @('/nologo', '/codepage:65001', '/utf8output', '/warn:4', '/langversion:5', '/nowarn:0114', '/nowarn:0108')
 
+# 程序图标：编进 exe（/win32icon），同时拷到 out 供运行时加载
+$IconFile = Join-Path $Root 'assets\icon.ico'
+
 function Invoke-Csc {
     param(
         [string]$Target,
@@ -97,6 +100,9 @@ function Invoke-Csc {
     $cscArgs += ('/target:' + $Target)
     $cscArgs += ('/out:' + (Q $OutFile))
     $cscArgs += '/platform:anycpu'
+    if ($Target -ne 'library' -and (Test-Path -LiteralPath $IconFile)) {
+        $cscArgs += ('/win32icon:' + (Q $IconFile))
+    }
     foreach ($r in $Refs)   { $cscArgs += ('/r:' + $r) }
     foreach ($s in $Sources){ $cscArgs += (Q $s) }
 
@@ -117,7 +123,7 @@ function Get-Sources([string]$dir) {
 }
 
 Write-Host ''
-Write-Host '  MyIME 构建 (csc / .NET Framework)' -ForegroundColor White
+Write-Host '  代龙 输入法 构建 (csc / .NET Framework)' -ForegroundColor White
 Write-Ok "编译器 : $Csc"
 Write-Ok "输出   : $OutDir"
 Write-Host ''
@@ -147,6 +153,13 @@ foreach ($p in $proj) {
     if ($p.ContainsKey('Out')) { $outName = $p.Out }
     Write-Step "$outName.exe  ($($srcs.Count) 源文件)"
     Invoke-Csc -Target $p.Target -OutFile (Join-Path $OutDir ($outName + '.exe')) -Sources $srcs -Refs ($CoreRefs + $SharedRef)
+}
+
+# ---------------------------------------------------------------- 图标
+if (Test-Path -LiteralPath $IconFile) {
+    Write-Step '复制图标'
+    Copy-Item -LiteralPath $IconFile -Destination (Join-Path $OutDir 'icon.ico') -Force
+    Write-Ok 'icon.ico'
 }
 
 # ---------------------------------------------------------------- 数据

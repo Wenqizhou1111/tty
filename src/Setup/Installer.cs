@@ -46,9 +46,9 @@ namespace MyIme.Setup
     {
         // ==================== 常量 ====================
 
-        public const string ProductNameCn = "墨言输入法";
+        public const string ProductNameCn = "代龙";
         public const string ProductNameEn = "MyIME";
-        public const string Publisher = "墨言输入法 (MyIME)";
+        public const string Publisher = "代龙 (MyIME)";
 
         public const string CoreExeName = "MyIme.Core.exe";
         public const string SettingsExeName = "MyIme.Settings.exe";
@@ -60,8 +60,8 @@ namespace MyIme.Setup
         public const string RunKeyPath = @"Software\Microsoft\Windows\CurrentVersion\Run";
         public const string RunValueName = "MyIME";
 
-        public const string StartMenuFolderName = "墨言输入法";
-        public const string MainShortcutName = "墨言输入法.lnk";
+        public const string StartMenuFolderName = "代龙";
+        public const string MainShortcutName = "代龙.lnk";
         public const string SettingsShortcutName = "设置.lnk";
         public const string UninstallShortcutName = "卸载.lnk";
 
@@ -71,7 +71,7 @@ namespace MyIme.Setup
         /// <summary>桌面上可能存在的快捷方式名。</summary>
         public static readonly string[] DesktopShortcutNames = new string[]
         {
-            "墨言输入法.lnk", "墨言输入法 设置.lnk", "MyIME.lnk"
+            "代龙.lnk", "代龙 设置.lnk", "MyIME.lnk"
         };
 
         /// <summary>安装包里必须有的文件（缺了只警告，不阻断）。</summary>
@@ -98,7 +98,7 @@ namespace MyIme.Setup
             return AppPaths.Version;
         }
 
-        /// <summary>默认安装目录（当前用户 → %LOCALAPPDATA%\Programs\墨言输入法）。</summary>
+        /// <summary>默认安装目录（当前用户 → %LOCALAPPDATA%\Programs\代龙）。</summary>
         public static string DefaultTargetDir(bool allUsers)
         {
             if (allUsers)
@@ -196,7 +196,7 @@ namespace MyIme.Setup
             return Path.Combine(GetPayloadDir(), SetupExeName);
         }
 
-        /// <summary>开始菜单里的「墨言输入法」文件夹。</summary>
+        /// <summary>开始菜单里的「代龙」文件夹。</summary>
         public static string StartMenuFolderPath()
         {
             string programs = Environment.GetFolderPath(Environment.SpecialFolder.Programs);

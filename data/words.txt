@@ -1,4 +1,4 @@
-# 墨言输入法 联想词库
+# 代龙 联想词库
 # 格式: <音节 空格分隔> <词> <权重>   权重越大越靠前
 # 由 tools/merge_data.py 从 data/_gen/words_*.txt 合并生成
 wo men 我们 9800

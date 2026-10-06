@@ -358,7 +358,7 @@ namespace MyIme.Shared
             try
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine("# 墨言输入法 用户词库（自动生成，可手工编辑）");
+                sb.AppendLine("# 代龙 用户词库（自动生成，可手工编辑）");
                 sb.AppendLine("# 格式: 音节码 <TAB> 词 <TAB> 使用次数");
                 foreach (KeyValuePair<string, Dictionary<string, int>> kv in _learned)
                 {

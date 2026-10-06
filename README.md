@@ -1,4 +1,6 @@
-# 墨言输入法 MyIME
+# 代龙 —— Windows 10 / 11 输入法
+
+安装包叫 `tty.exe`，产品名是**代龙**。
 
 Windows 10 / 11 上可以真正装起来用的中文 + 英文输入法。
 C# / .NET Framework 4.8，独立进程 + 全局键盘钩子，**不需要 Visual Studio、不需要 .NET SDK**
@@ -277,9 +279,15 @@ data/
 
 tools/
   merge_data.py      把 data/_gen 下的分片合并校验成正式词库
+  make_icon.py       从 assets/icon-source.jpg 生成 assets/icon.ico（多尺寸）
   lint_cs_escapes.py 查 C# 字符串里的非法转义（csc 只在编译时才报）
   check.ps1          只编译某个子目录做语法检查
   package.ps1        打包发布
+
+assets/
+  icon-source.jpg    图标原图
+  icon.ico           程序图标（编进 exe：build.ps1 传给 csc 的 /win32icon）
+  icon.png           同上的 256px PNG
 ~~~
 
 ---

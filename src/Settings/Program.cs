@@ -77,7 +77,7 @@ namespace MyIme.Settings
         {
             try
             {
-                MessageBox.Show(text, "墨言输入法 · 设置",
+                MessageBox.Show(text, "代龙 · 设置",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch { }

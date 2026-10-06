@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using MyIme.Shared;
@@ -16,6 +17,26 @@ namespace MyIme.Core
         public static Icon Get()
         {
             if (_cached != null) return _cached;
+
+            // 优先用随程序发布的 icon.ico（build.ps1 会把它拷到 exe 旁边）。
+            // 找不到才退回下面运行时画的图标，保证任何情况下都有图标可用。
+            try
+            {
+                string[] dirs = new string[] {
+                    AppPaths.BaseDir,
+                    Path.Combine(AppPaths.BaseDir, "assets"),
+                    AppPaths.BuiltinDataDir
+                };
+                foreach (string d in dirs)
+                {
+                    string p = Path.Combine(d, "icon.ico");
+                    if (!File.Exists(p)) continue;
+                    Icon loaded = new Icon(p);
+                    if (loaded != null) { _cached = loaded; return _cached; }
+                }
+            }
+            catch (Exception ex) { Log.Warn("加载 icon.ico 失败，改用内置绘制图标: " + ex.Message); }
+
             try
             {
                 using (Bitmap bmp = new Bitmap(32, 32))
@@ -42,7 +63,7 @@ namespace MyIme.Core
                             StringFormat sf = new StringFormat();
                             sf.Alignment = StringAlignment.Center;
                             sf.LineAlignment = StringAlignment.Center;
-                            g.DrawString("墨", f, w, new RectangleF(0, 0, 32, 32), sf);
+                            g.DrawString("代", f, w, new RectangleF(0, 0, 32, 32), sf);
                         }
                     }
                     IntPtr h = bmp.GetHicon();
