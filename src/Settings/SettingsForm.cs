@@ -57,7 +57,7 @@ namespace MyIme.Settings
 
             Theme.Apply(_working.General.Theme);
 
-            Text = "代龙 · 设置";
+            Text = "松林1234输入法 · 设置";
             Font = Theme.UI(9f, FontStyle.Regular);
             BackColor = Theme.Bg;
             ForeColor = Theme.Text;
@@ -439,7 +439,7 @@ namespace MyIme.Settings
             DialogResult r = MessageBox.Show(this,
                 "设置有改动还没保存，现在保存吗？\r\n\r\n" +
                 "「是」保存并关闭，「否」放弃改动，「取消」继续编辑。",
-                "代龙 · 设置", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                "松林1234输入法 · 设置", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
             if (r == DialogResult.Cancel) { e.Cancel = true; return; }
             if (r == DialogResult.Yes)

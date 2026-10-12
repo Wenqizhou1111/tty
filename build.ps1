@@ -123,7 +123,7 @@ function Get-Sources([string]$dir) {
 }
 
 Write-Host ''
-Write-Host '  代龙 输入法 构建 (csc / .NET Framework)' -ForegroundColor White
+Write-Host '  松林1234输入法 构建 (csc / .NET Framework)' -ForegroundColor White
 Write-Ok "编译器 : $Csc"
 Write-Ok "输出   : $OutDir"
 Write-Host ''

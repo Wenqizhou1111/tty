@@ -47,7 +47,7 @@ static class EngineTests
         Log.MinLevel = LogLevel.Warn;
         Log.ConsoleEcho = false;
 
-        Console.WriteLine("代龙 · 引擎单元测试");
+        Console.WriteLine("松林1234输入法 · 引擎单元测试");
         Console.WriteLine("数据目录: " + AppPaths.BuiltinDataDir);
 
         Lexicon lex = new Lexicon();
@@ -91,6 +91,23 @@ static class EngineTests
                 List<string> list = lex.CharsOf(syl.Trim());
                 Console.WriteLine(syl.Trim().PadRight(7) + (list == null ? "(没有这个音节)" :
                     "共 " + list.Count + " 个: " + string.Join(" ", list.ToArray())));
+            }
+            return 0;
+        }
+
+        // 查一串拼音能出哪些词：EngineTests.exe --word qichuang,shouji,wanan
+        // 用来验新增词条到底能不能打出来 —— 音节写错一个，词就永远出不来。
+        if (args != null && args.Length >= 2 && args[0] == "--word")
+        {
+            foreach (string qcode in args[1].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                string k = qcode.Trim();
+                Composition comp = eng.Compose(k);
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < comp.Candidates.Count && i < 6; i++)
+                    sb.Append(i + 1).Append('.').Append(comp.Candidates[i].Text).Append("  ");
+                Console.WriteLine(k.PadRight(14) + string.Join("|", comp.Syllables.ToArray()).PadRight(15)
+                                  + "-> " + sb.ToString().Trim());
             }
             return 0;
         }

@@ -28,7 +28,7 @@ static class TypeTest
         Log.MinLevel = LogLevel.Error;
 
         _form = new Form();
-        _form.Text = "代龙 · 端到端打字测试";
+        _form.Text = "松林1234输入法 · 端到端打字测试";
         _form.Size = new Size(700, 320);
         _form.StartPosition = FormStartPosition.CenterScreen;
         _form.TopMost = true;
@@ -120,12 +120,35 @@ static class TypeTest
                 break;
             case 10:
                 Check("vvv", "非拼音原样直通（vvv + 空格 -> vvv）");
+                // 回车直通：中文模式下敲拼音按回车，应该原样输出字母
+                Reset(); TypeText("nihao"); PressKey(0x0D);
+                break;
+            case 11:
+                Check("nihao", "中文模式下敲 nihao + 回车 -> 原样输出字母（不选候选）");
+                // 准备退格测试：先上屏「你好」，再敲 hao 停在缓冲区里不提交
+                Reset(); TypeText("nihao"); PressKey(0x20);
+                break;
+            case 12:
+                Check("你好", "（退格测试准备）nihao + 空格 -> 你好");
+                TypeText("hao");
+                break;
+            case 13:
+                // 模拟"按住退格不放"：连发 3 次 KEYDOWN，中间不发 KEYUP。
+                // Windows 的按键自动重复就是这个形态，专门用来验证连删。
+                RepeatKey(0x08, 3);
+                break;
+            case 14:
+                Check("你好", "按住退格连删拼音：3 个字母全删掉，正文「你好」不受影响");
+                PressKey(0x08);
+                break;
+            case 15:
+                Check("你", "拼音删空后再按退格 -> 正文最后一个字被删掉");
                 _timer.Stop();
                 _form.BeginInvoke((MethodInvoker)delegate { _form.Close(); });
                 break;
         }
         _step++;
-        if (_step <= 10) ForwardFocus();
+        if (_step <= 15) ForwardFocus();
     }
 
     static void ForwardFocus()
@@ -168,6 +191,23 @@ static class TypeTest
             if (c >= 'a' && c <= 'z') PressKey(0x41 + (c - 'a'));
             else if (c >= '0' && c <= '9') PressKey(0x30 + (c - '0'));
         }
+    }
+
+    /// <summary>
+    /// 模拟"按住不放"：连发 count 次 KEYDOWN（中间不发 KEYUP），最后补一次 KEYUP。
+    /// Windows 的按键自动重复正是这个形态 —— 用它才能测出"按住退格只删一个字符"这类 bug。
+    /// </summary>
+    static void RepeatKey(int vk, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            SendVk(vk, false);
+            Application.DoEvents();
+            System.Threading.Thread.Sleep(40);
+        }
+        SendVk(vk, true);
+        Application.DoEvents();
+        System.Threading.Thread.Sleep(40);
     }
 
     static void PressKey(int vk)

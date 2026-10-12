@@ -63,7 +63,7 @@ namespace MyIme.Core
                             StringFormat sf = new StringFormat();
                             sf.Alignment = StringAlignment.Center;
                             sf.LineAlignment = StringAlignment.Center;
-                            g.DrawString("代", f, w, new RectangleF(0, 0, 32, 32), sf);
+                            g.DrawString("松", f, w, new RectangleF(0, 0, 32, 32), sf);
                         }
                     }
                     IntPtr h = bmp.GetHicon();

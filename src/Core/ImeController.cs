@@ -234,10 +234,16 @@ namespace MyIme.Core
 
                 if (!isDown)
                 {
+                    // 只吞"按下时被我们吃掉的那个键"对应的那一次抬起
                     if (_swallowed.Remove(vk)) return true;
                     return false;
                 }
-                if (_swallowed.Contains(vk)) return true;
+
+                // 【不要】在这里检查 _swallowed 来吞掉重复的按下事件。
+                // Windows 的按键自动重复是"连发 KEYDOWN、中间不发 KEYUP"。
+                // 如果因为集合里已经有这个键就直接吞掉，按住退格键就只会删掉
+                // 一个字符，后面的重发全被吃掉 —— 表现为"退格失灵、字删不掉"。
+                // 正确的做法：每次按下都正常处理，只在抬起时把对应的那次吞掉。
                 if (ctrl || alt) return false;              // Ctrl/Alt 组合键一律放行
 
                 if (Log.MinLevel == LogLevel.Debug)
@@ -506,6 +512,9 @@ namespace MyIme.Core
             _predicting = false;
             _selected = 0;
             _page = 0;
+            // 清掉"吞键"记录：万一某次 KEYUP 因为切焦点/锁定而没送到，
+            // 残留的记录会让这个键以后每次按下都被吞掉（永久失灵）。
+            _swallowed.Clear();
             _bar.HideBar();
         }
 

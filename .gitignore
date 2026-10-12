@@ -11,6 +11,9 @@ dist/
 .finaldata/
 .setuplog/
 .accept/
+.e2e/
+_e2e_result.txt
+tools/_e2e.ps1
 
 # ---- 用户数据（万一被指向仓库里）----
 settings.json

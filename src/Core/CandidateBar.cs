@@ -72,6 +72,19 @@ namespace MyIme.Core
 
         Rectangle _aiRect = Rectangle.Empty;
 
+        // ---- 鼠标拖动 ----
+        // 条子默认贴着光标。用户一旦拖动，就记住"相对光标的偏移量"，
+        // 之后它仍然跟着光标跑，但保持在用户摆放的位置上。
+        // 右键点一下条子可以把这个偏移复位。
+        Point _userOffset = Point.Empty;
+        bool _dragging;          // 已经确认进入拖动
+        bool _maybeDrag;         // 按下了，还没超过阈值
+        Point _downScreen;       // 按下时鼠标的屏幕坐标
+        Point _dragWinOrigin;    // 按下时窗口左上角
+        Point _dragOffOrigin;    // 按下时已有的偏移
+        int _pendingCandidate = -1;
+        bool _pendingAi;
+
         public CandidateBar()
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer
@@ -82,7 +95,7 @@ namespace MyIme.Core
             StartPosition = FormStartPosition.Manual;
             TopMost = true;
             BackColor = _bg;
-            Text = "代龙 输入条";
+            Text = "松林1234输入法 输入条";
             Size = new Size(300, 44);
             Visible = false;
         }
@@ -313,6 +326,7 @@ namespace MyIme.Core
         /// <summary>贴到光标下方，并保证不跑出屏幕。</summary>
         public void Reposition()
         {
+            if (_dragging) return;      // 正在拖就别跟用户抢位置
             try
             {
                 RECT caret;
@@ -336,6 +350,10 @@ namespace MyIme.Core
                     work.Right = Screen.PrimaryScreen.Bounds.Right;
                     work.Bottom = Screen.PrimaryScreen.Bounds.Bottom;
                 }
+
+                // 应用用户拖动留下的偏移
+                x += _userOffset.X;
+                y += _userOffset.Y;
 
                 if (x + Width > work.Right) x = work.Right - Width - 4;
                 if (x < work.Left) x = work.Left + 4;
@@ -510,27 +528,94 @@ namespace MyIme.Core
 
         // ==================== 鼠标 ====================
 
+        /// <summary>
+        /// 鼠标左键：按住拖动可以搬走条子；原地松开才算点选/点 AI。
+        /// 用"先按下、移动超过阈值才算拖动、抬起才触发点击"这套，
+        /// 既能拖，又不会因为手抖把点选变成拖动。
+        /// 右键：把拖动偏移复位（重新贴回光标）。
+        /// </summary>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
+
+            if (e.Button == MouseButtons.Right)
+            {
+                _userOffset = Point.Empty;
+                Reposition();
+                return;
+            }
             if (e.Button != MouseButtons.Left) return;
+
+            _pendingCandidate = -1;
+            _pendingAi = false;
 
             if (ShowAiButton && _aiRect != Rectangle.Empty && _aiRect.Contains(e.X, e.Y))
             {
-                Action h2 = AiButtonClicked;
-                if (h2 != null) { try { h2(); } catch (Exception ex) { Log.Error("AI 按钮异常", ex); } }
-                return;
+                _pendingAi = true;
             }
-
-            for (int i = 0; i < _hitRects.Count; i++)
+            else
             {
-                if (_hitRects[i].Contains(e.X, e.Y))
+                for (int i = 0; i < _hitRects.Count; i++)
                 {
-                    Action<int> h = CandidateClicked;
-                    if (h != null) { try { h(_hitIndexes[i]); } catch (Exception ex) { Log.Error("点选候选异常", ex); } }
-                    return;
+                    if (_hitRects[i].Contains(e.X, e.Y)) { _pendingCandidate = _hitIndexes[i]; break; }
                 }
             }
+
+            _maybeDrag = true;
+            _dragging = false;
+            _downScreen = PointToScreen(new Point(e.X, e.Y));
+            _dragWinOrigin = Location;
+            _dragOffOrigin = _userOffset;
+            try { Capture = true; } catch { }
+        }
+
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            base.OnMouseMove(e);
+            if (!_maybeDrag) return;
+
+            Point now = PointToScreen(new Point(e.X, e.Y));
+            int dx = now.X - _downScreen.X;
+            int dy = now.Y - _downScreen.Y;
+
+            if (!_dragging)
+            {
+                // 挪过 4 像素才认定是拖动（否则算原地点击）
+                if (Math.Abs(dx) < 4 && Math.Abs(dy) < 4) return;
+                _dragging = true;
+                _pendingCandidate = -1;
+                _pendingAi = false;
+            }
+
+            _userOffset = new Point(_dragOffOrigin.X + dx, _dragOffOrigin.Y + dy);
+            Location = new Point(_dragWinOrigin.X + dx, _dragWinOrigin.Y + dy);
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            base.OnMouseUp(e);
+            if (e.Button != MouseButtons.Left) return;
+
+            bool wasDrag = _dragging;
+            _maybeDrag = false;
+            _dragging = false;
+            try { Capture = false; } catch { }
+
+            if (wasDrag) return;      // 拖完了，不当点击
+
+            if (_pendingAi)
+            {
+                Action h2 = AiButtonClicked;
+                if (h2 != null) { try { h2(); } catch (Exception ex) { Log.Error("AI 按钮异常", ex); } }
+            }
+            else if (_pendingCandidate >= 0)
+            {
+                Action<int> h = CandidateClicked;
+                if (h != null) { try { h(_pendingCandidate); } catch (Exception ex) { Log.Error("点选候选异常", ex); } }
+            }
+
+            _pendingAi = false;
+            _pendingCandidate = -1;
         }
 
         protected override void OnMouseWheel(MouseEventArgs e)

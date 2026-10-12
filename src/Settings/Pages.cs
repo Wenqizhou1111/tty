@@ -253,6 +253,24 @@ namespace MyIme.Settings
             return l;
         }
 
+        /// <summary>次要说明用的单行高度（Sub 角色的字号）。</summary>
+        protected static int SubLineHeight
+        {
+            get { return TextRenderer.MeasureText("汉", Theme.UI(8.25f, FontStyle.Regular)).Height; }
+        }
+
+        /// <summary>
+        /// 自动换行的说明标签比"单行"高出多少。
+        /// 页面上每个行高都必须把这个量加进去 —— 写死常量的行高是按一行算的，
+        /// 说明文字一换行就会压到下一行上（界面文字重叠的根因）。
+        /// </summary>
+        protected static int SubOverflow(ThemedLabel l)
+        {
+            if (l == null) return 0;
+            int extra = l.PreferredHeight - SubLineHeight;
+            return extra > 0 ? extra : 0;
+        }
+
         /// <summary>右对齐的定宽标签（AutoSize 关掉，锚右边）。</summary>
         protected ThemedLabel RightLabel(Control p, string text, int y, int width, int rightMargin)
         {
@@ -295,7 +313,8 @@ namespace MyIme.Settings
         {
             bool hasSub = !string.IsNullOrEmpty(sub);
             Text(c, title, 18, y + (hasSub ? 8 : 14));
-            if (hasSub) SubWrap(c, sub, 18, y + 30, c.Width - 180);
+            int rw1 = 0;
+            if (hasSub) rw1 = SubOverflow(SubWrap(c, sub, 18, y + 30, c.Width - 180));
 
             Switch s = new Switch();
             s.SetCheckedSilent(value);
@@ -304,7 +323,7 @@ namespace MyIme.Settings
             if (changed != null) s.CheckedChanged += changed;
             s.CheckedChanged += PageChanged;
             sw = s;
-            return y + (hasSub ? 58 : 46);
+            return y + (hasSub ? 58 : 46) + rw1;
         }
 
         protected int RowCheck(CardPanel c, int y, string text, string sub, bool value,
@@ -322,8 +341,8 @@ namespace MyIme.Settings
             y += 26;
             if (!string.IsNullOrEmpty(sub))
             {
-                SubWrap(c, sub, 45, y, c.Width - 80);
-                y += 26;
+                ThemedLabel _so1 = SubWrap(c, sub, 45, y, c.Width - 80);
+                y += 26 + SubOverflow(_so1);
             }
             return y;
         }
@@ -333,7 +352,8 @@ namespace MyIme.Settings
         {
             bool hasSub = !string.IsNullOrEmpty(sub);
             Text(c, title, 18, y + (hasSub ? 8 : 14));
-            if (hasSub) SubWrap(c, sub, 18, y + 30, c.Width - 200);
+            int rw2 = 0;
+            if (hasSub) rw2 = SubOverflow(SubWrap(c, sub, 18, y + 30, c.Width - 200));
 
             NumberBox nb = new NumberBox();
             nb.Min = min;
@@ -346,7 +366,7 @@ namespace MyIme.Settings
             if (changed != null) nb.ValueChanged += changed;
             nb.ValueChanged += PageChanged;
             box = nb;
-            return y + (hasSub ? 58 : 46);
+            return y + (hasSub ? 58 : 46) + rw2;
         }
 
         protected int RowSlider(CardPanel c, int y, string title, string sub, double value,
@@ -355,7 +375,8 @@ namespace MyIme.Settings
         {
             bool hasSub = !string.IsNullOrEmpty(sub);
             Text(c, title, 18, y + (hasSub ? 8 : 12));
-            if (hasSub) SubWrap(c, sub, 18, y + 30, c.Width - 330);
+            int rw3 = 0;
+            if (hasSub) rw3 = SubOverflow(SubWrap(c, sub, 18, y + 30, c.Width - 330));
 
             ThemedLabel vl = new ThemedLabel();
             vl.AutoSize = false;
@@ -385,7 +406,7 @@ namespace MyIme.Settings
 
             slider = sl;
             valueLabel = vl;
-            return y + (hasSub ? 58 : 48);
+            return y + (hasSub ? 58 : 48) + rw3;
         }
 
         protected int RowInput(CardPanel c, int y, string title, string sub, string value, string hint,
@@ -393,7 +414,8 @@ namespace MyIme.Settings
         {
             bool hasSub = !string.IsNullOrEmpty(sub);
             Text(c, title, 18, y + (hasSub ? 8 : 14));
-            if (hasSub) SubWrap(c, sub, 18, y + 30, c.Width - boxWidth - 46);
+            int rw4 = 0;
+            if (hasSub) rw4 = SubOverflow(SubWrap(c, sub, 18, y + 30, c.Width - boxWidth - 46));
 
             InputBox ib = new InputBox();
             ib.Size = new Size(boxWidth, 34);
@@ -405,7 +427,7 @@ namespace MyIme.Settings
             if (changed != null) ib.TextChanged += changed;
             ib.TextChanged += PageChanged;
             box = ib;
-            return y + (hasSub ? 58 : 46);
+            return y + (hasSub ? 58 : 46) + rw4;
         }
 
         protected int RowSelect(CardPanel c, int y, string title, string sub, List<string> items,
@@ -413,7 +435,8 @@ namespace MyIme.Settings
         {
             bool hasSub = !string.IsNullOrEmpty(sub);
             Text(c, title, 18, y + (hasSub ? 8 : 14));
-            if (hasSub) SubWrap(c, sub, 18, y + 30, c.Width - boxWidth - 46);
+            int rw5 = 0;
+            if (hasSub) rw5 = SubOverflow(SubWrap(c, sub, 18, y + 30, c.Width - boxWidth - 46));
 
             SelectBox sb = new SelectBox();
             sb.Size = new Size(boxWidth, 34);
@@ -424,7 +447,7 @@ namespace MyIme.Settings
             if (changed != null) sb.SelectedIndexChanged += changed;
             sb.SelectedIndexChanged += PageChanged;
             box = sb;
-            return y + (hasSub ? 58 : 46);
+            return y + (hasSub ? 58 : 46) + rw5;
         }
 
         protected int RowHotkey(CardPanel c, int y, string title, string sub, HotkeyBinding binding,
@@ -432,7 +455,8 @@ namespace MyIme.Settings
         {
             bool hasSub = !string.IsNullOrEmpty(sub);
             Text(c, title, 18, y + (hasSub ? 8 : 16));
-            if (hasSub) SubWrap(c, sub, 18, y + 33, c.Width - 330);
+            int rw6 = 0;
+            if (hasSub) rw6 = SubOverflow(SubWrap(c, sub, 18, y + 33, c.Width - 330));
 
             GhostButton cl = new GhostButton();
             cl.Text = "清除";
@@ -453,7 +477,7 @@ namespace MyIme.Settings
 
             box = hb;
             clear = cl;
-            return y + (hasSub ? 60 : 56);
+            return y + (hasSub ? 60 : 56) + rw6;
         }
 
         protected void OpenFolderOrToast(string path, string what)
@@ -495,7 +519,11 @@ namespace MyIme.Settings
             _autoStart = sw;
             _autoStart.CheckedChanged += StartupChanged;
 
-            _autoStartPath = SubText(c1, StartupText(), 40, y - 24);
+            // 状态行放在说明下面，并且必须把 y 推过去 ——
+            // 它不是一个"浮"在行内的小字，占了高度就要算进行高里，
+            // 否则要么压住上面的说明，要么被下一行压住。
+            _autoStartPath = SubText(c1, StartupText(), 40, y + 6);
+            y += _autoStartPath.PreferredHeight + 10;
 
             y = RowSwitch(c1, y, "显示托盘图标", null, Cfg.General.ShowTrayIcon, null, out sw);
             _tray = sw;
@@ -525,9 +553,9 @@ namespace MyIme.Settings
             _theme = seg;
             y += 48;
 
-            SubWrap(c2, "「跟随系统」= 跟着 Windows 的深色模式走（设置 → 个性化 → 颜色）。换主题立刻生效，点右下角「保存」后长期记住。",
-                18, y, c2.Width - 36);
-            y += 34;
+            ThemedLabel _sx201 = SubWrap(c2, "「跟随系统」= 跟着 Windows 的深色模式走（设置 → 个性化 → 颜色）。换主题立刻生效，点右下角「保存」后长期记住。",
+                18, y, c2.Width - 36);;
+            y += 34 + SubOverflow(_sx201);
             c2.Height = y + 12;
 
             FinishBuild();
@@ -736,8 +764,8 @@ namespace MyIme.Settings
             CardPanel c5 = Card();
             y = 16;
             Title(c5, "测试输入", y);
-            SubWrap(c5, "在下面敲拼音，立刻能看到候选长什么样 —— 用的就是上面这些设置（候选数、序号、页码、简拼、模糊音全都算数）。这里只是预览，不会真的上屏。",
-                18, y + 26, c5.Width - 36);
+            ThemedLabel _sx202 = SubWrap(c5, "在下面敲拼音，立刻能看到候选长什么样 —— 用的就是上面这些设置（候选数、序号、页码、简拼、模糊音全都算数）。这里只是预览，不会真的上屏。",
+                18, y + 26, c5.Width - 36);;
             y = 72;
 
             InputBox box = new InputBox();
@@ -745,7 +773,7 @@ namespace MyIme.Settings
             Stretch(c5, box, 18, y, 36, 18);
             box.TextChanged += delegate { UpdatePreview(); };
             _test = box;
-            y += 46;
+            y += 46 + SubOverflow(_sx202);
 
             CandidateStrip strip = new CandidateStrip();
             Stretch(c5, strip, 18, y, 128, 18);
@@ -1055,9 +1083,9 @@ namespace MyIme.Settings
             y = RowHotkey(c1, y, "锁定／解锁输入法", "默认 Ctrl+Alt+L。按一下锁定，再按一下解锁。",
                 Cfg.GameLock.ToggleKey, null, out hb, out cl);
             _lockKey = hb;
-            SubWrap(c1, "这个键和「快捷键」那页里的是同一个。锁定时如果勾了下面的「保留解锁热键」，它照样管用；不勾就只能右键托盘图标解锁。",
-                18, y - 6, c1.Width - 36);
-            y += 40;
+            ThemedLabel _sx203 = SubWrap(c1, "这个键和「快捷键」那页里的是同一个。锁定时如果勾了下面的「保留解锁热键」，它照样管用；不勾就只能右键托盘图标解锁。",
+                18, y - 6, c1.Width - 36);;
+            y += 40 + SubOverflow(_sx203);
             c1.Height = y + 12;
 
             // ---------------- 自动锁定 ----------------
@@ -1130,15 +1158,15 @@ namespace MyIme.Settings
             refresh.Click += delegate { RefreshCoreState(); };
 
             y = 50;
-            SubWrap(c5, "锁定状态由输入法主程序自己维护（钩子装卸都在那边），设置界面不去碰它，所以这里只做说明：",
-                18, y, c5.Width - 36);
-            y += 42;
+            ThemedLabel _sx204 = SubWrap(c5, "锁定状态由输入法主程序自己维护（钩子装卸都在那边），设置界面不去碰它，所以这里只做说明：",
+                18, y, c5.Width - 36);;
+            y += 42 + SubOverflow(_sx204);
 
-            SubWrap(c5, "· 未锁定：键盘钩子在工作，中文输入一切正常。\r\n" +
+            ThemedLabel _sx205 = SubWrap(c5, "· 未锁定：键盘钩子在工作，中文输入一切正常。\r\n" +
                         "· 已锁定：钩子被整体卸载，按键原样进游戏，候选窗不会出现。\r\n" +
                         "· 解锁：再按一次锁定热键，或者右键托盘图标选「解锁输入法」。",
-                18, y, c5.Width - 36);
-            y += 74;
+                18, y, c5.Width - 36);;
+            y += 74 + SubOverflow(_sx205);
 
             HLine(c5, y);
             y += 12;
@@ -1348,7 +1376,7 @@ namespace MyIme.Settings
             _provider = sb;
 
             _note = SubWrap(c1, "", 18, y, c1.Width - 36);
-            y += 28;
+            y += 28 + SubOverflow(_note);
 
             LinkText link = new LinkText();
             link.Text = "如何获取 API Key";
@@ -1394,10 +1422,10 @@ namespace MyIme.Settings
             _showKey = show;
             y += 46;
 
-            SubWrap(c2, "Key 用 Windows 的 DPAPI 按当前用户加密后再写进 settings.json，文件里不会出现明文。",
-                18, y, c2.Width - 330);
+            ThemedLabel _sx206 = SubWrap(c2, "Key 用 Windows 的 DPAPI 按当前用户加密后再写进 settings.json，文件里不会出现明文。",
+                18, y, c2.Width - 330);;
             _keyStatus = RightLabel(c2, "", y + 2, 300, 18);
-            y += 32;
+            y += 32 + SubOverflow(_sx206);
             c2.Height = y + 10;
 
             // ---------------- 生成参数 ----------------
@@ -1432,8 +1460,8 @@ namespace MyIme.Settings
             _bodyCards.Add(c4);
             y = 16;
             Title(c4, "系统提示词", y);
-            SubWrap(c4, "留空就用内置的默认提示词（针对中文润色调过）。填了就以你的为准，会加在每次请求最前面。",
-                18, y + 26, c4.Width - 36);
+            ThemedLabel _sx207 = SubWrap(c4, "留空就用内置的默认提示词（针对中文润色调过）。填了就以你的为准，会加在每次请求最前面。",
+                18, y + 26, c4.Width - 36);;
             y = 78;
 
             InputBox sp = new InputBox();
@@ -1458,7 +1486,7 @@ namespace MyIme.Settings
             _preset = sb;
 
             _presetDesc = SubText(c5, "", 18, y);
-            y += 26;
+            y += 26 + SubOverflow(_sx207);
             c5.Height = y + 10;
 
             // ---------------- 触发方式 ----------------
@@ -1504,8 +1532,8 @@ namespace MyIme.Settings
             _bodyCards.Add(c8);
             y = 16;
             Title(c8, "连接测试", y);
-            SubWrap(c8, "为了不重复实现一遍网络逻辑，连接测试放在输入法的 AI 面板里：保存设置后按快捷键（默认 Ctrl+Alt+A）打开面板，点一下「测试连接」，成不成、报什么错都会写在面板上。",
-                18, y + 26, c8.Width - 220);
+            ThemedLabel _sx208 = SubWrap(c8, "为了不重复实现一遍网络逻辑，连接测试放在输入法的 AI 面板里：保存设置后按快捷键（默认 Ctrl+Alt+A）打开面板，点一下「测试连接」，成不成、报什么错都会写在面板上。",
+                18, y + 26, c8.Width - 220);;
 
             GhostButton testBtn = new GhostButton();
             testBtn.Text = "连接测试";
@@ -1513,7 +1541,7 @@ namespace MyIme.Settings
             PlaceRight(c8, testBtn, 18);
             testBtn.Top = 16;
             testBtn.Click += delegate { OnTestClick(); };
-            y += 78;
+            y += 78 + SubOverflow(_sx208);
             c8.Height = y + 10;
 
             NoticeBar notice = new NoticeBar();
@@ -1751,9 +1779,9 @@ namespace MyIme.Settings
             int y = 16;
             Title(c1, "用户词库", y);
             y = 50;
-            SubWrap(c1, "输入法会把你经常用的词悄悄记下来，下次打同样的拼音它就更靠前。文件是纯文本，想手工加词也行。",
-                18, y, c1.Width - 36);
-            y += 44;
+            ThemedLabel _sx209 = SubWrap(c1, "输入法会把你经常用的词悄悄记下来，下次打同样的拼音它就更靠前。文件是纯文本，想手工加词也行。",
+                18, y, c1.Width - 36);;
+            y += 44 + SubOverflow(_sx209);
 
             Text(c1, "文件位置", 18, y + 6);
             GhostButton open = new GhostButton();
@@ -1778,8 +1806,8 @@ namespace MyIme.Settings
             PlaceRight(c1, clear, 18);
             clear.Top = y;
             clear.Click += delegate { ClearUserWords(); };
-            SubWrap(c1, "清空只删你学到的词，内置词库一个都不动。", 18, y + 6, c1.Width - 200);
-            y += 46;
+            ThemedLabel _so3 = SubWrap(c1, "清空只删你学到的词，内置词库一个都不动。", 18, y + 6, c1.Width - 200);
+            y += 46 + SubOverflow(_so3);
             c1.Height = y + 12;
 
             // ---------------- 内置词库 ----------------
@@ -1787,9 +1815,9 @@ namespace MyIme.Settings
             y = 16;
             Title(c2, "内置词库", y);
             y = 50;
-            SubWrap(c2, "随程序发布的数据文件（chars.txt 单字表、words.txt 词表、syllables.txt 音节表）。升级程序时会被覆盖，别在这里改。",
-                18, y, c2.Width - 36);
-            y += 44;
+            ThemedLabel _sx210 = SubWrap(c2, "随程序发布的数据文件（chars.txt 单字表、words.txt 词表、syllables.txt 音节表）。升级程序时会被覆盖，别在这里改。",
+                18, y, c2.Width - 36);;
+            y += 44 + SubOverflow(_sx210);
 
             Text(c2, "所在目录", 18, y + 6);
             GhostButton open2 = new GhostButton();
@@ -1826,7 +1854,7 @@ namespace MyIme.Settings
         {
             DialogResult r = MessageBox.Show(this,
                 "确定要清空用户词库吗？\r\n\r\n你自造的词、调过的词频都会没掉，内置词库不受影响。",
-                "代龙 · 清空用户词库", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                "松林1234输入法 · 清空用户词库", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (r != DialogResult.OK) return;
 
             try
@@ -1918,10 +1946,10 @@ namespace MyIme.Settings
             SubText(c1, "版本 " + AppPaths.Version + "　·　MyIme.Settings.exe", 100, y);
             y += 30;
 
-            SubWrap(c1, "一个用 C# 写的中文输入法：拼音引擎和词库全在本地、不联网，AI 写作助手是可选的。"
+            ThemedLabel _sx211 = SubWrap(c1, "一个用 C# 写的中文输入法：拼音引擎和词库全在本地、不联网，AI 写作助手是可选的。"
                 + "整个程序是用 Windows 自带的 csc.exe 编出来的，不需要装任何开发环境。",
-                100, y, c1.Width - 130);
-            y += 64;
+                100, y, c1.Width - 130);;
+            y += 64 + SubOverflow(_sx211);
 
             HLine(c1, y);
             y += 16;
@@ -1942,7 +1970,7 @@ namespace MyIme.Settings
             y = 16;
             Title(c2, "日志与卸载", y);
             y = 50;
-            SubWrap(c2, "输入法遇到问题时，把日志文件发给开发者就能定位。", 18, y, c2.Width - 220);
+            ThemedLabel _sw101 = SubWrap(c2, "输入法遇到问题时，把日志文件发给开发者就能定位。", 18, y, c2.Width - 220);
 
             GhostButton openLog = new GhostButton();
             openLog.Text = "打开日志文件夹";
@@ -1950,20 +1978,20 @@ namespace MyIme.Settings
             PlaceRight(c2, openLog, 18);
             openLog.Top = 46;
             openLog.Click += delegate { OpenLogFolder(); };
-            y += 44;
+            y += 44 + SubOverflow(_sw101);
 
             SubText(c2, LogFolder(), 18, y);
             y += 34;
 
             GhostButton uninstall = new GhostButton();
-            uninstall.Text = "卸载代龙";
+            uninstall.Text = "卸载松林1234输入法";
             uninstall.Danger = true;
             uninstall.Size = new Size(132, 32);
             PlaceRight(c2, uninstall, 18);
             uninstall.Top = y;
             uninstall.Click += delegate { Uninstall(); };
-            SubWrap(c2, "会调用同目录下的 tty.exe（带 --uninstall 参数）来卸载。", 18, y + 6, c2.Width - 200);
-            y += 48;
+            ThemedLabel _so4 = SubWrap(c2, "会调用同目录下的 tty.exe（带 --uninstall 参数）来卸载。", 18, y + 6, c2.Width - 200);
+            y += 48 + SubOverflow(_so4);
             c2.Height = y + 12;
 
             NoticeBar notice = new NoticeBar();
@@ -2020,9 +2048,9 @@ namespace MyIme.Settings
             }
 
             DialogResult r = MessageBox.Show(this,
-                "确定要卸载代龙吗？\r\n\r\n会先关掉正在运行的输入法，再删掉程序文件；"
+                "确定要卸载松林1234输入法吗？\r\n\r\n会先关掉正在运行的输入法，再删掉程序文件；"
                 + "你的设置和用户词库会保留在 %APPDATA%\\MyIME 里。",
-                "代龙 · 卸载", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                "松林1234输入法 · 卸载", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (r != DialogResult.OK) return;
 
             try

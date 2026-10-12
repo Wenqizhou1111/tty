@@ -1,0 +1,446 @@
+# 松林1234输入法 日常常用词库（人工精选）
+# 格式: <音节 空格分隔> <词> <权重>
+# 这一份专门补日常口语 —— 内置词库偏正式书面语，聊天/生活场景常常打不出来。
+
+# ---------------- 起居 · 生活 ----------------
+qi chuang 起床 8000
+shui jiao 睡觉 8500
+xi zao 洗澡 7500
+shua ya 刷牙 7000
+xi lian 洗脸 7200
+huan yi fu 换衣服 6800
+chuan yi fu 穿衣服 6500
+shou shi 收拾 7000
+da sao 打扫 6500
+xi yi fu 洗衣服 6800
+liang yi fu 晾衣服 5500
+dao la ji 倒垃圾 6000
+mai cai 买菜 6500
+zuo fan 做饭 7500
+xi wan 洗碗 6500
+jia wu 家务 6000
+zhuang xiu 装修 5800
+jia ju 家具 6200
+sha fa 沙发 6800
+chu fang 厨房 7000
+wo shi 卧室 7000
+ke ting 客厅 7000
+yang tai 阳台 6500
+lou dao 楼道 5200
+dian ti 电梯 6800
+men kou 门口 7500
+ge bi 隔壁 6200
+lin ju 邻居 6500
+xiao qu 小区 7000
+gong yu 公寓 6000
+
+# ---------------- 饮食 ----------------
+zao fan 早饭 7200
+wu fan 午饭 7500
+wan fan 晚饭 7500
+ye xiao 夜宵 5800
+wai mai 外卖 7500
+kuai can 快餐 6200
+can guan 餐馆 6200
+fan dian 饭店 7000
+cai dan 菜单 6800
+mi fan 米饭 7200
+mian tiao 面条 7000
+jiao zi 饺子 7000
+bao zi 包子 6800
+man tou 馒头 6200
+huo guo 火锅 7000
+shao kao 烧烤 6800
+xiao chi 小吃 6500
+ling shi 零食 6500
+shui guo 水果 7200
+ping guo 苹果 7200
+xiang jiao 香蕉 6800
+xi gua 西瓜 7000
+pu tao 葡萄 6500
+cheng zi 橙子 6200
+cao mei 草莓 6200
+shu cai 蔬菜 6800
+qing cai 青菜 6200
+bai cai 白菜 6500
+tu dou 土豆 6500
+xi hong shi 西红柿 6500
+huang gua 黄瓜 6500
+luo bo 萝卜 6200
+sheng jiang 生姜 5200
+zhu rou 猪肉 6800
+niu rou 牛肉 7000
+yang rou 羊肉 6500
+ji rou 鸡肉 6500
+ji dan 鸡蛋 7200
+dou fu 豆腐 6500
+niu nai 牛奶 7200
+dou jiang 豆浆 6200
+suan nai 酸奶 6500
+ka fei 咖啡 7200
+jiang you 酱油 5800
+la jiao 辣椒 6200
+
+# ---------------- 时间 · 日期 ----------------
+jin tian 今天 9000
+ming tian 明天 8800
+zuo tian 昨天 8800
+hou tian 后天 7200
+qian tian 前天 7000
+mei tian 每天 8500
+tian tian 天天 7800
+shang wu 上午 8000
+xia wu 下午 8000
+zhong wu 中午 8000
+zao shang 早上 8200
+wan shang 晚上 8500
+ban ye 半夜 6500
+qing chen 清晨 6200
+huang hun 黄昏 5800
+zhou mo 周末 8000
+gong zuo ri 工作日 6200
+jie jia ri 节假日 6200
+guo nian 过年 7000
+chun jie 春节 7000
+zhong qiu 中秋 6200
+duan wu 端午 5800
+yuan dan 元旦 6000
+sheng ri 生日 7500
+nian ji 年纪 6500
+shi jian 时间 8800
+ri qi 日期 7000
+xiao shi 小时 8000
+fen zhong 分钟 8200
+gang cai 刚才 7500
+yi hou 以后 8500
+yi qian 以前 8200
+xian zai 现在 9000
+jiang lai 将来 6500
+guo qu 过去 7000
+li shi 历史 7200
+
+# ---------------- 工作 · 学习 ----------------
+shang ban 上班 8500
+xia ban 下班 8500
+jia ban 加班 7500
+chu chai 出差 6800
+kai hui 开会 7800
+hui yi 会议 7500
+bao gao 报告 7200
+fang an 方案 7200
+xiang mu 项目 7800
+ren wu 任务 7500
+jin du 进度 6800
+ji hua 计划 8000
+mu biao 目标 7800
+cheng ji 成绩 7000
+kao shi 考试 7800
+fu xi 复习 7000
+yu xi 预习 5800
+zuo ye 作业 7500
+shang ke 上课 7800
+xia ke 下课 7500
+lao shi 老师 8500
+tong xue 同学 8200
+xue sheng 学生 8200
+xue xiao 学校 8500
+da xue 大学 8000
+zhuan ye 专业 7500
+bi ye 毕业 7500
+zhao pin 招聘 6800
+mian shi 面试 7000
+jian li 简历 6500
+gong zi 工资 7800
+jiang jin 奖金 6800
+tong shi 同事 7500
+shang si 上司 6200
+lao ban 老板 7800
+ke hu 客户 7500
+he tong 合同 7000
+qian zi 签字 6800
+li zhi 离职 6200
+ru zhi 入职 6200
+
+# ---------------- 情感 · 交流 ----------------
+kai xin 开心 8500
+gao xing 高兴 8500
+nan guo 难过 7500
+sheng qi 生气 7800
+wu liao 无聊 7000
+jin zhang 紧张 7200
+fang song 放松 7000
+dan xin 担心 8000
+hai pa 害怕 7200
+xi huan 喜欢 8800
+tao yan 讨厌 7200
+xi wang 希望 8500
+shi wang 失望 7000
+gan dong 感动 6800
+wei qu 委屈 6200
+jiao ao 骄傲 6200
+zi xin 自信 6800
+hou hui 后悔 7000
+yuan liang 原谅 6500
+bao qian 抱歉 7500
+gan xie 感谢 8200
+ma fan 麻烦 8200
+bang mang 帮忙 8200
+zhao gu 照顾 7500
+guan xin 关心 7500
+xiang nian 想念 6800
+pei ban 陪伴 6800
+fen shou 分手 6200
+lian ai 恋爱 6500
+jie hun 结婚 7000
+li hun 离婚 5800
+nan peng you 男朋友 7000
+nv peng you 女朋友 7000
+lao po 老婆 7500
+lao gong 老公 7500
+hai zi 孩子 8500
+xiao hai 小孩 7800
+nan hai 男孩 7000
+nv hai 女孩 7200
+xian sheng 先生 7500
+xiao jie 小姐 6800
+peng you 朋友 8800
+jia ren 家人 8000
+qin qi 亲戚 6200
+
+# ---------------- 身体 · 健康 ----------------
+shen ti 身体 8200
+jian kang 健康 8000
+sheng bing 生病 7500
+gan mao 感冒 7500
+fa shao 发烧 7000
+ke sou 咳嗽 6500
+tou teng 头疼 6800
+du zi 肚子 7200
+yao 药 7000
+yi yuan 医院 8000
+yi sheng 医生 8000
+kan bing 看病 7000
+da zhen 打针 6200
+shu ye 输液 5800
+jian cha 检查 7500
+ti jian 体检 6200
+yun dong 运动 7800
+pao bu 跑步 7200
+san bu 散步 7200
+you yong 游泳 7000
+jian shen 健身 7000
+da qiu 打球 6800
+lan qiu 篮球 6800
+zu qiu 足球 7000
+yu mao qiu 羽毛球 6200
+ping pang qiu 乒乓球 6200
+shui mian 睡眠 7200
+xiu xi 休息 8200
+lei 累 7500
+pi lao 疲劳 6200
+shu fu 舒服 7500
+nan shou 难受 7000
+
+# ---------------- 购物 · 金钱 ----------------
+gou wu 购物 7500
+shang chang 商场 7500
+chao shi 超市 7500
+mai dan 买单 7000
+jie zhang 结账 6500
+shou yin tai 收银台 5800
+fu kuan 付款 7000
+zhi fu 支付 7500
+wei xin 微信 8500
+zhi fu bao 支付宝 7500
+qian bao 钱包 7000
+yin xing 银行 8000
+xin yong ka 信用卡 6500
+jie qian 借钱 6200
+huan qian 还钱 6000
+sheng qian 省钱 6500
+pian yi 便宜 7800
+gui 贵 7500
+da zhe 打折 7000
+you hui 优惠 7000
+kuai di 快递 7800
+you jian 邮件 7500
+bao guo 包裹 7000
+shou huo 收货 6500
+tui huo 退货 6200
+huan huo 换货 5800
+zhi liang 质量 7200
+jia ge 价格 7800
+
+# ---------------- 科技 · 网络 ----------------
+shou ji 手机 9000
+dian nao 电脑 8800
+wang luo 网络 8200
+shang wang 上网 7500
+chong dian 充电 7800
+dian chi 电池 7500
+ping mu 屏幕 7500
+jian pan 键盘 7000
+shu biao 鼠标 7000
+ruan jian 软件 7500
+ying jian 硬件 6500
+xi tong 系统 7800
+cheng xu 程序 7000
+wen jian 文件 7800
+wen jian jia 文件夹 7000
+xia zai 下载 8000
+shang chuan 上传 7000
+an zhuang 安装 7800
+xie zai 卸载 6500
+geng xin 更新 7800
+ban ben 版本 7000
+mi ma 密码 8200
+zhang hao 账号 7800
+deng lu 登录 7800
+zhu ce 注册 7500
+tui chu 退出 7500
+sou suo 搜索 7800
+liu lan qi 浏览器 6800
+wang ye 网页 7200
+wang zhan 网站 7200
+shi pin 视频 8500
+yin yue 音乐 8500
+zhao pian 照片 8200
+pai zhao 拍照 7500
+xiang ji 相机 7500
+you xi 游戏 8800
+zhi bo 直播 7500
+dian zan 点赞 7000
+ping lun 评论 7500
+zhuan fa 转发 7000
+xiao xi 消息 8200
+yu yin 语音 7500
+tong hua 通话 7000
+duan xin 短信 7000
+dian hua 电话 8500
+lian xi ren 联系人 6500
+lian xi 联系 8200
+tong zhi 通知 7500
+tiao zheng 调整 7000
+she zhi 设置 8200
+bao cun 保存 8000
+shan chu 删除 8000
+fu zhi 复制 7500
+zhan tie 粘贴 7000
+jian qie 剪切 6000
+che xiao 撤销 6200
+hui fu 恢复 7000
+bei fen 备份 6500
+
+# ---------------- 天气 · 自然 ----------------
+tian qi 天气 8200
+xia yu 下雨 8000
+xia xue 下雪 7000
+gua feng 刮风 6500
+tai yang 太阳 7800
+yue liang 月亮 7000
+xing xing 星星 6800
+tian kong 天空 7000
+wen du 温度 7200
+qi wen 气温 6500
+leng 冷 7500
+re 热 7800
+nuan huo 暖和 6200
+liang kuai 凉快 6200
+yin tian 阴天 6200
+qing tian 晴天 6500
+duo yun 多云 5800
+tai feng 台风 5800
+di zhen 地震 6200
+feng 风 7000
+yu 雨 7500
+xue 雪 7000
+yun 云 6800
+shan 山 7200
+he 河 7000
+hai 海 7500
+hu 湖 6500
+shu 树 7200
+hua 花 7500
+cao 草 6800
+kong qi 空气 7200
+
+# ---------------- 交通 · 出行 ----------------
+gong jiao 公交 7000
+di tie 地铁 7500
+huo che 火车 7800
+gao tie 高铁 7000
+fei ji 飞机 8000
+ji chang 机场 7000
+che zhan 车站 7200
+da che 打车 7500
+kai che 开车 8000
+qi che 骑车 7500
+zou lu 走路 7200
+du che 堵车 7000
+hong lv deng 红绿灯 5800
+gao su 高速 6500
+ting che 停车 7000
+che piao 车票 6500
+ji piao 机票 6500
+xing cheng 行程 6200
+chu fa 出发 7800
+dao da 到达 7500
+lv xing 旅行 7500
+lv you 旅游 7800
+chu guo 出国 6500
+hui jia 回家 8800
+chu men 出门 8000
+lu shang 路上 7800
+fang xiang 方向 7000
+di tu 地图 7000
+dao hang 导航 6800
+ju li 距离 7200
+fu jin 附近 7800
+yuan 远 7200
+jin 近 7200
+
+# ---------------- 常用口语 ----------------
+xie xie 谢谢 9500
+dui bu qi 对不起 8500
+mei guan xi 没关系 8200
+bu ke qi 不客气 8000
+qing wen 请问 8200
+zai jian 再见 8800
+zao shang hao 早上好 7500
+wan an 晚安 7500
+xin ku 辛苦 7800
+jia you 加油 8500
+li hai 厉害 8000
+zen me ban 怎么办 8200
+wei shen me 为什么 8800
+duo shao qian 多少钱 8000
+hao chi 好吃 8200
+hao kan 好看 8200
+hao wan 好玩 7500
+hao ting 好听 7500
+ke yi 可以 9000
+bu yong 不用 8200
+mei wen ti 没问题 8000
+you kong 有空 7500
+dui 对 9000
+cuo 错 7500
+zhi dao 知道 9000
+bu zhi dao 不知道 8800
+ming bai 明白 8200
+dong 懂 7800
+ji de 记得 7800
+wang le 忘了 7500
+xiang qi lai 想起来 6500
+jue de 觉得 8500
+ren wei 认为 7800
+xiang xin 相信 7800
+jue ding 决定 7500
+da suan 打算 7500
+zhun bei 准备 8200
+kai shi 开始 8800
+jie shu 结束 7800
+wan cheng 完成 7800
+cheng gong 成功 7800
+shi bai 失败 7500
+nu li 努力 8200
+jian chi 坚持 7500

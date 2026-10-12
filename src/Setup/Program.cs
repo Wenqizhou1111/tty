@@ -226,39 +226,39 @@ namespace MyIme.Setup
         public static string UsageText()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("代龙 安装程序 (MyIME Setup)  版本 " + Installer.GetVersion());
+            sb.AppendLine("松林1234输入法 安装程序 (MyIME Setup)  版本 " + Installer.GetVersion());
             sb.AppendLine();
             sb.AppendLine("用法:");
             sb.AppendLine("  tty.exe [选项]");
             sb.AppendLine();
             sb.AppendLine("  不带任何选项直接双击运行，会打开图形化安装向导。");
-            sb.AppendLine("  默认是「当前用户安装」，装到 %LOCALAPPDATA%\\Programs\\代龙，不需要管理员权限。");
+            sb.AppendLine("  默认是「当前用户安装」，装到 %LOCALAPPDATA%\\Programs\\松林1234输入法，不需要管理员权限。");
             sb.AppendLine();
             sb.AppendLine("选项:");
             sb.AppendLine("  --uninstall            打开图形化卸载向导");
             sb.AppendLine("  --silent-install       静默安装（默认当前用户，不需要管理员权限）");
             sb.AppendLine("  --silent-uninstall     静默卸载（默认保留设置和用户词库）");
             sb.AppendLine("  --dir <路径>           指定安装目录（图形界面会作为默认值，静默模式则直接用它）");
-            sb.AppendLine("  --all-users            为所有用户安装（需要管理员权限，装到 %ProgramFiles%\\代龙）");
+            sb.AppendLine("  --all-users            为所有用户安装（需要管理员权限，装到 %ProgramFiles%\\松林1234输入法）");
             sb.AppendLine("  --desktop              创建桌面快捷方式（默认不创建）");
             sb.AppendLine("  --no-startmenu         不创建开始菜单快捷方式（默认创建）");
             sb.AppendLine("  --no-autostart         不设置开机自动启动（默认设置）");
-            sb.AppendLine("  --no-launch            安装完成后不自动启动代龙（默认启动）");
+            sb.AppendLine("  --no-launch            安装完成后不自动启动松林1234输入法（默认启动）");
             sb.AppendLine("  --remove-user-data     卸载时同时删除设置和用户词库（%APPDATA%\\MyIME，不可恢复）");
             sb.AppendLine("  --help, -h, /?         显示本帮助");
             sb.AppendLine();
             sb.AppendLine("示例:");
             sb.AppendLine("  tty.exe");
             sb.AppendLine("  tty.exe --silent-install");
-            sb.AppendLine("  tty.exe --silent-install --dir \"D:\\Apps\\代龙\" --desktop");
+            sb.AppendLine("  tty.exe --silent-install --dir \"D:\\Apps\\松林1234输入法\" --desktop");
             sb.AppendLine("  tty.exe --silent-install --no-autostart --no-launch");
             sb.AppendLine("  tty.exe --uninstall");
             sb.AppendLine("  tty.exe --silent-uninstall");
             sb.AppendLine("  tty.exe --silent-uninstall --remove-user-data");
             sb.AppendLine();
             sb.AppendLine("默认安装目录:");
-            sb.AppendLine("  当前用户安装 : %LOCALAPPDATA%\\Programs\\代龙   （默认，免管理员）");
-            sb.AppendLine("  所有用户安装 : %ProgramFiles%\\代龙           （需要管理员权限）");
+            sb.AppendLine("  当前用户安装 : %LOCALAPPDATA%\\Programs\\松林1234输入法   （默认，免管理员）");
+            sb.AppendLine("  所有用户安装 : %ProgramFiles%\\松林1234输入法           （需要管理员权限）");
             sb.AppendLine();
             sb.AppendLine("返回码: 0 = 成功, 1 = 失败");
             sb.AppendLine("日志:   %APPDATA%\\MyIME\\logs\\myime-yyyyMMdd.log");
@@ -280,7 +280,7 @@ namespace MyIme.Setup
 
             try
             {
-                MessageBox.Show(usage, "代龙 安装程序 - 用法",
+                MessageBox.Show(usage, "松林1234输入法 安装程序 - 用法",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch { }
@@ -297,7 +297,7 @@ namespace MyIme.Setup
             {
                 try
                 {
-                    MessageBox.Show(text, "代龙 安装程序", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(text, "松林1234输入法 安装程序", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch { }
             }
@@ -312,7 +312,7 @@ namespace MyIme.Setup
             {
                 MessageBox.Show("安装程序发生错误：\r\n\r\n" + (ex == null ? "未知错误" : ex.Message) +
                                 "\r\n\r\n详细信息已经写入日志：\r\n" + Log.CurrentPath,
-                    "代龙 安装程序", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    "松林1234输入法 安装程序", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch { }
         }

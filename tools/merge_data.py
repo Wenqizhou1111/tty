@@ -88,7 +88,7 @@ def merge_chars():
 
     out = os.path.join(DATA, 'chars.txt')
     with io.open(out, 'w', encoding='utf-8', newline='\n') as fh:
-        fh.write(u'# 代龙 拼音单字表\n')
+        fh.write(u'# 松林1234输入法 拼音单字表\n')
         fh.write(u'# 格式: <音节> <汉字1> <汉字2> ...   汉字按常用度从高到低\n')
         fh.write(u'# 由 tools/merge_data.py 从 data/_gen/chars_*.txt 合并生成，可手工补充\n')
         for s in order:
@@ -141,7 +141,7 @@ def merge_words():
     out = os.path.join(DATA, 'words.txt')
     items = sorted(best.items(), key=lambda kv: -kv[1][1])
     with io.open(out, 'w', encoding='utf-8', newline='\n') as fh:
-        fh.write(u'# 代龙 联想词库\n')
+        fh.write(u'# 松林1234输入法 联想词库\n')
         fh.write(u'# 格式: <音节 空格分隔> <词> <权重>   权重越大越靠前\n')
         fh.write(u'# 由 tools/merge_data.py 从 data/_gen/words_*.txt 合并生成\n')
         for word, (code, w) in items:

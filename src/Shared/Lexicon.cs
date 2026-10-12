@@ -152,10 +152,14 @@ namespace MyIme.Shared
         /// <summary>音节 -> 候选字（只读，给引擎用）。</summary>
         public Dictionary<string, List<string>> CharIndex { get { return _chars; } }
 
-        /// <summary>词表：words.txt 是自动生成的，words_extra.txt 是人工精选的补充，两个都读。</summary>
+        /// <summary>
+        /// 词表：words.txt 是自动生成的，words_extra.txt 和 words_daily.txt 是人工精选的补充，都读。
+        /// words_daily.txt 专门收日常口语词（聊天、生活场景），用来补内置词库偏书面语的短板。
+        /// 三个文件分开是为了让用户能直接往里加词，不用重跑合并脚本。
+        /// </summary>
         void LoadWords()
         {
-            string[] names = new string[] { "words.txt", "words_extra.txt" };
+            string[] names = new string[] { "words.txt", "words_extra.txt", "words_daily.txt" };
             bool any = false;
             foreach (string name in names)
             {
@@ -172,7 +176,7 @@ namespace MyIme.Shared
                     WordCount++;
                 }
             }
-            if (!any) LoadWarnings.Add("找不到 words.txt / words_extra.txt（词表）");
+            if (!any) LoadWarnings.Add("找不到 words.txt / words_extra.txt / words_daily.txt（词表）");
         }
 
         /// <summary>解析 "ni hao 你好 9600"。从行尾往前切，避免拼音和词粘连。</summary>
@@ -358,7 +362,7 @@ namespace MyIme.Shared
             try
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine("# 代龙 用户词库（自动生成，可手工编辑）");
+                sb.AppendLine("# 松林1234输入法 用户词库（自动生成，可手工编辑）");
                 sb.AppendLine("# 格式: 音节码 <TAB> 词 <TAB> 使用次数");
                 foreach (KeyValuePair<string, Dictionary<string, int>> kv in _learned)
                 {
