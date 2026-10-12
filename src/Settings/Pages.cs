@@ -2009,7 +2009,7 @@ namespace MyIme.Settings
             Theme.Prep(g);
             Rectangle logo = new Rectangle(26, 24, 56, 56);
             Theme.FillRounded(g, logo, 14, Theme.Accent);
-            Theme.CenterText(g, "墨", Theme.UI(21f, FontStyle.Bold),
+            Theme.CenterText(g, "松", Theme.UI(21f, FontStyle.Bold),
                 new Rectangle(logo.X, logo.Y + 1, logo.Width, logo.Height), Color.White);
         }
 

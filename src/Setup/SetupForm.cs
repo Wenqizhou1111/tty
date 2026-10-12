@@ -707,7 +707,7 @@ namespace MyIme.Setup
 
                 Rectangle logo = new Rectangle(20, 16, 32, 32);
                 Ui.FillRound(g, logo, 8, UiTheme.Primary);
-                TextRenderer.DrawText(g, "墨", UiFonts.Logo, logo, Color.White,
+                TextRenderer.DrawText(g, "松", UiFonts.Logo, logo, Color.White,
                     TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.NoPrefix);
 
                 Rectangle tr = new Rectangle(64, 14, Width - 84, 26);

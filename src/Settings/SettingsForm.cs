@@ -198,11 +198,19 @@ namespace MyIme.Settings
             // 顶部图标 + 名称 + 版本
             Rectangle logo = new Rectangle(20, 26, 38, 38);
             Theme.FillRounded(g, logo, 10, Theme.Accent);
-            Theme.CenterText(g, "墨", Theme.UI(15f, FontStyle.Bold),
+            Theme.CenterText(g, "松", Theme.UI(15f, FontStyle.Bold),
                 new Rectangle(logo.X, logo.Y + 1, logo.Width, logo.Height), Color.White);
 
-            Theme.LeftText(g, AppPaths.AppNameCn, Theme.UI(11.5f, FontStyle.Bold),
-                new Rectangle(68, 27, _nav.Width - 76, 24), Theme.Text);
+            // 产品名长度不定（"松林1234输入法"比"代龙"长得多），
+            // 字号从 11.5 往下缩到放得下为止 —— 否则会被画成「松林123...」。
+            Rectangle nameRect = new Rectangle(68, 27, _nav.Width - 76, 24);
+            Font nameFont = Theme.UI(11.5f, FontStyle.Bold);
+            for (float sz = 11.5f; sz >= 7.5f; sz -= 0.5f)
+            {
+                nameFont = Theme.UI(sz, FontStyle.Bold);
+                if (TextRenderer.MeasureText(AppPaths.AppNameCn, nameFont).Width <= nameRect.Width) break;
+            }
+            Theme.LeftText(g, AppPaths.AppNameCn, nameFont, nameRect, Theme.Text);
             Theme.LeftText(g, "版本 " + AppPaths.Version, Theme.Small(),
                 new Rectangle(68, 50, _nav.Width - 76, 20), Theme.SubText);
 
