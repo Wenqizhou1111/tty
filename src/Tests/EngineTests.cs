@@ -112,6 +112,20 @@ static class EngineTests
             return 0;
         }
 
+        // 自动注音：EngineTests.exe --pinyin 螺蛳粉,银行,音乐
+        // 加词界面靠它把汉字转成拼音，注错了用户就得手工改。
+        if (args != null && args.Length >= 2 && args[0] == "--pinyin")
+        {
+            foreach (string wp in args[1].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                string w = wp.Trim();
+                if (w.Length == 0) continue;
+                string py = lex.AutoPinyin(w);
+                Console.WriteLine(w.PadRight(12) + "-> " + (py == null ? "(有字不认识)" : py));
+            }
+            return 0;
+        }
+
         Section("词典装载");
         Check(lex.CharCount >= 4000, "单字表 >= 4000 字（实际 " + lex.CharCount + "）");
         Check(lex.WordCount >= 1000, "词库 >= 1000 条（实际 " + lex.WordCount + "）");

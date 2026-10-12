@@ -120,6 +120,9 @@ namespace MyIme.Core
             if (cfg.GameLock.AutoLockFullscreen || cfg.GameLock.AutoLockGames) { if (!_watch.Enabled) _watch.Start(); }
             else _watch.Stop();
 
+            // 名单/开关可能被改了，清掉前台缓存和锁定状态机，下次重新判定
+            GameLock.ResetCache();
+
             if (!_locked && !_hook.IsInstalled) _hook.Install();
             _tray.Update(_english, _locked);
             Log.Info("设置已应用");

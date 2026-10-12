@@ -72,6 +72,9 @@ namespace MyIme.Core
 
         Rectangle _aiRect = Rectangle.Empty;
 
+        // 正在拼拼音时用两行显示：上行拼音、下行候选
+        bool _twoRow;
+
         // ---- 鼠标拖动 ----
         // 条子默认贴着光标。用户一旦拖动，就记住"相对光标的偏移量"，
         // 之后它仍然跟着光标跑，但保持在用户摆放的位置上。
@@ -223,24 +226,29 @@ namespace MyIme.Core
             using (Graphics g = CreateGraphics())
             {
                 int padX = (int)(14 * _dpiScale);
-                int padY = (int)(9 * _dpiScale);
+                int padY = (int)(7 * _dpiScale);
                 int gap = (int)(16 * _dpiScale);
+                int rowGap = (int)(5 * _dpiScale);
 
-                int width = padX * 2;
-                int needed = 0;
+                // 正在拼拼音 -> 两行（上行拼音、下行候选）；只是在联想 -> 一行候选
+                _twoRow = _showBuffer && _buffer.Length > 0;
 
+                // ---- 上行：中/英徽标 + 拼音 ----
                 Size badgeSize = TextRenderer.MeasureText(g, _badge, badgeFont);
                 int badgeW = badgeSize.Width + (int)(14 * _dpiScale);
                 int badgeH = badgeSize.Height + (int)(6 * _dpiScale);
-                width += badgeW + (int)(8 * _dpiScale);
-
-                if (_showBuffer && _buffer.Length > 0)
+                int topW = badgeW + (int)(8 * _dpiScale);
+                int topH = badgeH;
+                if (_twoRow)
                 {
                     Size bsz = TextRenderer.MeasureText(g, _buffer, font);
-                    width += bsz.Width + gap;
-                    needed = Math.Max(needed, bsz.Height + 12);
+                    topW += bsz.Width;
+                    topH = Math.Max(topH, bsz.Height);
                 }
 
+                // ---- 下行：候选 ----
+                int botW = 0;
+                int botH = 0;
                 for (int i = 0; i < _items.Count; i++)
                 {
                     BarEntry e = _items[i];
@@ -250,30 +258,31 @@ namespace MyIme.Core
                     int w = isz.Width + tsz.Width;
                     if (!string.IsNullOrEmpty(e.Note))
                         w += TextRenderer.MeasureText(g, e.Note, noteFont).Width + (int)(6 * _dpiScale);
-                    width += w + gap;
-                    needed = Math.Max(needed, tsz.Height + 12);
+                    botW += w + gap;
+                    botH = Math.Max(botH, tsz.Height);
                 }
+                if (botW > 0) botW -= gap;
 
-                if (_showPage && _pageCount > 1)
-                {
-                    Size psz = TextRenderer.MeasureText(g, (_page + 1) + "/" + _pageCount, noteFont);
-                    width += psz.Width + gap;
-                    needed = Math.Max(needed, psz.Height + 12);
-                }
-
+                // ---- 下行右端：AI 按钮 + 页码 ----
+                int rightW = 0;
                 if (ShowAiButton)
                 {
                     Size asz = TextRenderer.MeasureText(g, "AI", badgeFont);
-                    width += asz.Width + (int)(16 * _dpiScale) + gap;
-                    needed = Math.Max(needed, asz.Height + 12);
+                    rightW += asz.Width + (int)(16 * _dpiScale) + gap;
+                }
+                if (_showPage && _pageCount > 1)
+                {
+                    Size psz = TextRenderer.MeasureText(g, (_page + 1) + "/" + _pageCount, noteFont);
+                    rightW += psz.Width + gap;
                 }
 
-                width += padX;
-                int height = Math.Max(needed, badgeH + (int)(6 * _dpiScale)) + padY * 2;
+                int width = Math.Max(topW, botW + rightW) + padX * 2;
+                int height = _twoRow ? (padY * 2 + topH + rowGap + botH) : (padY * 2 + botH);
 
                 int maxW = (int)(_barMaxWidth * _dpiScale);
                 if (width > maxW) width = maxW;
-                if (height < (int)(40 * _dpiScale)) height = (int)(40 * _dpiScale);
+                int minH = (int)((_twoRow ? 60 : 40) * _dpiScale);
+                if (height < minH) height = minH;
 
                 Size = new Size(width, height);
 
@@ -402,33 +411,44 @@ namespace MyIme.Core
             Font noteFont = CreateFont(Math.Max(8, _fontSize - 5), false);
 
             int padX = (int)(14 * _dpiScale);
+            int padY = (int)(7 * _dpiScale);
             int gap = (int)(16 * _dpiScale);
-            int cy = Height / 2;
+            int rowGap = (int)(5 * _dpiScale);
 
-            int x = padX;
-
-            // ---- 中/英 徽标 ----
+            // ================= 上行：中/英徽标 + 拼音 =================
             Size badgeText = TextRenderer.MeasureText(g, _badge, badgeFont);
             int bw = badgeText.Width + (int)(14 * _dpiScale);
             int bh = badgeText.Height + (int)(5 * _dpiScale);
-            Rectangle badgeRect = new Rectangle(x, cy - bh / 2, bw, bh);
+            int topH = bh;
+            Size bs = new Size(0, 0);
+            if (_twoRow)
+            {
+                bs = TextRenderer.MeasureText(g, _buffer, font);
+                topH = Math.Max(topH, bs.Height);
+            }
+
+            Rectangle badgeRect = new Rectangle(padX, padY + (topH - bh) / 2, bw, bh);
             using (GraphicsPath path = RoundPath(badgeRect, (int)(5 * _dpiScale)))
             using (SolidBrush sb = new SolidBrush(_badgeColor))
                 g.FillPath(sb, path);
             TextRenderer.DrawText(g, _badge, badgeFont, badgeRect, Color.White,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.NoPadding);
-            x += bw + (int)(8 * _dpiScale);
 
-            // ---- 拼音/英文缓存 ----
-            if (_showBuffer && _buffer.Length > 0)
+            if (_twoRow)
             {
-                Size bs = TextRenderer.MeasureText(g, _buffer, font);
-                Rectangle br = new Rectangle(x, cy - bs.Height / 2, bs.Width + 4, bs.Height);
-                TextRenderer.DrawText(g, _buffer, font, br, _textColor, TextFormatFlags.NoPadding | TextFormatFlags.Left);
-                x += bs.Width + gap;
+                int bx = badgeRect.Right + (int)(8 * _dpiScale);
+                Rectangle br = new Rectangle(bx, padY + (topH - bs.Height) / 2, bs.Width + 4, bs.Height);
+                TextRenderer.DrawText(g, _buffer, font, br, _textColor,
+                    TextFormatFlags.NoPadding | TextFormatFlags.Left);
             }
 
-            // ---- 候选 ----
+            // ================= 下行：候选 =================
+            int botY = _twoRow ? (padY + topH + rowGap) : padY;
+            int botH = Height - botY - padY;
+            if (botH < 1) botH = Math.Max(1, Height - botY);
+            int cy = botY + botH / 2;
+
+            int x = padX;
             for (int i = 0; i < _items.Count; i++)
             {
                 BarEntry item = _items[i];
@@ -472,13 +492,13 @@ namespace MyIme.Core
                         TextFormatFlags.NoPadding | TextFormatFlags.Left);
                 }
 
-                _hitRects.Add(new Rectangle(x - 5, 0, cellW + 10, Height));
+                _hitRects.Add(new Rectangle(x - 5, botY, cellW + 10, botH));
                 _hitIndexes.Add(i);
 
                 x += cellW + gap;
             }
 
-            // ---- 右侧：AI 按钮 + 页码 ----
+            // ================= 下行右端：AI 按钮 + 页码 =================
             _aiRect = Rectangle.Empty;
             int rightEdge = Width - padX;
 
@@ -511,7 +531,6 @@ namespace MyIme.Core
         {
             using (GraphicsPath path = RoundPath(r, radius)) g.DrawPath(pen, path);
         }
-
         static GraphicsPath RoundPath(Rectangle r, int radius)
         {
             GraphicsPath path = new GraphicsPath();

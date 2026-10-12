@@ -155,11 +155,13 @@ namespace MyIme.Shared
         /// <summary>
         /// 词表：words.txt 是自动生成的，words_extra.txt 和 words_daily.txt 是人工精选的补充，都读。
         /// words_daily.txt 专门收日常口语词（聊天、生活场景），用来补内置词库偏书面语的短板。
-        /// 三个文件分开是为了让用户能直接往里加词，不用重跑合并脚本。
+        /// words_web.txt 是从网络词频表挖出来的 5000+ 常用词（tools/build_web_words.py 生成）。
+        /// 分成多个文件是为了让用户能直接往"自己那份"里加词，不用重跑任何脚本，
+        /// 程序升级覆盖内置文件时也不会把用户加的词冲掉。
         /// </summary>
         void LoadWords()
         {
-            string[] names = new string[] { "words.txt", "words_extra.txt", "words_daily.txt" };
+            string[] names = new string[] { "words.txt", "words_extra.txt", "words_daily.txt", "words_web.txt" };
             bool any = false;
             foreach (string name in names)
             {
@@ -176,7 +178,7 @@ namespace MyIme.Shared
                     WordCount++;
                 }
             }
-            if (!any) LoadWarnings.Add("找不到 words.txt / words_extra.txt / words_daily.txt（词表）");
+            if (!any) LoadWarnings.Add("找不到 words.txt / words_extra.txt / words_daily.txt / words_web.txt（词表）");
         }
 
         /// <summary>解析 "ni hao 你好 9600"。从行尾往前切，避免拼音和词粘连。</summary>
@@ -374,6 +376,94 @@ namespace MyIme.Shared
                 File.WriteAllText(AppPaths.UserWordsFile, sb.ToString(), new UTF8Encoding(false));
             }
             catch (Exception ex) { Log.Error("保存用户词库失败", ex); }
+        }
+
+        // ==================== 手工加词（设置界面用） ====================
+
+        /// <summary>
+        /// 手工往用户词库里加一个词。
+        /// 会先校验：音节数必须和字数一致，每个音节都得是词库里认识的字音。
+        /// count 给大一点，让它一加进去就排在前面，不用先"用几次"。
+        /// </summary>
+        public bool AddUserWord(string code, string word, int count)
+        {
+            if (string.IsNullOrEmpty(code) || string.IsNullOrEmpty(word)) return false;
+            string[] syls = code.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            if (syls.Length != word.Length) return false;
+            for (int i = 0; i < syls.Length; i++)
+                if (!_chars.ContainsKey(syls[i])) return false;
+            AddLearned(string.Join(" ", syls), word, count);
+            return true;
+        }
+
+        /// <summary>从用户词库删掉一个词（所有音节码下的都删）。</summary>
+        public int RemoveUserWord(string word)
+        {
+            if (string.IsNullOrEmpty(word)) return 0;
+            int n = 0;
+            List<string> empty = new List<string>();
+            foreach (KeyValuePair<string, Dictionary<string, int>> kv in _learned)
+            {
+                if (kv.Value.Remove(word)) n++;
+                if (kv.Value.Count == 0) empty.Add(kv.Key);
+            }
+            for (int i = 0; i < empty.Count; i++) _learned.Remove(empty[i]);
+            return n;
+        }
+
+        /// <summary>列出用户词库，返回 "音节码\t词\t次数" 这样的一行行文本（按词排好序）。</summary>
+        public List<string> ListUserWords()
+        {
+            List<string> rows = new List<string>();
+            foreach (KeyValuePair<string, Dictionary<string, int>> kv in _learned)
+                foreach (KeyValuePair<string, int> w in kv.Value)
+                    rows.Add(kv.Key + "\t" + w.Key + "\t" + w.Value);
+            rows.Sort(StringComparer.Ordinal);
+            return rows;
+        }
+
+        Dictionary<string, string> _primarySyl;
+
+        /// <summary>
+        /// 给一个汉字找它"最常用"的读音。用于手工加词时自动注音：
+        /// 同一个字可能出现在多个音节下（多音字），取排在**最靠前**的那个 ——
+        /// chars.txt 里每个音节下的字是按常用度排的，越靠前越常用。
+        /// </summary>
+        public string PrimarySyllableOf(string ch)
+        {
+            if (string.IsNullOrEmpty(ch)) return null;
+            if (_primarySyl == null)
+            {
+                _primarySyl = new Dictionary<string, string>();
+                Dictionary<string, int> best = new Dictionary<string, int>();
+                foreach (KeyValuePair<string, List<string>> kv in _chars)
+                {
+                    for (int i = 0; i < kv.Value.Count; i++)
+                    {
+                        string c = kv.Value[i];
+                        int old;
+                        if (best.TryGetValue(c, out old) && old <= i) continue;
+                        best[c] = i;
+                        _primarySyl[c] = kv.Key;
+                    }
+                }
+            }
+            string s;
+            return _primarySyl.TryGetValue(ch, out s) ? s : null;
+        }
+
+        /// <summary>把一个词整词自动注音；有任何一个字不认识就返回 null。</summary>
+        public string AutoPinyin(string word)
+        {
+            if (string.IsNullOrEmpty(word)) return null;
+            List<string> parts = new List<string>();
+            for (int i = 0; i < word.Length; i++)
+            {
+                string s = PrimarySyllableOf(word.Substring(i, 1));
+                if (s == null) return null;
+                parts.Add(s);
+            }
+            return string.Join(" ", parts.ToArray());
         }
 
         /// <summary>这串字母是不是某个词的简拼前缀（"n"、"nh" 都是 你好 的前缀）。</summary>

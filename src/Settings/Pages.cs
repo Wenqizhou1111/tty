@@ -1094,11 +1094,14 @@ namespace MyIme.Settings
             Title(c2, "自动锁定", y);
             y = 50;
             y = RowSwitch(c2, y, "检测到全屏游戏时自动锁定",
-                "前台窗口铺满整块屏幕时就自动锁定，退出全屏自动恢复。",
+                "前台窗口铺满整块屏幕时自动锁定。浏览器全屏、看全屏视频、放 PPT、"
+                + "全屏看 PDF 这些都不算游戏，不会锁 —— 那些时候你多半是要打字的。"
+                + "解锁会延迟 2.5 秒，免得切一下桌面就把钩子反复装卸。",
                 Cfg.GameLock.AutoLockFullscreen, null, out sw);
             _autoFullscreen = sw;
             y = RowSwitch(c2, y, "检测到常见游戏进程时自动锁定",
-                "命中下面名单里的进程就自动锁定。",
+                "命中下面名单里的进程就自动锁定。进程名支持「精确」和「前缀+数字」两种匹配："
+                + "写 dota 能命中 dota2，写 cs 不会误伤 csrss.exe。",
                 Cfg.GameLock.AutoLockGames, null, out sw);
             _autoGames = sw;
             c2.Height = y + 12;
@@ -1749,13 +1752,21 @@ namespace MyIme.Settings
         ThemedLabel _builtinInfo;
         NoticeBar _notice;
 
+        InputBox _newWord;
+        InputBox _newPinyin;
+        AccentButton _addWordBtn;
+        ThemedLabel _addWordHint;
+        Lexicon _uiLex;
+
         static readonly string[] Captions = new string[] { "单字", "词语", "音节", "英文词" };
 
         public override void Build()
         {
             // ---------------- 词库概况 ----------------
             BlockPanel row = new BlockPanel();
-            row.Height = 110;
+            // 132 而不是 110：下面那行"数据统计中…"提示放在 y=100，
+            // 面板只有 110 高的话文字的**下半截会被裁掉**。
+            row.Height = 132;
             for (int i = 0; i < 4; i++)
             {
                 StatCard sc = new StatCard();
@@ -1769,10 +1780,50 @@ namespace MyIme.Settings
             ThemedLabel hint = new ThemedLabel();
             hint.Role = ThemedLabel.RoleSub;
             hint.Text = "正在统计本地词库…";
-            hint.Location = new Point(2, 100);
+            hint.Location = new Point(2, 102);
             row.Controls.Add(hint);
             _statHint = hint;
             Add(row);
+
+            // ---------------- 加词 ----------------
+            CardPanel c0 = Card();
+            int ay = 16;
+            Title(c0, "加词", ay);
+            ay = 50;
+            ThemedLabel _so_add = SubWrap(c0,
+                "打不出来的词在这里加一次，下次就能直接打出来。拼音留空会自动注音；"
+                + "多音字得自己改 —— 比如「银行」要写 yin hang，自动注音会注成 yin xing。",
+                18, ay, c0.Width - 36);
+            ay += 46 + SubOverflow(_so_add);
+
+            Text(c0, "词语", 18, ay + 6);
+            _newWord = new InputBox();
+            _newWord.Size = new Size(260, 34);
+            _newWord.Hint = "比如 螺蛳粉";
+            PlaceRight(c0, _newWord, 18);
+            _newWord.Top = ay;
+            _newWord.TextChanged += delegate { AutoFillPinyin(); };
+            ay += 44;
+
+            Text(c0, "拼音", 18, ay + 6);
+            _newPinyin = new InputBox();
+            _newPinyin.Size = new Size(260, 34);
+            _newPinyin.Hint = "留空则自动注音";
+            PlaceRight(c0, _newPinyin, 18);
+            _newPinyin.Top = ay;
+            ay += 46;
+
+            _addWordBtn = new AccentButton();
+            _addWordBtn.Text = "添加到词库";
+            _addWordBtn.Size = new Size(120, 34);
+            PlaceRight(c0, _addWordBtn, 18);
+            _addWordBtn.Top = ay;
+            _addWordBtn.Click += delegate { AddWordNow(); };
+            ay += 34;
+
+            _addWordHint = SubText(c0, "", 18, ay + 4);
+            ay += 34;
+            c0.Height = ay + 12;
 
             // ---------------- 用户词库 ----------------
             CardPanel c1 = Card();
@@ -1848,6 +1899,82 @@ namespace MyIme.Settings
         {
             if (_userCount == null) return;
             _userCount.Text = AppUtil.CountUserWords() + " 条";
+        }
+
+        // ==================== 加词 ====================
+
+        /// <summary>界面用的词库实例（懒加载，只在第一次加词/注音时才读文件）。</summary>
+        Lexicon UiLex()
+        {
+            if (_uiLex == null)
+            {
+                Lexicon l = new Lexicon();
+                l.LoadAll();
+                _uiLex = l;
+            }
+            return _uiLex;
+        }
+
+        void SetAddHint(string msg, bool bad)
+        {
+            if (_addWordHint == null) return;
+            _addWordHint.Text = msg == null ? "" : msg;
+            _addWordHint.ForeColor = bad ? Theme.Danger : Theme.Accent;
+        }
+
+        /// <summary>词语一改就试着自动注音，省得用户自己去查拼音。</summary>
+        void AutoFillPinyin()
+        {
+            try
+            {
+                if (_newWord == null || _newPinyin == null) return;
+                string w = _newWord.Text == null ? "" : _newWord.Text.Trim();
+                if (w.Length == 0) { _newPinyin.Text = ""; SetAddHint("", false); return; }
+                string py = UiLex().AutoPinyin(w);
+                if (py == null)
+                {
+                    _newPinyin.Text = "";
+                    SetAddHint("「" + w + "」里有字不在单字表里，拼音得自己填。", true);
+                }
+                else
+                {
+                    _newPinyin.Text = py;
+                    SetAddHint("", false);
+                }
+            }
+            catch (Exception ex) { SetAddHint("自动注音失败：" + ex.Message, true); }
+        }
+
+        void AddWordNow()
+        {
+            try
+            {
+                string w = _newWord == null || _newWord.Text == null ? "" : _newWord.Text.Trim();
+                if (w.Length == 0) { SetAddHint("先在上面填一个词。", true); return; }
+
+                string py = _newPinyin == null || _newPinyin.Text == null ? "" : _newPinyin.Text.Trim().ToLowerInvariant();
+                if (py.Length == 0) py = UiLex().AutoPinyin(w);
+                if (py == null || py.Length == 0) { SetAddHint("这个词没法自动注音，请手工填拼音。", true); return; }
+
+                // count 给 8：手工加的词应该一进去就排在前面，不用先"用几次"
+                if (!UiLex().AddUserWord(py, w, 8))
+                {
+                    SetAddHint("拼音对不上：音节数要和字数一样，每个音节也得是合法拼音（" + py + "）。", true);
+                    return;
+                }
+                UiLex().SaveUserWords();
+
+                SetAddHint("已加入：" + w + "  （" + py + "）", false);
+                _newWord.Text = "";
+                _newPinyin.Text = "";
+                UpdateUserCount();
+                if (_notice != null) _notice.Show("已加入「" + w + "」，输入法正在运行的话立刻生效。", NoticeBar.KindSuccess, 4000);
+            }
+            catch (Exception ex)
+            {
+                Log.Error("加词失败", ex);
+                SetAddHint("加词失败：" + ex.Message, true);
+            }
         }
 
         void ClearUserWords()

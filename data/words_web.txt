@@ -1,0 +1,5206 @@
+# 松林1234输入法 网络词频词库（自动生成）
+# 来源: jieba 分词词频表 (github.com/fxsjy/jieba) 前 5200 个常用中文词
+# 注音: pypinyin 0.55（词组级多音字消歧，银行=yin hang、音乐=yin yue）
+# 权重: 按词频从 9000 递减到 4200，不盖过人工精选词条
+# 重新生成: python tools/build_web_words.py
+
+zhong guo 中国 9000
+jin xing 进行 8999
+quan guo 全国 8998
+zhe zhong 这种 8997
+qi lai 起来 8996
+di qu 地区 8995
+mei guo 美国 8994
+cheng wei 成为 8993
+yan jiu 研究 8992
+bei jing 北京 8991
+tian an men 天安门 8990
+sheng chan 生产 8989
+dai biao 代表 8988
+hu bei 湖北 8987
+yi zhong 一种 8987
+chu lai 出来 8986
+yi ji 以及 8985
+shi shou 石首 8984
+you yu 由于 8983
+xue yuan 学院 8982
+liang ge 两个 8981
+zuo wei 作为 8980
+bu fen 部分 8979
+huo dong 活动 8978
+fang mian 方面 8977
+zu zhi 组织 8976
+gong ye 工业 8975
+xing cheng 形成 8975
+qi ta 其他 8974
+chu xian 出现 8973
+xu duo 许多 8972
+ri ben 日本 8971
+zhi jian 之间 8970
+ju you 具有 8969
+cheng shi 城市 8968
+yi shang 以上 8967
+ren men 人们 8966
+wei yuan hui 委员会 8965
+ji zhe 记者 8964
+guo ji 国际 8963
+ji guan 机关 8963
+wu han 武汉 8962
+fa sheng 发生 8961
+zhong xin 中心 8960
+yao qiu 要求 8959
+ren kou 人口 8958
+jian li 建立 8957
+wu han shi 武汉市 8956
+mian ji 面积 8955
+ge zhong 各种 8954
+ti chu 提出 8953
+wo guo 我国 8952
+huang di 皇帝 8951
+xing zheng 行政 8951
+shuo dao 说道 8950
+shi ji 世纪 8949
+zhi yi 之一 8948
+zhu xi 主席 8947
+you guan 有关 8946
+zu cheng 组成 8945
+min zu 民族 8944
+zeng zhang 增长 8943
+ru he 如何 8942
+zheng ti 政体 8941
+ge ji 各级 8940
+ren yuan 人员 8939
+chan sheng 产生 8939
+shi qi 时期 8938
+yi ci 一次 8937
+biao shi 表示 8936
+ji gou 机构 8935
+hu bei sheng 湖北省 8934
+ge ming 革命 8933
+jin ru 进入 8932
+ju xing 举行 8931
+dan wei 单位 8930
+ru ci 如此 8929
+ti gao 提高 8928
+gong cheng 工程 8927
+bai ke 百科 8927
+xia lai 下来 8926
+jun shi 军事 8925
+shang hai 上海 8924
+zui da 最大 8923
+nong ye 农业 8922
+jing guo 经过 8921
+huo de 获得 8920
+yi sheng 一声 8919
+li lun 理论 8918
+zhong yang 中央 8917
+biao xian 表现 8916
+guo wu yuan 国务院 8915
+ke ji 科技 8915
+yi yuan 亿元 8914
+cun zai 存在 8913
+da dao 达到 8912
+shi xing 实行 8911
+si xiang 思想 8910
+shi xian 实现 8909
+ren min zheng fu 人民政府 8908
+xing shi 形式 8907
+yuan lai 原来 8906
+you ren 有人 8905
+tu ran 突然 8904
+zan men 咱们 8903
+xin zhong 心中 8903
+zhi jie 直接 8902
+zhan zheng 战争 8901
+bu zhi 不知 8900
+zi ben 资本 8899
+ji xu 继续 8898
+nian dai 年代 8897
+qi jian 期间 8896
+wei yu 位于 8895
+ren he 任何 8894
+quan li 权力 8893
+zhi xing 执行 8892
+jian zhu 建筑 8891
+neng gou 能够 8891
+zi zhi qu 自治区 8890
+cheng wei 称为 8889
+jie gou 结构 8888
+cheng li 成立 8887
+ying guo 英国 8886
+she hui zhu yi 社会主义 8885
+tong yi 统一 8884
+xian jin 先进 8883
+bao hu 保护 8882
+zhu ren 主任 8881
+zhi ding 制定 8880
+li yong 利用 8879
+kan dao 看到 8879
+bu gan 不敢 8878
+xiang yang 襄阳 8877
+ji ge 几个 8876
+gong li 公里 8875
+jing shen 精神 8874
+ren da 人大 8873
+quan sheng 全省 8872
+ge ren 个人 8871
+chao guo 超过 8870
+ji qi 及其 8869
+xin wen 新闻 8868
+she ji 设计 8867
+xiang guan 相关 8867
+guo nei 国内 8866
+fen bu 分布 8865
+zui gao 最高 8864
+bu dui 部队 8863
+ta men 它们 8862
+ji tuan 集团 8861
+cai yong 采用 8860
+zhong da 重大 8859
+fan wei 范围 8858
+yin qi 引起 8857
+shi ji 实际 8856
+qu de 取得 8855
+feng fu 丰富 8855
+zheng ge 整个 8854
+wei zhu 为主 8853
+shen me 甚么 8852
+di wei 地位 8851
+lao dong 劳动 8850
+kong zhi 控制 8849
+ji di 基地 8848
+nong cun 农村 8847
+chuan tong 传统 8846
+shou dao 受到 8845
+fa guo 法国 8844
+jun dui 军队 8843
+tu di 土地 8843
+gui mo 规模 8842
+jing zhou 荆州 8841
+zuo you 左右 8840
+xuan ze 选择 8839
+pi zhun 批准 8838
+shen shang 身上 8837
+zhuan jia 专家 8836
+fen xi 分析 8835
+tong zhi 统治 8834
+jia qiang 加强 8833
+bu dao 不到 8832
+tie lu 铁路 8831
+gao su 告诉 8831
+jiao tong 交通 8830
+chu li 处理 8829
+ben ji 本级 8828
+zuo zhan 作战 8827
+shi dai 时代 8826
+huang shang 皇上 8825
+shi shi 实施 8824
+sui zhe 随着 8823
+zhi zhong 之中 8822
+jin yi bu 进一步 8821
+ren wu 人物 8820
+xia qu 下去 8819
+lai shuo 来说 8819
+yan zhong 严重 8818
+ci tiao 词条 8817
+jie shou 接受 8816
+yi lai 以来 8815
+cheng bang 城邦 8814
+yi jian 意见 8813
+guo lai 过来 8812
+bao chi 保持 8811
+jin ri 今日 8810
+yi tiao 一条 8809
+fa yan ren 发言人 8808
+er shi 而是 8807
+di ren 敌人 8807
+shang pin 商品 8806
+shuo hua 说话 8805
+gai bian 改变 8804
+xian hou 先后 8803
+li liang 力量 8802
+shi ye 事业 8801
+kan jian 看见 8800
+zhan lve 战略 8799
+shi fou 是否 8798
+chu qu 出去 8797
+bao dao 报道 8796
+cheng du 程度 8795
+guo min dang 国民党 8795
+ping jun 平均 8794
+du li 独立 8793
+wei xiao bao 韦小宝 8792
+cai qu 采取 8791
+gen ben 根本 8790
+ling yu 领域 8789
+ju ti 具体 8788
+gan bu 干部 8787
+yin du 印度 8786
+ru jin 如今 8785
+da hui 大会 8784
+bu ke 不可 8783
+de guo 德国 8783
+gan dao 感到 8782
+wu fa 无法 8781
+xian fa 宪法 8780
+si hu 似乎 8779
+zhen zheng 真正 8778
+dou zheng 斗争 8777
+ren lei 人类 8776
+zao cheng 造成 8775
+yi wei 一位 8774
+fan dui 反对 8773
+xiang tong 相同 8772
+zhu ming 著名 8771
+zhong ren 众人 8771
+jian yi 建议 8770
+xun su 迅速 8769
+quan mian 全面 8768
+zheng shi 正是 8767
+ming xian 明显 8766
+ou zhou 欧洲 8765
+zuo pin 作品 8764
+shou xian 首先 8763
+ji zhong 集中 8762
+zheng shi 正式 8761
+zhao kai 召开 8760
+wei yuan 委员 8759
+xing dong 行动 8759
+bao zheng 保证 8758
+xian xiang 现象 8757
+xian dai 现代 8756
+shi ji shang 实际上 8755
+zi liao 资料 8754
+mao ze dong 毛泽东 8753
+tong zhi 同志 8752
+xing wei 行为 8751
+zhi xia shi 直辖市 8750
+jie shao 介绍 8749
+zhi jian 只见 8748
+sheng li 胜利 8747
+ren shu 人数 8747
+gu niang 姑娘 8746
+ji ji 积极 8745
+geng jia 更加 8744
+hui da 回答 8743
+wu qi 武器 8742
+ying yong 应用 8741
+shi zhang 市长 8740
+lai dao 来到 8739
+she li 设立 8738
+chan ye 产业 8737
+ren cai 人才 8736
+tai wan 台湾 8735
+rong yi 容易 8735
+chang qi 长期 8734
+yi ju 一句 8733
+da dao 大道 8732
+kuo da 扩大 8731
+guan yuan 官员 8730
+kao lv 考虑 8729
+lian he 联合 8728
+reng ran 仍然 8727
+yong you 拥有 8726
+min zhu 民主 8725
+yi tian 一天 8724
+shi fu 师父 8723
+jie he 结合 8723
+qing chu 清楚 8722
+shuo ming 说明 8721
+wen ding 稳定 8720
+gu dai 古代 8719
+san ge 三个 8718
+ci shi 此时 8717
+wu zhi 物质 8716
+li yi 利益 8715
+hen da 很大 8714
+bu shao 不少 8713
+zhong xue 中学 8712
+kai fang 开放 8711
+diao cha 调查 8711
+chong xin 重新 8710
+guang fan 广泛 8709
+fen wei 分为 8708
+zong he 综合 8707
+chu kou 出口 8706
+su du 速度 8705
+zong li 总理 8704
+lian shang 脸上 8703
+yong yu 用于 8702
+she bei 设备 8701
+gu dong 股东 8700
+zuo chu 作出 8699
+zhan kai 展开 8699
+cuo shi 措施 8698
+tong chang 通常 8697
+dian zi 电子 8696
+dao dan 导弹 8695
+ping min 平民 8694
+te se 特色 8693
+huo bi 货币 8692
+wan shan 完善 8691
+xiang gang 香港 8690
+ju da 巨大 8689
+fa biao 发表 8688
+xing zhi 性质 8687
+ming ling 命令 8687
+he ping 和平 8686
+yi nian 一年 8685
+mian qian 面前 8684
+wu gong 武功 8683
+wei zhi 位置 8682
+ti xi 体系 8681
+zhu jian 逐渐 8680
+zhi chu 指出 8679
+xun lian 训练 8678
+zhi hui 指挥 8677
+que shi 却是 8676
+zhi dao 指导 8675
+fa bu 发布 8675
+chu le 除了 8674
+cong er 从而 8673
+tong yang 同样 8672
+er ren 二人 8671
+shu ji 书记 8670
+yi zhen 一阵 8669
+suo wei 所谓 8668
+zhe wei 这位 8667
+fan ying 反应 8666
+yu yan 语言 8665
+hu ran 忽然 8664
+dang nian 当年 8663
+yi xia 以下 8663
+xuan bu 宣布 8662
+kun nan 困难 8661
+shi jian 事件 8660
+jian dao 见到 8659
+zhuang bei 装备 8658
+mou xie 某些 8657
+qi ta 其它 8656
+wen dao 问道 8655
+wan yuan 万元 8654
+jian cha yuan 检察院 8653
+ping yuan 平原 8652
+jing ying 经营 8651
+duo nian 多年 8651
+wang wang 往往 8650
+su lian 苏联 8649
+guang chang 广场 8648
+jie shi 解释 8647
+yin su 因素 8646
+dui wu 队伍 8645
+zen yang 怎样 8644
+shuang fang 双方 8643
+kao sheng 考生 8642
+dang di 当地 8641
+duo zhong 多种 8640
+ge di 各地 8639
+sheng wu 生物 8639
+ping fang qian mi 平方千米 8638
+nan jing 南京 8637
+hai jun 海军 8636
+wai jiao bu 外交部 8635
+zhen shi 真是 8634
+xin xiang 心想 8633
+wai guo 外国 8632
+cai chan 财产 8631
+quan shi 全市 8630
+ben lai 本来 8629
+liang zhong 两种 8628
+you xiao 有效 8627
+yong hu 用户 8627
+jin gong 进攻 8626
+chang wei hui 常委会 8625
+ji xie 机械 8624
+can yu 参与 8623
+chong fen 充分 8622
+cong shi 从事 8621
+jin guan 尽管 8620
+te shu 特殊 8619
+you cheng 又称 8618
+yi kuai 一块 8617
+shou duan 手段 8616
+bian shi 便是 8615
+sheng zhang 生长 8615
+nei bu 内部 8614
+li ji 立即 8613
+jian dan 简单 8612
+yi pian 一片 8611
+kai zhan 开展 8610
+wen xue 文学 8609
+jin lai 进来 8608
+jue yi 决议 8607
+xian shi 显示 8606
+shu yu 属于 8605
+yi zhi 一只 8604
+lai zi 来自 8603
+hai yao 还要 8603
+que ding 确定 8602
+tou ru 投入 8601
+yi mian 一面 8600
+pu tong 普通 8599
+kan zhe 看着 8598
+gong yuan 公元 8597
+wen zhang 文章 8596
+shou zhong 手中 8595
+xin li 心理 8594
+feng jian 封建 8593
+chuang zao 创造 8592
+zong tong 总统 8591
+cu jin 促进 8590
+da xing 大型 8590
+dai lai 带来 8589
+jiao da 较大 8588
+kan lai 看来 8587
+ruo gan 若干 8586
+fan ying 反映 8585
+shi pin 食品 8584
+zuo zai 坐在 8583
+bian cheng 变成 8582
+zi jin 资金 8581
+fang zai 放在 8580
+hao mi 毫米 8579
+zhong jian 中间 8578
+fu ren 夫人 8578
+xiang dui 相对 8577
+da lu 大陆 8576
+zhi quan 职权 8575
+xi fang 西方 8574
+bu zai 不再 8573
+di yi ci 第一次 8572
+dao zhi 导致 8571
+dui fang 对方 8570
+ying dang 应当 8569
+ren min fa yuan 人民法院 8568
+tao lun 讨论 8567
+ji shi 即使 8566
+jin rong 金融 8566
+ai guo 爱国 8565
+zhi zao 制造 8564
+gou cheng 构成 8563
+dan ren 担任 8562
+qu yu 区域 8561
+yi zuo 一座 8560
+yuan zhang 院长 8559
+ji suan ji 计算机 8558
+bao zhang 保障 8557
+chuang zuo 创作 8556
+qiang diao 强调 8555
+lian xu 连续 8554
+yun shu 运输 8554
+kan kan 看看 8553
+zhu zhang 主张 8552
+shang ye 商业 8551
+you xian gong si 有限公司 8550
+zhi neng 只能 8549
+tian xia 天下 8548
+mao yi 贸易 8547
+bu de 不得 8546
+jing nei 境内 8545
+ti zhi 体制 8544
+yin er 因而 8543
+cai zheng 财政 8542
+yi jian 一件 8542
+jian cheng 建成 8541
+hui qu 回去 8540
+nan dao 难道 8539
+jie zhe 接着 8538
+xian dai hua 现代化 8537
+shi shou shi 石首市 8536
+yi wei 以为 8535
+chu yu 处于 8534
+da chen 大臣 8533
+gao du 高度 8532
+fu za 复杂 8531
+shen zi 身子 8530
+hui dao 回到 8530
+mei ti 媒体 8529
+e luo si 俄罗斯 8528
+di mian 地面 8527
+fen zi 分子 8526
+dong bei 东北 8525
+di zi 弟子 8524
+deng deng 等等 8523
+zhong shi 重视 8522
+liang hao 良好 8521
+ge ge 各个 8520
+zui zhong 最终 8519
+zhan dou 战斗 8518
+hang kong 航空 8518
+zhi xia 之下 8517
+yi ji 一级 8516
+li mian 里面 8515
+jing zheng 竞争 8514
+zong jiao 宗教 8513
+bi li 比例 8512
+shi ying 适应 8511
+chu ban 出版 8510
+gu shi 故事 8509
+mian dui 面对 8508
+jiang jun 将军 8507
+liang shi 粮食 8506
+zheng quan 政权 8506
+ge guo 各国 8505
+lei xing 类型 8504
+fa hui 发挥 8503
+ting shuo 听说 8502
+yi zhi 遗址 8501
+nan bei 南北 8500
+ya zhou 亚洲 8499
+zheng chang 正常 8498
+nv zi 女子 8497
+jiu ye 就业 8496
+da xiao 大小 8495
+mi shu zhang 秘书长 8494
+ming que 明确 8494
+you shi 优势 8493
+hao xiang 好像 8492
+yi chang 一场 8491
+ren shi 人士 8490
+te zheng 特征 8489
+gong xian 贡献 8488
+shi yan 实验 8487
+gao ji 高级 8486
+xiang dao 想到 8485
+yi yan 一眼 8484
+zhou wei 周围 8483
+nan yi 难以 8482
+yang zi 样子 8482
+ben bao 本报 8481
+di guo zhu yi 帝国主义 8480
+zi zhi zhou 自治州 8479
+yi zhang 一张 8478
+xiang hu 相互 8477
+bu zhang 部长 8476
+shen bian 身边 8475
+guang zhou 广州 8474
+san nian 三年 8473
+zhi wai 之外 8472
+meng gu 蒙古 8471
+fa chu 发出 8470
+bu zu 不足 8470
+nan bu 南部 8469
+jia shang 加上 8468
+xi bei 西北 8467
+yi zhong 一中 8466
+shi dang 适当 8465
+liu xia 留下 8464
+li zi cheng 李自成 8463
+yan zhi 研制 8462
+sheng ji 省级 8461
+fa da 发达 8460
+dong bu 东部 8459
+quan guo ren da 全国人大 8458
+pin zhong 品种 8458
+yuan yi 愿意 8457
+dao lu 道路 8456
+lei si 类似 8455
+kong jun 空军 8454
+xing shi 行使 8453
+xi bao 细胞 8452
+kong jian 空间 8451
+xing shi 形势 8450
+xi bu 西部 8449
+fu nv 妇女 8448
+gu fen 股份 8447
+wei hu 维护 8446
+gong bu 公布 8446
+ming cheng 名称 8445
+zhi hao 只好 8444
+ren qi 任期 8443
+mao dun 矛盾 8442
+ben shen 本身 8441
+zhuang kuang 状况 8440
+yi jia 一家 8439
+shi jian 实践 8438
+xu qiu 需求 8437
+fen pei 分配 8436
+duo ci 多次 8435
+yi zhi 一致 8434
+xi nan 西南 8434
+yi shi 一时 8433
+ji ran 既然 8432
+gui zu 贵族 8431
+quan ti 全体 8430
+mei yuan 美元 8429
+tong ji 统计 8428
+shi wu 事务 8427
+ti xian 体现 8426
+bu liao 不了 8425
+chan liang 产量 8424
+shi zhong 始终 8423
+zui jin 最近 8422
+chang an 长安 8422
+ying xiong 英雄 8421
+tong yi 同意 8420
+yi bu 一步 8419
+hai ba 海拔 8418
+zhang wo 掌握 8417
+pu bian 普遍 8416
+yi chang 宜昌 8415
+zhao sheng 招生 8414
+gong ji 攻击 8413
+tian ran 天然 8412
+yi dan 一旦 8411
+xiang ying 相应 8410
+guan dian 观点 8410
+shi li 实力 8409
+zhong bu 中部 8408
+ting dao 听到 8407
+zai ci 再次 8406
+geng shi 更是 8405
+tu chu 突出 8404
+quan qiu 全球 8403
+ren da dai biao 人大代表 8402
+gong yuan qian 公元前 8401
+jing li 经历 8400
+jin bu 进步 8399
+shang shu 上述 8398
+kang ri 抗日 8398
+jue dui 绝对 8397
+you xiu 优秀 8396
+he liu 河流 8395
+fa dong 发动 8394
+shen yi 审议 8393
+ji suan 计算 8392
+nv xing 女性 8391
+zhi gong 职工 8390
+zi ben zhu yi 资本主义 8389
+chao ting 朝廷 8388
+bu ken 不肯 8387
+biao ming 表明 8386
+wei yuan zhang 委员长 8386
+zhu chi 主持 8385
+chang chang 常常 8384
+yu dao 遇到 8383
+zai yu 在于 8382
+xiao fei 消费 8381
+xiang qi 想起 8380
+tiao yue 条约 8379
+xie yi 协议 8378
+gong kai 公开 8377
+xing zheng qu hua 行政区划 8376
+xian zhi 限制 8375
+xian shi 现实 8374
+wu chang 武昌 8374
+qiang lie 强烈 8373
+zao yi 早已 8372
+yi fu 衣服 8371
+he nan 河南 8370
+guang da 广大 8369
+pang zi 胖子 8368
+hen kuai 很快 8367
+bu hao 不好 8366
+jiao liu 交流 8365
+wan dun 万吨 8364
+qian mian 前面 8363
+xian ran 显然 8362
+you suo 有所 8362
+chuang wang 闯王 8361
+yi bu fen 一部分 8360
+qian mi 千米 8359
+po huai 破坏 8358
+shuang shou 双手 8357
+jiang nan 江南 8356
+shang mian 上面 8355
+fen fen 纷纷 8354
+bei bu 北部 8353
+zhong lei 种类 8352
+shen ru 深入 8351
+tui jin 推进 8350
+shi you 石油 8350
+jin qu 进去 8349
+di shang 地上 8348
+xiao guo 效果 8347
+tuan ti 团体 8346
+tang ruo 倘若 8345
+nian qing 年轻 8344
+he xin 核心 8343
+fang zhi 纺织 8342
+xing xiang 形象 8341
+yi shi 意识 8340
+chang wu 常务 8339
+xian de 显得 8338
+gui lv 规律 8338
+shan dong 山东 8337
+jia gong 加工 8336
+zhi shi 只是 8335
+hong shan qu 洪山区 8334
+liang ce 两侧 8333
+lie wei 列为 8332
+jia ru 加入 8331
+jie fang 解放 8330
+xin hua she 新华社 8329
+zhu bu 逐步 8328
+xia jiang 下降 8327
+biao mian 表面 8326
+gong ju 工具 8326
+di san 第三 8325
+zhi zuo 制作 8324
+she shi 设施 8323
+tian jin 天津 8322
+cheng guo 成果 8321
+ge xiang 各项 8320
+gua tou 寡头 8319
+ling hu chong 令狐冲 8318
+shi li 势力 8317
+yi xi lie 一系列 8316
+ji zai 记载 8315
+wai jiao 外交 8314
+sou hu 搜狐 8314
+zhong duo 众多 8313
+yi ba 一把 8312
+nian di 年底 8311
+wen wu 文物 8310
+xuan chuan 宣传 8309
+jian cha zhang 检察长 8308
+yi ming 一名 8307
+gao zhong 高中 8306
+yan ge 严格 8305
+ling ren 令人 8304
+ling dao ren 领导人 8303
+tui dong 推动 8302
+di xia 地下 8302
+sui hou 随后 8301
+da sheng 大声 8300
+sheng yu 生于 8299
+cheng yuan 成员 8298
+ming dai 明代 8297
+chuang xin 创新 8296
+bu jiu 不久 8295
+zao dao 遭到 8294
+chi xu 持续 8293
+you ke 游客 8292
+shi yan 试验 8291
+jie ji 阶级 8290
+shi de 似的 8290
+fa she 发射 8289
+wen zi 文字 8288
+tian men 天门 8287
+lai kan 来看 8286
+cheng lou 城楼 8285
+kong zhong 空中 8284
+shi shi 事实 8283
+di qiu 地球 8282
+yi ban 一半 8281
+shou li 手里 8280
+wu zhuang 武装 8279
+ren mian 任免 8278
+zhang ju zheng 张居正 8278
+bu xiang 不想 8277
+yi da li 意大利 8276
+yong yuan 永远 8275
+nian jian 年间 8274
+yi duan 一段 8273
+yan qian 眼前 8272
+yuan nian 元年 8271
+ting jian 听见 8270
+si ge 四个 8269
+bian de 变得 8268
+che di 彻底 8267
+bi jing 毕竟 8266
+kuai su 快速 8266
+chao xian 朝鲜 8265
+lin shi 临时 8264
+yi pi 一批 8263
+qi yu 其余 8262
+hua fen 划分 8261
+wei yi 唯一 8260
+tan ke 坦克 8259
+shang shu 尚书 8258
+gai nian 概念 8257
+lai yuan 来源 8256
+chong man 充满 8255
+jiang di 降低 8254
+si da 四大 8254
+man man 慢慢 8253
+fu he 符合 8252
+fa bu hui 发布会 8251
+zhe xue 哲学 8250
+qing qing 轻轻 8249
+bei ping 北平 8248
+zhe jian 这件 8247
+xiao ming 校名 8246
+shan di 山地 8245
+mei jun 美军 8244
+na zhong 那种 8243
+shuai ling 率领 8242
+ban gong shi 办公室 8242
+lu qu 录取 8241
+kuang chan 矿产 8240
+dang xia 当下 8239
+bie de 别的 8238
+zi xun 咨询 8237
+xiao long 小龙 8236
+ji tian 几天 8235
+shen shou 伸手 8234
+wu nian 五年 8233
+zi shen 自身 8232
+pan duan 判断 8231
+shi qu 失去 8230
+wei ji 危机 8230
+hou mian 后面 8229
+da shi 大事 8228
+zeng qiang 增强 8227
+jin shu 金属 8226
+jia yi 加以 8225
+bi ran 必然 8224
+cai fu 财富 8223
+shou du 首都 8222
+ci hou 此后 8221
+gou mai 购买 8220
+dong nan 东南 8219
+gong gong 公共 8218
+su zhi 素质 8218
+da ji 打击 8217
+gai shan 改善 8216
+guang dong 广东 8215
+ren sheng 人生 8214
+yi dai 一带 8213
+gai wei 改为 8212
+fang zhen 方针 8211
+cheng ren 承认 8210
+xiang zheng 象征 8209
+bao fa 爆发 8208
+fei xing 飞行 8207
+ju bei 具备 8206
+xue zhe 学者 8206
+fou ze 否则 8205
+dui wai 对外 8204
+xing ming 性命 8203
+gu dao 故道 8202
+sui ji 随即 8201
+bu jin 不禁 8200
+da ming 大明 8199
+bai xing 百姓 8198
+que fa 缺乏 8197
+yuan xiao 院校 8196
+gong fu 功夫 8195
+cheng fen 成分 8194
+wei da 伟大 8193
+tou piao 投票 8193
+bi hui 闭会 8192
+wan zheng 完整 8191
+ji zhi 机制 8190
+qi yi 起义 8189
+ji nian 几年 8188
+guo min jing ji 国民经济 8187
+cun wei hui 村委会 8186
+kao cha 考察 8185
+huang cheng 皇城 8184
+da ying 答应 8183
+yan chu 演出 8182
+xiang bi 相比 8181
+zui zao 最早 8181
+guan nian 观念 8180
+yun yong 运用 8179
+xing zhe 行者 8178
+zhi wu 职务 8177
+ben ren 本人 8176
+mian lin 面临 8175
+di yi ge 第一个 8174
+xi shou 吸收 8173
+liu tong 流通 8172
+xian chang 现场 8171
+zhua zhu 抓住 8170
+dui shou 对手 8169
+cheng dan 承担 8169
+jiao yi 交易 8168
+yuan liao 原料 8167
+zi zhi xian 自治县 8166
+deng xiao ping 邓小平 8165
+shi cong 是从 8164
+zhen dui 针对 8163
+wai mian 外面 8162
+zheng qu 争取 8161
+fa yu 发育 8160
+tao hua 桃花 8159
+shi wu 事物 8158
+nu li 奴隶 8157
+shao nian 少年 8157
+zhao ji 召集 8156
+jiao zuo 叫做 8155
+tui chu 推出 8154
+jiao xue 教学 8153
+zuo zhe 作者 8152
+hua gong 化工 8151
+lun tan 论坛 8150
+chu xi 出席 8149
+dong fang 东方 8148
+zai ye 再也 8147
+li xiang 理想 8146
+you xing 游行 8145
+jiu jing 究竟 8145
+xia mian 下面 8144
+wei xian 危险 8143
+nian jun 年均 8142
+shang lai 上来 8141
+ping heng 平衡 8140
+qing dai 清代 8139
+da gui mo 大规模 8138
+xun zhao 寻找 8137
+fei zhou 非洲 8136
+he shang 和尚 8135
+tuan jie 团结 8134
+zhuan yi 转移 8133
+guo min 国民 8133
+sheng zhang 省长 8132
+huan zhe 患者 8131
+ji qi 机器 8130
+zhong gong zhong yang 中共中央 8129
+bao yu 宝玉 8128
+wei xie 威胁 8127
+er yan 而言 8126
+liang ci 两次 8125
+qi guai 奇怪 8124
+xiang fan 相反 8123
+li mi 厘米 8122
+gu ji 估计 8121
+qing xu 情绪 8121
+mi qie 密切 8120
+yi dao 一道 8119
+da xue sheng 大学生 8118
+chuan bo 传播 8117
+he li 合理 8116
+min jian 民间 8115
+zhu ren 主人 8114
+dian tou 点头 8113
+da yue 大约 8112
+chang jiang da qiao 长江大桥 8111
+yi ju 依据 8110
+guo wai 国外 8109
+jiang xia qu 江夏区 8109
+bei fang 北方 8108
+gai zao 改造 8107
+ming chao 明朝 8106
+gu ding 固定 8105
+tai jian 太监 8104
+ting zhi 停止 8103
+yi zhi 一支 8102
+qiang da 强大 8101
+mi mi 秘密 8100
+qian ti 前提 8099
+bi mian 避免 8098
+jie dao 街道 8097
+gao xiao 高校 8097
+yi lang 伊朗 8096
+chan zhi 产值 8095
+bing fei 并非 8094
+mo shi 模式 8093
+xing neng 性能 8092
+yan xi 演习 8091
+shen pan 审判 8090
+wei chi 维持 8089
+fei yong 费用 8088
+zhi yuan 志愿 8087
+tai miao 太庙 8086
+shang wei 尚未 8085
+yi you 已有 8085
+ji da 极大 8084
+shi he 适合 8083
+wang chao 王朝 8082
+yi ye 一页 8081
+xiao zhang 校长 8080
+yi kou 一口 8079
+zhe er 这儿 8078
+shou ci 首次 8077
+gong ting 宫廷 8076
+zheng ti 整体 8075
+zi zhi 自治 8074
+si chuan 四川 8073
+zi chan jie ji 资产阶级 8073
+di fang xing 地方性 8072
+men wai 门外 8071
+zuo shou 左手 8070
+feng ge 风格 8069
+ba li 巴黎 8068
+jiang ling 江陵 8067
+zao qi 早期 8066
+shang sheng 上升 8065
+cheng shu 成熟 8064
+ji ju 几句 8063
+nan fang 南方 8062
+she ji 涉及 8061
+liang nian 两年 8061
+guo fang 国防 8060
+pang bian 旁边 8059
+yao wu 药物 8058
+jin nian lai 近年来 8057
+fu ze ren 负责人 8056
+quan shen 全身 8055
+hou xuan ren 候选人 8054
+bu zai 不在 8053
+ju mian 局面 8052
+yin zi 银子 8051
+tu po 突破 8050
+you ci 由此 8049
+jian zao 建造 8049
+ge lei 各类 8048
+shi bing 士兵 8047
+yi fen 一份 8046
+kang xi 康熙 8045
+liang wei 两位 8044
+zhuan hua 转化 8043
+yi hui 议会 8042
+kai fa qu 开发区 8041
+hui tou 回头 8040
+di guo 帝国 8039
+shi nian 十年 8038
+xian ji 县级 8037
+du te 独特 8037
+hu nan 湖南 8036
+gong jin 公斤 8035
+yi ran 依然 8034
+biao zhi 标志 8033
+mian hua 棉花 8032
+zhan shi 战士 8031
+shi yan 十堰 8030
+da duo shu 大多数 8029
+gui fan 规范 8028
+cheng jiu 成就 8027
+xin xing 新型 8026
+jiao huan 交换 8025
+ju jue 拒绝 8025
+zheng quan 证券 8024
+zhan chang 战场 8023
+tong zhi zhe 统治者 8022
+he dao 喝道 8021
+chong zhen 崇祯 8020
+gu quan 股权 8019
+jian jian 渐渐 8018
+jun jing 军警 8017
+ming qing 明清 8016
+yi fan 一番 8015
+fei chu 废除 8014
+zou xiang 走向 8013
+fan er 反而 8013
+ping shi 平时 8012
+duo ge 多个 8011
+ju ban 举办 8010
+suan shi 算是 8009
+jian cheng 简称 8008
+zhuang zhi 装置 8007
+gong zhu 公主 8006
+ci ci 此次 8005
+yan hai 沿海 8004
+chong qing 重庆 8003
+jia su 加速 8002
+zhu dong 主动 8001
+sun shi 损失 8001
+zhuan bian 转变 8000
+gong chan dang 共产党 7999
+zhi shang 之上 7998
+ping fang gong li 平方公里 7997
+fa xing 发行 7996
+jie jin 接近 7995
+lao dong li 劳动力 7994
+bei an 备案 7993
+chong jian 重建 7992
+yi sheng 一生 7991
+yi liao 医疗 7990
+shi de 使得 7989
+guo you 国有 7989
+hu po 湖泊 7988
+jia kuai 加快 7987
+shen cha 审查 7986
+sheng cun 生存 7985
+ji lu 记录 7984
+gong chang 工厂 7983
+lian se 脸色 7982
+lei ji 累计 7981
+da da 大大 7980
+zu guo 祖国 7979
+you shou 右手 7978
+shi ke 时刻 7977
+zhu zuo 著作 7977
+ke ren 客人 7976
+yi wai 以外 7975
+yi xue 医学 7974
+ji yu 给予 7973
+yuan shi 原始 7972
+xue ke 学科 7971
+dian xing 典型 7970
+yi shi 仪式 7969
+shang qu 上去 7968
+yi yao 医药 7967
+dao chu 到处 7966
+zuo fa 做法 7965
+li chang 立场 7965
+jin kou 进口 7964
+bu chong 补充 7963
+yun xing 运行 7962
+bei jing shi 北京市 7961
+di zhi 地址 7960
+zi ge 资格 7959
+you liang 优良 7958
+ri jun 日军 7957
+han guo 韩国 7956
+guo jia ji 国家级 7955
+chuan shuo 传说 7954
+shao shu min zu 少数民族 7953
+ju zhu 居住 7953
+cai fang 采访 7952
+mu guang 目光 7951
+shi wu 食物 7950
+dong li 动力 7949
+zhan ling 占领 7948
+ling yi fang mian 另一方面 7947
+fang zhi 防止 7946
+tai tai 太太 7945
+tu rang 土壤 7944
+yi chang 异常 7943
+yi zhao 依照 7942
+zuo jia 作家 7941
+hang qing 行情 7941
+min zu xiang 民族乡 7940
+kong pa 恐怕 7939
+mou zhong 某种 7938
+ren ma 人马 7937
+jie chu 接触 7936
+you zhe 有着 7935
+dong zuo 动作 7934
+zhong zhong 种种 7933
+bei jing 背景 7932
+yuan zhong 原种 7931
+jiang su 江苏 7930
+si wang 死亡 7929
+li you 理由 7929
+bu shu 部署 7928
+ji ti 集体 7927
+tong yi 同一 7926
+zhi jin 至今 7925
+bi ye sheng 毕业生 7924
+ren ti 人体 7923
+wu dang shan 武当山 7922
+guo wang 国王 7921
+nian du 年度 7920
+guan cha 观察 7919
+xi yin 吸引 7918
+suo shuo 所说 7917
+zuo chu 做出 7917
+an jian 案件 7916
+quan nian 全年 7915
+chu bu 初步 7914
+jie fang jun 解放军 7913
+zui jia 最佳 7912
+xiao xue 小学 7911
+xiang si 相似 7910
+zong ren kou 总人口 7909
+da qiao 大桥 7908
+ji wei 极为 7907
+jin jin 仅仅 7906
+ke xi 可惜 7905
+zong e 总额 7905
+nan zi 男子 7904
+qian ding 签订 7903
+ci ke 此刻 7902
+bu you de 不由得 7901
+yuan li 原理 7900
+dian liang 点亮 7899
+yin yong 引用 7898
+gao yuan 高原 7897
+da men 大门 7896
+deng yu 等于 7895
+yao qing 邀请 7894
+zhuan shen 转身 7893
+shou yu 授予 7893
+lu jun 陆军 7892
+liang zhe 两者 7891
+shui chan 水产 7890
+yi da 一大 7889
+yun xu 允许 7888
+jiao du 角度 7887
+da duo 大多 7886
+zao jiu 早就 7885
+shang ji 上级 7884
+zi chan 资产 7883
+gan kuai 赶快 7882
+sheng xia 剩下 7881
+yan jian 眼见 7881
+gai jin 改进 7880
+shuo fa 说法 7879
+chun qiu 春秋 7878
+dian li 电力 7877
+yi mei yuan 亿美元 7876
+zhi de 值得 7875
+hai shang 海上 7874
+zhen shi 真实 7873
+zhi neng 职能 7872
+gai cheng 改称 7871
+fen fu 吩咐 7870
+xue shu 学术 7869
+jiao gei 交给 7869
+ke yan 科研 7868
+di sheng 低声 7867
+fen lei 分类 7866
+shang shi 上市 7865
+xi lie 系列 7864
+ri yi 日益 7863
+he bei 河北 7862
+wei wei 微微 7861
+she you 设有 7860
+fang qi 放弃 7859
+zhi suo yi 之所以 7858
+yi hui 一会 7857
+ci shi 此事 7857
+wan mu 万亩 7856
+xuan min 选民 7855
+jian jue 坚决 7854
+yan jiu suo 研究所 7853
+yuan yuan 远远 7852
+tong nian 同年 7851
+deng shi 登时 7850
+yi kao 依靠 7849
+huang hou 皇后 7848
+xie hui 协会 7847
+zhe chang 这场 7846
+shi yong 适用 7845
+xiao fei zhe 消费者 7845
+yun nan 云南 7844
+dui yuan 队员 7843
+zhong gong 中共 7842
+tai zi 太子 7841
+dang ji 当即 7840
+ge bie 个别 7839
+fang fu 仿佛 7838
+xian tao 仙桃 7837
+ming yun 命运 7836
+xiao zu 小组 7835
+yong le 永乐 7834
+bu de bu 不得不 7833
+san xia 三峡 7833
+tou xiang 投降 7832
+di si 第四 7831
+shan xi 陕西 7830
+shi yan shi 十堰市 7829
+biao yan 表演 7828
+huang jin 黄金 7827
+er yi 而已 7826
+zhong zhi 种植 7825
+jian guo 建国 7824
+yi gu 一股 7823
+dong shou 动手 7822
+jing zhou shi 荆州市 7821
+hua bei 华北 7821
+you li yu 有利于 7820
+zou chu 走出 7819
+luo ma 罗马 7818
+xiao shi 消失 7817
+zhou en lai 周恩来 7816
+kang zhan 抗战 7815
+zai shuo 再说 7814
+zhui qiu 追求 7813
+da ge 大哥 7812
+lu chu 露出 7811
+wei xing 卫星 7810
+dong tai 动态 7809
+shu xi 熟悉 7809
+ren jun 人均 7808
+jin hou 今后 7807
+liu xing 流行 7806
+qu chu 取出 7805
+he fa 合法 7804
+qu shi 趋势 7803
+di shi 地势 7802
+ben ci 本次 7801
+yong lai 用来 7800
+mei li 美丽 7799
+guo du 过渡 7798
+di er ci 第二次 7797
+shen ke 深刻 7796
+xiang qian 向前 7796
+fan zhi 繁殖 7795
+feng wei 风味 7794
+zhe jiang 浙江 7793
+di zhi 地质 7792
+mei ci 每次 7791
+zhe ban 这般 7790
+xiao zi 小子 7789
+fan zui 犯罪 7788
+wu men 午门 7787
+biao da 表达 7786
+deng dai 等待 7785
+tong xin 通信 7784
+zi xi 仔细 7784
+yi chan 遗产 7783
+lao bai xing 老百姓 7782
+ba nian 八年 7781
+tou shang 头上 7780
+yu lei 鱼类 7779
+ting qu 听取 7778
+yi bu 一部 7777
+feng jing 风景 7776
+jiang ling 将领 7775
+lian he guo 联合国 7774
+ya men 衙门 7773
+pi ping 批评 7772
+qin lve 侵略 7772
+ren min bi 人民币 7771
+she ji 社稷 7770
+suo zai di 所在地 7769
+hou zhe 后者 7768
+men qian 门前 7767
+qian jin 前进 7766
+ti ming 提名 7765
+jue ce 决策 7764
+die die 爹爹 7763
+chu qi 初期 7762
+guan bing 官兵 7761
+shun li 顺利 7760
+yi fang mian 一方面 7760
+zui wei 最为 7759
+gong zhong 公众 7758
+yuan cheng zhi 袁承志 7757
+shou ye 首页 7756
+gao su gong lu 高速公路 7755
+bao han 包含 7754
+li bu 礼部 7753
+zhi xu 秩序 7752
+zi dong 自动 7751
+gen ju di 根据地 7750
+cheng hao 称号 7749
+lei da 雷达 7748
+han liang 含量 7748
+bian zhi 编制 7747
+ke guan 客观 7746
+geng wei 更为 7745
+guan che 贯彻 7744
+yi lu 一路 7743
+zhi de 只得 7742
+he bing 合并 7741
+dang xuan 当选 7740
+qian lai 前来 7739
+zhu zhong 注重 7738
+liang an 两岸 7737
+yi an 议案 7736
+ji lie 激烈 7736
+yi lei 一类 7735
+tai hou 太后 7734
+gang kou 港口 7733
+zhu yi 主意 7732
+duo me 多么 7731
+wen yi 文艺 7730
+ju shuo 据说 7729
+ai ji 埃及 7728
+xi ban ya 西班牙 7727
+yin yu 银鱼 7726
+zhu guan 主管 7725
+qian ting 潜艇 7724
+yao pin 药品 7724
+fan fu 反复 7723
+huo shi 或是 7722
+hang xian 航线 7721
+da jun 大军 7720
+rong yu 荣誉 7719
+yi xiang 一项 7718
+wu ren 无人 7717
+ci ji 刺激 7716
+wei bi 未必 7715
+qian hou 前后 7714
+huang gang 黄冈 7713
+yao tou 摇头 7712
+song jiang 宋江 7712
+zui xin 最新 7711
+yi chang shi 宜昌市 7710
+han you 含有 7709
+da shi 大师 7708
+bi jia 笔架 7707
+ben ke 本科 7706
+zhu ti 主体 7705
+na xie 哪些 7704
+de ming 得名 7703
+ren bu zhu 忍不住 7702
+yi tao 一套 7701
+fang yu 防御 7700
+you xian 有限 7700
+zhong yuan 中原 7699
+liu yu 流域 7698
+da qing 大清 7697
+hong jun 红军 7696
+zi wo 自我 7695
+ren gong 人工 7694
+jiang jie shi 蒋介石 7693
+shan qu 山区 7692
+ge bu 各部 7691
+xiang zhe 想着 7690
+hang zhou 杭州 7689
+zhi cheng 制成 7688
+shen zhen 深圳 7688
+pian ke 片刻 7687
+li fa 立法 7686
+tu jing 途径 7685
+suo zai 所在 7684
+ci shu 次数 7683
+sheng nei 省内 7682
+shi ren 诗人 7681
+xiang shou 享受 7680
+ji lei 积累 7679
+ke xue jia 科学家 7678
+liu dong 流动 7677
+si zhou 四周 7676
+zhan yi 战役 7676
+mei xiang dao 没想到 7675
+yi zhao 一招 7674
+yi gen 一根 7673
+qi ci 其次 7672
+cheng du 成都 7671
+yi qi 一齐 7670
+yu ji 预计 7669
+xiang you 享有 7668
+di chu 地处 7667
+zhi li 治理 7666
+zan shi 暂时 7665
+yi ceng 一层 7664
+jing li 经理 7664
+fa ming 发明 7663
+zhan shu 战术 7662
+xian zhang 县长 7661
+shi shi shang 事实上 7660
+zhi zheng 执政 7659
+dui fu 对付 7658
+jiang hu 江湖 7657
+jun zhu 君主 7656
+chu yu 出于 7655
+zou jin 走进 7654
+wan gong qing 万公顷 7653
+nei ge 内阁 7652
+chu shen 出身 7652
+chong tu 冲突 7651
+pai lie 排列 7650
+dang zhong yang 党中央 7649
+zhan guo 战国 7648
+qi bing 骑兵 7647
+fu fu 夫妇 7646
+jun ren 军人 7645
+shao nv 少女 7644
+yuan shi kai 袁世凯 7643
+xian zhu 显著 7642
+quan shi jie 全世界 7641
+tai ping yang 太平洋 7640
+zhi ji 之际 7640
+tou su 投诉 7639
+bao zhi 报纸 7638
+xiao yuan 校园 7637
+ren ren 人人 7636
+luo hou 落后 7635
+ji ben shang 基本上 7634
+huang shi 黄石 7633
+chang sha 长沙 7632
+shang liang 商量 7631
+zhi pa 只怕 7630
+bu xu 不许 7629
+da jie 大街 7628
+shan xi 山西 7628
+gu lao 古老 7627
+zheng xie 政协 7626
+du zhe 读者 7625
+qi tu 企图 7624
+gong yi 工艺 7623
+neng liang 能量 7622
+shen fen 身份 7621
+sheng ming 声明 7620
+zuo dao 做到 7619
+xie ding 协定 7618
+da dian 大典 7617
+ji nian 纪念 7616
+zhe hua 这话 7616
+xian you 现有 7615
+zong mian ji 总面积 7614
+yang zhi 养殖 7613
+zhu ti 主题 7612
+xin jiang 新疆 7611
+hai wai 海外 7610
+jian jie 简介 7609
+yi la ke 伊拉克 7608
+kuo zhan 扩展 7607
+zhun que 准确 7606
+dao lai 到来 7605
+han bai yu 汉白玉 7604
+pen di 盆地 7604
+zheng hao 正好 7603
+jiang shui liang 降水量 7602
+si nian 四年 7601
+lian meng 联盟 7600
+yi du 一度 7599
+tan suo 探索 7598
+fu you 富有 7597
+bu gou 不够 7596
+han shu 函数 7595
+zhu li 主力 7594
+ji jiang 即将 7593
+tu an 图案 7592
+hu bing chen 胡秉宸 7592
+wan sui 万岁 7591
+hao hao 好好 7590
+zhong hua min zu 中华民族 7589
+xue hui 学会 7588
+zhi shi 指示 7587
+wang guo 王国 7586
+chu liang 储量 7585
+yan lei 眼泪 7584
+yao su 要素 7583
+e guo 俄国 7582
+tiao jie 调节 7581
+qing xing 情形 7580
+gan shou 感受 7580
+qi fen 气氛 7579
+hu xi 呼吸 7578
+ban tian 半天 7577
+li hong zhang 李鸿章 7576
+xiu jian 修建 7575
+gong ying 供应 7574
+tiao zhan 挑战 7573
+jian you 建有 7572
+gang tie 钢铁 7571
+qi ti 气体 7570
+zu he 组合 7569
+zi zhu 自主 7568
+si hao 丝毫 7568
+gan jin 赶紧 7567
+di dai 地带 7566
+di chu 抵触 7565
+ti xing 提醒 7564
+jin ji 紧急 7563
+tou lu 透露 7562
+can kao 参考 7561
+xi zang 西藏 7560
+fo jiao 佛教 7559
+jiang xi 江西 7558
+dong ting hu 洞庭湖 7557
+zuo xia 坐下 7556
+ce liang 测量 7556
+jin cheng 进程 7555
+yan shen 延伸 7554
+shi wu 十五 7553
+re dai 热带 7552
+fa dong ji 发动机 7551
+jin zhi 禁止 7550
+ji cheng 继承 7549
+you li 有力 7548
+ling xiu 领袖 7547
+di er tian 第二天 7546
+xi an 西安 7545
+xun huan 循环 7544
+zi ben jia 资本家 7544
+wu chang qu 武昌区 7543
+shi xiang 事项 7542
+jin dai 近代 7541
+chu zhong 初中 7540
+biao jue 表决 7539
+ke jian 可见 7538
+liang zhi 两只 7537
+zuo hao 做好 7536
+xi la 希腊 7535
+zong shu 总数 7534
+nan xing 男性 7533
+chang jian 常见 7532
+xing tai 形态 7532
+xiang fa 想法 7531
+hou qi 后期 7530
+da jiao 大叫 7529
+wu bu 无不 7528
+jiang hua 讲话 7527
+lian jie 连接 7526
+shou fei 收费 7525
+ti dao 提到 7524
+zheng zhuang 症状 7523
+wu san gui 吴三桂 7522
+jian cha 检察 7521
+dong jing 东京 7520
+ban bu 颁布 7520
+gao xin ji shu 高新技术 7519
+ji ci 几次 7518
+xiang xi 详细 7517
+qian wang 前往 7516
+fan hui 返回 7515
+si fa 司法 7514
+da li 大力 7513
+you zhi 优质 7512
+kai guo 开国 7511
+zhan dou ji 战斗机 7510
+yu qi 与其 7509
+ying pian 影片 7508
+da pi 大批 7508
+kuai le 快乐 7507
+si ling 司令 7506
+zong liang 总量 7505
+ti sheng 提升 7504
+ma tou 码头 7503
+zong ti 总体 7502
+gou zao 构造 7501
+chang suo 场所 7500
+wang shang 网上 7499
+zhu yuan zhang 朱元璋 7498
+yi hui 一回 7497
+kan fa 看法 7496
+bu rang 不让 7496
+shuo wan 说完 7495
+hao wu 毫无 7494
+shun zhi 顺治 7493
+hei an 黑暗 7492
+qiu ling 丘陵 7491
+zi cong 自从 7490
+sui shi 随时 7489
+zhi lei 之类 7488
+lin chuang 临床 7487
+zhi nei 之内 7486
+zheng men 正门 7485
+zheng dang 政党 7484
+ren zhi 任职 7484
+zhi biao 指标 7483
+liu zai 留在 7482
+you jiu 悠久 7481
+geng hao 更好 7480
+dong shi hui 董事会 7479
+shi qu 市区 7478
+xian shi 县市 7477
+bing li 兵力 7476
+fu she 辐射 7475
+zong chan zhi 总产值 7474
+za zhi 杂志 7473
+que li 确立 7472
+guang xu 光绪 7472
+zong du 总督 7471
+zhong hua 中华 7470
+bao liu 保留 7469
+xiang ji 相继 7468
+si ren 私人 7467
+bian ge 变革 7466
+ju bu 局部 7465
+chen zhong 沉重 7464
+tan hua 谈话 7463
+qian long 乾隆 7462
+mu cai 木材 7461
+suo shu 所属 7460
+dang qian 当前 7460
+yu yi 予以 7459
+zui di 最低 7458
+he shi 合适 7457
+dang zhen 当真 7456
+ci ren 此人 7455
+zhen ya 镇压 7454
+ling hun 灵魂 7453
+kuo zhang 扩张 7452
+fen lie 分裂 7451
+xuan shou 选手 7450
+liang tian 两天 7449
+zhu yi 主义 7448
+jiang ze min 江泽民 7448
+jiang shi 将士 7447
+chu shou 出售 7446
+jie lun 结论 7445
+mi du 密度 7444
+wang ji 忘记 7443
+cao cao 曹操 7442
+gui dao 轨道 7441
+yi dui 一对 7440
+wu shu 无数 7439
+ge ti 个体 7438
+li gao cheng 李高成 7437
+gu gu 姑姑 7436
+jue xin 决心 7436
+gao shou 高手 7435
+chu ru 出入 7434
+shou shang 受伤 7433
+wu chan jie ji 无产阶级 7432
+pin de 品德 7431
+jiao zhu 教主 7430
+yi bian 一遍 7429
+shen chu 伸出 7428
+lao ye 老爷 7427
+shang zhang 上涨 7426
+gong he guo 共和国 7425
+xiang shi 像是 7424
+ying jie 迎接 7424
+fu bai 腐败 7423
+yin jin 引进 7422
+bu lun 不论 7421
+ba wo 把握 7420
+gu li 鼓励 7419
+ren qun 人群 7418
+sui zhou 随州 7417
+zhuan ti 专题 7416
+wai zi 外资 7415
+qian wan 千万 7414
+yi fa 依法 7413
+di dian 地点 7412
+ming ming 命名 7412
+jian zhi 简直 7411
+guo jia ji guan 国家机关 7410
+shi jian 始建 7409
+he kuang 何况 7408
+ci xi 慈禧 7407
+you ji 有机 7406
+jiao wei 较为 7405
+bei po 被迫 7404
+du shu 读书 7403
+ge sheng 各省 7402
+xing zheng qu 行政区 7401
+qing xiang 倾向 7400
+ling tu 领土 7400
+you quan 有权 7399
+ying wen 英文 7398
+zhan sheng 战胜 7397
+pin lv 频率 7396
+bu ju 布局 7395
+chuan lai 传来 7394
+sheng cheng 生成 7393
+yi chu 一处 7392
+yan yu 言语 7391
+shu chu 输出 7390
+jun fa 军阀 7389
+he lan 荷兰 7388
+yi xia zi 一下子 7387
+huang shi shi 黄石市 7387
+luo yang 洛阳 7386
+xiang xiang 想象 7385
+er nian 二年 7384
+zai nei 在内 7383
+jiu yao 就要 7382
+te chan 特产 7381
+bi xia 陛下 7380
+zhou qi 周期 7379
+zi xing 自行 7378
+ke xue ji shu 科学技术 7377
+jun guan 军官 7376
+cheng xiang 城乡 7375
+chen mo 沉默 7375
+yu zhou 宇宙 7374
+dang zhong 当中 7373
+zhi shu 指数 7372
+fen li 分离 7371
+zhao shu 诏书 7370
+yuan zi 原子 7369
+ru tong 如同 7368
+xiao chu 消除 7367
+sheng yu jia zhi 剩余价值 7366
+gong zuo ren yuan 工作人员 7365
+yi wei zhe 意味着 7364
+yi dun 一顿 7363
+jie dai 接待 7363
+e xi 鄂西 7362
+jing shi 竟是 7361
+zu cheng bu fen 组成部分 7360
+min zheng 民政 7359
+xi sheng 牺牲 7358
+xuan chu 选出 7357
+po po 婆婆 7356
+wen ku 文库 7355
+liu tong gu 流通股 7354
+shen hou 身后 7353
+bu zhi 布置 7352
+yi shen 一身 7351
+you li 有利 7351
+jia jing 嘉靖 7350
+ta ren 他人 7349
+miao shu 描述 7348
+yu ci tong shi 与此同时 7347
+hun he 混合 7346
+yuan you 原有 7345
+dun shi 顿时 7344
+gan ran 感染 7343
+zhang ai 障碍 7342
+zhuo shang 桌上 7341
+yi ri 一日 7340
+shen se 神色 7339
+qian shu 签署 7339
+ji du jiao 基督教 7338
+da ting 大厅 7337
+jia da 加大 7336
+zhan you 占有 7335
+gu yi 故意 7334
+xia gang 下岗 7333
+tang dai 唐代 7332
+yuan zi 院子 7331
+ya re dai 亚热带 7330
+he cheng 合成 7329
+nao dai 脑袋 7328
+cheng li 城里 7327
+dai ti 代替 7327
+wu yi 五一 7326
+li dai 历代 7325
+liang tiao 两条 7324
+ban de 般的 7323
+chang yong 常用 7322
+zheng yang men 正阳门 7321
+bu jian 不见 7320
+pai ming 排名 7319
+mu lu 目录 7318
+shi wei 示威 7317
+xun wen 询问 7316
+lun dun 伦敦 7315
+zhang lao 长老 7315
+na er 哪儿 7314
+zhu fang 住房 7313
+qiu dui 球队 7312
+fen cheng 分成 7311
+ban ge 半个 7310
+fan kang 反抗 7309
+fan dong 反动 7308
+neng yuan 能源 7307
+zhuan guo 转过 7306
+lv xing she 旅行社 7305
+pi pan 批判 7304
+zuo ri 昨日 7303
+leng xiao 冷笑 7303
+de yi 得以 7302
+si wei 思维 7301
+hao chu 好处 7300
+na tian 那天 7299
+wei he 为何 7298
+si kao 思考 7297
+gong guan 攻关 7296
+fu qi 夫妻 7295
+zao shou 遭受 7294
+shi yi 适宜 7293
+da fu 大夫 7292
+zhan shi 展示 7291
+wu lin 武林 7291
+men hu 门户 7290
+san fen 三分 7289
+tou zi zhe 投资者 7288
+qian bu 千步 7287
+yi wai 意外 7286
+fen nu 愤怒 7285
+cha yi 差异 7284
+shen chu 深处 7283
+qi shen 起身 7282
+cheng zhen 城镇 7281
+dang ju 当局 7280
+sha mo 沙漠 7279
+zhi zhe 指着 7279
+yun yang 郧阳 7278
+jin jin 紧紧 7277
+qing dao 青岛 7276
+xiao mie 消灭 7275
+jian mian 见面 7274
+xiao yi 效益 7273
+fu yu 赋予 7272
+dong de 懂得 7271
+shui zhong 水中 7270
+wu zi 物资 7269
+zhi bu guo 只不过 7268
+zheng dang 正当 7267
+nei di 内地 7267
+gong nv 宫女 7266
+jin liang 尽量 7265
+fu jian 福建 7264
+xi ju 戏剧 7263
+zhuan xiang 转向 7262
+yi men 一门 7261
+tu si 土司 7260
+sun zhong shan 孙中山 7259
+ce lve 策略 7258
+zhong qi 中期 7257
+ti nei 体内 7256
+yi bian 以便 7255
+ji mang 急忙 7255
+duo qu 夺取 7254
+pu cha 普查 7253
+jiang han ping yuan 江汉平原 7252
+yin dao 引导 7251
+chuang ban 创办 7250
+shi ti 尸体 7249
+mi lu 麋鹿 7248
+ju zhang 局长 7247
+an an 暗暗 7246
+mu yang 模样 7245
+kou wei 口味 7244
+cheng men 城门 7243
+ru xia 如下 7243
+wu yi 无疑 7242
+lu xu 陆续 7241
+kang ri zhan zheng 抗日战争 7240
+jing men 荆门 7239
+lin qu 林区 7238
+qing qiu 请求 7237
+bu bian 不变 7236
+xing jian 兴建 7235
+zhu chi ren 主持人 7234
+shuo chu 说出 7233
+ri qian 日前 7232
+cheng nei 城内 7231
+shang xia 上下 7231
+zheng duo 争夺 7230
+han zi 汉子 7229
+ming jiao 名叫 7228
+shi gong 施工 7227
+shi fang 释放 7226
+de zhi 得知 7225
+shui mian 水面 7224
+tong bi 同比 7223
+di que 的确 7222
+xiang cun 乡村 7221
+ren li 人力 7220
+fa qi 发起 7219
+gao deng 高等 7219
+kai pi 开辟 7218
+kou jing 口径 7217
+tong dao 通道 7216
+zhu quan 主权 7215
+da du 大都 7214
+zhan ji 战机 7213
+fan shi 凡是 7212
+qun dao 群岛 7211
+lao zi 老子 7210
+che cheng 车程 7209
+fang kong 防空 7208
+xing bu 刑部 7207
+xiao ying 效应 7207
+ji you 既有 7206
+gong dian 宫殿 7205
+yi he tuan 义和团 7204
+shen nong jia 神农架 7203
+lian sai 联赛 7202
+zhen cha 侦察 7201
+yi fang 一方 7200
+shen mi 神秘 7199
+zou shang 走上 7198
+jing cheng 京城 7197
+qian zhe 前者 7196
+dao yan 导演 7195
+jie ri 节日 7195
+fu cong 服从 7194
+guan jun 官军 7193
+guan li 官吏 7192
+yi dai 一代 7191
+guo tu 国土 7190
+xiao gan 孝感 7189
+yi bei 以北 7188
+di yu 低于 7187
+zheng dun 整顿 7186
+dan bai zhi 蛋白质 7185
+jing dian 经典 7184
+shi fan qu 示范区 7183
+you ming 又名 7183
+dang chu 当初 7182
+jiao bu 脚步 7181
+qi pan 棋盘 7180
+guang rong 光荣 7179
+a ge 阿哥 7178
+nan hai 南海 7177
+chen jia luo 陈家洛 7176
+ji du 季度 7175
+lian mang 连忙 7174
+ye hao 也好 7173
+hei yu 黑鱼 7172
+fan rong 繁荣 7171
+xia ling 下令 7171
+yin xiang 印象 7170
+li lai 历来 7169
+huan huan 缓缓 7168
+fu gai 覆盖 7167
+yu du 鱼肚 7166
+hui shang 会上 7165
+shang nian 上年 7164
+ji bian 即便 7163
+bu mian 不免 7162
+quan wei 权威 7161
+jin shi 进士 7160
+zhuang yan 庄严 7159
+chang jian 长剑 7159
+quan dou 全都 7158
+jia na da 加拿大 7157
+te ding 特定 7156
+wei rao 围绕 7155
+ben zhi 本质 7154
+xiao xiao de 小小的 7153
+luo ji 逻辑 7152
+ping mian 平面 7151
+chuang shang 床上 7150
+lun shu 论述 7149
+hang hai 航海 7148
+yi ke 一颗 7147
+yi ge ge 一个个 7147
+bei jing da xue 北京大学 7146
+ao da li ya 澳大利亚 7145
+xian lu 线路 7144
+jing cai 精彩 7143
+dan sheng 诞生 7142
+nan jing shi 南京市 7141
+shou gou 收购 7140
+ke ti 课题 7139
+he dao 河道 7138
+yi se lie 以色列 7137
+yi zhi 意志 7136
+zhong zi 种子 7135
+lv you qu 旅游区 7135
+gai kuang 概况 7134
+yi qun 一群 7133
+bu ting 不停 7132
+hui zu 回族 7131
+qiao qiao 瞧瞧 7130
+wan mei yuan 万美元 7129
+zheng yao 正要 7128
+jin ri 近日 7127
+sheng chan li 生产力 7126
+jin ci yu 仅次于 7125
+dang ri 当日 7124
+bu xia 不下 7123
+wu dao 舞蹈 7123
+sheng xiang 声响 7122
+gan she 干涉 7121
+han zu 汉族 7120
+zhong guo dui 中国队 7119
+yan shi 岩石 7118
+ru qin 入侵 7117
+xin hai ge ming 辛亥革命 7116
+shuang yan 双眼 7115
+zhi si 职司 7114
+zong bu 总部 7113
+bu zhu 不住 7112
+bing wei 并未 7111
+yan ge 沿革 7111
+pai chu 派出 7110
+re nao 热闹 7109
+jin zhan 进展 7108
+wei shou 为首 7107
+bu luo 部落 7106
+chuang jian 创建 7105
+gong gu 巩固 7104
+xing zhuang 形状 7103
+suo zhang 所长 7102
+ji si 祭祀 7101
+gai ming 改名 7100
+yu ce 预测 7099
+ge wei 各位 7099
+deng ji 等级 7098
+xiang lian 相连 7097
+yan guang 眼光 7096
+qu dai 取代 7095
+hai zao 海藻 7094
+dong han 东汉 7093
+xuan gao 宣告 7092
+han kou 汉口 7091
+ping wei 评为 7090
+hun luan 混乱 7089
+lie ru 列入 7088
+zui li 嘴里 7087
+ming pai 名牌 7087
+ji qi 极其 7086
+qing dian 庆典 7085
+zhi yuan 支援 7084
+lao tai tai 老太太 7083
+tai kong 太空 7082
+ji ceng 基层 7081
+bao zha 爆炸 7080
+shen jing 神经 7079
+wang qi yao 王琦瑶 7078
+geng ming 更名 7077
+shen shen 深深 7076
+da zhi 大致 7075
+tian di 天地 7075
+chong ji 冲击 7074
+ji yin 基因 7073
+bo li 玻璃 7072
+bu wei 部位 7071
+chang he 场合 7070
+zun shou 遵守 7069
+ping fang mi 平方米 7068
+ren xuan 人选 7067
+wu tai 舞台 7066
+man lian 满脸 7065
+da po 打破 7064
+qing song 轻松 7063
+can guan 参观 7063
+wei tuo 委托 7062
+xuan gua 悬挂 7061
+wan ping fang mi 万平方米 7060
+shi fu 师傅 7059
+yan fa 研发 7058
+ju shi 局势 7057
+ren ming 任命 7056
+gan dao 赶到 7055
+bu bing 步兵 7054
+que bao 确保 7053
+shi wei 市委 7052
+dai you 带有 7051
+re lie 热烈 7051
+shen qing 神情 7050
+san ji 三级 7049
+guang hua 光华 7048
+nan lu 南路 7047
+xue shuo 学说 7046
+hang yun 航运 7045
+xue ye 血液 7044
+yi ci 依次 7043
+jing pin 精品 7042
+ju le bu 俱乐部 7041
+tu ce 图册 7040
+cheng qiang 城墙 7039
+sun hai 损害 7039
+xian xue 鲜血 7038
+shi tou 石头 7037
+li mo chou 李莫愁 7036
+ping ri 平日 7035
+ji he 集合 7034
+yi wang 以往 7033
+jian fa 剑法 7032
+shui li 水力 7031
+que shao 缺少 7030
+shi wei 侍卫 7029
+quan zhang 全长 7028
+xing qi 兴起 7027
+ke pa 可怕 7027
+li xing 理性 7026
+gong he 共和 7025
+fu dan 负担 7024
+na er 那儿 7023
+dai li 代理 7022
+ping jing 平静 7021
+te xing 特性 7020
+zhi sheng ji 直升机 7019
+zhi shi fen zi 知识分子 7018
+pin fan 频繁 7017
+zhou zhang 州长 7016
+shou bi 手臂 7015
+hua ti 话题 7015
+ren jian 人间 7014
+bu liang 不良 7013
+mei ri 每日 7012
+hui jian 会见 7011
+shou shang 手上 7010
+ri yue 日月 7009
+pei tao 配套 7008
+sheng chan zong zhi 生产总值 7007
+bu gai 不该 7006
+hao cheng 号称 7005
+jie tou 街头 7004
+na chu 拿出 7003
+yi kou qi 一口气 7003
+zhe shi hou 这时候 7002
+bian yuan 边缘 7001
+shen du 深度 7000
+cheng zhong 城中 6999
+wu li 屋里 6998
+wei zhi 为止 6997
+da qi 大气 6996
+yan xia 眼下 6995
+yuan ben 原本 6994
+song dai 宋代 6993
+guan kan 观看 6992
+que shuo 却说 6991
+tui xing 推行 6990
+tong wang 通往 6990
+dui dai 对待 6989
+guang bo 广播 6988
+xie dai 携带 6987
+hua jia 画家 6986
+na wei 那位 6985
+jia zu 家族 6984
+di wang 帝王 6983
+ben di 本地 6982
+fa zhi 法制 6981
+yi fu 一副 6980
+yi tou 一头 6979
+fu ze zhi 负责制 6978
+ming ri 明日 6978
+yuan su 元素 6977
+fa ting 法庭 6976
+shuo bu ding 说不定 6975
+shi wei 视为 6974
+ao men 澳门 6973
+ju ji 聚集 6972
+che liang 车辆 6971
+qin lve zhe 侵略者 6970
+zhi pei 支配 6969
+xin yang 信仰 6968
+shang hai shi 上海市 6967
+pao dan 炮弹 6966
+ke lian 可怜 6966
+xiang dang yu 相当于 6965
+xian ru 陷入 6964
+qian bei 前辈 6963
+mian xiang 面向 6962
+wu bi 无比 6961
+yu ye 渔业 6960
+jing fei 经费 6959
+qing chao 清朝 6958
+sheng zhi 省直 6957
+zong jing li 总经理 6956
+dai ling 带领 6955
+hui guo 回国 6954
+tai tou 抬头 6954
+yan an 沿岸 6953
+qing yuan 请愿 6952
+qing bao 情报 6951
+bai tuo 摆脱 6950
+guo nei wai 国内外 6949
+wai mao 外贸 6948
+cheng nuo 承诺 6947
+zang zu 藏族 6946
+liang ming 两名 6945
+shi er 事儿 6944
+shou fa 手法 6943
+song dao 送到 6942
+gong zhong 宫中 6942
+hui hua 绘画 6941
+li hai 利害 6940
+xin tou 心头 6939
+zhuang jia 装甲 6938
+pin kun 贫困 6937
+bu man 不满 6936
+xian wei 纤维 6935
+shi shang 世上 6934
+qin bing 亲兵 6933
+jie shang 街上 6932
+hu nan sheng 湖南省 6931
+yi si lan jiao 伊斯兰教 6930
+he bi 何必 6930
+fu zhuang 服装 6929
+huo jian 火箭 6928
+na ge 哪个 6927
+she ji 射击 6926
+jiang xia 江夏 6925
+dang yuan 党员 6924
+xie zhu 协助 6923
+xi fu 媳妇 6922
+na bian 那边 6921
+fang wu 房屋 6920
+qi guan 器官 6919
+jue se 角色 6918
+dong hu 东湖 6918
+di kang 抵抗 6917
+ha ha 哈哈 6916
+an hui 安徽 6915
+er ji 二级 6914
+sheng wei 省委 6913
+bu xing 不幸 6912
+en shi 恩施 6911
+tong yong 通用 6910
+zeng jia zhi 增加值 6909
+wu ge 五个 6908
+gong jiang 工匠 6907
+gan jing 干净 6906
+gai jian 改建 6906
+shui xi 水系 6905
+a la bo 阿拉伯 6904
+dang zuo 当作 6903
+shi ba nian 十八年 6902
+dang jin 当今 6901
+zao yu 遭遇 6900
+wo jun 我军 6899
+gu mu 古墓 6898
+jie guo 接过 6897
+da cheng 达成 6896
+huo xu 或许 6895
+shen me yang 什么样 6894
+cai neng 才能 6894
+zhong wai 中外 6893
+ming cheng 名城 6892
+guan xia 管辖 6891
+shi chang jing ji 市场经济 6890
+zi nv 子女 6889
+kuo jian 扩建 6888
+neng fou 能否 6887
+ma chao xu 马朝旭 6886
+ge ge 个个 6885
+zhi ze 职责 6884
+bing ren 兵刃 6883
+yi shi 议事 6882
+shou ling 首领 6882
+jian dui 舰队 6881
+yu miao 鱼苗 6880
+guang mang 光芒 6879
+lao zhe 老者 6878
+feng suo 封锁 6877
+shi yong 食用 6876
+ke yong 可用 6875
+teng tong 疼痛 6874
+mai mai 买卖 6873
+jin kuai 尽快 6872
+xuan ba 选拔 6871
+yu lun 舆论 6870
+wu zhuang li liang 武装力量 6870
+ren wei 人为 6869
+chong fu 重复 6868
+hui guo 回过 6867
+xin shang 欣赏 6866
+da xue shi 大学士 6865
+hao zhao 号召 6864
+xing sheng 行省 6863
+ming dan 名单 6862
+ding yi 定义 6861
+yi bei zi 一辈子 6860
+bu li 不利 6859
+jing guan 景观 6858
+xuan yan 宣言 6858
+shi wu nian 十五年 6857
+mo si ke 莫斯科 6856
+bian jie 边界 6855
+jing ji te qu 经济特区 6854
+bi zhong 比重 6853
+zheng zhi bu 政治部 6852
+ren min gong she 人民公社 6851
+zong cai 总裁 6850
+qun ti 群体 6849
+zhen di 阵地 6848
+nei wai 内外 6847
+nei zhan 内战 6846
+qiang du 强度 6846
+yi ge yue 一个月 6845
+qi dong 启动 6844
+shi san 十三 6843
+dian dian tou 点点头 6842
+si ling bu 司令部 6841
+li shi 立时 6840
+xiao gan shi 孝感市 6839
+dian ding 奠定 6838
+gong zi 公子 6837
+di xing 地形 6836
+dui kang 对抗 6835
+ji yi 技艺 6834
+shu li 树立 6834
+huang gang shi 黄冈市 6833
+bian e 匾额 6832
+zeng duo 增多 6831
+zi jue 自觉 6830
+di zeng 递增 6829
+shang hai 伤害 6828
+sha ren 杀人 6827
+yan bian 演变 6826
+zhi hui bu 指挥部 6825
+wu zi 屋子 6824
+huang jia 皇家 6823
+min zhong 民众 6822
+chuan bo 船舶 6822
+nai shi 乃是 6821
+sheng li 生理 6820
+dai biao tuan 代表团 6819
+cha kan 查看 6818
+li du 力度 6817
+chu tu 出土 6816
+qi jian 其间 6815
+wei hai 危害 6814
+shang you 上游 6813
+lie che 列车 6812
+jie zhi 截至 6811
+ji yu 基于 6810
+cheng xian 呈现 6810
+guo yu 过于 6809
+ling xian 领先 6808
+jun min 军民 6807
+shi ji 时机 6806
+qiu yuan 球员 6805
+qing jing 情景 6804
+gong bu 工部 6803
+ce ding 测定 6802
+wu ti 物体 6801
+ye sheng 野生 6800
+shi gu 事故 6799
+hou guo 后果 6798
+gao yu 高于 6798
+jian quan 健全 6797
+bing tuan 兵团 6796
+feng bi 封闭 6795
+hu tong 胡同 6794
+jue sai 决赛 6793
+bian dong 变动 6792
+zhi an 治安 6791
+yi shuang 一双 6790
+fan ren 犯人 6789
+bei shang 背上 6788
+cha ju 差距 6787
+niu yue 纽约 6786
+zi jin cheng 紫禁城 6786
+wei ruan 微软 6785
+zhong liu 肿瘤 6784
+di tou 低头 6783
+jian zhu qun 建筑群 6782
+zhong wen 中文 6781
+yue fen 月份 6780
+liu bei 刘备 6779
+huo shan 火山 6778
+meng gu zu 蒙古族 6777
+quan yi 权益 6776
+qiao liang 桥梁 6775
+zheng zhong 正中 6774
+chu ji 初级 6774
+guan fang 官方 6773
+di xiong 弟兄 6772
+ti yi 提议 6771
+quan dang 全党 6770
+feng guang 风光 6769
+xin yong 信用 6768
+jia zhong 家中 6767
+yi zhi 抑制 6766
+shi xing 施行 6765
+di zhu 地主 6764
+yin shi 饮食 6763
+kai chuang 开创 6762
+da guo 大国 6762
+da jiang 大将 6761
+bian jing 边境 6760
+ji zhong 几种 6759
+jing jie 境界 6758
+jing ti 晶体 6757
+deng hou 等候 6756
+gao da 高大 6755
+ba le 罢了 6754
+da dao 打倒 6753
+zi cheng 自成 6752
+wu dai 五代 6751
+xia qu 辖区 6750
+ming e 名额 6750
+pang ren 旁人 6749
+shang yi 商议 6748
+ji rou 肌肉 6747
+zhe fang mian 这方面 6746
+ceng ci 层次 6745
+ge ren 各人 6744
+guang xi 广西 6743
+ci chu 此处 6742
+tui fan 推翻 6741
+ban shang 半晌 6740
+mo ni 模拟 6739
+hao bu 毫不 6738
+zhi zhu 支柱 6738
+shou yi 收益 6737
+bu gu 不顾 6736
+zhou bian 周边 6735
+yu mi 玉米 6734
+nu cai 奴才 6733
+chuan di 传递 6732
+ci ri 次日 6731
+sheng yi 生意 6730
+bo si 波斯 6729
+jing hua 精华 6728
+zhan ju 占据 6727
+kou hao 口号 6726
+nan fei 南非 6726
+nian chu 年初 6725
+gong she 公社 6724
+hua biao 华表 6723
+zhen duan 诊断 6722
+zhang wu ji 张无忌 6721
+ming pian 名片 6720
+biao yu 标语 6719
+shan yu 善于 6718
+bi ding 必定 6717
+jing qu 景区 6716
+tuo li 脱离 6715
+he chu 何处 6714
+lao ren jia 老人家 6714
+tuan zhang 团长 6713
+hua shi 化石 6712
+wen xian 文献 6711
+shi xiong 师兄 6710
+shu ru 输入 6709
+hui tan 会谈 6708
+zhi ding 指定 6707
+yan zhe 沿着 6706
+yin fa 引发 6705
+wu xian 无限 6704
+yan li 眼里 6703
+gu wen 顾问 6702
+kai feng 开封 6702
+ge jie 各界 6701
+sang shi 丧失 6700
+min gan 敏感 6699
+sheng xiao 生效 6698
+qiong ren 穷人 6697
+cao an 草案 6696
+xin xian 新鲜 6695
+zheng shu 证书 6694
+tai qi 抬起 6693
+ti yan 体验 6692
+dui zhang 队长 6691
+long duan 垄断 6690
+ba jie 八戒 6690
+cheng zhi wei 称之为 6689
+lv xing 履行 6688
+gong shang 工商 6687
+cheng wai 城外 6686
+xiao mai 小麦 6685
+zhi jing 直径 6684
+fen dou 奋斗 6683
+dao jiao 道教 6682
+xi bei bu 西北部 6681
+hua he wu 化合物 6680
+dan chun 单纯 6679
+song gei 送给 6678
+qian ke 千克 6678
+zheng mian 正面 6677
+wei xiu 维修 6676
+yi lun 议论 6675
+hong guan 宏观 6674
+ming yi 名义 6673
+yi yi 一一 6672
+can shu 参数 6671
+tong shuai 统帅 6670
+qu zhang 区长 6669
+ge ju 格局 6668
+yi shou 一手 6667
+qian qian yi 钱谦益 6666
+wan li 万历 6666
+gu cheng 古城 6665
+he ge 合格 6664
+yong li 用力 6663
+qian jing 前景 6662
+tian zi 天子 6661
+yi ye 一夜 6660
+tu jia zu 土家族 6659
+shao lin 少林 6658
+jian nan 艰难 6657
+shang qian 上前 6656
+bian wei 变为 6655
+hai di 海底 6654
+xing zheng qu yu 行政区域 6654
+jia yao 佳肴 6653
+dong yuan 动员 6652
+da di 大地 6651
+pai qian 派遣 6650
+zhi zhi 直至 6649
+dang wei 党委 6648
+da ti 大体 6647
+shi cai 适才 6646
+yu qi 预期 6645
+bu yi 不易 6644
+da dui 大队 6643
+zhao hu 招呼 6642
+nan de 难得 6642
+bu nan 不难 6641
+ya tou 丫头 6640
+nan hu 南湖 6639
+xiao xing 小型 6638
+jiang han 江汉 6637
+bu suan 不算 6636
+shou xu 手续 6635
+yan su 严肃 6634
+ding wei 定位 6633
+liu chuan 流传 6632
+dang dai 当代 6631
+zhuan huan 转换 6630
+dong nan ya 东南亚 6630
+ti qi 提起 6629
+fei fa 非法 6628
+zong si ling 总司令 6627
+qing zheng fu 清政府 6626
+su zhou 苏州 6625
+xi ji 袭击 6624
+dan shui yu 淡水鱼 6623
+kan chu 看出 6622
+da si 打死 6621
+shu mu 数目 6620
+zong chan liang 总产量 6619
+yuan shi 院士 6618
+hua gang yan 花岗岩 6618
+xiao ren 小人 6617
+fu zi 父子 6616
+gui xia 跪下 6615
+huang zong xi 黄宗羲 6614
+huo pao 火炮 6613
+liang bian 两边 6612
+chan luan 产卵 6611
+shi si 十四 6610
+wang you 网友 6609
+liu nian 六年 6608
+gu ran 固然 6607
+zhuang shi 装饰 6606
+xi han 西汉 6606
+liang dai 两代 6605
+zhong deng 中等 6604
+wai jie 外界 6603
+han ren 汉人 6602
+hai xia 海峡 6601
+chan wu 产物 6600
+ba xi 巴西 6599
+huo yue 活跃 6598
+si lu 思路 6597
+da ting 打听 6596
+shui ni 水泥 6595
+jiao wang 交往 6594
+huan jie 环节 6593
+hui zhang 会长 6593
+zen di 怎地 6592
+hua xiang 画像 6591
+wang ye 王爷 6590
+chi you 持有 6589
+bei bu 被捕 6588
+ba guo lian jun 八国联军 6587
+hai an 海岸 6586
+ban nian 半年 6585
+shuo qi 说起 6584
+zu zhi 阻止 6583
+yi xing 一行 6582
+li xue 力学 6581
+shi da 十大 6581
+duo ban 多半 6580
+tou ding 头顶 6579
+reng jiu 仍旧 6578
+li shi 历时 6577
+kou zhong 口中 6576
+mei tan 煤炭 6575
+dang tian 当天 6574
+jing xi 精细 6573
+nan yang 南阳 6572
+shen pang 身旁 6571
+pi lu 披露 6570
+ji bai 击败 6569
+qing zhu 庆祝 6569
+xin si 心思 6568
+qing gan 情感 6567
+huo ban 伙伴 6566
+da fu 大幅 6565
+han yu 汉语 6564
+zheng shi 证实 6563
+dan xing 单行 6562
+tong qi 同期 6561
+zhong liang 重量 6560
+dai yu 待遇 6559
+sheng ya 生涯 6558
+e zhou 鄂州 6557
+bu pa 不怕 6557
+yi nan 以南 6556
+bao wei 包围 6555
+xian ning 咸宁 6554
+ji su 激素 6553
+lian bang 联邦 6552
+sai ji 赛季 6551
+mo fan 模范 6550
+shou ji 收集 6549
+qing xi 清晰 6548
+fang di chan 房地产 6547
+zhi yue 制约 6546
+shou ming 受命 6545
+shi xian 事先 6545
+chang mian 场面 6544
+zhi min di 殖民地 6543
+ke yun 客运 6542
+zhuang li 壮丽 6541
+gui ju 规矩 6540
+guan cai 棺材 6539
+jin mi 紧密 6538
+ban dian 半点 6537
+qu shi 去世 6536
+jian yan 检验 6535
+hai shui 海水 6534
+pei zhi 配置 6533
+sha si 杀死 6533
+bao kao 报考 6532
+bei jing cheng 北京城 6531
+rui shi 瑞士 6530
+xian xing 现行 6529
+pang da 庞大 6528
+zhi hui 智慧 6527
+yi zhi 以致 6526
+dong ji 冬季 6525
+bei da 北大 6524
+yuan chu 远处 6523
+ren kou shu 人口数 6522
+fa jue 发掘 6521
+jian zhi 建制 6521
+gong xian zhe 贡献者 6520
+xia you 下游 6519
+he xie 和谐 6518
+wang gong 王公 6517
+ha ha da xiao 哈哈大笑 6516
+huang zhou 黄州 6515
+cong cong 匆匆 6514
+shou hui 收回 6513
+ji yi 记忆 6512
+bo lan 波兰 6511
+yu zhong 鱼种 6510
+an lu 安陆 6509
+gai lan 概览 6509
+bai xue 白雪 6508
+jiang jiu 讲究 6507
+fang shou 防守 6506
+nong chan pin 农产品 6505
+ke neng xing 可能性 6504
+min guo 民国 6503
+bing qi 兵器 6502
+su song 诉讼 6501
+gong cheng shi 工程师 6500
+chuang li 创立 6499
+tuan zi 团子 6498
+wang lai 往来 6497
+gan ji 感激 6497
+wu nai 无奈 6496
+yuan zhu 援助 6495
+ben shi 本事 6494
+he kou 河口 6493
+jiao xia 脚下 6492
+yi lv 一律 6491
+bao wei 保卫 6490
+an zhong 暗中 6489
+zheng fu 征服 6488
+zhu ru 注入 6487
+shen shou 深受 6486
+ji qiao 技巧 6485
+pin zhi 品质 6485
+qiang shang 墙上 6484
+shi ge 诗歌 6483
+feng jing qu 风景区 6482
+zhu xi tuan 主席团 6481
+bu liao 不料 6480
+gan rao 干扰 6479
+pi qi 脾气 6478
+chang cheng 长城 6477
+bei wei 北纬 6476
+guang kuo 广阔 6475
+deng shang 登上 6474
+nei li 内力 6473
+da wei 大为 6473
+yu wei 誉为 6472
+rong ye 溶液 6471
+duan qi 短期 6470
+gao feng 高峰 6469
+gai bang 丐帮 6468
+lv ke 旅客 6467
+ran shao 燃烧 6466
+zhong hua men 中华门 6465
+e zhou shi 鄂州市 6464
+xie shang 协商 6463
+xian tao shi 仙桃市 6462
+jing men shi 荆门市 6461
+ping jie 凭借 6461
+fen zhi 分支 6460
+mu gong 木工 6459
+he wu qi 核武器 6458
+chui zhi 垂直 6457
+qu jia ling 屈家岭 6456
+dui mian 对面 6455
+yi dao 一刀 6454
+bing chuan 冰川 6453
+peng dao 碰到 6452
+guan ce 观测 6451
+ya po 压迫 6450
+ke kao 可靠 6449
+jia huo 家伙 6449
+huai li 怀里 6448
+miao xie 描写 6447
+pu sa 菩萨 6446
+xian ning shi 咸宁市 6445
+jie du shi 节度使 6444
+qi sheng 齐声 6443
+jing ji xue 经济学 6442
+man zhou 满洲 6441
+xian cun 现存 6440
+ming ti 命题 6439
+bi bei 必备 6438
+bai nian 百年 6437
+chang du 长度 6437
+zeng da 增大 6436
+xiang deng 相等 6435
+hua shan 华山 6434
+da dan 大胆 6433
+yue shi 越是 6432
+xi jin 西晋 6431
+shan shang 山上 6430
+han jiang 汉江 6429
+xiong nu 匈奴 6428
+tian e zhou 天鹅洲 6427
+zong he xing 综合性 6426
+ji duan 极端 6425
+yong zuo 用作 6425
+yi li fang mi 亿立方米 6424
+zhou nian 周年 6423
+wu pin 物品 6422
+yue nan 越南 6421
+bu an 不安 6420
+ge xing 个性 6419
+zhi pin 制品 6418
+ke wei 可谓 6417
+ge zu 各族 6416
+shang kou 伤口 6415
+chuang ye 创业 6414
+gan su 甘肃 6413
+qiao qiao 悄悄 6413
+shi chen 时辰 6412
+yi ti 一体 6411
+zu xian 祖先 6410
+wen wu 文武 6409
+zuo feng 作风 6408
+da zhong 大众 6407
+ju xi 据悉 6406
+da dian 大殿 6405
+fa yan 发言 6404
+mei dang 每当 6403
+hai yu 海域 6402
+fang zhi 防治 6401
+xian ming 鲜明 6401
+shou gong ye 手工业 6400
+ban dao 半岛 6399
+gu li 孤立 6398
+diao ke 雕刻 6397
+shi ying 石英 6396
+yao shuo 要说 6395
+she xiang 设想 6394
+ou meng 欧盟 6393
+da xi yang 大西洋 6392
+cong wei 从未 6391
+fu chu 付出 6390
+cheng qu 城区 6389
+zong zhi 总之 6389
+sheng hui 省会 6388
+jing mei 精美 6387
+nan du 难度 6386
+gao wen 高温 6385
+ling bu jian 零部件 6384
+yong xian 涌现 6383
+deng lu 登陆 6382
+qi xiang 气象 6381
+huan man 缓慢 6380
+wei fan 违反 6379
+yan zhong 眼中 6378
+tian zhu jiao 天主教 6377
+ou yang feng 欧阳锋 6377
+ben yue 本月 6376
+jin wan 今晚 6375
+zi mei 姊妹 6374
+wan mei 完美 6373
+jiu zheng 纠正 6372
+di er ge 第二个 6371
+da bai 打败 6370
+lu xun 鲁迅 6369
+chai chu 拆除 6368
+jian qing 减轻 6367
+de zui 得罪 6366
+shui li 水利 6365
+qi yuan 起源 6365
+li zi 粒子 6364
+zhong shang 重伤 6363
+ye jin 冶金 6362
+qian qu 前去 6361
+zhi cheng 支撑 6360
+zao xing 造型 6359
+xian cheng 县城 6358
+shan shui 山水 6357
+ti wen 提问 6356
+xue dao 穴道 6355
+quan guo zheng xie 全国政协 6354
+you yi 友谊 6353
+man zu 满族 6353
+zhe xiang 这项 6352
+bu ji 不及 6351
+da shi 大使 6350
+yi zhi 以至 6349
+di mao 地貌 6348
+jin dian 金殿 6347
+san tian 三天 6346
+shu niu 枢纽 6345
+hun shen 浑身 6344
+jing li 精力 6343
+cha ye 茶叶 6342
+yi jiu 依旧 6341
+zhi ming 知名 6341
+guo wu wei yuan 国务委员 6340
+wan yi 万一 6339
+xiang xiang 想想 6338
+xia ji 夏季 6337
+tai guo 泰国 6336
+deng ji 登基 6335
+na ru 纳入 6334
+shi lang 侍郎 6333
+jie dao 接到 6332
+ben shi 本市 6331
+zhong shen 终身 6330
+yi xiang 一向 6329
+ye wan 夜晚 6329
+shen yang 沈阳 6328
+ye ti 液体 6327
+te you 特有 6326
+mian qiang 勉强 6325
+zheng ju 证据 6324
+e wai 额外 6323
+sheng chan zi liao 生产资料 6322
+wu ding 屋顶 6321
+yan kan 眼看 6320
+qiang hua 强化 6319
+shi tu 试图 6318
+gu li 故里 6317
+ci nian 次年 6317
+huo wu 货物 6316
+chang an jie 长安街 6315
+bu fang 不妨 6314
+fang yan 方言 6313
+yong ren 用人 6312
+gang ling 纲领 6311
+zhuan tou 转头 6310
+li zi 离子 6309
+hang mu 航母 6308
+zhou bo tong 周伯通 6307
+ji ji xing 积极性 6306
+si ba da 斯巴达 6305
+mei hao 美好 6305
+qing yi 轻易 6304
+ke fu 克服 6303
+tong xun 通讯 6302
+hei long jiang 黑龙江 6301
+you qu 有趣 6300
+mu di di 目的地 6299
+yuan dai 元代 6298
+di yu 地域 6297
+shou zhang 手掌 6296
+you yi 有益 6295
+zhe fen 这份 6294
+ti cai 题材 6293
+an wei 安慰 6293
+chu shou 出手 6292
+jin cheng 进城 6291
+yi ben 一本 6290
+kai kou 开口 6289
+she zai 设在 6288
+nong zuo wu 农作物 6287
+yi bei 一杯 6286
+na dao 拿到 6285
+ren ding 认定 6284
+kong bu 恐怖 6283
+zeng tian 增添 6282
+dao shang 岛上 6281
+yi fu 一幅 6281
+cu shi 促使 6280
+quan jing 全境 6279
+xue li 学历 6278
+fou ding 否定 6277
+ye li 夜里 6276
+cheng shou 承受 6275
+xiao rong 笑容 6274
+zheng zhi jia 政治家 6273
+wei neng 未能 6272
+hui gu 回顾 6271
+de yi 得意 6270
+wu shi 武士 6269
+zu jian 组建 6269
+zhe tian 这天 6268
+lian zi 莲子 6267
+ming yong le 明永乐 6266
+nv shi 女士 6265
+guo hui 国会 6264
+jie kou 借口 6263
+shi cha 视察 6262
+ji hua sheng yu 计划生育 6261
+yi ci 以此 6260
+he yi 何以 6259
+qing xing 清醒 6258
+mian mao 面貌 6257
+shou fu 首辅 6257
+chu zheng 出征 6256
+xiao hua 消化 6255
+ling huo 灵活 6254
+shi ge 师哥 6253
+fu du 幅度 6252
+hu bu 户部 6251
+mei ren 每人 6250
+han jian 汉奸 6249
+ren xin 人心 6248
+yi ran 已然 6247
+huang gong 皇宫 6246
+bu neng bu 不能不 6245
+shang wu 尚无 6245
+xian qian 先前 6244
+ping an 平安 6243
+jiu zhi 旧址 6242
+zhu dao 主导 6241
+he jiu 喝酒 6240
+zhan lan 展览 6239
+shui zhi 水质 6238
+chuan guo 穿过 6237
+geng di 耕地 6236
+zhu di 驻地 6235
+li xi 利息 6234
+zheng wen 正文 6233
+ying yong 英勇 6233
+gao chao 高潮 6232
+dui hua 对话 6231
+qin ru 侵入 6230
+fen san 分散 6229
+fen mi 分泌 6228
+xue pai 学派 6227
+jiu ci 就此 6226
+gan ga 尴尬 6225
+guo fen 过分 6224
+long tou 龙头 6223
+jie fang qu 解放区 6222
+ye jiu shi shuo 也就是说 6221
+yi qi 仪器 6221
+zhi ci 至此 6220
+ling hua 菱花 6219
+san ceng 三层 6218
+ben guo 本国 6217
+shen hua 深化 6216
+lun zheng 论证 6215
+nei meng gu 内蒙古 6214
+ji he 几何 6213
+fu bu 腹部 6212
+tong bao 同胞 6211
+jian ce 检测 6210
+san zhong 三种 6209
+zhi ding 制订 6209
+shou xia 手下 6208
+kun ming 昆明 6207
+yan yong 沿用 6206
+xiao lian 笑脸 6205
+ping gu 评估 6204
+zhong fang 中纺 6203
+bie shuo 别说 6202
+kou qi 口气 6201
+lian lian 连连 6200
+san yue 三月 6199
+ding lv 定律 6198
+shi yong 实用 6197
+ji nan 济南 6196
+qi quan 齐全 6196
+yi jun 义军 6195
+kai cai 开采 6194
+bei song 北宋 6193
+ke bu 可不 6192
+shui yun 水运 6191
+you ru 犹如 6190
+sheng dao 声道 6189
+sheng si 生死 6188
+xin ling 心灵 6187
+huan xi 欢喜 6186
+da fu 答复 6185
+wei ju 位居 6184
+dui huan 兑换 6184
+zhong fang 中方 6183
+er shi 二十 6182
+hui yi 回忆 6181
+zeng she 增设 6180
+jie lu 揭露 6179
+xin jia po 新加坡 6178
+huang jin zhou 黄金周 6177
+gu xiang 故乡 6176
+han jian 罕见 6175
+qi dao 起到 6174
+li fa quan 立法权 6173
+san ci 三次 6172
+ji dong 机动 6172
+jiang bei 江北 6171
+zhi shi 致使 6170
+hong cheng chou 洪承畴 6169
+kai tong 开通 6168
+yin mou 阴谋 6167
+diao dong 调动 6166
+chu chu 处处 6165
+shi zhi 实质 6164
+xu shu 叙述 6163
+huo zhe 活着 6162
+yan jing 燕京 6161
+feng kuang 疯狂 6160
+liu zong min 刘宗敏 6160
+yi xian 一线 6159
+ye jian 夜间 6158
+fa fang 发放 6157
+jian tou 肩头 6156
+ling shou 零售 6155
+liang zuo 两座 6154
+shi er 十二 6153
+shao jiang 少将 6152
+qia hao 恰好 6151
+dai bu 逮捕 6150
+ban fa 颁发 6149
+wu lun ru he 无论如何 6148
+zhen gui 珍贵 6148
+mei zhou 美洲 6147
+qu zhe 曲折 6146
+lian xiang 联想 6145
+po shi 迫使 6144
+rong he 融合 6143
+di wu 第五 6142
+ti ji 体积 6141
+ding qi 定期 6140
+qi xian 期限 6139
+yong yi 用以 6138
+shang xin 伤心 6137
+dai biao da hui 代表大会 6136
+cong bu 从不 6136
+wai hui 外汇 6135
+qin wang 亲王 6134
+qian qi 前期 6133
+ri hou 日后 6132
+min shi 民事 6131
+shi shi 逝世 6130
+can ku 残酷 6129
+jue bu 绝不 6128
+ming gui 名贵 6127
+yan an 延安 6126
+zhi liu 支流 6125
+lin biao 林彪 6124
+zhong du 中毒 6124
+dong jing 动静 6123
+xin sheng 新生 6122
+fu yi 服役 6121
+chuan zhang 船长 6120
+ying zao 营造 6119
+shen hua 神话 6118
+nao zi 脑子 6117
+cun li 村里 6116
+liu li wa 琉璃瓦 6115
+jia ding 假定 6114
+ji wei 几位 6113
+qi xi 气息 6112
+qing bing 清兵 6112
+ren shen 人身 6111
+yong tu 用途 6110
+ba yue 八月 6109
+ben ling 本领 6108
+shun jian 瞬间 6107
+xi ri 昔日 6106
+xiao de 晓得 6105
+li ren 历任 6104
+min yong 民用 6103
+jin er 进而 6102
+hu guang 湖广 6101
+tou ming 透明 6100
+li cheng 里程 6100
+jian ting 舰艇 6099
+yan xu 延续 6098
+nong hou 浓厚 6097
+kan zuo 看作 6096
+shu xie 书写 6095
+tan tao 探讨 6094
+wan qi 晚期 6093
+kuang wu 矿物 6092
+ren he ren 任何人 6091
+yi liu 一流 6090
+tian bao 填报 6089
+cheng ren 成人 6088
+gu ke 顾客 6088
+jiao tang 教堂 6087
+zui xiao 最小 6086
+xi yu 西域 6085
+mai guo zei 卖国贼 6084
+fen jie 分解 6083
+xian wei 县委 6082
+xin tai 心态 6081
+gong zheng 公正 6080
+da ye 大业 6079
+ji shi nian 几十年 6078
+xiang lai 向来 6077
+qi zhi 旗帜 6076
+ming sheng gu ji 名胜古迹 6076
+dui wai kai fang 对外开放 6075
+zheng ji 征集 6074
+kan shang qu 看上去 6073
+guo min zheng fu 国民政府 6072
+gai kuo 概括 6071
+xun qiu 寻求 6070
+zhi bei 植被 6069
+chuan shang 船上 6068
+wai bu 外部 6067
+te zhong 特种 6066
+fa da guo jia 发达国家 6065
+wu yue 五月 6064
+fang cai 方才 6064
+fen hua 分化 6063
+wen shu 文书 6062
+feng bo 风波 6061
+peng zhang 膨胀 6060
+mo fei 莫非 6059
+wen he 温和 6058
+shi mei 师妹 6057
+zhong jiu 终究 6056
+zong zhi 宗旨 6055
+li hui 理会 6054
+bu jue 不觉 6053
+feng huang 凤凰 6052
+hua xia 华夏 6052
+xin xi hua 信息化 6051
+min zu zi zhi 民族自治 6050
+zhan di 占地 6049
+suo xiao 缩小 6048
+cong ye 从业 6047
+wei qiang 围墙 6046
+hai er 孩儿 6045
+mou ge 某个 6044
+xia ji 下级 6043
+quan jun 全军 6042
+jun qu 军区 6041
+bian geng 变更 6040
+fu zhu 辅助 6040
+chen yin 沉吟 6039
+hang tian 航天 6038
+yi xiao 一小 6037
+rui dian 瑞典 6036
+ao di li 奥地利 6035
+xi zhou 西周 6034
+shuo lai 说来 6033
+xin qin 辛勤 6032
+liang lei 两类 6031
+chu zhang 处长 6030
+zheng wu 政务 6029
+fu lin 福临 6028
+xi nan bu 西南部 6028
+gao deng jiao yu 高等教育 6027
+jia ru 假如 6026
+bu chang 补偿 6025
+ren de 认得 6024
+jin yin 金银 6023
+han yi 含义 6022
+jian cha 监察 6021
+zhu chang 主场 6020
+ren shi 人事 6019
+li da zhao 李大钊 6018
+zheng lun 争论 6017
+jiu rang 就让 6016
+ping chang 平常 6016
+hong hu 洪湖 6015
+wei li 威力 6014
+wan bi 完毕 6013
+ji guang 激光 6012
+shui shou 税收 6011
+lei shui 泪水 6010
+tao zou 逃走 6009
+gu jian zhu 古建筑 6008
+lian he hui 联合会 6007
+de chu 得出 6006
+si xing 死刑 6005
+yi yuan 议员 6004
+mian zi 面子 6004
+bing bu 兵部 6003
+bian yu 便于 6002
+ren zao 人造 6001
+chan shu 阐述 6000
+zhong ye 中叶 5999
+fen liu 分流 5998
+nian tou 念头 5997
+zheng zha 挣扎 5996
+ji bu 几步 5995
+tu ji 突击 5994
+shi run 湿润 5993
+quan min 全民 5992
+qian xian 前线 5992
+qing jie 情节 5991
+yang zhou 扬州 5990
+qi wang 期望 5989
+fan ji 反击 5988
+duo jia 多家 5987
+sheng chan 盛产 5986
+san zang 三藏 5985
+yu shi 玉石 5984
+hang xing 航行 5983
+jue da duo shu 绝大多数 5982
+bo xue 剥削 5981
+hao sheng 好生 5980
+jing ren 惊人 5980
+ba gong 罢工 5979
+chan ming 阐明 5978
+cheng xiang 丞相 5977
+yuan da du 元大都 5976
+yi pai 一派 5975
+jie chu 杰出 5974
+zhang cheng 章程 5973
+huang pi 黄陂 5972
+chu tai 出台 5971
+gu guai 古怪 5970
+pai she 拍摄 5969
+zi zhu 资助 5968
+ting liu 停留 5968
+dang nei 党内 5967
+deng guang 灯光 5966
+kong qian 空前 5965
+jing que 精确 5964
+xing shi 行事 5963
+shao liang 少量 5962
+gu ti 固体 5961
+pai chu 排除 5960
+shui shen 水深 5959
+ou ran 偶然 5958
+xiao hao 消耗 5957
+jin lai 近来 5956
+cong qian 从前 5956
+miao zu 苗族 5955
+wen ming 闻名 5954
+liang yuan zhi 两院制 5953
+jing zheng li 竞争力 5952
+nai zhi 乃至 5951
+bang zhu 帮主 5950
+ji le 极了 5949
+xuan zhuan 旋转 5948
+si ling yuan 司令员 5947
+huo qu 获取 5946
+zhuan rang 转让 5945
+sui yi 随意 5944
+guo fang bu 国防部 5944
+bi jia shan 笔架山 5943
+ming ming 明明 5942
+fa ding 法定 5941
+da dian hua 打电话 5940
+shi ba 十八 5939
+du fu 杜甫 5938
+qiu zhi 求职 5937
+sui zhou shi 随州市 5936
+tou nao 头脑 5935
+gu gong 故宫 5934
+shi fen 时分 5933
+xiang chang 乡长 5932
+mo xi ge 墨西哥 5932
+wen li xue yuan 文理学院 5931
+xin si 寻思 5930
+gao ji zhong xue 高级中学 5929
+ba ge 八个 5928
+xun fu 巡抚 5927
+yi feng 一封 5926
+zhi fang 脂肪 5925
+tai shang 台上 5924
+dui li 对立 5923
+xi jun 细菌 5922
+hu zi 胡子 5921
+dong nan bu 东南部 5920
+ji tuan gong si 集团公司 5920
+zao chen 早晨 5919
+ba mian 罢免 5918
+guo ba 锅巴 5917
+xu mi zuo 须弥座 5916
+tong hang 通航 5915
+gao chu 高出 5914
+bu yuan 不远 5913
+jian yu 见于 5912
+tian men shi 天门市 5911
+qing jun 清军 5910
+jin e 金额 5909
+bu yi 不宜 5908
+gan cui 干脆 5908
+ge wai 格外 5907
+kao yan 考验 5906
+zun yan 尊严 5905
+tong che 通车 5904
+di zhong hai 地中海 5903
+shen ji zhang 审计长 5902
+ying fu 应付 5901
+liu ge 六个 5900
+duo de 夺得 5899
+yao cai 药材 5898
+dai jia 代价 5897
+yuan lin 园林 5896
+chi he 池河 5896
+you zhu yu 有助于 5895
+gan xian 干线 5894
+lao tou 老头 5893
+jin qi 近期 5892
+pian pian 偏偏 5891
+qu fen 区分 5890
+tai yuan 太原 5889
+he chuang 河床 5888
+bu zhun 不准 5887
+shi ye 失业 5886
+zuo wu 作物 5885
+hu yu 呼吁 5884
+jian jiao 尖椒 5884
+pu ji 普及 5883
+zhen xi 珍稀 5882
+ming wei 名为 5881
+la kai 拉开 5880
+bao lu 暴露 5879
+mu si lin 穆斯林 5878
+qin fan 侵犯 5877
+hou qin 后勤 5876
+xi qu 戏曲 5875
+she ying 摄影 5874
+zao fan 造反 5873
+yuan ming 原名 5872
+an ding 安定 5872
+xiang zhen 乡镇 5871
+gu ji 古迹 5870
+dao ren 道人 5869
+zi ran zi yuan 自然资源 5868
+ji qing 激情 5867
+shen cai 身材 5866
+dian shi tai 电视台 5865
+fa zuo 发作 5864
+da pian 大片 5863
+you yi 有意 5862
+ban kuai 板块 5861
+chu fa 处罚 5860
+bi xu 必需 5860
+nan song 南宋 5859
+tu ku 图库 5858
+da dao 答道 5857
+dong jing 东经 5856
+gu ren 古人 5855
+shang cheng 商城 5854
+hui gui 回归 5853
+gui lin 桂林 5852
+zhang guan 长官 5851
+zhen li 真理 5850
+gen sui 跟随 5849
+ya dian 雅典 5848
+da bie shan 大别山 5848
+xin li xue 心理学 5847
+chang fang xing 长方形 5846
+suo zhi 所知 5845
+bu ran 不然 5844
+sheng dong 生动 5843
+chang xiao 畅销 5842
+she hui xue 社会学 5841
+nei he 内河 5840
+xue guan 血管 5839
+er zhe 二者 5838
+tian tang 天堂 5837
+tui kai 推开 5836
+wu li 无力 5836
+chu bei 储备 5835
+qian tu 前途 5834
+wu li 武力 5833
+tan dao 谈到 5832
+shen chuan 身穿 5831
+he nan sheng 河南省 5830
+jian zhang 见长 5829
+cai wu 财物 5828
+chan ye hua 产业化 5827
+fan ge ming 反革命 5826
+yan li 严厉 5825
+chu se 出色 5824
+qie shi 切实 5824
+bo lin 柏林 5823
+yang hua 氧化 5822
+chen ji 沉积 5821
+shi zheng fu 市政府 5820
+she xian 射线 5819
+liu ru 流入 5818
+dao shi 道士 5817
+tian shang 天上 5816
+zai du 再度 5815
+li bu 吏部 5814
+cai hui 彩绘 5813
+you ming 有名 5812
+lao dong zhe 劳动者 5812
+su wei ai 苏维埃 5811
+cong xiao 从小 5810
+fen ming 分明 5809
+ti chang 提倡 5808
+shen fen 身分 5807
+tong xing 通行 5806
+jie ceng 阶层 5805
+zhan hou 战后 5804
+di zu 地租 5803
+sun shang 损伤 5802
+wang fu 王府 5801
+she fa 设法 5800
+zi xing 字形 5800
+kuang shan 矿山 5799
+zhuan zhi 专制 5798
+zhan xian 战线 5797
+zui chun 嘴唇 5796
+yun zuo 运作 5795
+ke bu shi 可不是 5794
+xun chang 寻常 5793
+tan ming 探明 5792
+pei fu 佩服 5791
+gu dian 古典 5790
+fa xue 法学 5789
+di xia shui 地下水 5788
+tao chu 掏出 5787
+zheng zheng 整整 5787
+zhong zhou xian 中轴线 5786
+dong ce 东侧 5785
+ci qian 此前 5784
+yan jun 严峻 5783
+zhu feng 主峰 5782
+jian ding 坚定 5781
+shui liu 水流 5780
+ran liao 燃料 5779
+xian zhuang 现状 5778
+zhuo shou 着手 5777
+xing zou 行走 5776
+zha dan 炸弹 5775
+chu ren 出任 5775
+da zhan 大战 5774
+wan qu 弯曲 5773
+xiang jian 相见 5772
+qun xiong 群雄 5771
+lian luo 联络 5770
+ba ji si tan 巴基斯坦 5769
+ou yuan 欧元 5768
+yi fen 一分 5767
+huai zhong 怀中 5766
+zheng bian 政变 5765
+pu bu 瀑布 5764
+jun ma 军马 5763
+hua zhong 华中 5763
+shui jing 水晶 5762
+fu hao 符号 5761
+hui huang 辉煌 5760
+yi chuan 遗传 5759
+wen bu 稳步 5758
+ding neng tong 丁能通 5757
+bo lan hui 博览会 5756
+yin shua 印刷 5755
+bo wei 泊位 5754
+ji lu 纪录 5753
+yin yang 阴阳 5752
+zhong guo zheng fu 中国政府 5751
+xin yue 新月 5751
+yi min 移民 5750
+xian du 限度 5749
+guan jia 官家 5748
+kong ju 恐惧 5747
+xi bian 西边 5746
+ji xia 几下 5745
+yan chang 延长 5744
+yi zhi 已知 5743
+ri bao 日报 5742
+gan lai 赶来 5741
+chong zu 充足 5740
+ti dai 替代 5739
+nong yu 浓郁 5739
+er shi nian 二十年 5738
+wai di 外地 5737
+shan chang 擅长 5736
+re dian 热点 5735
+lao ying 老营 5734
+jian ding 鉴定 5733
+ben shu 本书 5732
+hao han 好汉 5731
+jiang shan 江山 5730
+guang hui 光辉 5729
+dang chang 当场 5728
+ji lv 纪律 5727
+zun xun 遵循 5727
+qing shao nian 青少年 5726
+yu dao 御道 5725
+kang yi 抗议 5724
+tan ce 探测 5723
+qian ze 谴责 5722
+gen zong 跟踪 5721
+qi shi 气势 5720
+hui lv 汇率 5719
+gao ceng 高层 5718
+song xian ce 宋献策 5717
+guang ming 光明 5716
+jing xiang 景象 5715
+jun fang 军方 5715
+qian lie 前列 5714
+xiang wang 向往 5713
+hao shi 好事 5712
+tian ran qi 天然气 5711
+zhan dou li 战斗力 5710
+xiu shan 修缮 5709
+guang xue 光学 5708
+ge xiao 各校 5707
+jing xin 精心 5706
+si yue 四月 5705
+zong hui 总会 5704
+zong dui 总队 5703
+ying de 赢得 5703
+jiao yu bu 教育部 5702
+duo jiu 多久 5701
+xin xing 新兴 5700
+fen sui 粉碎 5699
+chao yue 超越 5698
+ji wei 即位 5697
+guo shi 国师 5696
+ying ye 营业 5695
+wei fa 违法 5694
+li gong xue yuan 理工学院 5693
+ban shu 半数 5692
+zai xiao 在校 5691
+jun yun 均匀 5691
+shi wu 失误 5690
+shang you 尚有 5689
+cun min 村民 5688
+jing sai 竞赛 5687
+shou li 受理 5686
+sheng fen 省份 5685
+ke tou 磕头 5684
+yin cang 隐藏 5683
+yao yao tou 摇摇头 5682
+yi jian 一间 5681
+tong meng 同盟 5680
+ru shi 如是 5679
+zheng wei 政委 5679
+sheng xing 盛行 5678
+sui zhi 随之 5677
+sui dao 隧道 5676
+li run lv 利润率 5675
+ye zi 叶子 5674
+qi dan 契丹 5673
+zheng qiu 征求 5672
+zai pei 栽培 5671
+fu diao 浮雕 5670
+guan gai 灌溉 5669
+te quan 特权 5668
+dao ju 道具 5667
+you xian 优先 5667
+shen ji 审计 5666
+pi gu 屁股 5665
+li nian 理念 5664
+sheng qu 省区 5663
+ji zhu 记住 5662
+lv you ye 旅游业 5661
+gui zhou 贵州 5660
+gao shan 高山 5659
+shi ren 世人 5658
+zhu bian 主编 5657
+cao zong 操纵 5656
+shou xi 首席 5655
+yi mian 以免 5655
+yu fu 预付 5654
+an jing 安静 5653
+huo li 火力 5652
+qi dian 起点 5651
+yi jian 一剑 5650
+li wai 例外 5649
+chang gui 常规 5648
+zhi li 致力 5647
+gao di 高低 5646
+guan fu 官府 5645
+jing ya 惊讶 5644
+ying ying 盈盈 5643
+shen long 神龙 5643
+zong ran 纵然 5642
+chang zi 肠子 5641
+wo hui 我会 5640
+feng bao 风暴 5639
+hui shi 回事 5638
+hu shi 忽视 5637
+zhi dian 指点 5636
+ji fa 激发 5635
+di jie 缔结 5634
+zhu zhai 住宅 5633
+kai tuo 开拓 5632
+shi di 湿地 5631
+san mian 三面 5631
+xing hao 型号 5630
+hou dai 后代 5629
+meng di 猛地 5628
+shi ming 使命 5627
+te wu 特务 5626
+jiu fen 纠纷 5625
+kao gu 考古 5624
+gu shi 股市 5623
+shi fan xue yuan 师范学院 5622
+ju dong 举动 5621
+you yu 犹豫 5620
+dong shi 董事 5619
+qi yi jun 起义军 5619
+shao lin si 少林寺 5618
+gong ren jie ji 工人阶级 5617
+gong feng 供奉 5616
+dian tai 电台 5615
+nan mian 难免 5614
+yu zhong 余种 5613
+wai yu 外语 5612
+mi ji 密集 5611
+xian qi 掀起 5610
+yi si 一丝 5609
+tu shu 图书 5608
+da hai 大海 5607
+bao chou 报仇 5607
+jiu nian 九年 5606
+zi kou 子口 5605
+xiao di 小弟 5604
+bai wan 百万 5603
+zhong shan gong yuan 中山公园 5602
+shi liu 十六 5601
+chang shang 厂商 5600
+he hu 合乎 5599
+kong ming 孔明 5598
+zi sha 自杀 5597
+qi ma 骑马 5596
+chong bai 崇拜 5595
+ji yu 机遇 5595
+zhuan ru 转入 5594
+di xia 低下 5593
+pan jue 判决 5592
+wu li xue 物理学 5591
+wai zhang 外长 5590
+miao hui 描绘 5589
+tu zhong 途中 5588
+xian ji shi 县级市 5587
+tu er qi 土耳其 5586
+jing jiang 荆江 5585
+men xia 门下 5584
+liang mian 两面 5583
+kai lai 开来 5583
+shun zhe 顺着 5582
+yi ti hua 一体化 5581
+lai bu ji 来不及 5580
+ming ci 名词 5579
+pei yu 培育 5578
+xin zeng 新增 5577
+su cheng 俗称 5576
+han yang 汉阳 5575
+zhuan xian 专线 5574
+gong ji 供给 5573
+dui bi 对比 5572
+ru guo shuo 如果说 5571
+liang di 两地 5571
+qiu mi 球迷 5570
+liu bu 六部 5569
+jun jian 军舰 5568
+jie zou 节奏 5567
+huang yi yi 黄依依 5566
+bian liang 变量 5565
+shi zhang 师长 5564
+dang an 档案 5563
+zhuan li 专利 5562
+xiang ying 响应 5561
+dian di 点滴 5560
+shang di 上帝 5559
+cong zhong 从中 5559
+jia zhong 加重 5558
+guo hui 国徽 5557
+ren zheng 认证 5556
+yun he 运河 5555
+xian feng 先锋 5554
+jun zhong 军中 5553
+dui ci 对此 5552
+tu di 徒弟 5551
+yi bi 一笔 5550
+jiang li 奖励 5549
+heng guan 横贯 5548
+nei gong 内功 5547
+fen gong 分工 5547
+shang wu 商务 5546
+si xia 四下 5545
+shan po 山坡 5544
+zong suan 总算 5543
+da zhang 打仗 5542
+bu fa 步伐 5541
+bi kai 避开 5540
+zan cheng 赞成 5539
+gong cheng xue yuan 工程学院 5538
+yi liang 一辆 5537
+quan li 全力 5536
+wei ji 危急 5535
+xiao sheng 小声 5535
+ji bie 级别 5534
+huang tu 黄土 5533
+duo er gun 多尔衮 5532
+bu cheng 不成 5531
+zhi ze 指责 5530
+fa zi 法子 5529
+chu ban she 出版社 5528
+zhong dong 中东 5527
+ying you 应有 5526
+ban shi chu 办事处 5525
+gong shi 公式 5524
+jun shi 军师 5523
+xiao fei pin 消费品 5523
+zai wai 在外 5522
+shou huo 收获 5521
+wu song 武松 5520
+ci chang 磁场 5519
+shui lu 水陆 5518
+mie wang 灭亡 5517
+bing bao 禀报 5516
+yi han 遗憾 5515
+jian zhu ye 建筑业 5514
+fen kai 分开 5513
+shou ming 寿命 5512
+zhuan zheng 专政 5511
+si qu 死去 5511
+yin yue tang 音乐堂 5510
+jun shi 军士 5509
+shi liao 史料 5508
+yi pian 一篇 5507
+gao xiao 搞笑 5506
+guo du 过度 5505
+bai jia xuan 白嘉轩 5504
+zhao jian 召见 5503
+li kui 李逵 5502
+man chang 漫长 5501
+chuang wai 窗外 5500
+yi ke 一刻 5499
+fang cheng 方程 5499
+bi zhe 笔者 5498
+liang jie 两届 5497
+yuan yu 源于 5496
+xi su 习俗 5495
+kao zheng 考证 5494
+nan ti 难题 5493
+xiang bu dao 想不到 5492
+gu ding zi chan 固定资产 5491
+jian zhu wu 建筑物 5490
+jian qiang 坚强 5489
+mo jing 墨镜 5488
+cheng fa 惩罚 5487
+ji qi 激起 5487
+yue qi 乐器 5486
+qing xie 倾斜 5485
+guo qi 国旗 5484
+jian guan 监管 5483
+yin yin 隐隐 5482
+sheng gao 升高 5481
+shen yuan 深远 5480
+kan wu 刊物 5479
+jian jie 间接 5478
+yi zai 一再 5477
+kui sun 亏损 5476
+chuan zhi 船只 5475
+xi ou 西欧 5475
+yue bu qun 岳不群 5474
+zhu guan 主观 5473
+chuan ru 传入 5472
+cheng xiao 成效 5471
+jian ku 艰苦 5470
+gao xiao 高效 5469
+chu ming 出名 5468
+dai dong 带动 5467
+di xia 底下 5466
+sha shi 沙市 5465
+shen hou 深厚 5464
+shen xian 神仙 5463
+zhui gan 追赶 5463
+fu lu 俘虏 5462
+zao nian 早年 5461
+jie cheng 结成 5460
+zhi fu 致富 5459
+bu lei 部类 5458
+ci shi 刺史 5457
+zhong zu 种族 5456
+jiao ben 脚本 5455
+yi tuan 一团 5454
+yi dun 亿吨 5453
+bu jin jin 不仅仅 5452
+dang shi ren 当事人 5451
+lang fei 浪费 5451
+hui bao 回报 5450
+bao zhu 抱住 5449
+xian xing 先行 5448
+yue shu 约束 5447
+suo yong 所用 5446
+zhi dao 直到 5445
+jin shen 谨慎 5444
+bu tong yu 不同于 5443
+zi dai 自带 5442
+shi dian 试点 5441
+ai zi bing 艾滋病 5440
+tai kang 太康 5439
+ting zhang 廷杖 5439
+da ban 打扮 5438
+xi ce 西侧 5437
+hong qi gong 洪七公 5436
+he gu 河谷 5435
+chao chu 超出 5434
+san wei 三位 5433
+ban xue 办学 5432
+zi you 自有 5431
+zhe bu 这部 5430
+bu deng 不等 5429
+niang zi 娘子 5428
+jie chu 解除 5427
+bu shu 部属 5427
+zi dan 子弹 5426
+tan xing 弹性 5425
+ri li 日历 5424
+bei yue 北约 5423
+bei hou 背后 5422
+shi po tian 石破天 5421
+cheng zan 称赞 5420
+nian fen 年份 5419
+ke wang 渴望 5418
+yan zou 演奏 5417
+gao hu 高呼 5416
+da han 大汉 5415
+dan yao 弹药 5415
+re liang 热量 5414
+jin qian 金钱 5413
+hun ning tu 混凝土 5412
+xia da 下达 5411
+hong shan 洪山 5410
+qi fu 起伏 5409
+she cheng 射程 5408
+pei bei 配备 5407
+shou nao 首脑 5406
+wo jia 我家 5405
+jing shen wen ming 精神文明 5404
+zhong shan 中山 5403
+chuang jian zhe 创建者 5403
+zhe hui er 这会儿 5402
+cheng ji 乘机 5401
+nei lu 内陆 5400
+shi yi 十一 5399
+xue ruo 削弱 5398
+lai hui 来回 5397
+xian zheng fu 县政府 5396
+shang ma 上马 5395
+shu fa 书法 5394
+wa wa 娃娃 5393
+zuo tan hui 座谈会 5392
+jun yong 军用 5391
+tai ping 太平 5390
+chang wei 常委 5390
+ming ren 名人 5389
+fa ling 法令 5388
+shi bie 识别 5387
+xiang qi 响起 5386
+yin ru 引入 5385
+sha hai 杀害 5384
+huan jie 缓解 5383
+li tai hou 李太后 5382
+yan jiu yuan 研究员 5381
+wu fen 五分 5380
+ri zhi 日志 5379
+ce hua 策划 5378
+lu di 陆地 5378
+li shu 隶属 5377
+fei xing yuan 飞行员 5376
+shi yu 始于 5375
+shui dao 水稻 5374
+gong ye hua 工业化 5373
+jing ji xiao yi 经济效益 5372
+xiao xiao 小小 5371
+ge xin 革新 5370
+bi du 必读 5369
+qiu zhi 求知 5368
+zhong yao 中药 5367
+dai biao zuo 代表作 5366
+zheng yi 争议 5366
+da ju 大局 5365
+liao dong 辽东 5364
+yi jiao 一脚 5363
+qin qie 亲切 5362
+zong shu ji 总书记 5361
+wu jian 五间 5360
+ji fen 几分 5359
+bian qian 变迁 5358
+duo ming 多名 5357
+kong zi 孔子 5356
+xue shi 学士 5355
+gu gan 骨干 5354
+leng jing 冷静 5354
+rong liang 容量 5353
+huo li 活力 5352
+tong cheng 通称 5351
+xian hua 鲜花 5350
+yuan chao 元朝 5349
+xian shi 先是 5348
+quan hui 全会 5347
+shen bao 申报 5346
+jue da bu fen 绝大部分 5345
+nei han 内涵 5344
+fan she 反射 5343
+gan quan 甘泉 5342
+na mo 那末 5342
+tai he dian 太和殿 5341
+shi fei 是非 5340
+si yang 饲养 5339
+shan xi sheng 陕西省 5338
+xin feng 信奉 5337
+qing jie 清洁 5336
+chang jiang liu yu 长江流域 5335
+yi wan 一碗 5334
+xia xia 下辖 5333
+fu ren 妇人 5332
+zu zong 祖宗 5331
+yi ba 一八 5330
+hou shi 后世 5330
+shi di 师弟 5329
+mo hu 模糊 5328
+qi nian 七年 5327
+di ceng 地层 5326
+liao ning 辽宁 5325
+bu bian 不便 5324
+tu xiang 图像 5323
+shui xia 水下 5322
+xiang ju 相距 5321
+zhuan dong 转动 5320
+yu ding 预定 5319
+jin ke neng 尽可能 5318
+bu xiao 不小 5318
+yun ji 云集 5317
+tong qing 同情 5316
+tian ti 天体 5315
+dian shi 殿试 5314
+li yi 礼仪 5313
+sui shou 随手 5312
+pai fang 牌坊 5311
+du zi 独自 5310
+la xia 落下 5309
+si fang 四方 5308
+zai chang 在场 5307
+qi te 奇特 5306
+jie lian 接连 5306
+shui yu 水域 5305
+qing chun 青春 5304
+yi dong 以东 5303
+dui ying 对应 5302
+cheng hu 称呼 5301
+xiao hua 笑话 5300
+dan bai 蛋白 5299
+ren min ri bao 人民日报 5298
+dian qi 电器 5297
+yuan xian 原先 5296
+jie shou 接收 5295
+deng dao 等到 5294
+zu zhi fa 组织法 5294
+xia lie 下列 5293
+fen e 份额 5292
+ju lie 剧烈 5291
+chu zhi 处置 5290
+lou shang 楼上 5289
+huan le 欢乐 5288
+ke zhang 科长 5287
+shui zhi 谁知 5286
+yuan chong huan 袁崇焕 5285
+liang ju 两句 5284
+sheng pa 生怕 5283
+men dong 门洞 5282
+kuan kuo 宽阔 5282
+shan he 山河 5281
+sheng ping 生平 5280
+shou wei 首位 5279
+xin hua wang 新华网 5278
+zhong ya 中亚 5277
+zhao shou 招收 5276
+zhang guan 掌管 5275
+zhi li 直隶 5274
+zhuo zhong 着重 5273
+zhe kuai 这块 5272
+wan nian 万年 5271
+nan yue 南岳 5270
+zhao ze 沼泽 5270
+hua qiao 华侨 5269
+ci jian 此间 5268
+zhuang you 装有 5267
+ji hui 集会 5266
+wan jia 万家 5265
+dong feng 东风 5264
+you mei 优美 5263
+wen dai 温带 5262
+ji li 激励 5261
+e dong 鄂东 5260
+yi nei 以内 5259
+shan ding 山顶 5258
+wen hua 文华 5258
+zhen jing 震惊 5257
+you yue 优越 5256
+bao bei 宝贝 5255
+pin ming 拼命 5254
+tie kuang 铁矿 5253
+sui shuo 虽说 5252
+pei chang 赔偿 5251
+yi mei 一枚 5250
+bu ceng 不曾 5249
+qu jue 取决 5248
+di bu 地步 5247
+bai ling 白领 5246
+tong qu 通衢 5246
+dong shi zhang 董事长 5245
+tui song 推送 5244
+si zhe 死者 5243
+bu yi 不已 5242
+liang jia 两家 5241
+zheng qi 整齐 5240
+meng lie 猛烈 5239
+zao lin 造林 5238
+yi ji 遗迹 5237
+wu xian dian 无线电 5236
+di yi pi 第一批 5235
+pai mai 拍卖 5234
+zheng he 整合 5234
+zhu ge liang 诸葛亮 5233
+shang ceng 上层 5232
+qiang po 强迫 5231
+zi cheng 自称 5230
+cao ru lin 曹汝霖 5229
+ge jia 各家 5228
+jiao hui 教会 5227
+jia shu 家属 5226
+wu jia 物价 5225
+san guo 三国 5224
+shang kong 上空 5223
+jian bei 兼备 5222
+ting zhang 庭长 5222
+lao da 老大 5221
+zi you ren 自由人 5220
+tong yi zhan xian 统一战线 5219
+xing zheng gong shu 行政公署 5218
+ying zi 影子 5217
+mian yang 沔阳 5216
+fang wu 防务 5215
+tao qi 陶器 5214
+shi xia qu 市辖区 5213
+bian ji zhe 编辑者 5212
+ding wei 定为 5211
+kan guo 看过 5210
+lian peng 莲蓬 5210
+zi zhi ji guan 自治机关 5209
+bu chi 不吃 5208
+xing shi 刑事 5207
+yun qi 运气 5206
+ma cheng 麻城 5205
+shou xiang 首相 5204
+yi dian er 一点儿 5203
+jiao zuo 叫作 5202
+wang qian 往前 5201
+qing hua 清华 5200
+shui zhao 睡着 5199
+bao mi hua 爆米花 5198
+tong bu 同步 5198
+gai zhuang 改装 5197
+huang tai hou 皇太后 5196
+shu ji 书籍 5195
+zhu liu 主流 5194
+lan jie 拦截 5193
+zhen pin 珍品 5192
+tao tai 淘汰 5191
+xian yi 现已 5190
+ji ke 即可 5189
+la ma 喇嘛 5188
+da zhe 打着 5187
+xiang cha 相差 5186
+hong qi 红旗 5186
+lv hua 绿化 5185
+jin hua 进化 5184
+gong chan guo ji 共产国际 5183
+zhu shi 注视 5182
+shen sheng 神圣 5181
+jin jun 进军 5180
+da zhan hong tu 大展宏图 5179
+xia zhai 狭窄 5178
+zhen zhang 镇长 5177
+guo qing 国情 5176
+jin bi 紧闭 5175
+song lai 送来 5174
+yin du yang 印度洋 5174
+bi li shi 比利时 5173
+sheng xia shi 省辖市 5172
+zhi zhi 制止 5171
+cai xi 菜系 5170
+er lu 二路 5169
+shang wang 伤亡 5168
+zi sun 子孙 5167
+you hai 有害 5166
+dian liu 电流 5165
+ren wen 人文 5164
+bi hua 壁画 5163
+da ye 大爷 5162
+hao xiang 好象 5162
+zhuang yuan 状元 5161
+jian li 监利 5160
+huan bao 环保 5159
+bei ju 悲剧 5158
+sou gou 搜狗 5157
+shi shang 时尚 5156
+jie li 竭力 5155
+zhu duo 诸多 5154
+xia ma 下马 5153
+nong du 浓度 5152
+biao tai 表态 5151
+hao hua 豪华 5150
+bian li 便利 5150
+guan zhi 官职 5149
+xue yuan lu 学院路 5148
+dong jiao min xiang 东交民巷 5147
+bi shou 匕首 5146
+zhi guan 只管 5145
+tai jie 台阶 5144
+bao gui 宝贵 5143
+zou lai 走来 5142
+chuan mei 传媒 5141
+jia jin 加紧 5140
+qian nian 千年 5139
+ji shao 极少 5138
+chang she 常设 5138
+you liao 油料 5137
+yun ying 运营 5136
+da huo er 大伙儿 5135
+huan xiang 幻想 5134
+e nan 鄂南 5133
+xiang dong 向东 5132
+qing li 清理 5131
+en shi shi 恩施市 5130
+feng jian wang chao 封建王朝 5129
+er yue 二月 5128
+wan nian 晚年 5127
+tong yi ge 同一个 5126
+zhai wu 债务 5126
+hou ren 后人 5125
+hen xiao 很小 5124
+tiao kong 调控 5123
+zhuan ke 专科 5122
+da lian 大连 5121
+guan liao 官僚 5120
+zi you 自幼 5119
+da yu 大于 5118
+da chi yi jing 大吃一惊 5117
+ti hui 体会 5116
+si chu 四处 5115
+mao zi 帽子 5114
+lin ye 林业 5114
+chong chong 重重 5113
+zhong xiao xue 中小学 5112
+yi tong 一同 5111
+mian de 免得 5110
+an qi 暗器 5109
+zhe jia 这家 5108
+kang you wei 康有为 5107
+qian jiang shi 潜江市 5106
+yi guan 一贯 5105
+shi yue 十月 5104
+jiu qu hui chang 九曲回肠 5103
+wu si yun dong 五四运动 5102
+huo ju ji hua 火炬计划 5102
+shen li 审理 5101
+wang shi 王室 5100
+bing qing 病情 5099
+lian xi 练习 5098
+zhu yi jun 朱翊钧 5097
+pan luan 叛乱 5096
+zhi yu 置于 5095
+shi fan xian 示范县 5094
+de fen 得分 5093
+zhuan xie 撰写 5092
+zai nan 灾难 5091
+gong chan zhu yi 共产主义 5090
+jia she 假设 5090
+zhi yao 制药 5089
+chang you 常有 5088
+fan nao 烦恼 5087
+liu xue 留学 5086
+shi wen 诗文 5085
+qian gong qing 千公顷 5084
+xiao hai zi 小孩子 5083
+wan ru 宛如 5082
+jian shi 监视 5081
+zong shen 纵身 5080
+mei shi 美食 5079
+yao jian 腰间 5078
+wan duo mu 万多亩 5078
+liu shao qi 刘少奇 5077
+li hong zhong 李鸿忠 5076
+yi shu jia 艺术家 5075
+dan mai 丹麦 5074
+qi wei 气味 5073
+pin dao 频道 5072
+nan huan lu 南环路 5071
+yuan zhong chang 原种场 5070
+bai sha zhou 白沙洲 5069
+fei lv bin 菲律宾 5068
+ti li 体力 5067
+shi xi 实习 5066
+qia qia 恰恰 5066
+xi xia 西夏 5065
+jie kai 解开 5064
+jin qiu 进球 5063
+zi gu 自古 5062
+di gei 递给 5061
+qiao tou bao 桥头堡 5060
+zhong lu 中路 5059
+da sai 大赛 5058
+zhe shi 着实 5057
+zhong you 中游 5056
+wu yi 武艺 5055
+ke ju 科举 5054
+ban sui 伴随 5054
+fang dao 放到 5053
+liao dao 料到 5052
+gen zhe 跟着 5051
+kun jing 困境 5050
+xiao shi 小事 5049
+huo guang 火光 5048
+lei bie 类别 5047
+fan di 反帝 5046
+qiang dao 强盗 5045
+jie shi 揭示 5044
+yi yu 易于 5043
+ci ju 此举 5042
+jiao she 交涉 5042
+xian mei 鲜美 5041
+zhuan yong 专用 5040
+da pao 大炮 5039
+gong shen 躬身 5038
+ren ge 人格 5037
+kai zhi 开支 5036
+ju ci 据此 5035
+shi zu 氏族 5034
+cai yao 菜肴 5033
+zhang xian zhong 张献忠 5032
+dan fu 担负 5031
+xiao sheng 笑声 5030
+zhong nan bu 中南部 5030
+shi shi qiu shi 实事求是 5029
+qu sheng 取胜 5028
+xue fu 学府 5027
+shou jiao 手脚 5026
+gong shou 拱手 5025
+jie xia lai 接下来 5024
+e lie 恶劣 5023
+bu qiang 步枪 5022
+zong heng 纵横 5021
+tou bu 头部 5020
+xin shang 心上 5019
+hai nan 海南 5018
+cha yi 诧异 5018
+dan shui 淡水 5017
+li zhi 理智 5016
+yu lei 鱼雷 5015
+guang ze 光泽 5014
+rong zi 融资 5013
+shen pan yuan 审判员 5012
+shu xue jia 数学家 5011
+yi pang 一旁 5010
+zhong ri 中日 5009
+jia re 加热 5008
+dan yi 单一 5007
+gai bian 改编 5006
+bao li 暴力 5006
+guan dao 管道 5005
+jian ren 兼任 5004
+xun zhang 勋章 5003
+he jin 合金 5002
+can an 惨案 5001
+suo de 所得 5000
+seng ren 僧人 4999
+yuan xing 圆形 4998
+hui shou 挥手 4997
+fang kai 放开 4996
+ji qiang 机枪 4995
+tian fu 天府 4994
+zhi min 殖民 4993
+jian ce 监测 4993
+yi tang 一趟 4992
+xue yuan 学员 4991
+gong zhan 攻占 4990
+hong qiang 红墙 4989
+yin ni 印尼 4988
+xin jian 新建 4987
+fan shen 翻身 4986
+le yuan 乐园 4985
+zhu fu 嘱咐 4984
+zhao shu 招数 4983
+min bing 民兵 4982
+bo dong 波动 4981
+yi zhi 移植 4981
+bo duo 剥夺 4980
+bian xing 变形 4979
+tan xi 叹息 4978
+tian se 天色 4977
+xin mu 心目 4976
+fang ru 放入 4975
+ji ti 机体 4974
+chao liu 潮流 4973
+shi nei 室内 4972
+zi ci 自此 4971
+mei li 魅力 4970
+wei wu er zu 维吾尔族 4969
+liang ceng 两层 4969
+kou dai 口袋 4968
+su liao 塑料 4967
+zhan you 战友 4966
+zi tai 姿态 4965
+han zhong 汉中 4964
+bian huan 变换 4963
+zhuang zu 壮族 4962
+po chan 破产 4961
+yi zhou 一周 4960
+wei gong 围攻 4959
+heng xing 恒星 4958
+tou chan 投产 4957
+zhen dong 振动 4957
+wei mian 未免 4956
+que xian 缺陷 4955
+mei nv 美女 4954
+bei shang 北上 4953
+xue wen 学问 4952
+shen he 审核 4951
+yong hu 拥护 4950
+gang qin 钢琴 4949
+wei yi 惟一 4948
+yao yong 药用 4947
+qu xiang 趋向 4946
+zhe mo 折磨 4945
+chun cui 纯粹 4945
+yi jia 一架 4944
+shi bao 时报 4943
+xiao qu 校区 4942
+huo jiang 获奖 4941
+yuan cheng 远程 4940
+di da 抵达 4939
+gu wu 鼓舞 4938
+ha er bin 哈尔滨 4937
+bu shi 不时 4936
+yu shang 遇上 4935
+fu shu 附属 4934
+qu zhu 驱逐 4933
+yi bei 一倍 4933
+fou ren 否认 4932
+jian rui 尖锐 4931
+hei ren 黑人 4930
+ke xue yuan 科学院 4929
+bu jin 不尽 4928
+ping xing 平行 4927
+di jun 敌军 4926
+mian shang 面上 4925
+er ci 二次 4924
+chan di 产地 4923
+fen qi 分歧 4922
+hui bi 回避 4921
+tian wen 天文 4921
+bu kan 不堪 4920
+qi ji 奇迹 4919
+yun ying shang 运营商 4918
+ma ke si 马克思 4917
+dong ji 动机 4916
+kuo san 扩散 4915
+gai shi 该市 4914
+zhe gu 鹧鸪 4913
+bu zhi 不止 4912
+ru jia 儒家 4911
+chong dang 充当 4910
+gong ren 公认 4909
+gong hui 工会 4909
+shi fan 师范 4908
+hen hen 狠狠 4907
+zhen xiang 真相 4906
+shi fan 示范 4905
+lian tong 连同 4904
+xia die 下跌 4903
+hao ma 号码 4902
+mei fa 没法 4901
+jian yu 监狱 4900
+hang dao 航道 4899
+shi ji mo 世纪末 4898
+an hui sheng 安徽省 4897
+wan li fang mi 万立方米 4897
+xie xia 写下 4896
+nan an 南岸 4895
+che tui 撤退 4894
+wang jia 王家 4893
+xing ren 行人 4892
+zhong yao xing 重要性 4891
+zhu ban 主办 4890
+zhou kan 周刊 4889
+yao jin 要紧 4888
+jin chu 进出 4887
+yan mi 严密 4886
+wu zi 兀自 4885
+shi ge 十个 4885
+li sheng 厉声 4884
+zhao zhi jing 赵志敬 4883
+wan wan 万万 4882
+jie shi 届时 4881
+ti qing 提请 4880
+cun zhuang 村庄 4879
+xiang mao 相貌 4878
+suo duan 缩短 4877
+ming sheng qu 名胜区 4876
+qiang bi 墙壁 4875
+jian yu 建于 4874
+zi fei 资费 4873
+jiu yue 九月 4873
+jie kai 揭开 4872
+er nv 儿女 4871
+gong shi 公使 4870
+gao bie 告别 4869
+chu fen 处分 4868
+an na 安娜 4867
+gan yu 干预 4866
+zhi da 直达 4865
+nv hai zi 女孩子 4864
+niang niang 娘娘 4863
+han dai 汉代 4862
+shan lu 山麓 4861
+chuan chu 传出 4861
+bao quan 保全 4860
+duo yu 多于 4859
+chun ji 春季 4858
+qu xian 曲线 4857
+liang pang 两旁 4856
+jie zhu 借助 4855
+gong gong 公公 4854
+man xing 慢性 4853
+zhan qu 战区 4852
+mo fang 模仿 4851
+liu jing 流经 4850
+nong ye bu 农业部 4849
+huang yao shi 黄药师 4849
+hua mian 画面 4848
+xi men 西门 4847
+zhu ru 诸如 4846
+qing mo 清末 4845
+jin chu kou 进出口 4844
+jie fang zhan zheng 解放战争 4843
+yi lun 一轮 4842
+hei hei 嘿嘿 4841
+fu ren 富人 4840
+zuo wan 昨晚 4839
+yuan gu 缘故 4838
+lai yuan yu 来源于 4837
+yi chu 一出 4837
+ren jiao 任教 4836
+bu wei 部委 4835
+a gen ting 阿根廷 4834
+shi tou 势头 4833
+hu sheng 呼声 4832
+zhi wang 指望 4831
+jiang shui 降水 4830
+liang bu 两步 4829
+zhi nan 指南 4828
+zheng qiao 正桥 4827
+jiao dian 焦点 4826
+zou jin 走近 4825
+feng jian she hui 封建社会 4825
+hai mian 海面 4824
+huang quan 皇权 4823
+li xian nian 李先念 4822
+gong chan dang yuan 共产党员 4821
+dong ya 东亚 4820
+nan duan 南端 4819
+fu yong 服用 4818
+zi di 子弟 4817
+mei hua 梅花 4816
+huai nan 淮南 4815
+li fang 立方 4814
+jing mao 经贸 4813
+hua fei 花费 4813
+da li 大理 4812
+wan bei 完备 4811
+bu lang 布朗 4810
+sheng yu 生育 4809
+gan shang 赶上 4808
+yuan cai liao 原材料 4807
+fa guang 发光 4806
+qing gong 清宫 4805
+gao shang 高尚 4804
+suo you zhe 所有者 4803
+liang yuan 两院 4802
+qing ting 倾听 4801
+kan cheng 堪称 4801
+zi dong hua 自动化 4800
+wei qi 为期 4799
+dong bei bu 东北部 4798
+fa xi si 法西斯 4797
+li qiu 力求 4796
+zhang fu 涨幅 4795
+gei chu 给出 4794
+luo di 落地 4793
+zou lang 走廊 4792
+qing qing 青青 4791
+shou yao 首要 4790
+sao zi 嫂子 4789
+gong fu 工夫 4789
+bian xie 编写 4788
+jiang su sheng 江苏省 4787
+you hua 优化 4786
+ben tu 本土 4785
+zhui jia 追加 4784
+cong lai bu 从来不 4783
+hua sheng dun 华盛顿 4782
+ren yi 任意 4781
+chang dao 倡导 4780
+wai shang 外商 4779
+gu jia 股价 4778
+zhu cheng 著称 4777
+yu qi 语气 4777
+xuan qu 选区 4776
+jian yu 鉴于 4775
+men ren 门人 4774
+can yi yuan 参议院 4773
+ji xing 急性 4772
+xing bie 性别 4771
+qing tong 青铜 4770
+xiang jiao 橡胶 4769
+tong shang 通商 4768
+dai biao xing 代表性 4767
+xiao huo zi 小伙子 4766
+liang ji 两级 4765
+bo bo 伯伯 4765
+gong yue 公约 4764
+ceng mian 层面 4763
+can lan 灿烂 4762
+jing shi 京师 4761
+chu cun 储存 4760
+bao fu 包袱 4759
+fa bing 发病 4758
+quan zi 圈子 4757
+zuo wei 座位 4756
+xian jin 现今 4755
+jie ji dou zheng 阶级斗争 4754
+da pan 大盘 4753
+liu pai 流派 4753
+te qu 特区 4752
+long zhao 笼罩 4751
+hu tu 糊涂 4750
+jian shi 见识 4749
+kao jin 靠近 4748
+ji feng qi hou 季风气候 4747
+cheng ji si han 成吉思汗 4746
+he deng 何等 4745
+wai bian 外边 4744
+mei zi 妹子 4743
+chi bi 赤壁 4742
+di liu ci 第六次 4741
+yu hui 与会 4741
+huo shao 火烧 4740
+shuai xian 率先 4739
+quan shu 全书 4738
+chong dong 冲动 4737
+xia men 厦门 4736
+di biao 地表 4735
+sun quan 孙权 4734
+zong shi 宗室 4733
+zhan li 站立 4732
+jing du 精度 4731
+zhuan qu 专区 4730
+jie zhi 介质 4729
+nan chao 南朝 4729
+chi jing 吃惊 4728
+gan yu 敢于 4727
+lai wang 来往 4726
+dian ya 电压 4725
+bei xin 背心 4724
+du du 都督 4723
+gao sheng 高声 4722
+meng ran 猛然 4721
+su dan 苏丹 4720
+shi yu 适于 4719
+tao pao 逃跑 4718
+di yi bu 第一部 4717
+hua ren 华人 4717
+cui hui 摧毁 4716
+zu lan 阻拦 4715
+lian ming 联名 4714
+yi er 一二 4713
+shi zhe 使者 4712
+jiao ti 交替 4711
+bi jiang 必将 4710
+shou qu 收取 4709
+liang jiu 良久 4708
+he qian ting 核潜艇 4707
+jin shui he 金水河 4706
+bei yang 北洋 4705
+xiang tong 相通 4705
+jing qiao 精巧 4704
+da ku 大哭 4703
+zai xiang 宰相 4702
+kai she 开设 4701
+zeng zhang lv 增长率 4700
+kou tou 叩头 4699
+da lou 大楼 4698
+mei tou 眉头 4697
+gong shang ye 工商业 4696
+ji tuo 寄托 4695
+wa jue 挖掘 4694
+mei kuang 煤矿 4693
+jin shen 进深 4693
+sui yue 岁月 4692
+qiao miao 巧妙 4691
+qiang zhi 强制 4690
+shou fu 收复 4689
+qing hai 青海 4688
+biao jue quan 表决权 4687
+wu xing 五行 4686
+zhi li 智力 4685
+shu shang 树上 4684
+bie chu 别处 4683
+du guo 度过 4682
+bei dong 被动 4681
+e tou 额头 4681
+wan liang 万辆 4680
+er wei 二位 4679
+zhuang da 壮大 4678
+huan rao 环绕 4677
+gui ge 规格 4676
+jiao liang 较量 4675
+zhe xue jia 哲学家 4674
+dui chen 对称 4673
+la zhu 蜡烛 4672
+kou zi 口子 4671
+lao lao 牢牢 4670
+huang shi 皇室 4669
+yao me 要么 4669
+ji xiang 吉祥 4668
+chang jing 场景 4667
+shan nan 山南 4666
+zong zhang 总长 4665
+ri qu 日趋 4664
+huo yan 火焰 4663
+chun shou ru 纯收入 4662
+wai lai 外来 4661
+tong ling 统领 4660
+fan chou 范畴 4659
+chong zu 重组 4658
+gao ya 高压 4657
+gong zuo zhe 工作者 4657
+chuan qi 传奇 4656
+fu he 复合 4655
+guang dong sheng 广东省 4654
+qi yue 七月 4653
+dong hai 东海 4652
+yi xi 以西 4651
+he shi 何时 4650
+gong lv 功率 4649
+nu bi 奴婢 4648
+liu ti 流体 4647
+xiang gong 相公 4646
+zhong xun 中旬 4645
+zhi dao 制导 4645
+yin jiu 饮酒 4644
+bu zheng shi 布政使 4643
+can ji ren 残疾人 4642
+zi ran jie 自然界 4641
+qing hua da xue 清华大学 4640
+ke mu 科目 4639
+tong cheng 统称 4638
+dai xie 代谢 4637
+tu sha 屠杀 4636
+hu lve 忽略 4635
+kong bai 空白 4634
+xia shou 下手 4633
+chong po 冲破 4633
+can mou 参谋 4632
+xiang shang 向上 4631
+heng liang 衡量 4630
+wan hao 完好 4629
+zhang men 掌门 4628
+yu wang 欲望 4627
+ren ke 认可 4626
+zhao dai hui 招待会 4625
+jin biao sai 锦标赛 4624
+xiang zhen qi ye 乡镇企业 4623
+zhong duan 中断 4622
+he shui 河水 4621
+fang fan 防范 4621
+zhen rong 阵容 4620
+long zhong 隆重 4619
+shui chan pin 水产品 4618
+an zhi 安置 4617
+da duan 打断 4616
+ke bian zi ben 可变资本 4615
+da wang 大王 4614
+ye man 野蛮 4613
+zhang cui shan 张翠山 4612
+qin xin 亲信 4611
+da liang 打量 4610
+yang pi 羊皮 4609
+bu yu 不语 4609
+liang hu 两湖 4608
+shu hua 书画 4607
+shou chi 手持 4606
+ci di 此地 4605
+xiang zhu 相助 4604
+se su 色素 4603
+yu bei 预备 4602
+shui fen 水分 4601
+han zi 汉字 4600
+xian xia 闲暇 4599
+jiao fu 交付 4598
+jiao dai 交代 4597
+ban yan 扮演 4596
+jia shi 驾驶 4596
+bao zhuang 包装 4595
+cheng bei 城北 4594
+xiu li 秀丽 4593
+jiao tan 交谈 4592
+hen ji 痕迹 4591
+li qu 离去 4590
+fa jue 发觉 4589
+xin yi 心意 4588
+tiao xuan 挑选 4587
+ku xiao 苦笑 4586
+nan bei chao 南北朝 4585
+shi jin 使劲 4584
+ce suo 厕所 4584
+zhan che 战车 4583
+mo nian 末年 4582
+cun zi 村子 4581
+ji li 极力 4580
+hui ji 汇集 4579
+qian du 迁都 4578
+pu ren 仆人 4577
+sheng qi 升起 4576
+hu lu 葫芦 4575
+bi ru shuo 比如说 4574
+tu xing 图形 4573
+bao shang 报上 4572
+qing qing di 轻轻地 4572
+fang zhong 房中 4571
+zhu de 朱德 4570
+jiao ji 焦急 4569
+she tou 舌头 4568
+zhui jiu 追究 4567
+xiu xing 修行 4566
+xia gu 峡谷 4565
+huai zhe 怀着 4564
+jiang huai 江淮 4563
+qing feng 清风 4562
+zhe bian 这边 4561
+quan xin 全新 4560
+zhuo mo 琢磨 4560
+shi yi 示意 4559
+zou si 走私 4558
+bu xia 部下 4557
+jing ji xue jia 经济学家 4556
+zhou zhuan 周转 4555
+tu jue 突厥 4554
+xuan du 宣读 4553
+hai si 害死 4552
+beng kui 崩溃 4551
+jing ti 警惕 4550
+ba le si tan 巴勒斯坦 4549
+ren xing 人性 4548
+zhi cai 制裁 4548
+ju ben 剧本 4547
+tui xiang 推向 4546
+shi zhan 施展 4545
+ming zhi 明知 4544
+fu zhou 福州 4543
+xiang shi 象是 4542
+yue fa 越发 4541
+guo zao 过早 4540
+yi pi 一匹 4539
+chu mian 出面 4538
+su zao 塑造 4537
+qi neng 岂能 4536
+wu sheng 无声 4536
+zhi suo 治所 4535
+ying li 盈利 4534
+ye da ying 叶大鹰 4533
+quan ran 全然 4532
+tai xia 台下 4531
+zheng shou 征收 4530
+jie xian 界限 4529
+zhun ze 准则 4528
+shen mei 审美 4527
+shan dong 山洞 4526
+qi xi 栖息 4525
+yi shi 一事 4524
+quan xian 全县 4524
+jian bing 兼并 4523
+chou chu 抽出 4522
+shi chang 时常 4521
+zhu hou 诸侯 4520
+di wu ci 第五次 4519
+gong li 功力 4518
+mo shou 没收 4517
+tu fa 突发 4516
+luo ru 落入 4515
+tan lun 谈论 4514
+pu tao ya 葡萄牙 4513
+chuan dao 传到 4512
+chen min 臣民 4512
+na tiao 那条 4511
+xiao gu niang 小姑娘 4510
+di san ci 第三次 4509
+guan jie 关节 4508
+hun li 婚礼 4507
+gong ke 攻克 4506
+yi shan 衣衫 4505
+gai shu 该书 4504
+zhu hua 驻华 4503
+pan chu 判处 4502
+ning xia 宁夏 4501
+wang qu 望去 4500
+lin jin 邻近 4500
+ming sheng 名胜 4499
+si zhi 四肢 4498
+zong bing 总兵 4497
+san wen 散文 4496
+zhou ye 昼夜 4495
+dan zi 胆子 4494
+wei bei 违背 4493
+lu jiao 鹿角 4492
+ming yu 名誉 4491
+chu jing 处境 4490
+du cheng 都城 4489
+xian yu 限于 4488
+shen su 申诉 4488
+diao su 雕塑 4487
+wan qian wa 万千瓦 4486
+ba lu jun 八路军 4485
+di ji shi 地级市 4484
+qi yi 其一 4483
+jin li 尽力 4482
+nian chan 年产 4481
+mu du 目睹 4480
+guan lian 关联 4479
+wai biao 外表 4478
+kuang chuang 矿床 4477
+jie yue 节约 4476
+yi dui 一堆 4476
+bu xi 不惜 4475
+he yue 和约 4474
+shou suo 收缩 4473
+shu e 数额 4472
+wu yi 无意 4471
+qiu zhu 求助 4470
+xiong ya li 匈牙利 4469
+qin yan 亲眼 4468
+chu lu 出路 4467
+deng long 灯笼 4466
+yi wen 疑问 4465
+zuo liang yu 左良玉 4464
+yan jiu yuan 研究院 4464
+chang shang 场上 4463
+du cha 督察 4462
+shuang mu 双目 4461
+jing liu liang 径流量 4460
+zhe dian 这点 4459
+san he 三合 4458
+di dang 抵挡 4457
+nuo wei 挪威 4456
+shu zhong 树种 4455
+jie zhi 节制 4454
+li wen xiu 李文秀 4453
+gao xue ya 高血压 4452
+ye yu 业余 4452
+di yi jie 第一届 4451
+zhong ji 中级 4450
+yuan shuai 元帅 4449
+bei mei 北美 4448
+gong deng 宫灯 4447
+kai gong 开工 4446
+zheng tian 整天 4445
+zheng zhi quan li 政治权利 4444
+lie xi 列席 4443
+li jing 历经 4442
+xiao yu 小于 4441
+yi tu 意图 4440
+you lan 游览 4440
+yi huo 疑惑 4439
+tong hong 通红 4438
+you zheng 邮政 4437
+chan dou 颤抖 4436
+niao lei 鸟类 4435
+gong yang 供养 4434
+ban gong 办公 4433
+jun wang 君王 4432
+jin men 进门 4431
+dan dao dao dan 弹道导弹 4430
+ri ye 日夜 4429
+zhi xian 直线 4428
+mian dian 缅甸 4428
+hang tian zui 杭天醉 4427
+ge shi 各市 4426
+xing rong 形容 4425
+tong bao 通报 4424
+shou fu 首府 4423
+chen you liang 陈友谅 4422
+liu yue 六月 4421
+duo yang 多样 4420
+zhi ling 指令 4419
+yan lian 演练 4418
+re ai 热爱 4417
+qu yu 趋于 4416
+xie dao 写道 4416
+tu jia 土家 4415
+dian ran 点燃 4414
+xu mu ye 畜牧业 4413
+xi xing 习性 4412
+lai fang 来访 4411
+jian hua 简化 4410
+zuo ce 左侧 4409
+qing chu 清除 4408
+ban dao ti 半导体 4407
+xin nian 信念 4406
+ting ting 听听 4405
+chang zheng 长征 4404
+mai guo 卖国 4404
+tuo zhan 拓展 4403
+yi xin 一心 4402
+quan jia 全家 4401
+shuang yong 双拥 4400
+tong deng 同等 4399
+ming cha 名茶 4398
+tang seng 唐僧 4397
+zhan xian 展现 4396
+wan jiu 挽救 4395
+xiong zhuang 雄壮 4394
+xue shan 雪山 4393
+du juan hua 杜鹃花 4392
+yi deng 一灯 4392
+da nao 大脑 4391
+na xia 拿下 4390
+zhen zhu 珍珠 4389
+zou guo 走过 4388
+chi yi 迟疑 4387
+han zi qi 韩子奇 4386
+chan qu 产区 4385
+jue zhan 决战 4384
+jiao sheng 叫声 4383
+da bai 大败 4382
+bao jian 宝剑 4381
+ming cheng zu 明成祖 4380
+shi bi 势必 4380
+ding xiang 定向 4379
+jian du 建都 4378
+you ru 有如 4377
+hong zha ji 轰炸机 4376
+xiang hu zuo yong 相互作用 4375
+yi zhang 仪仗 4374
+hui tong 会同 4373
+chuan shou 传授 4372
+chu dong 出动 4371
+fan dao 反倒 4370
+hou bian 后边 4369
+ran liao 染料 4368
+hai wan 海湾 4368
+zhong shi ji 中世纪 4367
+lu wu shuang 陆无双 4366
+jue ji 决计 4365
+fa dian 发电 4364
+qi yong 启用 4363
+miao zhun 瞄准 4362
+ping xuan 评选 4361
+tong xiang 通向 4360
+yi sou 一艘 4359
+chuan shu 传输 4358
+ji yu 急于 4357
+xiang bi 想必 4356
+zhan luan 战乱 4356
+di yu 抵御 4355
+quan tou 拳头 4354
+huan he 缓和 4353
+lao han 老汉 4352
+xiong qian 胸前 4351
+shang ban chang 上半场 4350
+wen ding xing 稳定性 4349
+gu qiu shui 顾秋水 4348
+mao xian 冒险 4347
+you wei 尤为 4346
+guang yi 广义 4345
+guo shi 果实 4344
+hai li 海里 4344
+qing jiang 清江 4343
+hu shui 湖水 4342
+sheng qian 生前 4341
+lao wu 劳务 4340
+shan li 山里 4339
+da fa 打发 4338
+kan dai 看待 4337
+jin qu 禁区 4336
+gong chan dang ren 共产党人 4335
+yi lai 一来 4334
+wei jiao 围剿 4333
+dai dao 带到 4332
+dong zu 侗族 4332
+tou tou 偷偷 4331
+jiang cheng 奖惩 4330
+si suo 思索 4329
+zu zhang 组长 4328
+xiu ding 修订 4327
+dao wei 到位 4326
+mi bu 密布 4325
+zhao chu 找出 4324
+zi wei 滋味 4323
+mang mu 盲目 4322
+yi ze 一则 4321
+ren shou 忍受 4320
+qiang jiu 抢救 4320
+ti qu 提取 4319
+gu tou 骨头 4318
+shang ban nian 上半年 4317
+cheng yuan guo 成员国 4316
+da sheng 大圣 4315
+tian hua 天花 4314
+da gong 打工 4313
+zhi zhang 执掌 4312
+xu jia 虚假 4311
+bian bu 遍布 4310
+mian mu 面目 4309
+yu xian 预先 4308
+ta ma de 他妈的 4308
+qin zhan 侵占 4307
+dan ge 单个 4306
+sheng chu 生出 4305
+huo sheng 获胜 4304
+jin hua 金花 4303
+yi ju 一举 4302
+wan wu 万物 4301
+zi mu 字母 4300
+gong nong 工农 4299
+jia zi 架子 4298
+hong shao 红烧 4297
+yao yuan 遥远 4296
+gong bao 公报 4296
+chu zi 出自 4295
+jun zi 君子 4294
+ning ke 宁可 4293
+kuai bu 快步 4292
+yi yuan zhi 一院制 4291
+zhi zao ye 制造业 4290
+bu zhi 不致 4289
+zuo cheng 做成 4288
+ju yuan 剧院 4287
+xie tong 协同 4286
+si mian 四面 4285
+mai fu 埋伏 4284
+cheng di 称帝 4284
+lu hua 芦花 4283
+ji shu 记述 4282
+yang si chang 杨嗣昌 4281
+geng huan 更换 4280
+bo ruo 薄弱 4279
+fa yang 发扬 4278
+cai ce 猜测 4277
+huang wei 皇位 4276
+er bian 耳边 4275
+fang xian 防线 4274
+yi quan 一拳 4273
+jia ju 加剧 4272
+mi bu 弥补 4272
+lan zhu 拦住 4271
+lian jun 联军 4270
+fang hu 防护 4269
+jue bu neng 决不能 4268
+ming liang 明亮 4267
+mei feng 每逢 4266
+du xing 毒性 4265
+bai yi 白衣 4264
+wan yan 蜿蜒 4263
+qu yuan 屈原 4262
+fang xian 房县 4261
+que kou 缺口 4260
+zhen dong 震动 4260
+si ren bang 四人帮 4259
+lv you ju 旅游局 4258
+ji xie hua 机械化 4257
+niu jin xing 牛金星 4256
+shang shan 上山 4255
+bu yi 不一 4254
+zun jing 尊敬 4253
+shou zu 手足 4252
+fang zhang 方丈 4251
+wu fei 无非 4250
+cai pan 裁判 4249
+gong wu 公务 4248
+xing guo 兴国 4248
+ping wen 平稳 4247
+wen ren 文人 4246
+li ti 立体 4245
+yi nian 翌年 4244
+zi jia 自家 4243
+qi shi 骑士 4242
+ye lian zi 叶莲子 4241
+da ming 大名 4240
+han leng 寒冷 4239
+jiang qing 江青 4238
+jian jie 见解 4237
+qi chu 起初 4236
+yin ying 阴影 4236
+xia ban nian 下半年 4235
+zhuan xiang 专项 4234
+liu bang 刘邦 4233
+xian jing 县境 4232
+liao xiang 料想 4231
+wan hui 晚会 4230
+chou bei 筹备 4229
+shen ying 身影 4228
+san shi nian 三十年 4227
+gao deng xue xiao 高等学校 4226
+fang li 房里 4225
+huo ba 火把 4224
+huan yuan 还原 4224
+gai zu 改组 4223
+xue xing 血腥 4222
+long men 龙门 4221
+ru xue lv 入学率 4220
+jin shu 尽数 4219
+ji ju 急剧 4218
+shen tou 渗透 4217
+yun cang 蕴藏 4216
+chong xiu 重修 4215
+cang ku 仓库 4214
+dui ce 对策 4213
+huai bao 怀抱 4212
+di zhi 抵制 4212
+jiang shui 江水 4211
+zheng zhou 郑州 4210
+gao ju 高举 4209
+he zi 合资 4208
+qiang sheng 强盛 4207
+shu fu 束缚 4206
+chun jian 纯碱 4205
+nan men 南门 4204
+tou ling 头领 4203
+zi shu 字数 4202
+jian cai 建材 4201
+duan qi rui 段祺瑞 4200
+dong bei da xue 东北大学 4200

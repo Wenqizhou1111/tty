@@ -16,6 +16,11 @@ dist/
 _e2e_result.txt
 tools/_e2e.ps1
 _shot/
+.uidata/
+.uidata2/
+
+# 词频原始数据（5 MB，tools/build_web_words.py 会按需重新下载）
+data/_gen/jieba_dict.txt
 
 # ---- 用户数据（万一被指向仓库里）----
 settings.json

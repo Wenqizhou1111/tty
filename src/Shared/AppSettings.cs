@@ -87,11 +87,31 @@ namespace MyIme.Shared
         public bool AutoLockGames = true;          // 命中游戏进程名单时自动锁定
         public bool KeepUnlockHotkey = true;       // 锁定时仍保留解锁热键
         public bool NotifyOnAutoLock = false;
+        /// <summary>
+        /// 内置游戏名单。匹配规则见 GameLock.ProcessMatches：
+        /// 精确匹配，或"前缀 + 数字/下划线/横线"，所以这里**不要**写 "cf"、"cs" 这种
+        /// 两三个字母的缩写 —— 虽然现在的匹配已经不会误伤 csrss.exe 了，
+        /// 但写全名（crossfire）对用户来说更好懂。
+        /// </summary>
         public List<string> GameProcesses = new List<string>(new string[] {
-            "league of legends", "cs2", "csgo", "valorant", "dota2", "pubg", "genshinimpact",
-            "yuanshen", "starrail", "bf2042", "r5apex", "rainbowsix", "overwatch", "wow",
-            "minecraft", "terraria", "stardew valley", "hollow_knight", "eldenring",
-            "sekiro", "darksoulsiii", "rdr2", "gta5", "cyberpunk2077", "forzahorizon5"
+            // 竞技 / 网游
+            "league of legends", "leagueclient", "riotclient", "cs2", "csgo", "valorant",
+            "dota2", "r5apex", "rainbowsix", "overwatch", "pubg", "pubgsteam",
+            "naraka", "crossfire", "dnf", "dfo", "tft", "escapefromtarkov", "destiny2",
+            "warthunder", "worldoftanks", "worldofwarships", "hearthstone", "wow",
+            "ffxiv", "guildwars2", "lostark", "mhxy", "kartrider", "jx3",
+            // 二次元 / 手游端
+            "genshinimpact", "yuanshen", "starrail", "bh3", "arknights", "bluearchive",
+            // 单机 / 3A
+            "eldenring", "sekiro", "darksoulsiii", "darksouls", "rdr2", "gta5",
+            "cyberpunk2077", "forzahorizon5", "forzahorizon4", "assassinscreed",
+            "modernwarfare", "cod", "battlefield", "bf2042", "left4dead2",
+            "civilizationvi", "stellaris", "cities", "ittakestwo", "humanfallflat",
+            "fallguys", "deathstranding", "godofwar", "monsterhunter", "finalfantasy",
+            "skyrim", "fallout4", "witcher3", "grimdawn", "pathofexile",
+            // 沙盒 / 独立
+            "minecraft", "terraria", "stardew valley", "hollow_knight", "noita",
+            "dontstarve", "oxygennotincluded", "rimworld", "factorio"
         });
     }
 
