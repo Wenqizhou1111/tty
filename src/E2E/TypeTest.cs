@@ -212,12 +212,30 @@ static class TypeTest
             case 21:
                 Check("", "点了输入条以外的地方 -> 拼音被丢弃，没有上屏");
                 Record(!BarVisible(), "点了别处之后输入条关闭");
+                // 回归用例：部分上屏后残留拼音，退格必须能删掉
+                // nihaoma 的第 9 个候选是「你」，只吃 1 个音节，剩下 "hao ma"
+                Reset(); TypeText("nihaoma"); PressKey(0x39);
+                break;
+            case 22:
+                Check("你", "nihaoma 选第 9 个候选「你」-> 只上屏 1 个音节，剩下 hao ma 继续拼");
+                PressKey(0x08);
+                break;
+            case 23:
+                // 这一条是这个 bug 的关键：部分上屏后 _caret 没跟着 _buffer 变短，
+                // 退格会 Remove 越界抛异常 -> 异常被吞 -> 键漏给应用 -> 正文被删掉，
+                // 同时残留拼音一个字都删不掉。
+                Check("你", "部分上屏后退格 -> 删的是残留拼音，不会漏到正文里删字");
+                PressKey(0x08); PressKey(0x08); PressKey(0x08); PressKey(0x08); PressKey(0x08);
+                break;
+            case 24:
+                Check("你", "连按退格把残留拼音删光 -> 正文「你」一直都在");
+                Record(!BarVisible(), "残留拼音删光后输入条关闭");
                 _timer.Stop();
                 _form.BeginInvoke((MethodInvoker)delegate { _form.Close(); });
                 break;
         }
         _step++;
-        if (_step <= 21) ForwardFocus();
+        if (_step <= 24) ForwardFocus();
     }
 
     [DllImport("user32.dll")]

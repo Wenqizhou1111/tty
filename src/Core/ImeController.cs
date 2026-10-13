@@ -324,6 +324,7 @@ namespace MyIme.Core
             {
                 if (_buffer.Length > 0)
                 {
+                    if (_caret > _buffer.Length) _caret = _buffer.Length;   // 永不越界
                     if (_caret > 0)
                     {
                         _buffer = _buffer.Remove(_caret - 1, 1);
@@ -351,6 +352,7 @@ namespace MyIme.Core
             {
                 if (_buffer.Length > 0)
                 {
+                    if (_caret < 0) _caret = 0;
                     if (_caret < _buffer.Length)
                     {
                         _buffer = _buffer.Remove(_caret, 1);
@@ -492,6 +494,11 @@ namespace MyIme.Core
 
         void Recompute()
         {
+            // 保险：任何路径改过 _buffer 之后，光标都不该越界。
+            // 越界会让退格 Remove 抛异常，异常一被吞，退格就"失灵"了。
+            if (_caret < 0) _caret = 0;
+            if (_caret > _buffer.Length) _caret = _buffer.Length;
+
             _page = 0;
             _selected = 0;
             _predicting = false;
@@ -553,6 +560,12 @@ namespace MyIme.Core
             if (remaining.Length > 0)
             {
                 _buffer = remaining;
+                // 光标必须跟着走！这里以前漏了这行，_caret 还停在旧的位置上。
+                // 部分上屏后新 buffer 更短，_caret 常常 > _buffer.Length，
+                // 于是退格执行 Remove(_caret - 1, 1) 直接越界抛异常 ——
+                // 异常被 OnKey 的 catch 吞掉并 return false，键就漏给了应用：
+                // 表现就是"最后一个字母怎么都删不掉"。这就是那个 bug 的根因。
+                _caret = _buffer.Length;
                 _comp = _engine.Compose(_buffer);
                 _candidates.AddRange(_comp.Candidates);
                 UpdateBar();

@@ -104,8 +104,12 @@ static class EngineTests
                 string k = qcode.Trim();
                 Composition comp = eng.Compose(k);
                 StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < comp.Candidates.Count && i < 6; i++)
-                    sb.Append(i + 1).Append('.').Append(comp.Candidates[i].Text).Append("  ");
+                int show = 6;
+                string env = Environment.GetEnvironmentVariable("MYIME_SHOW_CANDS");
+                if (!string.IsNullOrEmpty(env)) { try { show = int.Parse(env); } catch { } }
+                for (int i = 0; i < comp.Candidates.Count && i < show; i++)
+                    sb.Append(i + 1).Append('.').Append(comp.Candidates[i].Text)
+                      .Append("[吃").Append(comp.Candidates[i].Consumed).Append("] ");
                 Console.WriteLine(k.PadRight(14) + string.Join("|", comp.Syllables.ToArray()).PadRight(15)
                                   + "-> " + sb.ToString().Trim());
             }
