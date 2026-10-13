@@ -27,7 +27,10 @@ namespace MyIme.Core
         readonly CandidateBar _bar;
         readonly TrayIcon _tray;
         readonly Timer _watch;
+        readonly Timer _clickWatch;
         readonly Lexicon _lex;
+
+        bool _lmbDown;              // 上一轮轮询时左键是不是按着的（用来抓"按下沿"）
 
         AppSettings _cfg;
         PinyinEngine _engine;
@@ -37,6 +40,7 @@ namespace MyIme.Core
         Composition _comp;
 
         string _buffer = "";
+        int _caret;                 // 光标在 _buffer 里的位置（0..Length），点拼音可以挪
         int _selected;
         int _page;
         bool _english;
@@ -87,11 +91,20 @@ namespace MyIme.Core
             _bar.CandidateClicked += OnBarCandidateClicked;
             _bar.PageRequested += delegate (int d) { if (Page(d)) UpdateBar(); };
             _bar.AiButtonClicked += delegate { if (Ai != null) Ai.ShowPanel(true); };
+            _bar.BufferClicked += OnBarBufferClicked;
             _bar.ShowAiButton = cfg.Ai.Enabled && cfg.Ai.ShowButtonInBar;
 
             _watch = new Timer();
             _watch.Interval = 700;
             _watch.Tick += delegate { WatchTick(); };
+
+            // 鼠标左键"按下沿"检测：正在输入时点到别处就结束这次输入。
+            // 120ms 轮询足够灵敏，比再装一个全局鼠标钩子安全得多
+            // （钩子越多越容易被反作弊盯上，而且这里只需要知道"点没点"）。
+            _clickWatch = new Timer();
+            _clickWatch.Interval = 120;
+            _clickWatch.Tick += delegate { ClickWatchTick(); };
+            _clickWatch.Start();
 
             _tray.Update(_english, _locked);
             _bar.ApplyUiSettings(cfg.Ui);
@@ -190,7 +203,15 @@ namespace MyIme.Core
             try
             {
                 bool should = GameLock.ShouldAutoLock(_cfg.GameLock);
-                if (should && !_locked) SetLocked(true, true);
+                if (should && !_locked)
+                {
+                    Log.Info("自动锁定原因: " + GameLock.DescribeForeground()
+                             + " | 名单命中=" + GameLock.IsForegroundInList(_cfg.GameLock.GameProcesses)
+                             + " 全屏=" + GameLock.IsForegroundFullscreen()
+                             + " D3D=" + GameLock.IsD3DFullscreen()
+                             + " 非游戏全屏=" + GameLock.IsNonGameFullscreenApp());
+                    SetLocked(true, true);
+                }
                 else if (!should && _locked && _autoLocked) SetLocked(false, true);
             }
             catch (Exception ex) { Log.Warn("自动锁定检测异常: " + ex.Message); }
@@ -295,22 +316,64 @@ namespace MyIme.Core
         /// <summary>处理"正在组合"或"正在联想"状态下的按键。返回 true 表示吃掉这个键。</summary>
         bool HandleActive(int vk, bool shift)
         {
-            // Esc 取消
+            // Esc：立刻退出输入框
             if (vk == 0x1B) { CancelAll(); return true; }
 
-            // 退格
+            // 退格：删光标**前面**那个字母
             if (vk == 0x08)
             {
                 if (_buffer.Length > 0)
                 {
-                    _buffer = _buffer.Substring(0, _buffer.Length - 1);
-                    if (_buffer.Length == 0) CancelAll();
-                    else Recompute();
+                    if (_caret > 0)
+                    {
+                        _buffer = _buffer.Remove(_caret - 1, 1);
+                        _caret--;
+                    }
+                    else
+                    {
+                        // 光标已经顶在最前面，没东西可删。
+                        // 这里必须 return true 把它吃掉 —— 放过去的话会落到应用里
+                        // 把正文的字删掉，看起来就像是"退格乱删/删不掉"。
+                        return true;
+                    }
+                    // 字母全删光了：这次输入结束，关掉输入框
+                    if (_buffer.Length == 0) { CancelAll(); return true; }
+                    Recompute();
                     return true;
                 }
                 ClearPredictions();
                 UpdateBar();
                 return false;
+            }
+
+            // Delete：删光标**后面**那个字母
+            if (vk == 0x2E)
+            {
+                if (_buffer.Length > 0)
+                {
+                    if (_caret < _buffer.Length)
+                    {
+                        _buffer = _buffer.Remove(_caret, 1);
+                        if (_buffer.Length == 0) { CancelAll(); return true; }
+                        Recompute();
+                    }
+                    return true;            // 吃掉，别让它跑到正文里去删字
+                }
+                return false;
+            }
+
+            // 方向键/Home/End：在拼音里挪光标（翻页交给 PgUp/PgDn 和 -/=）
+            if (vk == 0x25 || vk == 0x27 || vk == 0x24 || vk == 0x23)
+            {
+                if (_buffer.Length > 0)
+                {
+                    if (vk == 0x25) SetCaret(_caret - 1);
+                    else if (vk == 0x27) SetCaret(_caret + 1);
+                    else if (vk == 0x24) SetCaret(0);
+                    else SetCaret(_buffer.Length);
+                    UpdateBar();
+                    return true;
+                }
             }
 
             bool hasCands = _candidates.Count > 0;
@@ -366,10 +429,12 @@ namespace MyIme.Core
                 char c = KeyboardHook.LetterOf(vk);
                 if (_buffer.Length > 0)
                 {
-                    string next = _buffer + c;
+                    // 插在光标处，不是一律追加到末尾
+                    string next = _buffer.Substring(0, _caret) + c + _buffer.Substring(_caret);
                     if (_english || CanCompose(next))
                     {
                         _buffer = next;
+                        _caret++;
                         Recompute();
                         return true;
                     }
@@ -408,9 +473,17 @@ namespace MyIme.Core
             return false;
         }
 
+        void SetCaret(int pos)
+        {
+            if (pos < 0) pos = 0;
+            if (pos > _buffer.Length) pos = _buffer.Length;
+            _caret = pos;
+        }
+
         void StartBuffer(string seed)
         {
             _buffer = seed;
+            _caret = _buffer.Length;
             if (Log.MinLevel == LogLevel.Debug) Log.Debug("  起新组合 [" + _buffer + "]");
             Recompute();
         }
@@ -487,7 +560,13 @@ namespace MyIme.Core
             }
 
             _buffer = "";
+            _caret = 0;
             _comp = null;
+
+            // 拼音已经全部变成字 -> 这次输入完成了，直接把输入条关掉。
+            // （"打完就关"和"上屏后联想"是互斥的，想留联想就把这个开关关掉）
+            if (!_english && _cfg.Input.CloseAfterCommit) { CancelAll(); return; }
+
             if (!_english) ShowPredictions(text);
             else UpdateBar();
         }
@@ -498,17 +577,23 @@ namespace MyIme.Core
         {
             if (_buffer.Length > 0) QueueInject(_buffer);
             _buffer = "";
+            _caret = 0;
             _comp = null;
             _candidates.Clear();
             _predicting = false;
             _selected = 0;
             _page = 0;
+
+            // 整串拼音原样上屏了，同样算"这次输入完成"。
+            // keepComposing 是"马上还要用后面的字母开新组合"，那种情况不能关。
+            if (!keepComposing && !_english && _cfg.Input.CloseAfterCommit) { CancelAll(); return; }
             UpdateBar();
         }
 
         void CancelAll()
         {
             _buffer = "";
+            _caret = 0;
             _comp = null;
             _candidates.Clear();
             _predictions.Clear();
@@ -577,6 +662,44 @@ namespace MyIme.Core
             SelectCandidate(items[globalIndex]);
         }
 
+        /// <summary>点了输入条上的拼音：把光标挪到点的那一格，之后就能在那儿插入/删除。</summary>
+        void OnBarBufferClicked(int index)
+        {
+            if (_buffer.Length == 0) return;
+            SetCaret(index);
+            UpdateBar();
+            Log.Info("光标移到拼音第 " + _caret + " 个字后面");
+        }
+
+        // ==================== 点了别处就结束输入 ====================
+
+        void ClickWatchTick()
+        {
+            try
+            {
+                bool down = (Native.GetAsyncKeyState(0x01) & 0x8000) != 0;
+                if (down && !_lmbDown) OnGlobalMouseDown();
+                _lmbDown = down;
+            }
+            catch { }
+        }
+
+        void OnGlobalMouseDown()
+        {
+            // 只有"正在输入"的时候才管这件事
+            if (_buffer.Length == 0 && _predictions.Count == 0) return;
+            try
+            {
+                POINT p;
+                if (!Native.GetCursorPos(out p)) return;
+                // 点在输入条自己身上不算"点了别处" —— 那是在选词、挪光标或者拖条子
+                if (_bar.IsPointInside(p.X, p.Y)) return;
+                Log.Info("点到输入条以外的区域，结束本次输入");
+                CancelAll();
+            }
+            catch (Exception ex) { Log.Warn("点击检测异常: " + ex.Message); }
+        }
+
         // ==================== 输入条 ====================
 
         void UpdateBar()
@@ -610,7 +733,7 @@ namespace MyIme.Core
 
                 string badge = _english ? "英" : "中";
                 _bar.SetContent(badge, bufferText, entries, _selected, _page, PageCount(),
-                                _cfg.Input.ShowPinyinInBar || _english);
+                                _cfg.Input.ShowPinyinInBar || _english, _caret);
                 _bar.ShowNoActivate();
             }
             catch (Exception ex)
@@ -668,6 +791,7 @@ namespace MyIme.Core
         public void Dispose()
         {
             try { _watch.Stop(); _watch.Dispose(); } catch { }
+            try { _clickWatch.Stop(); _clickWatch.Dispose(); } catch { }
             try { _hook.Dispose(); } catch { }
             try { _hotkeys.Dispose(); } catch { }
             try { _tray.Dispose(); } catch { }

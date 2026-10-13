@@ -21,6 +21,22 @@ static class TypeTest
     static int _fail;
     static readonly StringBuilder _report = new StringBuilder();
 
+    [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+    static extern IntPtr FindWindow(string className, string windowName);
+    [DllImport("user32.dll")]
+    static extern bool IsWindowVisible(IntPtr hWnd);
+
+    /// <summary>候选条现在是不是显示着。用它验证"打完就关""Esc 关掉"这些行为。</summary>
+    static bool BarVisible()
+    {
+        try
+        {
+            IntPtr h = FindWindow(null, "松林1234输入法 输入条");
+            return h != IntPtr.Zero && IsWindowVisible(h);
+        }
+        catch { return false; }
+    }
+
     [STAThread]
     static int Main(string[] args)
     {
@@ -143,20 +159,95 @@ static class TypeTest
                 break;
             case 15:
                 Check("你", "拼音删空后再按退格 -> 正文最后一个字被删掉");
+                // Esc：立刻退出输入框，什么都不上屏
+                Reset(); TypeText("nihao"); PressKey(0x1B);
+                break;
+            case 16:
+                Check("", "Esc -> 拼音被丢弃，正文没有上屏");
+                Record(!BarVisible(), "Esc 之后输入条已经关闭");
+                // 光标定位：敲 hao 然后把光标挪到最前面
+                TypeText("hao");
+                PressKey(0x25); PressKey(0x25); PressKey(0x25);
+                break;
+            case 17:
+                PressKey(0x08);
+                Check("", "光标在拼音最前面时按退格 -> 不会漏到正文里去删字");
+                PressKey(0x27); PressKey(0x27); PressKey(0x27);   // 光标挪回末尾
+                PressKey(0x08);                                    // 删掉最后一个字母 o
+                break;
+            case 18:
+                PressKey(0x20);                                    // ha -> 哈
+                break;
+            case 19:
+                Check("哈", "光标移到末尾后退格删掉最后一个字母，ha 上屏「哈」");
+                Record(!BarVisible(), "拼音全部上屏后输入条自动关闭");
                 _timer.Stop();
                 _form.BeginInvoke((MethodInvoker)delegate { _form.Close(); });
                 break;
         }
         _step++;
-        if (_step <= 15) ForwardFocus();
+        if (_step <= 19) ForwardFocus();
     }
 
+    [DllImport("user32.dll")]
+    static extern IntPtr GetForegroundWindow();
+    [DllImport("user32.dll")]
+    static extern uint GetWindowThreadProcessId(IntPtr hWnd, IntPtr pid);
+    [DllImport("user32.dll")]
+    static extern bool AttachThreadInput(uint idAttach, uint idAttachTo, bool fAttach);
+    [DllImport("user32.dll")]
+    static extern bool BringWindowToTop(IntPtr hWnd);
+    [DllImport("user32.dll")]
+    static extern bool SetForegroundWindow(IntPtr hWnd);
+    [DllImport("user32.dll")]
+    static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+    [DllImport("user32.dll")]
+    static extern void SwitchToThisWindow(IntPtr hWnd, bool altTab);
+    [DllImport("user32.dll")]
+    static extern bool SetWindowPos(IntPtr hWnd, IntPtr after, int x, int y, int cx, int cy, uint flags);
+    [DllImport("kernel32.dll")]
+    static extern uint GetCurrentThreadId();
+
+    static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
+    static readonly IntPtr HWND_NOTOPMOST = new IntPtr(-2);
+    const uint SWP_NOMOVE = 0x0002, SWP_NOSIZE = 0x0001, SWP_SHOWWINDOW = 0x0040;
+
+    /// <summary>
+    /// 把焦点抢回来。
+    /// 光靠 Form.Activate() 是不够的 —— Windows 有"前台锁定"：如果别的程序
+    /// （实测微信最典型）正占着前台，Activate() 会**静默失败**，SendInput 就打偏了，
+    /// 测试会莫名其妙全挂。这里用 AttachThreadInput 把自己的输入队列临时挂到
+    /// 当前前台线程上，此时 SetForegroundWindow 才会真的生效。
+    /// </summary>
     static void ForwardFocus()
     {
         try
         {
-            _form.Activate();
-            _box.Focus();
+            IntPtr h = _form.Handle;
+            uint fgThread = GetWindowThreadProcessId(GetForegroundWindow(), IntPtr.Zero);
+            uint myThread = GetCurrentThreadId();
+            bool attached = false;
+            if (fgThread != 0 && fgThread != myThread)
+                attached = AttachThreadInput(myThread, fgThread, true);
+            try
+            {
+                // 先把窗口"顶到最上层再放下来"：Windows 对 SetForegroundWindow
+                // 有一堆拒绝条件，这一步能让它认为我们确实是用户想看的窗口。
+                SetWindowPos(h, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+                SetWindowPos(h, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+                ShowWindow(h, 9);            // SW_RESTORE
+                SetForegroundWindow(h);
+                BringWindowToTop(h);
+                // 微信这类 Qt 程序会死守前台，SetForegroundWindow 会被静默拒绝；
+                // SwitchToThisWindow 是更老的强制切换接口，通常还能得手。
+                SwitchToThisWindow(h, true);
+                _form.Activate();
+                _box.Focus();
+            }
+            finally
+            {
+                if (attached) AttachThreadInput(myThread, fgThread, false);
+            }
         }
         catch { }
     }

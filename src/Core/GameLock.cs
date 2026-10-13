@@ -42,7 +42,10 @@ namespace MyIme.Core
             // 会议 / 直播 / 录屏
             "zoom", "teams", "ms-teams", "wemeet", "dingtalk", "skype", "voov", "obs64", "obs32", "obs",
             // 图片 / 系统
-            "photos", "photosapp", "mspaint", "explorer", "taskmgr", "regedit"
+            "photos", "photosapp", "mspaint", "explorer", "taskmgr", "regedit",
+            // 聊天 / 笔记（全屏看消息、看文档时也得能打字）
+            "wechat", "weixin", "wechatapp", "qq", "tim", "wework", "wxwork",
+            "feishu", "lark", "notion", "obsidian", "typora", "onenote", "evernote"
         };
 
         /// <summary>失焦后要连续多久没再命中，才真的解锁（防止钩子反复装卸）。</summary>
@@ -99,6 +102,13 @@ namespace MyIme.Core
             {
                 if (hwnd == IntPtr.Zero) return false;
                 if (hwnd == Native.GetDesktopWindow()) return false;
+
+                // 最大化的窗口不算全屏游戏。
+                // 任务栏设成"自动隐藏"时，工作区 == 整个显示器，这时候任何最大化的
+                // 窗口（浏览器、编辑器、微信…）都会盖满整个显示器，被判成"全屏游戏"
+                // 而把输入法锁掉 —— 用户会莫名其妙打不了字。
+                // 真正的全屏游戏一般是无边框窗口或独占全屏，不带 WS_MAXIMIZE。
+                if (Native.IsZoomed(hwnd)) return false;
 
                 RECT r;
                 if (!Native.GetWindowRect(hwnd, out r)) return false;

@@ -624,6 +624,7 @@ namespace MyIme.Settings
         NumberBox _pageSize;
         NumberBox _fontSize;
         NumberBox _predictCount;
+        Switch _closeAfterCommit;
         NumberBox _enMin;
         NumberBox _enMax;
 
@@ -711,6 +712,12 @@ namespace MyIme.Settings
 
             y = RowNumber(c2, y, "联想词个数", null, Cfg.Input.PredictCount, 1, 9, 1, null, out nb);
             _predictCount = nb;
+
+            y = RowSwitch(c2, y, "拼音打完就关掉输入条",
+                "拼音全部变成字之后直接把输入条关掉，用「关掉」表示这次输入完了。"
+                + "打开时不会再显示联想词（两者互斥）；想留联想就把它关掉。",
+                Cfg.Input.CloseAfterCommit, null, out sw);
+            _closeAfterCommit = sw;
             c2.Height = y + 12;
 
             // ---------------- 模糊音 ----------------
@@ -887,6 +894,7 @@ namespace MyIme.Settings
             if (_spaceCommit != null) s.AutoCommitOnSpace = _spaceCommit.Checked;
             if (_predict != null) s.PredictEnabled = _predict.Checked;
             if (_predictCount != null) s.PredictCount = _predictCount.Value;
+            if (_closeAfterCommit != null) s.CloseAfterCommit = _closeAfterCommit.Checked;
             if (_enStart != null) s.StartInEnglish = _enStart.Checked;
             if (_enCompletion != null) s.EnglishCompletion = _enCompletion.Checked;
             if (_enMin != null) s.EnglishMinPrefix = _enMin.Value;

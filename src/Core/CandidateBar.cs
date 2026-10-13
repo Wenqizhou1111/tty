@@ -66,6 +66,12 @@ namespace MyIme.Core
         public event Action<int> CandidateClicked;      // 传全局候选序号
         public event Action<int> PageRequested;         // +1 / -1
         public event Action AiButtonClicked;            // 点了输入条上的 AI 按钮
+        public event Action<int> BufferClicked;         // 点了拼音里的第几个字（光标插到这个位置）
+
+        // ---- 拼音区逐字位置：用来做点击定位和画光标 ----
+        readonly List<Rectangle> _bufRects = new List<Rectangle>();
+        int _caret = -1;
+        int _bufLeft, _bufRight, _bufTop, _bufBottom;
 
         /// <summary>输入条最右侧是否显示「AI」按钮（AI 总开关打开且用户没关这个显示项）。</summary>
         public bool ShowAiButton = false;
@@ -86,6 +92,7 @@ namespace MyIme.Core
         Point _dragWinOrigin;    // 按下时窗口左上角
         Point _dragOffOrigin;    // 按下时已有的偏移
         int _pendingCandidate = -1;
+        int _pendingBuffer = -1;
         bool _pendingAi;
 
         public CandidateBar()
@@ -205,8 +212,15 @@ namespace MyIme.Core
         public void SetContent(string badge, string buffer, List<BarEntry> items,
                                int selected, int page, int pageCount, bool showBuffer)
         {
+            SetContent(badge, buffer, items, selected, page, pageCount, showBuffer, -1);
+        }
+
+        public void SetContent(string badge, string buffer, List<BarEntry> items,
+                               int selected, int page, int pageCount, bool showBuffer, int caret)
+        {
             _badge = badge;
             _buffer = buffer == null ? "" : buffer;
+            _caret = caret;
             _items = items == null ? new List<BarEntry>() : items;
             _selected = selected;
             _page = page;
@@ -440,6 +454,30 @@ namespace MyIme.Core
                 Rectangle br = new Rectangle(bx, padY + (topH - bs.Height) / 2, bs.Width + 4, bs.Height);
                 TextRenderer.DrawText(g, _buffer, font, br, _textColor,
                     TextFormatFlags.NoPadding | TextFormatFlags.Left);
+
+                // 逐字记下位置：点哪一格就把光标放到哪。
+                // 用"前缀宽度"算，比逐字 MeasureText 累加更准（拉丁字母有字距调整）。
+                _bufRects.Clear();
+                _bufLeft = bx; _bufTop = br.Top; _bufBottom = br.Bottom;
+                int prevW = 0;
+                for (int i = 1; i <= _buffer.Length; i++)
+                {
+                    int w = TextRenderer.MeasureText(g, _buffer.Substring(0, i), font,
+                                new Size(int.MaxValue, int.MaxValue), TextFormatFlags.NoPadding).Width;
+                    _bufRects.Add(new Rectangle(bx + prevW, br.Top, w - prevW, br.Height));
+                    prevW = w;
+                }
+                _bufRight = bx + prevW;
+
+                // 光标：竖线画在第 _caret 个字的位置上
+                if (_caret >= 0 && _caret <= _buffer.Length)
+                {
+                    int cx = bx;
+                    if (_caret < _bufRects.Count) cx = _bufRects[_caret].Left;
+                    else if (_bufRects.Count > 0) cx = _bufRects[_bufRects.Count - 1].Right;
+                    using (Pen cp = new Pen(_badgeColor, Math.Max(1f, 1.3f * _dpiScale)))
+                        g.DrawLine(cp, cx, br.Top + 1, cx, br.Bottom - 1);
+                }
             }
 
             // ================= 下行：候选 =================
@@ -545,6 +583,38 @@ namespace MyIme.Core
             return path;
         }
 
+        /// <summary>点是不是落在拼音那一行上（前后留点余量，方便点行首行尾）。</summary>
+        bool IsInBufferArea(int x, int y)
+        {
+            if (_buffer.Length == 0 || _bufRects.Count == 0) return false;
+            return y >= _bufTop - 5 && y <= _bufBottom + 5
+                   && x >= _bufLeft - 6 && x <= _bufRight + 6;
+        }
+
+        /// <summary>点在第 x 列时，光标该插到第几个字前面（取最近的空隙）。</summary>
+        int BufferIndexAt(int x)
+        {
+            for (int i = 0; i < _bufRects.Count; i++)
+            {
+                Rectangle r = _bufRects[i];
+                if (x < r.Left + r.Width / 2) return i;
+            }
+            return _bufRects.Count;
+        }
+
+        /// <summary>屏幕坐标是不是落在输入条上（"点了别处就结束输入"要用）。</summary>
+        public bool IsPointInside(int screenX, int screenY)
+        {
+            try
+            {
+                if (!Visible) return false;
+                RECT r;
+                if (!Native.GetWindowRect(Handle, out r)) return false;
+                return screenX >= r.Left && screenX < r.Right && screenY >= r.Top && screenY < r.Bottom;
+            }
+            catch { return false; }
+        }
+
         // ==================== 鼠标 ====================
 
         /// <summary>
@@ -567,8 +637,14 @@ namespace MyIme.Core
 
             _pendingCandidate = -1;
             _pendingAi = false;
+            _pendingBuffer = -1;
 
-            if (ShowAiButton && _aiRect != Rectangle.Empty && _aiRect.Contains(e.X, e.Y))
+            if (IsInBufferArea(e.X, e.Y))
+            {
+                // 点在拼音上：把光标挪到点的那一格
+                _pendingBuffer = BufferIndexAt(e.X);
+            }
+            else if (ShowAiButton && _aiRect != Rectangle.Empty && _aiRect.Contains(e.X, e.Y))
             {
                 _pendingAi = true;
             }
@@ -604,6 +680,7 @@ namespace MyIme.Core
                 _dragging = true;
                 _pendingCandidate = -1;
                 _pendingAi = false;
+                _pendingBuffer = -1;
             }
 
             _userOffset = new Point(_dragOffOrigin.X + dx, _dragOffOrigin.Y + dy);
@@ -622,7 +699,12 @@ namespace MyIme.Core
 
             if (wasDrag) return;      // 拖完了，不当点击
 
-            if (_pendingAi)
+            if (_pendingBuffer >= 0)
+            {
+                Action<int> hb = BufferClicked;
+                if (hb != null) { try { hb(_pendingBuffer); } catch (Exception ex) { Log.Error("点拼音定位异常", ex); } }
+            }
+            else if (_pendingAi)
             {
                 Action h2 = AiButtonClicked;
                 if (h2 != null) { try { h2(); } catch (Exception ex) { Log.Error("AI 按钮异常", ex); } }
@@ -635,6 +717,7 @@ namespace MyIme.Core
 
             _pendingAi = false;
             _pendingCandidate = -1;
+            _pendingBuffer = -1;
         }
 
         protected override void OnMouseWheel(MouseEventArgs e)

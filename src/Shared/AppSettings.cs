@@ -60,6 +60,12 @@ namespace MyIme.Shared
         public int MaxWordLength = 6;              // 整词匹配最长汉字数
         public bool PredictEnabled = true;         // 上屏后联想
         public int PredictCount = 4;
+        /// <summary>
+        /// 拼音全部变成字之后，直接把输入条关掉 —— 用"关掉"来表示"这次输入完了"。
+        /// 打开时不会再显示联想词（联想跟"打完就关"是互斥的）；
+        /// 想保留联想就把这个开关关掉。
+        /// </summary>
+        public bool CloseAfterCommit = true;
         public int HistoryBoost = 300;             // 用户词频加权
 
         // 模糊音
