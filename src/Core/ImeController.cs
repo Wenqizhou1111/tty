@@ -677,8 +677,14 @@ namespace MyIme.Core
         {
             try
             {
-                bool down = (Native.GetAsyncKeyState(0x01) & 0x8000) != 0;
-                if (down && !_lmbDown) OnGlobalMouseDown();
+                int st = (int)Native.GetAsyncKeyState(0x01);
+                bool down = (st & 0x8000) != 0;          // 现在是不是按着
+                bool pressed = (st & 0x0001) != 0;       // 上次查询之后有没有按下过
+
+                // 0x0001 这一位很关键：用户"点一下"往往只按 50~100ms，
+                // 120ms 轮询很可能采样时已经松开了 —— 只看 0x8000 会漏掉快速点击。
+                // 系统会把"自上次查询以来按下过"记在这一位里。
+                if ((down && !_lmbDown) || (!down && pressed)) OnGlobalMouseDown();
                 _lmbDown = down;
             }
             catch { }

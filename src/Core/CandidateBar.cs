@@ -81,6 +81,13 @@ namespace MyIme.Core
         // 正在拼拼音时用两行显示：上行拼音、下行候选
         bool _twoRow;
 
+        // 输入条是不是"我们自己显示出来的"。
+        // 不能用 WinForms 的 Visible —— 这个窗口是用原生 SetWindowPos(SWP_SHOWWINDOW)
+        // 弹出来的，WinForms 的 Visible 会**一直停在 false**。
+        // 之前 HideBar() 写成 if (Visible) Hide();，于是那句永远不会执行，
+        // 输入条一旦弹出来就再也关不掉了。
+        bool _barShown;
+
         // ---- 鼠标拖动 ----
         // 条子默认贴着光标。用户一旦拖动，就记住"相对光标的偏移量"，
         // 之后它仍然跟着光标跑，但保持在用户摆放的位置上。
@@ -383,7 +390,10 @@ namespace MyIme.Core
                 if (y + Height > work.Bottom) y = y - Height - (int)(34 * _dpiScale);
                 if (y < work.Top) y = work.Top + 4;
 
-                Native.SetWindowPos(Handle, IntPtr.Zero, x, y, Width, Height, 0x0010 | 0x0040); // NOACTIVATE|SHOWWINDOW
+                // 只有"本来就该显示着"的时候才顺带 SHOWWINDOW；隐藏状态下挪窗口不该把它弄出来
+                uint flags = 0x0010;                       // SWP_NOACTIVATE
+                if (_barShown) flags |= 0x0040;            // SWP_SHOWWINDOW
+                Native.SetWindowPos(Handle, IntPtr.Zero, x, y, Width, Height, flags);
                 Location = new Point(x, y);
             }
             catch (Exception ex)
@@ -394,7 +404,15 @@ namespace MyIme.Core
 
         public void HideBar()
         {
-            try { if (Visible) Hide(); } catch { }
+            try
+            {
+                if (!_barShown) return;
+                _barShown = false;
+                // 和 ShowNoActivate 对称：用同一个原生接口藏起来
+                Native.SetWindowPos(Handle, IntPtr.Zero, Location.X, Location.Y, Width, Height,
+                    0x0010 | 0x0080 | 0x0001 | 0x0004);    // NOACTIVATE|HIDEWINDOW|NOSIZE|NOZORDER
+            }
+            catch (Exception ex) { Log.Warn("隐藏输入条失败: " + ex.Message); }
         }
 
         // ==================== 绘制 ====================
@@ -607,7 +625,7 @@ namespace MyIme.Core
         {
             try
             {
-                if (!Visible) return false;
+                if (!_barShown) return false;
                 RECT r;
                 if (!Native.GetWindowRect(Handle, out r)) return false;
                 return screenX >= r.Left && screenX < r.Right && screenY >= r.Top && screenY < r.Bottom;
@@ -732,8 +750,9 @@ namespace MyIme.Core
         {
             try
             {
-                if (!Visible)
+                if (!_barShown)
                 {
+                    _barShown = true;
                     Native.SetWindowPos(Handle, IntPtr.Zero, Location.X, Location.Y, Width, Height,
                         0x0010 | 0x0040 | 0x0002); // NOACTIVATE | SHOWWINDOW | NOMOVE
                 }

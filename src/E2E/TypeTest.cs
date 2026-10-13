@@ -25,6 +25,27 @@ static class TypeTest
     static extern IntPtr FindWindow(string className, string windowName);
     [DllImport("user32.dll")]
     static extern bool IsWindowVisible(IntPtr hWnd);
+    [DllImport("user32.dll")]
+    static extern bool SetCursorPos(int x, int y);
+    [DllImport("user32.dll")]
+    static extern void mouse_event(uint flags, uint dx, uint dy, uint data, IntPtr extra);
+
+    /// <summary>在窗体左上角点一下 —— 那是候选条**之外**的地方。</summary>
+    static void ClickAwayFromBar()
+    {
+        try
+        {
+            Point p = _form.PointToScreen(new Point(24, 24));
+            SetCursorPos(p.X, p.Y);
+            Application.DoEvents();
+            System.Threading.Thread.Sleep(200);
+            mouse_event(0x0002, 0, 0, 0, IntPtr.Zero);      // LEFTDOWN
+            System.Threading.Thread.Sleep(80);
+            mouse_event(0x0004, 0, 0, 0, IntPtr.Zero);      // LEFTUP
+            Application.DoEvents();
+        }
+        catch { }
+    }
 
     /// <summary>候选条现在是不是显示着。用它验证"打完就关""Esc 关掉"这些行为。</summary>
     static bool BarVisible()
@@ -181,12 +202,22 @@ static class TypeTest
             case 19:
                 Check("哈", "光标移到末尾后退格删掉最后一个字母，ha 上屏「哈」");
                 Record(!BarVisible(), "拼音全部上屏后输入条自动关闭");
+                // 点输入条以外的地方 -> 结束本次输入
+                Reset(); TypeText("zhongguo");
+                break;
+            case 20:
+                Record(BarVisible(), "正在拼拼音时输入条是显示着的");
+                ClickAwayFromBar();
+                break;
+            case 21:
+                Check("", "点了输入条以外的地方 -> 拼音被丢弃，没有上屏");
+                Record(!BarVisible(), "点了别处之后输入条关闭");
                 _timer.Stop();
                 _form.BeginInvoke((MethodInvoker)delegate { _form.Close(); });
                 break;
         }
         _step++;
-        if (_step <= 19) ForwardFocus();
+        if (_step <= 21) ForwardFocus();
     }
 
     [DllImport("user32.dll")]
