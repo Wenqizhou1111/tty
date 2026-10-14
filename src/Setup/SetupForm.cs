@@ -62,7 +62,14 @@ namespace MyIme.Setup
             if (string.IsNullOrEmpty(_args.Dir))
             {
                 _options.AllUsers = admin;                       // 管理员默认"为所有用户安装"
-                _options.TargetDir = Installer.DefaultTargetDir(admin);
+                // 卸载时要删的是「当初装到哪了」，不是默认路径。
+                // 这里原来无条件用 DefaultTargetDir，而且**完全没看 _uninstall** ——
+                // 于是装在别的盘的用户，卸载时被告知（并且真的去删）默认目录：
+                // 路径对不上，注册表和快捷方式倒是清了，程序文件却留在原地。
+                string installedDir = _uninstall ? Installer.InstalledDir : null;
+                _options.TargetDir = string.IsNullOrEmpty(installedDir)
+                    ? Installer.DefaultTargetDir(admin)
+                    : Installer.NormalizeDir(installedDir);
             }
             else
             {
