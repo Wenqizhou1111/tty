@@ -444,3 +444,35 @@ cheng gong 成功 7800
 shi bai 失败 7500
 nu li 努力 8200
 jian chi 坚持 7500
+
+# ---------------- 极常用短语（补漏）----------------
+ni hao ma 你好吗 8600
+shi ma 是吗 8400
+hao de 好的 8800
+bu ke qi 不客气 7800
+dui bu qi 对不起 8500
+mei guan xi 没关系 8200
+zen me ban 怎么办 8300
+wei shen me 为什么 8800
+shen me shi hou 什么时候 8000
+zai na li 在哪里 7600
+wo zhi dao 我知道 8200
+bu zhi dao 不知道 8600
+ke yi ma 可以吗 7800
+shi bu shi 是不是 8400
+you mei you 有没有 8400
+zen me yang 怎么样 8300
+mei wen ti 没问题 8000
+tai hao le 太好了 8000
+xin ku le 辛苦了 7600
+bu hao yi si 不好意思 8000
+dui bu dui 对不对 7400
+hao bu hao 好不好 7400
+xing bu xing 行不行 7200
+zen me hui shi 怎么回事 7600
+yi qi 一起 8600
+yi dian 一点 8400
+yi xia 一下 8500
+you dian 有点 8000
+ke neng 可能 8600
+ying gai 应该 8700

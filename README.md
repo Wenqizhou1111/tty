@@ -506,6 +506,16 @@ legacy-tsf-cpp 目录里是项目最初的一份 **C++ / TSF 输入法骨架**
 
 MIT 许可要求保留版权声明，所以上面这段声明同时写在生成的数据文件头部和这里。
 
+### hanziDB —— 汉字字频表
+
+- 项目：<https://github.com/ruddfawcett/hanziDB.csv>
+- 许可：**MIT License**
+- 用途：`tools/calibrate_chars.py` 用它的 `frequency_rank` 列给单字表排序。
+  排序信号必须是"字有多常用"，用词频推会跑偏（新闻语料把「及/即/既」抬高，
+  而"出现在多少词里"又会奖励构词能力强的字）。
+- 顺带：这个脚本还对照《通用规范汉字表》补齐了 **2732 个缺失的字** ——
+  原先 `既/际/健/剪/返/企/肌` 这些常用字根本不在表里，单打 ji 是打不出「既」的。
+
 ### jieba —— 通用词频表
 
 - 项目：<https://github.com/fxsjy/jieba>

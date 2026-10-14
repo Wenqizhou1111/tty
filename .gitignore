@@ -19,10 +19,13 @@ _shot/
 .uidata/
 .uidata2/
 
-# 上游词库原始数据（jieba 词频表 5 MB + THUOCL 2.6 MB）
-# 两个生成脚本都会在文件缺失时自动重新下载，所以不进版本库
+# 上游词库原始数据（jieba 词频表 5 MB + THUOCL 2.6 MB + 字频表 0.5 MB）
+# 生成脚本都会在文件缺失时自动重新下载，所以不进版本库
 data/_gen/jieba_dict.txt
 data/_gen/thuocl/
+data/_gen/hanziDB.csv
+data/_gen/std_chars.txt
+data/_gen/chars_backup.txt
 
 # ---- 用户数据（万一被指向仓库里）----
 settings.json

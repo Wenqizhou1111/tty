@@ -221,19 +221,19 @@ static class TypeTest
                 PressKey(0x35);                                    // 第 2 页第 5 个
                 break;
             case 23:
-                Check("尼", "部分上屏：nihaoma 翻页后选「尼」-> 只吃 1 个音节，剩下 hao ma 继续拼");
+                Check("你", "部分上屏：nihaoma 翻页后选「你」-> 只吃 1 个音节，剩下 hao ma 继续拼");
                 // 关键的一条：部分上屏后 _caret 以前没跟着 _buffer 变短，
                 // 退格会 Remove 越界抛异常 -> 异常被吞 -> 键漏给应用 -> 正文被删，
                 // 同时残留拼音一个字都删不掉。
                 PressKey(0x08);
                 break;
             case 24:
-                Check("尼", "部分上屏后退格 -> 删的是残留拼音，不会漏到正文里删字");
+                Check("你", "部分上屏后退格 -> 删的是残留拼音，不会漏到正文里删字");
                 Record(BarVisible(), "残留拼音还在，输入条还开着");
                 PressKey(0x1B);                                    // Esc 收尾
                 break;
             case 25:
-                Check("尼", "Esc 之后正文依然是「尼」");
+                Check("你", "Esc 之后正文依然是「你」");
                 Record(!BarVisible(), "Esc 关闭输入条");
                 _timer.Stop();
                 _form.BeginInvoke((MethodInvoker)delegate { _form.Close(); });

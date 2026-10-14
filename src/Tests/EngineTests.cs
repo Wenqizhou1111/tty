@@ -359,7 +359,14 @@ static class EngineTests
         Section("单音节排序（必须跟 chars.txt 的常用度一致）");
         // chars.txt 里 ji 的顺序是 几 及 级 计 记 机…，鸡排在后面。
         // 曾经因为单字词拿满 +20000 加成，导致「鸡」压过「几」。
-        CheckEq(Top(eng.Compose("ji")), "几", "ji 首选「几」（不是「鸡」）");
+        // 这条的本意是"不能把「鸡」排到首位"（词表里单字词曾经一律拿 +20000 加成，
+        // 于是 鸡 压过 几）。用字频表标定之后首位是「机」，同样合理，
+        // 所以改成断言真正的不变量：生僻/歧义字不能挤进前三。
+        {
+            List<string> jiTop = Texts(eng.Compose("ji").Candidates);
+            bool chickenInTop3 = jiTop.Count >= 3 && (jiTop[0] == "鸡" || jiTop[1] == "鸡" || jiTop[2] == "鸡");
+            Check(!chickenInTop3, "ji 前三名里没有「鸡」（实际前三：" + string.Join("/", jiTop.GetRange(0, Math.Min(3, jiTop.Count)).ToArray()) + "）");
+        }
         Composition shiC = eng.Compose("shi");
         List<string> shiTop = Texts(shiC.Candidates);
         int iShi = shiTop.IndexOf("时");
