@@ -225,7 +225,7 @@ namespace MyIme.Shared
         /// 简拼是给常用词用的缩写捷径：nh -> 你好。词库变大以后，
         /// 生僻词的首字母会和用户想打的字母串撞车（qqq -> 前驱期），所以卡一条线。
         /// </summary>
-        const int JianpinMinWeight = 6000;
+        public const int JianpinMinWeight = 6000;
 
         // ==================== 候选 ====================
 
@@ -377,18 +377,30 @@ namespace MyIme.Shared
             }
 
             // ---- 5. 简拼 ----
-            if (_cfg.Jianpin && S >= 2 && letters.Length == raw.Length)
+            // 条件从 "S >= 2" 放宽成"只要输入不是一条完整的拼音"。
+            //
+            // 原来要求至少切出两个音节，于是 aq / els / zel / dec 这类永远走不到这里：
+            // 它们的第一个字母（a、e、o）本身就是合法音节，S 正好是 1，
+            // 剩下的字母成了"没敲完的尾巴"。用户想打 安全(an quan)、俄罗斯(e luo si)、
+            // 周恩来(zhou en lai)，得到的却只有「啊」「额」——只覆盖了前半截。
+            //
+            // 判断依据用 PartialTail：它非空就说明这条拼音读不通，简拼才是唯一说得通的解释。
+            bool hasLeftover = c.PartialTail != null && c.PartialTail.Length > 0;
+            if (_cfg.Jianpin && letters.Length >= 2 && letters.Length == raw.Length)
             {
                 List<WordEntry> byInit = _lex.WordsOfInitials(letters);
                 if (byInit != null && letters != fullCode.Replace(" ", ""))
                 {
+                    // 读不通的时候加权更多：否则简拼候选压不过那些只解释了半截的拼读候选
+                    // （它们的单字候选权重是 15000 一档）。
+                    int bonus = hasLeftover ? 20000 : 5000;
                     int shown = 0;
                     for (int i = 0; i < byInit.Count && shown < 6; i++)
                     {
                         // 简拼是"常用词的缩写快捷键"，生僻词不该靠首字母抢候选。
                         // 加了领域词库之后，像「前驱期」(qqq) 这种词会把用户想打的字母顶掉。
                         if (byInit[i].Weight < JianpinMinWeight) continue;
-                        Offer(pool, MakeCandidate(byInit[i], CandidateKind.Jianpin, 5000 - shown * 20));
+                        Offer(pool, MakeCandidate(byInit[i], CandidateKind.Jianpin, bonus - shown * 20));
                         shown++;
                     }
                 }

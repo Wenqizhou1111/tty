@@ -77,6 +77,14 @@ namespace MyIme.Shared
             return null;
         }
 
+        /// <summary>所有词条（测试基准和统计用，不参与运行时逻辑）。</summary>
+        public List<WordEntry> AllWords()
+        {
+            List<WordEntry> r = new List<WordEntry>();
+            foreach (KeyValuePair<string, List<WordEntry>> kv in _byCode) r.AddRange(kv.Value);
+            return r;
+        }
+
         public List<WordEntry> PredictFrom(string firstChar)
         {
             List<WordEntry> list;
@@ -177,8 +185,8 @@ namespace MyIme.Shared
                     if (line.Length == 0 || line[0] == '#') continue;
                     WordEntry e = ParseWordLine(line);
                     if (e == null) continue;
-                    AddWord(_byCode, e.Code, e);
-                    WordCount++;
+                    // 只有真的新增了才计数，否则同一个词在两份文件里会让规模虚高
+                    if (AddWord(_byCode, e.Code, e)) WordCount++;
                 }
             }
             if (!any) LoadWarnings.Add("找不到词表文件（words*.txt）");
@@ -211,7 +219,15 @@ namespace MyIme.Shared
             return e;
         }
 
-        static void AddWord(Dictionary<string, List<WordEntry>> map, string key, WordEntry e)
+        /// <summary>
+        /// 往索引里加一个词。**同一个码下的同一个词只留一条**，返回是否真的新增了。
+        ///
+        /// 词库分成好几个文件（words.txt / words_extra / words_daily / words_web / words_topical），
+        /// 同一个词被写进两个文件是很正常的（手机 在 words.txt 和 words_daily.txt 里都有）。
+        /// 以前直接 list.Add，于是候选条里会出现两个一模一样的「手机」。
+        /// 这里按词去重，权重取高的那条。
+        /// </summary>
+        static bool AddWord(Dictionary<string, List<WordEntry>> map, string key, WordEntry e)
         {
             List<WordEntry> list;
             if (!map.TryGetValue(key, out list))
@@ -219,7 +235,16 @@ namespace MyIme.Shared
                 list = new List<WordEntry>();
                 map[key] = list;
             }
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (string.Equals(list[i].Word, e.Word, StringComparison.Ordinal))
+                {
+                    if (e.Weight > list[i].Weight) list[i] = e;
+                    return false;
+                }
+            }
             list.Add(e);
+            return true;
         }
 
         void LoadEnglish()

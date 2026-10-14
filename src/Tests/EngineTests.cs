@@ -130,6 +130,141 @@ static class EngineTests
             return 0;
         }
 
+        // 简拼基准：EngineTests.exe --jianpin [样本数] [--verbose]
+        // 对词库里最常见的 N 个词，用它们自己的简拼去查，看能不能排到第一。
+        // 这是"简拼好不好用"的量化指标 —— 改算法前后跑一遍就知道有没有变好。
+        if (args != null && args.Length >= 1 && args[0] == "--jianpin")
+        {
+            int topN = 600;
+            bool verbose = false;
+            for (int i = 1; i < args.Length; i++)
+            {
+                if (args[i] == "--verbose") verbose = true;
+                else { int t; if (int.TryParse(args[i], out t)) topN = t; }
+            }
+
+            List<WordEntry> all = lex.AllWords();
+            Dictionary<string, WordEntry> bestByInitials = new Dictionary<string, WordEntry>();
+            foreach (WordEntry e in all)
+            {
+                if (e.SyllableCount < 2 || e.SyllableCount > 6) continue;
+                if (string.IsNullOrEmpty(e.Initials)) continue;
+                WordEntry cur;
+                if (!bestByInitials.TryGetValue(e.Initials, out cur) || e.Weight > cur.Weight)
+                    bestByInitials[e.Initials] = e;
+            }
+
+            List<WordEntry> sorted = new List<WordEntry>(all);
+            sorted.Sort(delegate (WordEntry a, WordEntry b) { return b.Weight.CompareTo(a.Weight); });
+
+            // 对**每一个**够常见的词，用它的简拼去查，看它排在第几。
+            // 不挑"每个简拼权重最高的那个词"——那样等于自问自答，测不出东西。
+            // 真正要回答的是：同一串简拼下有好几个词时，排序合不合理；
+            // 以及有没有哪个常见词被阈值挡在外面、简拼根本查不到。
+            int total = 0, rank1 = 0, rank3 = 0, rank6 = 0, missing = 0, skipped = 0;
+            int ambigKeys = 0, ambigWords = 0;
+            List<string> miss = new List<string>();
+            Dictionary<string, Composition> cache = new Dictionary<string, Composition>();
+            HashSet<string> counted = new HashSet<string>();
+            foreach (WordEntry e in sorted)
+            {
+                if (total >= topN) break;
+                if (e.SyllableCount < 2 || e.SyllableCount > 6) continue;
+                if (e.Initials == null || e.Initials.Length < 2) continue;
+                if (e.Initials.Length != e.Word.Length) continue;
+
+                Composition probe;
+                if (!cache.TryGetValue(e.Initials, out probe))
+                {
+                    probe = eng.Compose(e.Initials);
+                    cache[e.Initials] = probe;
+                }
+                // 只考"简拼是唯一说得通的解释"的情况。
+                // 如果这串字母本身就是一条完整合法的拼音（ba 就是「八」、ye 就是「也」），
+                // 那整拼音理应先出，拿简拼词去要求它是错的。
+                bool fullyPinyin = probe.Syllables.Count > 0
+                                   && (probe.PartialTail == null || probe.PartialTail.Length == 0);
+                if (fullyPinyin) { skipped++; continue; }
+
+                total++;
+                int rank = -1;
+                for (int i = 0; i < probe.Candidates.Count; i++)
+                    if (probe.Candidates[i].Text == e.Word) { rank = i + 1; break; }
+                if (rank == 1) rank1++;
+                if (rank >= 1 && rank <= 3) rank3++;
+                if (rank >= 1 && rank <= 6) rank6++;
+                if (rank < 0)
+                {
+                    missing++;
+                    if (miss.Count < 25)
+                        miss.Add("   " + e.Initials.PadRight(8) + e.Word.PadRight(10)
+                                 + " 完全没出现   (权重 " + e.Weight + ")");
+                }
+                else if (rank > 1 && miss.Count < 25)
+                {
+                    miss.Add("   " + e.Initials.PadRight(8) + e.Word.PadRight(10)
+                             + " 排第 " + rank + "   (权重 " + e.Weight + ")");
+                }
+            }
+            // 有多少简拼是"好几个常见词共用"的 —— 这类天生不可能全对，用来解释命中率
+            Dictionary<string, int> keyCount = new Dictionary<string, int>();
+            foreach (WordEntry e in sorted)
+            {
+                if (e.SyllableCount < 2 || e.SyllableCount > 6) continue;
+                if (e.Initials == null || e.Initials.Length < 2) continue;
+                if (e.Weight < PinyinEngine.JianpinMinWeight) continue;
+                int cnt;
+                keyCount.TryGetValue(e.Initials, out cnt);
+                keyCount[e.Initials] = cnt + 1;
+            }
+            foreach (KeyValuePair<string, int> kv in keyCount)
+                if (kv.Value > 1) { ambigKeys++; ambigWords += kv.Value; }
+
+            Console.WriteLine("=== 简拼基准 ===");
+            Console.WriteLine("  正例样本: " + total + " 个常见词（各自用自己的简拼去查）");
+            Console.WriteLine("    排第 1 : " + rank1 + "  = " + (total == 0 ? 0 : rank1 * 100 / total) + "%");
+            Console.WriteLine("    排前 3 : " + rank3 + "  = " + (total == 0 ? 0 : rank3 * 100 / total) + "%");
+            Console.WriteLine("    排前 6 : " + rank6 + "  = " + (total == 0 ? 0 : rank6 * 100 / total) + "%");
+            Console.WriteLine("    查不到 : " + missing + "  (必须为 0，否则说明阈值把常见词挡了)");
+            Console.WriteLine("  同简拼多词: " + ambigKeys + " 组，共 " + ambigWords + " 个词"
+                              + "（这类天生只能有一个排第一）");
+
+            // 反例：任何词的简拼都不是的字母串，应该原样直通
+            int negTotal = 0, negHit = 0;
+            List<string> negMiss = new List<string>();
+            string[] pool = new string[] { "q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h",
+                                           "j","k","l","z","x","c","v","b","n","m" };
+            Random rnd = new Random(20170101);
+            while (negTotal < 200)
+            {
+                int len = 2 + rnd.Next(3);
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < len; i++) sb.Append(pool[rnd.Next(pool.Length)]);
+                string s = sb.ToString();
+                if (bestByInitials.ContainsKey(s)) continue;   // 有词匹配，不算反例
+                // 只考"一个音节都切不出来"的串。
+                // 像 fots 这种 fo 是合法音节、后面剩个尾巴的，属于"拼音还没敲完"，
+                // 出「佛」是正常行为，不该要求它原样直通。
+                Composition pre = eng.Compose(s);
+                if (pre.Syllables.Count > 0) continue;
+                negTotal++;
+                Composition negComp = eng.Compose(s);
+                string negTop = negComp.Candidates.Count > 0 ? negComp.Candidates[0].Text : "";
+                if (negTop == s) negHit++;
+                else if (negMiss.Count < 15) negMiss.Add("   " + s.PadRight(8) + " 实际 " + negTop);
+            }
+            Console.WriteLine("  反例样本: " + negTotal + " 个（没有词用这个简拼）");
+            Console.WriteLine("  原样直通: " + negHit + "/" + negTotal + "  = " + (negTotal == 0 ? 0 : negHit * 100 / negTotal) + "%");
+            if (verbose)
+            {
+                Console.WriteLine("  --- 正例未命中 ---");
+                foreach (string s in miss) Console.WriteLine(s);
+                Console.WriteLine("  --- 反例未直通 ---");
+                foreach (string s in negMiss) Console.WriteLine(s);
+            }
+            return 0;
+        }
+
         Section("词典装载");
         Check(lex.CharCount >= 4000, "单字表 >= 4000 字（实际 " + lex.CharCount + "）");
         Check(lex.WordCount >= 1000, "词库 >= 1000 条（实际 " + lex.WordCount + "）");
@@ -285,6 +420,71 @@ static class EngineTests
         Composition c8 = eng.Compose("nh");
         PrintTop(c8, 5);
         CheckEq(Top(c8), "你好", "简拼 nh -> 你好");
+
+        // 首字母是 a/e/o 这种独立音节时，后面剩下的字母是"没敲完的尾巴"。
+        // 旧逻辑要求至少切出两个音节，于是 aq/els/zel/dec 永远走不到简拼，
+        // 用户只能得到「啊」「额」——只覆盖了前半截。这几条钉住这个修复。
+        CheckEq(Top(eng.Compose("aq")), "安全", "aq -> 安全（a 是独立音节，q 是尾巴）");
+        CheckEq(Top(eng.Compose("els")), "俄罗斯", "els -> 俄罗斯");
+        CheckEq(Top(eng.Compose("zel")), "周恩来", "zel -> 周恩来");
+        CheckEq(Top(eng.Compose("dec")), "第二次", "dec -> 第二次");
+
+        // 反例：一个音节都切不出来的串，必须原样直通，
+        // 不能被某个生僻词的简拼顶掉（qqq 曾经出「前驱期」）
+        CheckEq(Top(eng.Compose("qqq")), "qqq", "qqq -> qqq（「前驱期」权重 3100 低于阈值，不抢）");
+        // zzz 是另一回事：自治州(zi zhi zhou, 权重 8479)确实是个常用词，
+        // 排第一是合理的；但原样直通必须还在候选里，用户想打字母随时能选。
+        {
+            Composition zzComp = eng.Compose("zzz");
+            bool hasLiteral = false;
+            foreach (Candidate cd in zzComp.Candidates)
+                if (cd.Text == "zzz") { hasLiteral = true; break; }
+            Check(hasLiteral, "zzz 的原样直通始终在候选里（哪怕有常用词抢第一，实际第一是「"
+                              + Top(zzComp) + "」）");
+        }
+
+        // 候选里不能有重复的词（手机 同时在 words.txt 和 words_daily.txt 里，
+        // 以前会加载两遍，候选条上就出现两个一模一样的「手机」）
+        {
+            bool dupFound = false;
+            string dupSample = "";
+            string[] probe = new string[] { "sj", "xx", "zj", "sh", "zg", "dx" };
+            foreach (string p in probe)
+            {
+                Composition pc = eng.Compose(p);
+                HashSet<string> seenText = new HashSet<string>();
+                foreach (Candidate cd in pc.Candidates)
+                    if (!seenText.Add(cd.Text)) { dupFound = true; dupSample = p + " -> " + cd.Text; break; }
+                if (dupFound) break;
+            }
+            Check(!dupFound, "简拼候选里没有重复词" + (dupFound ? "（" + dupSample + "）" : ""));
+        }
+
+        // 阈值不能把常见词挡在简拼之外：权重前 800 的词，用自己的简拼必须查得到
+        {
+            List<WordEntry> allW = lex.AllWords();
+            allW.Sort(delegate (WordEntry a, WordEntry b) { return b.Weight.CompareTo(a.Weight); });
+            int checkedN = 0, unreachable = 0;
+            string firstBad = "";
+            HashSet<string> doneKeys = new HashSet<string>();
+            foreach (WordEntry e in allW)
+            {
+                if (checkedN >= 800) break;
+                if (e.SyllableCount < 2 || e.SyllableCount > 6) continue;
+                if (e.Initials == null || e.Initials.Length < 2) continue;
+                if (!doneKeys.Add(e.Initials)) continue;
+                Composition pc = eng.Compose(e.Initials);
+                // 完整拼音的串（ba/ye 这种）不算，那是整拼音的天下
+                if (pc.Syllables.Count > 0 && (pc.PartialTail == null || pc.PartialTail.Length == 0)) continue;
+                checkedN++;
+                bool found = false;
+                foreach (Candidate cd in pc.Candidates)
+                    if (cd.Kind == CandidateKind.Jianpin) { found = true; break; }
+                if (!found && unreachable == 0) { unreachable++; firstBad = e.Initials; }
+            }
+            Check(unreachable == 0, "常见词的简拼都能查到" + (unreachable > 0 ? "（" + firstBad + " 查不到）" : "")
+                                    + "（抽查 " + checkedN + " 个）");
+        }
 
         Section("非拼音兜底");
         Composition c9 = eng.Compose("qqq");
