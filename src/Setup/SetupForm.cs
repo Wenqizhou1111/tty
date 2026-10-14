@@ -683,7 +683,10 @@ namespace MyIme.Setup
             ExitCode = _failed ? 1 : 0;
             if (!_failed) _bar.SetValue(100);
 
-            _welcomePath.Text = _options.TargetDir;
+            // 卸载模式下不构建「欢迎」那一步，_welcomePath 是 null。
+            // 这里以前漏了判空（紧邻的 _confirmPath 反而判了）—— 于是每次卸载都
+            // 走完流程后弹「未将对象引用设置到对象的实例」，把成功的卸载伪装成失败。
+            if (_welcomePath != null) _welcomePath.Text = _options.TargetDir;
             if (_confirmPath != null) _confirmPath.Text = _options.TargetDir;
             ShowStep(3);
         }
