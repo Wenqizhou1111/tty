@@ -220,6 +220,13 @@ namespace MyIme.Shared
             return result;
         }
 
+        /// <summary>
+        /// 简拼（首字母）匹配的最低词权重。
+        /// 简拼是给常用词用的缩写捷径：nh -> 你好。词库变大以后，
+        /// 生僻词的首字母会和用户想打的字母串撞车（qqq -> 前驱期），所以卡一条线。
+        /// </summary>
+        const int JianpinMinWeight = 6000;
+
         // ==================== 候选 ====================
 
         public Composition Compose(string raw)
@@ -239,17 +246,22 @@ namespace MyIme.Shared
                     if (byInit != null)
                     {
                         foreach (WordEntry e in byInit)
+                        {
+                            if (e.Weight < JianpinMinWeight) continue;
                             c.Candidates.Add(MakeCandidate(e, CandidateKind.Jianpin, 5000));
+                        }
                         added = c.Candidates.Count > 0;
                     }
                 }
-                if (!added)
-                {
-                    Candidate rawC = new Candidate(raw, CandidateKind.Raw, 100);
-                    rawC.Code = letters;
-                    rawC.Consumed = 0;
-                    c.Candidates.Add(rawC);
-                }
+                // 原样直通**永远**加进来，不再"简拼匹配到了就不给"。
+                // 否则像 qqq 这种串会被某个生僻词的简拼完全顶掉，用户想打字母都打不出来。
+                // 权重给 300：排在常规简拼后面，但只要简拼没命中（或命中的都是生僻词）
+                // 它就是第一个 —— 这也正是"打不出拼音就原样上屏"的本意。
+                Candidate rawC = new Candidate(raw, CandidateKind.Raw, 300);
+                rawC.Code = letters;
+                rawC.Consumed = 0;
+                c.Candidates.Add(rawC);
+                if (added) { /* 简拼候选已在上面加入 */ }
                 c.IsValid = true;
                 Finish(c);
                 return c;
@@ -370,9 +382,15 @@ namespace MyIme.Shared
                 List<WordEntry> byInit = _lex.WordsOfInitials(letters);
                 if (byInit != null && letters != fullCode.Replace(" ", ""))
                 {
-                    int n = Math.Min(byInit.Count, 6);
-                    for (int i = 0; i < n; i++)
-                        Offer(pool, MakeCandidate(byInit[i], CandidateKind.Jianpin, 5000 - i * 20));
+                    int shown = 0;
+                    for (int i = 0; i < byInit.Count && shown < 6; i++)
+                    {
+                        // 简拼是"常用词的缩写快捷键"，生僻词不该靠首字母抢候选。
+                        // 加了领域词库之后，像「前驱期」(qqq) 这种词会把用户想打的字母顶掉。
+                        if (byInit[i].Weight < JianpinMinWeight) continue;
+                        Offer(pool, MakeCandidate(byInit[i], CandidateKind.Jianpin, 5000 - shown * 20));
+                        shown++;
+                    }
                 }
             }
 

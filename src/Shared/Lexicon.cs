@@ -156,12 +156,15 @@ namespace MyIme.Shared
         /// 词表：words.txt 是自动生成的，words_extra.txt 和 words_daily.txt 是人工精选的补充，都读。
         /// words_daily.txt 专门收日常口语词（聊天、生活场景），用来补内置词库偏书面语的短板。
         /// words_web.txt 是从网络词频表挖出来的 5000+ 常用词（tools/build_web_words.py 生成）。
+        /// words_topical.txt 是从 THUOCL（MIT）转来的领域词：成语/地名/饮食/科技/医学/人名等
+        /// （tools/build_topical_words.py 生成）。
         /// 分成多个文件是为了让用户能直接往"自己那份"里加词，不用重跑任何脚本，
         /// 程序升级覆盖内置文件时也不会把用户加的词冲掉。
         /// </summary>
         void LoadWords()
         {
-            string[] names = new string[] { "words.txt", "words_extra.txt", "words_daily.txt", "words_web.txt" };
+            string[] names = new string[] { "words.txt", "words_extra.txt", "words_daily.txt",
+                                            "words_web.txt", "words_topical.txt" };
             bool any = false;
             foreach (string name in names)
             {
@@ -178,7 +181,7 @@ namespace MyIme.Shared
                     WordCount++;
                 }
             }
-            if (!any) LoadWarnings.Add("找不到 words.txt / words_extra.txt / words_daily.txt / words_web.txt（词表）");
+            if (!any) LoadWarnings.Add("找不到词表文件（words*.txt）");
         }
 
         /// <summary>解析 "ni hao 你好 9600"。从行尾往前切，避免拼音和词粘连。</summary>
