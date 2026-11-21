@@ -46,6 +46,30 @@ namespace MyIme.Ai
     }
 
     /// <summary>
+    /// 输出模式（场景）。跟「润色效果」是两个维度：
+    /// 润色效果决定"怎么改"（简洁/正式/口语…），输出模式决定"按什么场合说"
+    /// （谈情说爱/公文/回复领导…）。两者叠加生效。
+    /// </summary>
+    public class OutputMode
+    {
+        public string Id = "";
+        public string Name = "";
+        public string Description = "";
+        /// <summary>给 AI 的场合指令，会自动拼进系统提示词。</summary>
+        public string Instruction = "";
+
+        public OutputMode() { }
+
+        public OutputMode(string id, string name, string description, string instruction)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+            Instruction = instruction;
+        }
+    }
+
+    /// <summary>
     /// 所有提示词都集中在这里。提示词写死在这里、不散落在各处，
     /// 后面想调效果只改这一个文件。
     /// </summary>
@@ -54,6 +78,7 @@ namespace MyIme.Ai
         static readonly object Gate = new object();
         static List<AiAction> _actions;
         static List<PolishPreset> _presets;
+        static List<OutputMode> _modes;
 
         // ==================== 默认系统提示词 ====================
 
@@ -190,6 +215,79 @@ namespace MyIme.Ai
             return null;
         }
 
+        // ==================== 输出模式（场景） ====================
+
+        public static List<OutputMode> OutputModes
+        {
+            get
+            {
+                lock (Gate)
+                {
+                    if (_modes == null) _modes = BuildOutputModes();
+                    return _modes;
+                }
+            }
+        }
+
+        public static OutputMode FindOutputMode(string id)
+        {
+            List<OutputMode> list = OutputModes;
+            if (!string.IsNullOrEmpty(id))
+            {
+                string want = id.Trim();
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (string.Equals(list[i].Id, want, StringComparison.OrdinalIgnoreCase)) return list[i];
+                }
+            }
+            return null;
+        }
+
+        public static OutputMode FindOutputModeOrDefault(string id)
+        {
+            OutputMode m = FindOutputMode(id);
+            if (m != null) return m;
+            return FindOutputMode("default");
+        }
+
+        static List<OutputMode> BuildOutputModes()
+        {
+            List<OutputMode> list = new List<OutputMode>();
+
+            list.Add(new OutputMode("default", "默认",
+                "不加场合限制，只按润色效果改写",
+                ""));
+
+            list.Add(new OutputMode("romance", "谈情说爱",
+                "语气亲密自然，适合发消息给对象",
+                "【场合】这是发给恋人或暧昧对象的私聊消息。写法要求：" +
+                "语气亲密、自然、有温度，像真人打字而不是写作文；" +
+                "句子短一点，可以有一点点撒娇、关心或试探；" +
+                "不要油腻、不要土味情话、不要堆形容词，不要用感叹号轰炸；" +
+                "不要出现「宝贝」「亲爱的」这类泛泛的称呼，除非原文里本来就有；" +
+                "整体要让人觉得真诚、舒服，而不是刻意讨好。"));
+
+            list.Add(new OutputMode("official", "公文润色",
+                "机关/企业公文腔，规范、对仗、分寸得当",
+                "【场合】这是机关或企业的正式公文/工作汇报。写法要求：" +
+                "使用规范的公文表达：四字短语、并列结构、书面词汇，句式整齐；" +
+                "语气庄重克制，多用「拟」「予以」「切实」「进一步」「确保」这类公文常用词；" +
+                "结构上先总述后分述，重要的事放前面；" +
+                "不要口语、不要网络用语、不要夸张修辞、不要感叹号；" +
+                "不要编造原文没有的政策名称、数字、时间节点。"));
+
+            list.Add(new OutputMode("boss", "回复领导",
+                "高情商场面话：接得住、表得态、不揽锅",
+                "【场合】这是回复上级/领导的消息或安排。写法要求：" +
+                "先明确回应（收到/明白了/我马上跟进），态度积极、干脆；" +
+                "把领导的意思复述到位，表明自己听懂了重点；" +
+                "表态要具体但不过度承诺——说清下一步做什么、什么时候反馈；" +
+                "不抢功、不甩锅、不诉苦，遇到困难用「需要您把关/协调」这类得体说法；" +
+                "长度控制在一小段，别写成汇报材料；不要用感叹号堆热情，也不要谄媚。"));
+
+            return list;
+        }
+
         /// <summary>按 Id 取预设，找不到就退回"简洁"。</summary>
         public static PolishPreset FindPresetOrDefault(string id)
         {
@@ -256,6 +354,17 @@ namespace MyIme.Ai
 
             StringBuilder sb = new StringBuilder();
             sb.Append(body);
+
+            // 输出模式（场合）叠加在系统提示词后面：换了模式，润色出来的文字
+            // 就直接是对应场合的口气，不用用户自己去输入框里写要求。
+            OutputMode mode = FindOutputModeOrDefault(s == null ? null : s.OutputMode);
+            if (mode != null && !string.IsNullOrEmpty(mode.Instruction))
+            {
+                sb.Append('\n');
+                sb.Append('\n');
+                sb.Append(mode.Instruction);
+            }
+
             sb.Append('\n');
             sb.Append('\n');
             sb.Append("再次强调输出格式：直接给出改写后的正文，从第一个字开始就是正文；" +

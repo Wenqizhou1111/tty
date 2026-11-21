@@ -18,6 +18,8 @@ namespace MyIme.Settings
         public string DocUrl = "";
         public string Note = "";
         public bool Local = false;
+        /// <summary>免费模型清单（只有 OpenCode Zen 有）。</summary>
+        public List<string> FreeModels = new List<string>();
     }
 
     /// <summary>
@@ -107,6 +109,15 @@ namespace MyIme.Settings
                     p.Note = ReadField(o, "Note");
                     object local = ReadFieldObj(o, "Local");
                     p.Local = (local is bool) && (bool)local;
+                    IEnumerable fm = ReadFieldObj(o, "FreeModels") as IEnumerable;
+                    if (fm != null)
+                    {
+                        foreach (object s in fm)
+                        {
+                            string ms = s as string;
+                            if (!string.IsNullOrEmpty(ms)) p.FreeModels.Add(ms);
+                        }
+                    }
                     if (p.Id.Length == 0) continue;
                     if (p.Provider.Length == 0) p.Provider = "openai";
                     list.Add(p);
@@ -216,6 +227,18 @@ namespace MyIme.Settings
                 "https://api.siliconflow.cn/v1", "Qwen/Qwen2.5-7B-Instruct",
                 "https://cloud.siliconflow.cn/account/ak",
                 "一个 Key 用很多开源模型；模型名要写全称，如 deepseek-ai/DeepSeek-V3。"));
+
+            // 免费模型池（和 Core 那份保持一致）
+            ProviderInfo opencode = P("opencode", "OpenCode Zen（免费模型）", "openai",
+                "https://opencode.ai/inference/openai/v1", "deepseek-v4.1-flash-free",
+                "https://opencode.ai/zen",
+                "免费模型池，注册后在控制台建一个 API Key 即可；不带 Key 会被限流（429）。");
+            opencode.FreeModels.AddRange(new string[] {
+                "deepseek-v4.1-flash-free", "mimo-v2.6-flash-free", "big-pickle",
+                "hy4-flash-free", "nemotron-3.5-lightning-free", "nemotron-3.5-super-vl-free",
+                "flint-40b-free", "longcat-2.5-free", "beam-free", "iceman-free",
+                "tidepool-alpha-free" });
+            list.Add(opencode);
 
             ProviderInfo ollama = P("ollama", "Ollama（本地）", "openai",
                 "http://localhost:11434/v1", "qwen2.5:7b",

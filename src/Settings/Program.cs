@@ -17,7 +17,7 @@ namespace MyIme.Settings
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            try { Native.SetProcessDPIAware(); }
+            try { Native.EnableBestDpiAwareness(); }
             catch { }
 
             Application.ThreadException += OnThreadException;

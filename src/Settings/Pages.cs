@@ -1310,6 +1310,9 @@ namespace MyIme.Settings
 
         InputBox _baseUrl;
         InputBox _model;
+        SelectBox _freeModelBox;
+        ThemedLabel _freeModelTipLabel;
+        bool _freeModelBusy;
         InputBox _apiKey;
         FlatCheck _showKey;
         ThemedLabel _keyStatus;
@@ -1413,6 +1416,23 @@ namespace MyIme.Settings
             y = RowInput(c2, y, "模型", "按服务商的文档填，比如 deepseek-chat、glm-4-flash。",
                 Cfg.Ai.Model, "deepseek-chat", 300, false, null, out ib);
             _model = ib;
+
+            // 免费模型：服务商带免费池时（OpenCode Zen），把模型直接列出来点选，
+            // 不用自己去查模型名。选中就等于把上面的「模型」框填好。
+            Text(c2, "免费模型", 18, y + 16);
+            _freeModelBox = new SelectBox();
+            _freeModelBox.Size = new Size(300, 34);
+            PlaceRight(c2, _freeModelBox, 18);
+            _freeModelBox.Top = y + 6;
+            _freeModelBox.SelectedIndexChanged += delegate
+            {
+                if (_freeModelBusy || _freeModelBox == null || _model == null) return;
+                string picked = _freeModelBox.SelectedText;
+                if (!string.IsNullOrEmpty(picked)) _model.Text = picked;
+            };
+            y += 46;
+            _freeModelTipLabel = SubWrap(c2, "", 18, y, c2.Width - 36);
+            y += 24 + SubOverflow(_freeModelTipLabel);
 
             Text(c2, "API Key", 18, y + 16);
             InputBox key = new InputBox();
@@ -1592,6 +1612,34 @@ namespace MyIme.Settings
             ApplyProvider(_provider.SelectedIndex, true);
         }
 
+        /// <summary>把当前服务商的免费模型刷新到下拉框里。没有免费池就禁用+提示。</summary>
+        void RefreshFreeModels()
+        {
+            if (_freeModelBox == null) return;
+            _freeModelBusy = true;
+            try
+            {
+                List<string> items = new List<string>();
+                List<ProviderInfo> all = ProviderCatalog.All;
+                int idx = (_provider == null) ? -1 : _provider.SelectedIndex;
+                if (idx >= 0 && idx < all.Count && all[idx].FreeModels != null)
+                    items.AddRange(all[idx].FreeModels);
+
+                _freeModelBox.SetItems(items);
+                _freeModelBox.Enabled = items.Count > 0;
+                _freeModelBox.SelectedIndex = 0;
+                _freeModelBox.Invalidate();
+
+                if (_freeModelTipLabel != null)
+                {
+                    _freeModelTipLabel.Text = items.Count > 0
+                        ? "这 " + items.Count + " 个是免费模型，选中会填到上面的「模型」里（仍需该服务商的 API Key）。"
+                        : "当前服务商没有预置免费模型，可以直接在「模型」里手填。";
+                }
+            }
+            finally { _freeModelBusy = false; }
+        }
+
         void ApplyProvider(int index, bool overwrite)
         {
             List<ProviderInfo> all = ProviderCatalog.All;
@@ -1613,6 +1661,7 @@ namespace MyIme.Settings
                 if (p.Local) note = "本地服务，一般不用填 API Key。" + note;
                 _note.Text = note;
             }
+            RefreshFreeModels();
             if (_docLink != null)
             {
                 if (_docUrl.Length > 0)

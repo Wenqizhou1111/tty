@@ -130,6 +130,8 @@ namespace MyIme.Core
         public event Action<string, string, string> RunRequested;   // mode, id(预设或动作), requirement
         public event Action<bool> ApplyRequested;                   // true=替换原文, false=插入
         public event Action PanelClosedClicked;
+        /// <summary>输出模式（场合）被用户改了。参数是模式 Id。</summary>
+        public event Action<string> OutputModeChanged;
 
         // ---- 配色 ----
         Color _card = Color.White;
@@ -153,6 +155,7 @@ namespace MyIme.Core
         Label _actionLabel;
         Label _resultLabel;
         TextBox _result;
+        Label _outputModeLabel;
         Label _status;
         Pill _runBtn;
         Pill _applyBtn;
@@ -162,9 +165,11 @@ namespace MyIme.Core
 
         readonly List<Pill> _presetPills = new List<Pill>();
         readonly List<Pill> _actionPills = new List<Pill>();
+        readonly List<Pill> _outputModePills = new List<Pill>();
 
         string _mode = ModeAuto;
         string _selectedPreset = "concise";
+        string _selectedOutputMode = "default";
         string _selectedAction = "polish";
         string _sourceText = "";
         bool _busy;
@@ -178,7 +183,7 @@ namespace MyIme.Core
             ShowInTaskbar = false;
             TopMost = true;
             Text = "AI 写作助手";
-            Size = new Size(580, 430);
+            Size = new Size(580, 470);
             BackColor = _bg;
             KeyPreview = true;
         }
@@ -226,6 +231,29 @@ namespace MyIme.Core
             _tabCmd.NormalBg = _line;
             _tabCmd.Click += delegate { SetMode(ModeCommand); };
             Controls.Add(_tabCmd);
+
+            // ---- 输出模式（场合）----
+            // 放在页签下面、输入框上面，两种模式（自动/指令）都生效：
+            // 它改的是系统提示词里的"场合"，不是"改写手法"，
+            // 所以跟下面的「润色效果」「要对原文做什么」是叠加关系。
+            _outputModeLabel = MakeLabel("输出模式", _sub, 9f, false);
+            Controls.Add(_outputModeLabel);
+
+            foreach (OutputMode om in PromptLibrary.OutputModes)
+            {
+                OutputMode captured = om;
+                Pill p = new Pill();
+                p.Text = om.Name;
+                p.PillId = om.Id;
+                p.Small = true;
+                p.Height = 28;
+                p.Accent = _accent;
+                p.NormalBg = _line;
+                p.Selected = (om.Id == _selectedOutputMode);
+                p.Click += delegate { SetOutputMode(captured.Id); };
+                Controls.Add(p);
+                _outputModePills.Add(p);
+            }
 
             // ---- 自动模式页 ----
             _autoPage = new Panel();
@@ -418,6 +446,44 @@ namespace MyIme.Core
             foreach (Pill p in _presetPills) { p.Selected = (p.PillId == _selectedPreset); p.Invalidate(); }
         }
 
+        /// <summary>当前输出模式 Id（default / romance / official / boss）。</summary>
+        public string OutputMode
+        {
+            get { return _selectedOutputMode; }
+        }
+
+        /// <summary>只同步界面，不触发 OutputModeChanged。</summary>
+        public void SetOutputModeSilently(string id)
+        {
+            OutputMode m = PromptLibrary.FindOutputModeOrDefault(id);
+            if (m == null) return;
+            _selectedOutputMode = m.Id;
+            foreach (Pill p in _outputModePills)
+            {
+                p.Selected = (p.PillId == _selectedOutputMode);
+                p.Invalidate();
+            }
+        }
+
+        /// <summary>设置输出模式；外部（比如从设置里读回来的默认值）也可以调。</summary>
+        public void SetOutputMode(string id)
+        {
+            OutputMode m = PromptLibrary.FindOutputModeOrDefault(id);
+            if (m == null) return;
+            bool changed = (m.Id != _selectedOutputMode);
+            _selectedOutputMode = m.Id;
+            foreach (Pill p in _outputModePills)
+            {
+                p.Selected = (p.PillId == _selectedOutputMode);
+                p.Invalidate();
+            }
+            if (changed)
+            {
+                Action<string> h = OutputModeChanged;
+                if (h != null) h(_selectedOutputMode);
+            }
+        }
+
         void RefreshActionSelection()
         {
             foreach (Pill p in _actionPills) { p.Selected = (p.PillId == _selectedAction); p.Invalidate(); }
@@ -440,7 +506,18 @@ namespace MyIme.Core
             _closeBtn.AutoWidth();
             _closeBtn.Location = new Point(Width - pad - _closeBtn.Width - 8, 46);
 
-            int contentTop = 90;
+            // ---- 输出模式这一行 ----
+            _outputModeLabel.Location = new Point(pad, 82);
+            int omx = pad + 72;
+            foreach (Pill p in _outputModePills)
+            {
+                p.AutoWidth();
+                p.Height = 28;
+                p.Location = new Point(omx, 78);
+                omx += p.Width + 8;
+            }
+
+            int contentTop = 122;
             int contentW = Width - pad * 2;
 
             _autoPage.Location = new Point(pad, contentTop);
@@ -516,6 +593,9 @@ namespace MyIme.Core
             _busy = false;
 
             if (ai != null && !string.IsNullOrEmpty(ai.AutoPreset)) _selectedPreset = ai.AutoPreset;
+            // 输出模式从设置里读回来。注意要绕过事件：这里只是"同步界面"，
+            // 不是用户改的，不该反过来再写一次设置。
+            SetOutputModeSilently(ai == null ? "default" : ai.OutputMode);
 
             string preview = _sourceText.Length == 0
                 ? "(没有读到输入框里的文字，可以直接在下面写要求)"

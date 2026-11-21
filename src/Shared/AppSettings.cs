@@ -151,6 +151,11 @@ namespace MyIme.Shared
         // 模式一：自动读取修改
         public bool AutoReadMode = true;                   // 允许"自动读取输入框内容并修改"
         public string AutoPreset = "concise";              // 默认润色风格
+        /// <summary>
+        /// 输出模式（场合）：default / romance / official / boss。
+        /// 跟 AutoPreset 是两个维度 —— AutoPreset 决定"怎么改"，这个决定"按什么场合说"。
+        /// </summary>
+        public string OutputMode = "default";
         public bool AutoReplaceAll = true;                 // true = 替换整段；false = 只在光标处插入
         public bool ConfirmBeforeReplace = true;           // 替换前先给预览确认
 

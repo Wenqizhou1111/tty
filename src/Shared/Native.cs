@@ -219,6 +219,38 @@ namespace MyIme.Shared
 
         // Win10 1703+；老系统上找不到入口点，调用方要 try/catch
         [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SetProcessDpiAwarenessContext(IntPtr value);
+
+        /// <summary>
+        /// 把进程设成"每显示器 DPI 感知 v2"，这是 WinForms 不糊的前提。
+        ///
+        /// 原来只调了 SetProcessDPIAware()，那是"系统 DPI 感知"：
+        /// 在缩放不是 100% 的机器上，窗口会被 Windows 位图拉伸 → 整个界面发虚。
+        /// 换成 PerMonitorV2 之后，系统不再替程序缩放，文字按真实像素渲染，边缘就清了。
+        ///
+        /// 逐级降级，任何一步失败都能继续跑：v2 → 每显示器 → 系统 DPI。
+        /// </summary>
+        public static void EnableBestDpiAwareness()
+        {
+            try
+            {
+                // DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 = -4
+                if (SetProcessDpiAwarenessContext(new IntPtr(-4))) return;
+            }
+            catch (Exception) { }
+            try
+            {
+                // DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE = -3
+                if (SetProcessDpiAwarenessContext(new IntPtr(-3))) return;
+            }
+            catch (Exception) { }
+            try { SetProcessDPIAware(); }
+            catch (Exception) { }
+        }
+
+        // Win10 1703+；老系统上找不到入口点，调用方要 try/catch
+        [DllImport("user32.dll", SetLastError = true)]
         public static extern uint GetDpiForWindow(IntPtr hwnd);
 
         [DllImport("user32.dll")]

@@ -33,6 +33,13 @@ namespace MyIme.Ai
         /// <summary>是不是本地服务（本地服务通常不需要 API Key）。</summary>
         public bool Local = false;
 
+        /// <summary>
+        /// 这家服务商的"免费模型"清单。设置界面会把它们列出来一键选用。
+        /// 目前只有 OpenCode Zen 有（从 https://opencode.ai/zen/v1/models 的
+        /// cost.text.input.price = 0 里筛出来的），其他家留空。
+        /// </summary>
+        public List<string> FreeModels = new List<string>();
+
         public AiProviderPreset() { }
 
         public AiProviderPreset(string id, string name, string provider, string baseUrl, string defaultModel, string docUrl, string note)
@@ -213,6 +220,30 @@ namespace MyIme.Ai
                 "https://api.siliconflow.cn/v1", "Qwen/Qwen2.5-7B-Instruct",
                 "https://cloud.siliconflow.cn/account/ak",
                 "一个 Key 用很多开源模型；模型名要写全称，如 deepseek-ai/DeepSeek-V3。"));
+
+            // ---------------- 免费池 ----------------
+            // OpenCode Zen 的免费模型池。目录是公开的（https://opencode.ai/zen/v1/models），
+            // 下面这 11 个是 cost.text.input.price == 0 的对话模型；
+            // jev-1.13-free 走的是另一个结构化决策端点（systemone），不能当聊天模型用，已排除。
+            // 仍然需要一个（免费注册就能拿到的）API Key：不带 Key 会被限流成 429。
+            AiProviderPreset opencode = new AiProviderPreset(
+                "opencode", "OpenCode Zen（免费模型）", "openai",
+                "https://opencode.ai/inference/openai/v1", "deepseek-v4.1-flash-free",
+                "https://opencode.ai/zen",
+                "免费模型池，注册后在控制台建一个 API Key 即可；不带 Key 会被限流（429）。" +
+                "模型名可以直接从下面列出的免费模型里挑。");
+            opencode.FreeModels.Add("deepseek-v4.1-flash-free");
+            opencode.FreeModels.Add("mimo-v2.6-flash-free");
+            opencode.FreeModels.Add("big-pickle");
+            opencode.FreeModels.Add("hy4-flash-free");
+            opencode.FreeModels.Add("nemotron-3.5-lightning-free");
+            opencode.FreeModels.Add("nemotron-3.5-super-vl-free");
+            opencode.FreeModels.Add("flint-40b-free");
+            opencode.FreeModels.Add("longcat-2.5-free");
+            opencode.FreeModels.Add("beam-free");
+            opencode.FreeModels.Add("iceman-free");
+            opencode.FreeModels.Add("tidepool-alpha-free");
+            list.Add(opencode);
 
             // ---------------- 本地 ----------------
             AiProviderPreset ollama = new AiProviderPreset(

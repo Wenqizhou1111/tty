@@ -44,7 +44,7 @@ namespace MyIme.Core
             }
 
             // DPI 感知必须在任何窗口创建之前设置
-            try { Native.SetProcessDPIAware(); }
+            try { Native.EnableBestDpiAwareness(); }
             catch (Exception ex) { Log.Warn("设置 DPI 感知失败: " + ex.Message); }
 
             AppDomain.CurrentDomain.UnhandledException += delegate (object s, UnhandledExceptionEventArgs e)

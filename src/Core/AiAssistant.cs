@@ -125,6 +125,18 @@ namespace MyIme.Core
             _panel.ApplyRequested += OnApplyRequested;
             _panel.PanelClosedClicked += delegate { HidePanel(); };
             _panel.FormClosed += delegate { _panel = null; };
+            // 用户在面板上换了输出模式（谈情说爱/公文/回复领导）就记进设置，
+            // 下次打开还是这个模式；润色时系统提示词会自动带上对应场合。
+            _panel.OutputModeChanged += delegate (string id)
+            {
+                try
+                {
+                    if (_cfg == null || _cfg.Ai == null) return;
+                    _cfg.Ai.OutputMode = id;
+                    SettingsStore.Save(_cfg);
+                }
+                catch (Exception ex) { Log.Warn("保存输出模式失败: " + ex.Message); }
+            };
         }
 
         public void HidePanel()
