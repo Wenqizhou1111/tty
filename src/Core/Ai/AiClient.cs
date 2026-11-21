@@ -689,6 +689,13 @@ namespace MyIme.Ai
             return t;
         }
 
+        /// <summary>当前是不是 OpenCode Zen（免费池要特殊处理 Key）。</summary>
+        bool IsOpenCode()
+        {
+            string b = (_settings == null || _settings.BaseUrl == null) ? "" : _settings.BaseUrl;
+            return b.IndexOf("opencode.ai", StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
         void ApplyHeaders(HttpRequestMessage req, string provider)
         {
             try
@@ -700,9 +707,14 @@ namespace MyIme.Ai
                 }
                 else
                 {
-                    // 本地服务（Ollama / LM Studio）不需要 Key，留空就不发这个头
+                    // 本地服务（Ollama / LM Studio）不需要 Key，留空就不发这个头；
+                    // 但 OpenCode Zen 是个例外 —— 它把字面量 "public" 当作合法的匿名身份，
+                    // 没填 Key 时发 Bearer public 至少能走通鉴权（拿到的会是
+                    // FreeUsageLimitError 而不是 401），错误信息也更准确。
                     if (_apiKey.Length > 0)
                         req.Headers.TryAddWithoutValidation("Authorization", "Bearer " + _apiKey);
+                    else if (IsOpenCode())
+                        req.Headers.TryAddWithoutValidation("Authorization", "Bearer public");
                 }
 
                 if (_settings.ExtraHeaders != null)
